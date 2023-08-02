@@ -1,0 +1,814 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/kapibala.jpg">
+  <link rel="icon" href="/img/kapibala.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Duyifei">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一次量子化下的多体波函数表示 假设在某个空间中，存在N个粒子，则整个系统的哈密顿量写为: \[ \hat{H} &#x3D; \sum_{i&#x3D;1}^N T(x_i) +\frac{1}{2} \sum_{k\ne l&#x3D;1}^{N} V(x_k,x_l)  \] 其中\(x_i\)是用于表征第\(i\)粒子的状态所用的坐标，它可以是实空间的坐标，也可以是自旋等离散的坐标，也可以是两者的组合等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二次量子化和场算符">
+<meta property="og:url" content="http://dyf.zone/2023/02/25/quantum6/index.html">
+<meta property="og:site_name" content="dyf&#39;s blog">
+<meta property="og:description" content="一次量子化下的多体波函数表示 假设在某个空间中，存在N个粒子，则整个系统的哈密顿量写为: \[ \hat{H} &#x3D; \sum_{i&#x3D;1}^N T(x_i) +\frac{1}{2} \sum_{k\ne l&#x3D;1}^{N} V(x_k,x_l)  \] 其中\(x_i\)是用于表征第\(i\)粒子的状态所用的坐标，它可以是实空间的坐标，也可以是自旋等离散的坐标，也可以是两者的组合等等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-25T10:50:45.000Z">
+<meta property="article:modified_time" content="2023-03-05T15:17:05.550Z">
+<meta property="article:author" content="Duyifei">
+<meta property="article:tag" content="quantum mechanics, 量子力学">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>二次量子化和场算符 - dyf&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dyf.zone","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>行行行</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="二次量子化和场算符"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-25 18:50" pubdate>
+          2023年2月25日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          52 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">二次量子化和场算符</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一次量子化下的多体波函数表示">一次量子化下的多体波函数表示</h1>
+<p>假设在某个空间中，存在N个粒子，则整个系统的哈密顿量写为:</p>
+<p><span class="math display">\[
+\hat{H} = \sum_{i=1}^N T(x_i) +\frac{1}{2} \sum_{k\ne l=1}^{N} V(x_k,x_l) 
+\]</span></p>
+<p>其中<span class="math inline">\(x_i\)</span>是用于表征第<span class="math inline">\(i\)</span>粒子的状态所用的坐标，它可以是实空间的坐标，也可以是自旋等离散的坐标，也可以是两者的组合等等。</p>
+<p>假设每个粒子都存在完全力学量集<span class="math inline">\(\{E_k\}\)</span>，表示第k个单体的本征能级<span class="math inline">\({\epsilon_{E_k = eigen-state1},\epsilon_{E_k = eigen-state2}...\}\)</span>和本征态<span class="math inline">\({\psi_{E_k=eigen-state1}(x_k),\psi_{E_k = eigen-state2}(x_k)...\}\)</span>，则此系统所对应的波函数：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    \psi(x_1,x_2,...x_n,t)= \sum_{E_1,E_2,E_3,...E_N} C(E_1,E_2,...E_N,t) \psi_{E_1}(x_1) \psi_{E_2}(x_2)...\psi_{E_N}(x_n)
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>求和号表示，对所有可能的本征态组合求和。</p>
+<h1 id="薛定谔方程">薛定谔方程</h1>
+<p>对于任意的波函数，想求其分量<span class="math inline">\(C(E_1,E_2,...E_N,t)\)</span>，可以用<span class="math inline">\(\left&lt;\psi_{E_1}(x_1) \psi_{E_2}(x_2)...\psi_{E_N}(x_n) |\psi\right&gt;\)</span>的方法来求，求其随时演化的可以将<span class="math inline">\(\left|\psi \right&gt;\)</span> 带入薛定谔方程并且左积<span class="math inline">\(\left&lt;\psi_{E_1}(x_1) \psi_{E_2}(x_2)...\psi_{E_N}(x_n) \right|\)</span>化简得到：</p>
+<p><span id="eq1"> <span class="math display">\[\begin{equation}
+    \begin{aligned}
+    &amp;i\hbar \frac{\partial C(E_1,E_2,...E_N,t)}{\partial t}
+    \\\\ =&amp; \sum_k \sum_{W} C(E_1,E_2,...W,E_{k+1},..E_N,t)\left&lt;\psi_{E_k}| T(x_k) |\psi_{W} \right&gt;
+    \\\\ &amp;+ \sum_i \sum_j \sum_{W}\sum_{M} C(E_1,E_2,...M,E_{j+1},...W,E_{i+1},..E_N,t)\left&lt;\psi_{E_i}\psi_{E_j}| V(x_i,x_j) |\psi_{W}\psi_{M} \right&gt;
+    \end{aligned}
+\end{equation}\]</span> </span></p>
+<p>其中<span class="math inline">\(k,i,j\)</span>的取值从1到粒子总数N，而<span class="math inline">\(W,M\)</span>的含义是当<span class="math inline">\(k,i,j\)</span>取定后<span class="math inline">\(E_k,E_i,E_j\)</span>所对应的所有单体本征值和本征态。</p>
+<h2 id="玻色子">玻色子</h2>
+<p>假设共有<span class="math inline">\(M\)</span>个粒子，假设有<span class="math inline">\(N\)</span>个全同玻色子，为了便于分析，将同一种玻色子的编号编在前N位，其余的不同种的粒子放在后边。即，</p>
+<p><span class="math display">\[
+\psi(x_1,x_2,..x_N,x_{N+1},...x_{M},t)
+\]</span></p>
+<p><span class="math inline">\(x_1\)</span>到<span class="math inline">\(x_n\)</span>对应同种玻色子，后面为了方便，简写其后的<span class="math inline">\(x_{N+i}\)</span>，记为<span class="math inline">\(\psi(x_1,x_2,..x_N,t)\)</span>，由量子力学基本假设有：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    \psi(x_1,x_2,.x_i,...x_j..x_N,t) = \psi(x_1,x_2,..,x_j,...x_i...x_N,t)
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>将波函数对应上方的展开方法展开之后，容易得到：</p>
+<p><span class="math inline">\(\forall \{E_1,E_2,...E_N\}, C(E_1,...E_i,..E_j,..E_N,t) =C(E_1,...E_j,..E_i,..E_N,t)\)</span>与上式条件完全等价。</p>
+<p>这里评价一下，因为<span class="math inline">\(1\)</span>到<span class="math inline">\(N\)</span>都是全同粒子，所以完全可以用同一套本征态来进行展开，而等式的含义，举个例子，假设该种玻色子的本征态<span class="math inline">\(E\)</span>可以取<span class="math inline">\(0,1,2,3,..\)</span>，波函数在第i个粒子在5态，第j个粒子在4态的某个态上的分量，与波函数在第i个粒子在4态，第j个粒子在5态的，其余粒子取态都相同的态的分量相同，其余的参数完全相同。</p>
+<p>对展开系数进行变量代换，设<span class="math inline">\(n_i\)</span>指第i个单体本征态上的粒子个数，则定义:</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    \bar C(n_1,n_2,...n_\infty,t) \equiv C(E_1,...E_i,..E_j,..E_N,t)
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>其中变量$ \{E_1,E_2,...E_3\} <span class="math inline">\(满足有\)</span>n_1<span class="math inline">\(个取值等于第一个单体本征值\)</span><em>{eigen-state1}<span class="math inline">\(，\)</span>n_2<span class="math inline">\(个取\)</span></em>{eigen-state_1}<span class="math inline">\(，由前文的交换对称性可知，这个定义是well-defined的，交换任意的\)</span>E_i,E_j<span class="math inline">\(所对应的\)</span>C'<span class="math inline">\(都等于\)</span>C$。</p>
+<p>再定义:</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    f(n_1,n_2,...n_\infty,t) &amp;= (\frac{N!}{n_1!n_2!..n_\infty!})^{1/2}\bar C(n_1,n_2,...n_\infty,t) 
+    \\\\ \varphi_{n_1,n_2,...n_\infty}(x_1,x_2,...x_n) &amp;= (\frac{n_1!n_2!..n_\infty!}{N!})^{1/2}\sum_{E_1,E_2,...E_N} \psi_{E_1}(x_1) \psi_{E_2}(x_2)...\psi_{E_N}(x_n)
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>其中，第二行的求和号表示对所有满足<span class="math inline">\(n_1,n_2,...n_\infty\)</span>的<span class="math inline">\(E_1,E_2...E_N\)</span>进行求和。</p>
+<p>容易验证：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    \psi(x_1,x_2,...x_N,t) = \sum_{n_1,n_2,n_3,...n_\infty} f(n_1,n_2,...n_\infty,t)\varphi_{n_1,n_2,...n_\infty}(x_1,x_2,...x_N)
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>其中<span class="math inline">\(\sum_i n_i = N\)</span>，<span class="math inline">\(\left&lt;\varphi_{n_1,n_2,...n_\infty}|\varphi_{n_1,n_2,...n_\infty}\right&gt; =1\)</span>且<span class="math inline">\(\left|\varphi_{n_1,n_2,...n_\infty}\right&gt;(x_1,x_2,...x_N)\)</span>是一个满足交换对称性的波函数。</p>
+<p>回到<a href="#eq1">薛定谔方程</a>，作为例子，对等号右边动能项进行改写，</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+     \sum_k \sum_{W} C(E_1,E_2,...W,E_{k+1},..E_N,t)\left&lt;\psi_{E_k}| T(x_k) |\psi_{W} \right&gt; 
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>给定<span class="math inline">\(\\{E_1,E_2,...E_N\\}\)</span>之后，得到对应的<span class="math inline">\(\\{n_1,n_2,..n_\infty\\}\)</span>，则可以将<span class="math inline">\(C\)</span>用$C $改写：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    \sum_k \sum_{W} \bar C(n_1,n_2,.,n_{E_K}-1,..n_{W}+1,..n_\infty,t)\left&lt;\psi_{E_k}| T(x_k) |\psi_{W} \right&gt; 
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>在对所有粒子求和<span class="math inline">\(\sum_{k=1}^{N}\)</span>的过程中，通过表达式可以看出，如果<span class="math inline">\(E_{k_1} = E_{k_2}\)</span>则<span class="math inline">\(k_1\)</span>号粒子和<span class="math inline">\(k_2\)</span>号粒子的 求和项表达式$<em>{W} C(n_1,n_2,.,n</em>{E_K}-1,..n_{W}+1,..n_,t)&lt;<em>{E_k}| T(x_k) |</em>{W} &gt; $完全一样，将所在能级一致的粒子放在一起求和，所以再次改写：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    &amp;\sum_i^{\infty} \sum_{W} n_i \bar C(n_1,n_2,.,n_{i}-1,..n_{W}+1,..n_\infty,t)\left&lt;\psi_{i}| T(x_k) |\psi_{W} \right&gt; 
+    \\\\=&amp;\sum_{M} \sum_{W} n_M \bar C(n_1,n_2,.,n_{M}-1,..n_{W}+1,..n_\infty,t)\left&lt;\psi_{M}| T(x_k) |\psi_{W} \right&gt;
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>第一行代表将第一个求和变成了对所有能级求和，而第二行只是换了个变量名，使得形式更对称。同理对势能也做同样的操作，具体形式很复杂，不再赘述。</p>
+<h1 id="粒子数表象及产生湮灭算符">粒子数表象及产生湮灭算符</h1>
+<p>我们将前文中定义的对称波函数 $ <em>{n_1,n_2,...n</em>}(x_1,x_2,...x_n) = ()^{1/2}<em>{E_1,E_2,...E_N} </em>{E_1}(x_1) <em>{E_2}(x_2)...</em>{E_N}(x_n)<span class="math inline">\(记作\)</span>|n_1 n_2,...n_&gt;<span class="math inline">\(， 通过\)</span>_{E}(x)$的正交性很容易得到 <span class="math inline">\(\left&lt;n_1 n_2,...n_\infty |n_1&#39; n_2&#39;,...n_\infty&#39;\right&gt; = \delta_{n_1,n_1&#39;}\delta_{n_2,n_2&#39;}....\)</span>，且这组基是完备的（未证明）。</p>
+<p>引入粒子数升降算符<span class="math inline">\(\hat b_i，\hat b^\dagger_i\)</span>，i代表对称波函数的<span class="math inline">\(n_i\)</span>对应的能级，<span class="math inline">\([\hat b_i，\hat b^\dagger_i] = 1\)</span>而不同能级之间的升降算符相互对易。</p>
+<p>根据初量升降算符有性质<span class="math inline">\(\hat b_i\hat b^\dagger_i \left|n_1 n_2,...n_\infty\right&gt; = n_i\)</span>等。</p>
+<p>同样的以动量作为例子，前文中推导得到的动能表达式为：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    &amp;\sum_{M} \sum_{W} n_M \bar C(n_1,n_2,.,n_{M}-1,..n_{W}+1,..n_\infty,t)\left&lt;\psi_{M}| T(x_k) |\psi_{W} \right&gt;
+    \\\\&amp;=\sum_{M} \sum_{W} n_M (\frac{n_1n_2...n_\infty!}{N!})^{\frac{1}{2}} (\frac{n_W+1}{n_M})^{\frac{1}{2}} f(n_1,n_2,...n_\infty) \left&lt;\psi_{M}| T(x_k) |\psi_{W} \right&gt;
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>方程左侧： <span class="math display">\[\begin{equation}
+    \begin{aligned}
+     = (\frac{n_1n_2...n_\infty!}{N!})^{\frac{1}{2}} i\hbar \frac{\partial f(n_1,n_2,...n_\infty)}{\partial t} \left|n_1 n_2,...n_\infty\right&gt;
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>综上，薛定谔方程改写为：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    &amp;i\hbar \frac{\partial f}{\partial t}\left|n_1 n_2,...n_\infty\right&gt;
+    = 
+     \\\\&amp;=\sum_{M} \sum_{W} (n_W+1)^{1/2}(n_M)^{1/2} f(n_1,n_2,...n_\infty) \left&lt;\psi_{M}| T(x_k) |\psi_{W} \right&gt;\left|n_1 n_2,...n_\infty\right&gt; + etc.
+     \\\\&amp;=\sum_{M} \sum_{W} b_{W}^\dagger b_{M}  \left&lt;\psi_{M}| T(x_k) |\psi_{W} \right&gt;f(n_1,n_2,...n_\infty)\left|n_1 n_2,...n_\infty\right&gt; + etc. 
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>势能也是同样的处理方式，所以实际上哈密顿量可以用升降算符表示为：</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{aligned}
+    \hat H = \sum_{M} \sum_{W} b_{W}^\dagger b_{M}  \left&lt;\psi_{M}| T(x_k) |\psi_{W} \right&gt; + \sum_{i,j,k,l} b_{i}^\dagger b_{j}^\dagger\left&lt; ij|V|kl \right&gt; b_{k} b_{l}
+    \end{aligned}
+\end{equation}\]</span></p>
+<p>这种操作，将量子体系重新用升降算符来进行描述，将哈密顿量定义在了一个抽象的粒子占据数表象下。动能势能和单体本征值的内积沟通了一次量子化后的哈密顿量以及定义在抽象的粒子数表象空间中的多体哈密顿量。</p>
+<p><mark>费米子</mark>则可以用反对易的行列式：</p>
+<p><span class="math display">\[
+(\frac{n_1!n_2!..n_{\infty}!}{N!})^{1/2}\left( \begin{matrix}{l}
+    \psi _{E_1}\left( x_1 \right)&amp;      \cdots&amp;     \psi _{E_1}\left( x_N \right)\\\\
+    \vdots&amp;     \ddots&amp;     \vdots\\\\
+    \psi _{E_N}\left( x_1 \right)&amp;      \cdots&amp;     \psi _{E_N}\left( x_N \right)\\\\
+\end{matrix} \right) 
+\]</span></p>
+<p>作为粒子数表象所对应的波函数的表达式，同时<span class="math inline">\(\\{a_i,a_j^{\dagger}\\} = \delta_{i,j}\)</span>反对易式作为升降算符的定义，可以得到一样的表达形式。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" class="category-chain-item">量子力学</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/quantum-mechanics-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" class="print-no-link">#quantum mechanics, 量子力学</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>二次量子化和场算符</div>
+      <div>http://dyf.zone/2023/02/25/quantum6/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Duyifei</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年2月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/19/microwave1/" title="微波电路基本概念">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">微波电路基本概念</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/09/quantum4/" title="Schrieffer–Wolff transformation">
+                        <span class="hidden-mobile">Schrieffer–Wolff transformation</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       Contact me:  <i class="iconfont icon-mail"></i> <a href="mailto:duyifei1619@qq.com" target="_blank"><span>email</span></a>&nbsp <i class="iconfont icon-zhihu-fill"></i><a href="https://www.zhihu.com/people/du-e-nan-zhi-4" target="_blank"><span>肚饿难治</span></a> <br> Powered by  <a href="https://www.hexo.io" target="_blank" rel="nofollow noopener"><span>hexo</span></a> and <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>. 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

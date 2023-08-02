@@ -1,0 +1,895 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/kapibala.jpg">
+  <link rel="icon" href="/img/kapibala.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Duyifei">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一维单原子链 加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：\(M\frac{d^2u_n}{dt^2}&#x3D; \beta(u_{n+1}+u_{n-1}-2u_n)\) 代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系： \[\begin{aligned} u_n &#x3D; \sum^{}_{l} A_l e^{-iw_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="晶格振动">
+<meta property="og:url" content="http://dyf.zone/2023/01/02/solid3/index.html">
+<meta property="og:site_name" content="dyf&#39;s blog">
+<meta property="og:description" content="一维单原子链 加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：\(M\frac{d^2u_n}{dt^2}&#x3D; \beta(u_{n+1}+u_{n-1}-2u_n)\) 代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系： \[\begin{aligned} u_n &#x3D; \sum^{}_{l} A_l e^{-iw_">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dyf.zone/2023/01/02/solid3/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-25%20175006.png">
+<meta property="og:image" content="http://dyf.zone/2023/01/02/solid3/3E0B5AE836EBB34B602A8B51A62691D5.png">
+<meta property="article:published_time" content="2023-01-02T05:56:17.000Z">
+<meta property="article:modified_time" content="2023-01-02T07:29:28.938Z">
+<meta property="article:author" content="Duyifei">
+<meta property="article:tag" content="solid physics, physics, 固体物理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://dyf.zone/2023/01/02/solid3/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-25%20175006.png">
+  
+  
+  
+  <title>晶格振动 - dyf&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dyf.zone","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>行行行</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="晶格振动"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-02 13:56" pubdate>
+          2023年1月2日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          58 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">晶格振动</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一维单原子链">一维单原子链</h1>
+<p>加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：<span class="math inline">\(M\frac{d^2u_n}{dt^2}= \beta(u_{n+1}+u_{n-1}-2u_n)\)</span></p>
+<p>代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系：</p>
+<span class="math display">\[\begin{aligned}
+u_n = \sum^{}_{l} A_l e^{-iw_lt}e^{inaq}
+\\\\w^2(q)= \frac{2\beta}{M}(1-cosqa)
+\end{aligned}\]</span>
+<h3 id="一维双原子晶格振动">一维双原子晶格振动</h3>
+<p>同样的方法解出色散关系</p>
+<p><span class="math display">\[
+w^2(q) = \frac{\beta}{M_1M_2}[M_1+M_2 \pm \sqrt{M_1^2+M_2^2+2M_1M_2cosqa}]
+\]</span></p>
+<p><img src="屏幕截图 2022-11-25 175006.png" srcset="/img/loading.gif" lazyload></p>
+<p>在q趋向于0的时候，<span class="math inline">\(w\)</span>趋向于0的波称为声学支。声学支代表的振动模式相邻原子振动方向同向，另一支称为光学支，相邻原子振动方向相反，同时由于这种振动模式会产生迅速变化的电偶极矩，与光发生相互作用。</p>
+<p>三维的同理，N个原胞，每个原胞s个原子，解出来(没证明)3支声学波，<span class="math inline">\(3s-3\)</span>支光学波</p>
+<h3 id="声子">4. 声子</h3>
+<p>单原子链晶格振动的量子化(简谐近似，只考虑最近邻原子间的相互作用)：</p>
+<div style="text-align:center">
+<span class="math inline">\(H = T+U = \frac{1}{2} M \sum^{}_{n}\dot u_n^2 + \frac{1}{2} \beta \sum^{}_{n}(u_{n-1}-u_n)^2\)</span>
+</div>
+<p>欲对<span class="math inline">\(H\)</span>的形式进行变化方便看出具体形式，做变量代换：</p>
+<p><span class="math inline">\(u_n(t) = \sum^{}_{l} A_l(t) e^{-iw_lt}e^{inaq_l}\)</span>，其中<span class="math inline">\(q_l=\frac{2\pi l}{Na},-\frac{N}{2}\leq l&lt;\frac{N}{2}\)</span></p>
+<p>令 <span class="math inline">\(Q_l(t) = (NM)^{\frac{1}{2}}A_l e^{-iw_l t}\)</span> 则</p>
+<span class="math display">\[\begin{aligned}
+u_n = (NM)^{-\frac{1}{2}}\sum^{}_{l}Q_l e^{inaq_l}
+\\\\Q_l = (\frac{M}{N})^{1/2}\sum_n u_ne^{-inaq}
+\end{aligned}\]</span>
+<blockquote>
+<p>正交性条件：<span class="math inline">\(\frac{1}{N} \sum_n e^{ina(q_l-q_{l&#39;})} = \delta _{ll&#39;}\)</span> (易证)</p>
+</blockquote>
+<blockquote>
+<p>由<span class="math inline">\(u_n\)</span>为实数可推得 <span class="math inline">\(Q_l* = Q_{-l}\)</span></p>
+</blockquote>
+<span class="math display">\[\begin{aligned}
+T &amp;= \frac{M}{2} \sum^N_n \dot u_n^2
+\\\\ &amp;= \frac{1}{2N} \sum^N_{n=0} \sum_{l&#39;}\sum_l \dot Q_l \dot Q_{l&#39;}e^{ina(q_l+q_{l&#39;})}
+\\\\ &amp;= \frac{1}{2} \sum_l \sum_{l&#39;} \dot Q_l \dot Q_{l&#39;} \delta_{ll&#39;}
+\\\\ &amp;= \frac{1}{2} \sum_l  \dot Q_l ^2
+\end{aligned}\]</span>
+<p>第二行由定义，第三行由正交性条件</p>
+<div style="text-align:center">
+<span class="math inline">\(V= \frac{1}{2} \beta \sum^{N}_{n=0}(u_{n-1}-u_n)^2\)</span>
+</div>
+<br>
+<div style="text-align:center">
+<span class="math inline">\(=\frac{1}{2} \beta \sum^{N}_{n=0}u_{n-1}^2 - 2u_{n-1}u_n + u_n^2\)</span>
+</div>
+<br>
+<div style="text-align:center">
+<span class="math inline">\(= \beta \sum^{N}_{n=0}u_{n}^2 - u_{n-1}u_n\)</span>
+</div>
+<br>
+<div style="text-align:center">
+<span class="math inline">\(=\frac{1}{NM}\beta \sum_n\sum_{l}\sum_{l&#39;} Q_lQ_{l&#39;} e^{inaq_l}e^{inaq_{l&#39;}}(1 - e^{-iaq_l})\)</span>
+</div>
+<br>
+<div style="text-align:center">
+<span class="math inline">\(= \frac{\beta}{M} \sum_{l} Q_lQ_{l}*(1 - e^{-iaq_l})\)</span>
+</div>
+<br>
+<div style="text-align:center">
+<span class="math inline">\(= \frac{(1-cos(aq))\beta}{2M} \sum_{l} Q_lQ_{l}^*\)</span>
+</div>
+<br>
+<div style="text-align:center">
+<span class="math inline">\(= w_l^2 Q_lQ_{l}^*\)</span>
+</div>
+<p>第三个等号来源于周期性边界条件，第六个等号来源于<span class="math inline">\(V\)</span>是实数，所以可以取实部，第七个等号来源于一维振子解的色散关系，可以理解为用这个定义了<span class="math inline">\(w_l\)</span>，显然是一个谐振子哈密顿量，后面可以把对应的能量子定义为声子。</p>
+<h4 id="声子性质">声子性质</h4>
+<p>从基态<span class="math inline">\(n_l = 0\)</span> 到激发态<span class="math inline">\(n_l (≠ 0)\)</span> 的能量差为<span class="math inline">\(n_l ћω_l\)</span>，这一过程可以看成是产生了<span class="math inline">\(n_l\)</span>个频率<span class="math inline">\(ћω_l\)</span>的声子，每个声子的能量为<span class="math inline">\(ћω_l\)</span>。（元激发）波矢q的方向代表格波的传播方向，也代表声子的运动方向，<span class="math inline">\(\hbar q\)</span> 称为声子的准动量。</p>
+<h3 id="离子晶体的红外光学性质">离子晶体的红外光学性质</h3>
+<h4 id="光学模">光学模</h4>
+<p>光学模是正负离子相对振动的一种振动模式，如图所示：</p>
+<p><img src="3E0B5AE836EBB34B602A8B51A62691D5.png" srcset="/img/loading.gif" lazyload></p>
+<p><mark>纵波由于离子移动形成了指向回复方向的极化电场，所以振动变快，频率高于不会形成极化电场的横波</mark>。同时由于电磁波为横波，只有横光学模能够与电磁波发生耦合。</p>
+<h4 id="黄昆方程">黄昆方程</h4>
+<span class="math display">\[\begin{aligned}
+\frac{d^2W}{dt^2} = b_{11} W +b_{12}E
+\\\\ p = b_{12}W +b_{22}E
+\end{aligned}\]</span>
+<p><span class="math inline">\(W = (\mu n)^{-\frac{1}{2}}(u_+ - u_-)\)</span>，<span class="math inline">\(n\)</span> 为单位体积内的原胞数，<span class="math inline">\(\mu\)</span> 是折合质量，<span class="math inline">\(u_+(u_-)\)</span>是正(负)离子的振动位移，<span class="math inline">\(b_{ij}\)</span>为待定系数。</p>
+<h4 id="lst关系">LST关系</h4>
+<span class="math display">\[\begin{aligned}
+b_{11}&amp;= -w_{TO}^2
+\\\\ \epsilon(0) &amp;= \frac{w^2_{LO}}{w^2_{TO}} \epsilon(\infty)
+\\\\ w_{LO}^2 &amp;= w_{TO}^2 + \frac{b^2_{12}}{\epsilon_0+b_{22}}
+\\\\ \epsilon(\infty) &amp;= 1+ \frac{b_{22}}{\epsilon_0}
+\end{aligned}\]</span>
+<h4 id="晶格热容">晶格热容</h4>
+<p>略</p>
+<h3 id="习题">习题</h3>
+<blockquote>
+<p>在一维单原子晶格中，若考虑每一原子与其余原子都有相互作用，在简谐近似下求格波的色散关系</p>
+</blockquote>
+<span class="math inline">\(ij\)</span>原子的相互距离：<span class="math inline">\(x_{ij} = x_i -x_j\)</span> , <span class="math inline">\(x_i = x_i^0 +u_i\)</span> ,<span class="math inline">\(u_i\)</span>为振幅，<span class="math inline">\(x_i^0\)</span>为平衡位置
+<div style="text-align:center">
+<span class="math inline">\(U = \frac{1}{2} \sum^N_{i,j}\phi(x_{ij}^0) + \frac{\partial \phi}{\partial x_{ij}}|_{x_{ij}^0}u_{ij}+\frac{1}{2}\frac{\partial^2 \phi}{\partial x_{ij}^2}|_{x_{ij}^0} u_{ij}^2\)</span>
+</div>
+<div style="text-align:center">
+<span class="math inline">\(= \frac{1}{4}\frac{\partial^2 \phi}{\partial x_{ij}^2}|_{x_{ij}^0} u_{ij}^2\)</span>
+</div>
+<p>去掉了常数，以及在稳定状态下一阶导为0。</p>
+<div style="text-align:center">
+<span class="math inline">\(M \ddot u_{n} = - \frac{\partial U}{\partial u_n} = -\sum_{j} \beta_{nj} (u_n-u_j)\)</span>
+</div>
+<br>
+<div style="text-align:center">
+<span class="math inline">\(M \ddot u_{n} = - \sum_{j=0}^{\frac{N}{2}} \beta_{n,{n+j}} (u_{n+j}-2u_{n}+u_{n-j})\)</span>
+</div>
+<p>假设解的形式为：<span class="math inline">\(u_n = e^{iwt-inaq}\)</span> 代入得： <span class="math inline">\(w^2 = \frac{2}{M} \sum_j^{N/2} (1- cos(jaq))\)</span></p>
+<blockquote>
+<p>设有一维双原子晶格，两种原子的质量相等，最近邻原子的力常量交错等于<span class="math inline">\(\beta_1\)</span>和<span class="math inline">\(\beta_2\)</span>，求色散关系</p>
+</blockquote>
+<span class="math display">\[\begin{aligned}
+M \ddot u_n = \beta_1(v_{n+1} -u_n) + \beta_2 (v_{n}-u_{n})
+\\\\  M \ddot v_n = \beta_2(u_{n} -v_n) + \beta_1 (u_{n-1}-v_{n})
+\end{aligned}\]</span>
+<p><span class="math inline">\(v_n, u_n\)</span>分别代表两种不同原子的振动表达式。将试探解 <span class="math inline">\(v_n = Ae^{iwt-inaq}, u_n =B e^{iwt-inaq}\)</span>，带入得：</p>
+<span class="math display">\[\begin{aligned}
+(-Mw^2 +\beta_1+\beta_2) B - (\beta_1e^{-iaq}+\beta_2)A = 0
+\\\\(\beta_2+\beta_1e^{iaq})B - (\rho_2+\rho_1- Mw^2)A = 0
+\end{aligned}\]</span>
+<p>由系数行列式等于0得到：<span class="math inline">\(w^2 = \frac{\beta_1+\beta_2 \pm \sqrt{2\beta_1\beta_2cos(aq)+\beta_1^2+\beta^2}}{M}\)</span></p>
+<blockquote>
+<ol start="3" type="1">
+<li>求一维单原子晶格的格波的模密度以及低温热容：</li>
+</ol>
+</blockquote>
+模密度的表达式：
+<span class="math display">\[\begin{aligned}
+g(w) &amp;= \sum_i g_i(w) = \sum_i \frac{dN_i}{dw} 
+\\\\&amp; = \sum_i\frac{d \sum_k\Omega(w-w_i(k))}{dw}
+\\\\ &amp;= \sum_i \sum_k\delta(w-w_i(k))
+\\\\ &amp;=\sum_i \frac{N}{V^*} \int \delta(w-w_i(k))dk
+\end{aligned}\]</span>
+<p><span class="math inline">\(i\)</span>代表不同的支，第三个等式 <span class="math inline">\(\Omega\)</span> 代表阶跃函数，代表对<span class="math inline">\(k\)</span>空间的每个波矢所对应的频率计数，比<span class="math inline">\(w\)</span>低的记1，最后一个等号对k空间近似连续化，<span class="math inline">\(V^*\)</span>代表<span class="math inline">\(k\)</span>空间大小，<span class="math inline">\(N\)</span>代表k点的个数，由<span class="math inline">\(w^2 = \frac{2\beta}{M}(1-cos(ka))\)</span> 得到 <span class="math inline">\(2wdw = \frac{2\beta}{M}a sin(ka)dk\)</span></p>
+<p>于是模密度表达式：</p>
+<span class="math display">\[\begin{aligned}
+&amp;\sum_i \frac{N}{V^*} \int \delta(w-w_i(k))dk
+\\\\&amp; = \frac{LN}{2\pi} \int \delta(w-w(k))\frac{w(k)dw(k)}{\frac{\beta}{M}a\sin(\arccos(1-\frac{Mw(k)^2}{2\beta}))}
+\\\\&amp; =  \frac{LN}{2\pi}\frac{w}{\frac{\beta}{M}a\sin(\arccos(1-\frac{Mw^2}{2\beta}))}
+\end{aligned}\]</span>
+<p>低温热容:</p>
+系统的配分函数：
+<span class="math display">\[\begin{aligned}
+Z &amp;= \Pi_{w_i} \sum_n e^{-\beta E_n}
+\\\\&amp;= \Pi_{w_i} \sum_n e^{-\beta (\hbar w_i(1/2+n))}
+\\\\&amp;= \Pi_{w_i} (2\sinh(\beta\hbar w_i/2))^{-1}
+\end{aligned}\]</span>
+<p>将每个振动模视作独立的正则系综，同时相互之间无相互作用，热容表达式</p>
+<p><span class="math display">\[
+C_v = \frac{1}{k_BT^2}\frac{\partial^2 lnZ}{\partial \beta^2}
+\]</span></p>
+<p>则：</p>
+<span class="math display">\[\begin{aligned}
+\ln Z =&amp; -\sum_w ~\ln(2 \sinh(\beta\hbar w_i/2))
+\\\\ =&amp; -\frac{1}{N}\int_0^{w_{max}} g(w)\ln(2 \sinh(\beta\hbar w/2)) dw
+\\\\ &amp;\frac{\partial^2 lnZ}{\partial \beta^2} = \frac{1}{N} \int_0^{w_{max}} g(w)(\frac{\hbar w}{2})^2\frac{1}{\cosh(\beta\hbar w/2)\tanh^2(\beta\hbar w/2)} dw
+\end{aligned}\]</span>
+<p><span class="math inline">\(N\)</span>为总波模数，由于代求低温热容，低温下 <span class="math inline">\(w\)</span> 小的起主要贡献，大的由<span class="math inline">\(\frac{\partial^2 lnZ}{\partial \beta^2}\)</span> 表达式可看出，趋近于0，所以可以近似将 <span class="math inline">\(g(w)\)</span> 在 <span class="math inline">\(w\ll 1\)</span> 时的表达式替换到积分中，则：</p>
+<span class="math display">\[\begin{aligned}
+\sin(\arccos(1-\frac{Mw(k)^2}{2\beta_u}))= \sqrt{1-(1-\frac{Mw^2}{2\beta_u})^2} \approx \sqrt{M/\beta_u}w
+\\\\g(w) = \frac{NL}{2\pi}\frac{w}{\frac{\beta_u}{M}a\sin(\arccos(1-\frac{Mw^2}{2\beta}))} = \frac{NL}{2\pi a}\sqrt\frac{M}{\beta_u}
+\end{aligned}\]</span>
+<p>为了区别，<span class="math inline">\(\beta_u\)</span>表示晶格振动中的力常量。</p>
+<p>则低温热容：</p>
+<span class="math display">\[\begin{aligned}
+C_v &amp;= \frac{1}{k_BT^2}\frac{\partial^2 lnZ}{\partial \beta^2}
+\\\\&amp;= \frac{1}{k_BT^2}\frac{1}{N} \int_0^{w_{max}} g(w)(\frac{\hbar w}{2})^2\frac{1}{\cosh^2(\beta\hbar w/2)\tanh^2(\beta\hbar w/2)} dw
+\\\\&amp;\approx\frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}  \int_0^{w_{max}} (\frac{\hbar w}{2})^2\frac{1}{\sinh^2(\beta\hbar w/2)} dw
+\\\\&amp;\approx\frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}  \int_0^{\infty} (\frac{\hbar w}{2})^2\frac{1}{\sinh^2(\beta\hbar w/2)} dw
+\\\\&amp;=\frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}\int_0^{\infty} \frac{2}{\beta^3\hbar}x^2\frac{1}{\sinh^2 x} dx
+\\\\&amp; = \frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}\frac{2}{\beta^3\hbar} I
+\\\\&amp; = \frac{K_B^2L}{a\pi \hbar}\sqrt\frac{M}{\beta_u} I T
+\end{aligned}\]</span>
+<p><span class="math inline">\(I\)</span>代表积分值，结果与<span class="math inline">\(T\)</span>呈一次方关系</p>
+<blockquote>
+<p>运用德拜模型计算低温下的晶体热容</p>
+</blockquote>
+<p><mark>德拜假设低温下起主要作用的都是声学模，其色散关系可以近似为<span class="math inline">\(w=cq\)</span></mark></p>
+<p>则频率密度<span class="math inline">\(g(w) = \frac{1}{V^*} \int \delta(w-w(q))dq =\frac{l}{\pi c}\)</span></p>
+<p>则热容的表达式：</p>
+<span class="math display">\[\begin{aligned}
+C_v &amp;= \frac{\partial\sum_w  E_w}{\partial T} = \frac{\sum_w\partial (\frac{1}{2}\hbar w+\bar n\hbar w)}{\partial T} 
+\\\\&amp;= \frac{\partial\sum_w \bar n\hbar w}{\partial T} 
+\\\\&amp;= \frac{\partial}{\partial T}\int \frac{1}{N}\frac{g(w)dw}{e^{\frac{1}{2}\hbar w}-1}\frac{1}{2}\hbar w
+\\\\&amp;=\frac{l}{\pi c} \frac{k_bT^2}{\hbar}\int_0^\infty\frac{x^2e^x}{(e^{x}-1)^2}dx
+\end{aligned}\]</span>
+<blockquote>
+<p>证明一维单原子晶格中，激发出一个<span class="math inline">\(\hbar q_0\)</span>的声子后动量不变。</p>
+</blockquote>
+不妨令初始状态初动量为0，激发一个声子后，整体动量：
+<span class="math display">\[\begin{aligned}
+p =&amp; \sum_n m \dot u_n  
+\\\\ =&amp;\sum_n m \sum_q \dot e^{iwt-inaq} = iw \sum_n m e^{iwt-inaq_0} 
+\\\\=&amp; iwm e^{iwt}\sum_n e^{-inaq} = 0
+\end{aligned}\]</span>
+<p>最后一个等式来源于等比数列求和</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86/" class="category-chain-item">固体物理</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/solid-physics-physics-%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86/" class="print-no-link">#solid physics, physics, 固体物理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>晶格振动</div>
+      <div>http://dyf.zone/2023/01/02/solid3/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Duyifei</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/02/solid4/" title="自由电子气">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">自由电子气</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/02/solid2/" title="晶体结合能">
+                        <span class="hidden-mobile">晶体结合能</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       Contact me:  <i class="iconfont icon-mail"></i> <a href="mailto:duyifei1619@qq.com" target="_blank"><span>email</span></a>&nbsp <i class="iconfont icon-zhihu-fill"></i><a href="https://www.zhihu.com/people/du-e-nan-zhi-4" target="_blank"><span>肚饿难治</span></a> <br> Powered by  <a href="https://www.hexo.io" target="_blank" rel="nofollow noopener"><span>hexo</span></a> and <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>. 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

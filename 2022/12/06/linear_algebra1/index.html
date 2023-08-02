@@ -1,0 +1,870 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/kapibala.jpg">
+  <link rel="icon" href="/img/kapibala.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Duyifei">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Vector Space 1.1 vector space  A vector space  is a set (denoted by \(V\)) along with an addition and a scalar multiplication satisfying the following properties. \[\begin{aligned} \forall &amp;u,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性空间">
+<meta property="og:url" content="http://dyf.zone/2022/12/06/linear_algebra1/index.html">
+<meta property="og:site_name" content="dyf&#39;s blog">
+<meta property="og:description" content="Vector Space 1.1 vector space  A vector space  is a set (denoted by \(V\)) along with an addition and a scalar multiplication satisfying the following properties. \[\begin{aligned} \forall &amp;u,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-06T14:21:51.000Z">
+<meta property="article:modified_time" content="2022-12-07T01:20:51.043Z">
+<meta property="article:author" content="Duyifei">
+<meta property="article:tag" content="线性代数, linear algebra">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>线性空间 - dyf&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dyf.zone","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>行行行</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="线性空间"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-06 22:21" pubdate>
+          2022年12月6日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          56 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">线性空间</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="vector-space">Vector Space</h1>
+<h2 id="vector-space-1">1.1 vector space</h2>
+<p><span id="1.1"> A vector space </span> is a set (denoted by <span class="math inline">\(V\)</span>) along with an addition and a scalar multiplication satisfying the following properties.</p>
+<span class="math display">\[\begin{aligned}
+\forall &amp;u,v,w \in V, a,b \in F
+\\\\&amp;(1)u+v = v+u
+\\\\&amp;(2)(u+v)+w = u+(v+w)
+\\\\ &amp;(3)\exists \enspace 0, st\enspace 0+u = 0
+\\\\ &amp;(4)\exists \enspace h, st\enspace h+u = 0
+\\\\ &amp;(5)\exists \enspace 1, st\enspace 1u=u
+\\\\ &amp;(6)a(u+v)=au+av,(a+b)u=au+bu
+\end{aligned}\]</span>
+<h2 id="fs">1.2 <span class="math inline">\(F^S\)</span></h2>
+<p><span class="math inline">\(F^S\)</span> denotes a function from S to F, such as <span class="math inline">\(F^2\)</span>,$F^ $, $ R^{[1,2]}$, and <span class="math inline">\(F^n\)</span> also can be expressed by <span class="math inline">\(\\{x_1,x_2,......, x_n:x_i \in F \enspace for \enspace i =1,2,3,...,n \\}\)</span></p>
+<p>the scalar multiplication and addition are defined by:</p>
+<span class="math display">\[\begin{aligned}
+&amp;f,g \in F^S, x \in S
+\\\\&amp;(f+g)(x)=f(x)+g(x)
+\\\\&amp;(\lambda g)(x)= \lambda g(x)
+\end{aligned}\]</span>
+<h2 id="unique-additive-identity-and-unique-additive-inverse">1.3 unique additive identity and unique additive inverse</h2>
+<p>prove:</p>
+<p>(zero here means vector 0)</p>
+<span class="math display">\[\begin{aligned}
+&amp; suppose \enspace \exists 0,0&#39;,\forall v \in V,
+\\\\&amp;0= v+(-v)=(0&#39;+ v )+(-v)=0&#39;+(v+-v)=0&#39;+0=0&#39;
+\\\\\&amp;therefore \enspace  0=0&#39;
+\\\\&amp;suppose \enspace  \exists w,w&#39;,st \enspace w+v=0,w&#39;+v=0
+\\\\&amp;w = 0 + w=(w&#39;+v)+w=w&#39;
+\\\\&amp;\therefore w = w&#39;
+\end{aligned}\]</span>
+<h2 id="vector-0-and-number-0">1.4 vector 0 and number 0</h2>
+<span class="math display">\[\begin{aligned}
+ 0v&amp;=(0+0)v=0v+0v
+\\\\  \therefore 0v &amp;= 0
+\\\\  a0_v&amp;=a(v-v)=av -av=0_v
+\end{aligned}\]</span>
+<h2 id="times-v">1.5 -1 times v</h2>
+<p><span id="1.5"></p>
+<span class="math display">\[\begin{aligned}
+0_v&amp;=(1+(-1))v=v+(-1)v
+\\\\0_v&amp;=v+(-v)
+\\\\\therefore -1v&amp; = -v
+\end{aligned}\]</span>
+<p></span></p>
+<h2 id="subspace">1.6 subspace</h2>
+<p>A subset of V is a subspace if it inherites addition and multiplication defined on V and it is a vector space.</p>
+<p><span id="1.7"></p>
+<h2 id="conditions-for-a-subspace">1.7 conditions for a subspace</h2>
+<p>U is a subspace of V if and only if:</p>
+<span class="math display">\[\begin{aligned}
+&amp;(1)0_v \in U
+\\\\ &amp;(2)\forall u,w \in U\Rightarrow u+w \in U
+\\\\ &amp;(3)\forall a\in F,v\in U, av \in U
+\end{aligned}\]</span>
+<p>I'll deduce <span class="math inline">\(U\)</span> is a linear space <a href="#1.1">1.1</a> from the assumptions above.</p>
+<p><a href="#1.1">1.1</a>(1),(2) is easy to get because U is the subset of V and condition(2) ensures <span class="math inline">\(v+w \in U\)</span>.</p>
+<p><a href="#1.1">1.1</a>(3) is equal to condition(2).</p>
+<p><a href="#1.1">1.1</a>(4): according to condition(3)，we could know <span class="math inline">\(-v = -1v \in U\)</span> (see <a href="#1.5">1.5</a>) , which means every element has its own additive inverse in <span class="math inline">\(U\)</span></p>
+<p><a href="#1.1">1.1</a>(5) <span class="math inline">\(1 \in F\)</span></p>
+<p><a href="#1.1">1.1</a>(6) can be seen as <span class="math inline">\(U\)</span> is a subset of <span class="math inline">\(V\)</span> and condition(2)(3) ensures <span class="math inline">\(av+bw \in U\)</span>.</p>
+<p>conversely, easy to prove.</p>
+<p></span></p>
+<h2 id="sum-of-subspaces">1.8 sum of subspaces</h2>
+<p><span class="math inline">\(U_1,U_2,......,U_n\)</span> are subsets of V, define sum of these subspaces by:</p>
+<span class="math display">\[\begin{aligned}
+U_1+U_2......+U_n = \\{u_1+u_2+u_3...+u_n:u_i \in U_i,i=1,2,3...,n\\}
+\begin{aligned}
+
+If $U_1,U_2,......,U_n$ are subspaces of V and each element in $U_1+U_2......+U_n$ can only be expressed uniquely in $u_1+u_2+u_3+......+u_n$, we call $U_1+U_2......+U_n$  is a direct sum,we use $U_1 \oplus U_2 \oplus ..... U_n$ to denote it.
+
+## 1.9 condition of direct sum
+
+$U_1,U_2,......,U_n$ is subspace of V,  $U_1+U_2+U_3...+U_n$ is direct sum if and only if $0$ can only be expressed uniquely in $0_1+0_2+0_3......+0_n$
+
+prove:
+
+\begin{aligned}
+&amp;suppose \enspace 0 = 0_1+0_2+0_3......+0_n 
+\\\\ &amp;if\enspace \exists u = u_1+u_2...+u_n=u_1&#39;+u_2&#39;...u_n&#39;
+\\\\ &amp;0 = u-u=(u_1&#39;-u_1)+(u_2&#39;-u_2)...+(u_n&#39;-u_n)
+\end{aligned}\]</span>
+<p>Because 0 can only be expressed in one way, <span class="math inline">\(u_i = u_i&#39;\)</span>, which means <span class="math inline">\(U_1+U_2...+U_n\)</span> is a direct sum</p>
+<p><span id="1.10"></p>
+<h2 id="direct-sum-of-two-subspace">1.10 direct sum of two subspace</h2>
+<p><span class="math inline">\(U_1+U_2\)</span> is a direct sum if and only if <span class="math inline">\(U_1 \cap U_2 =\\{0\\}\)</span></p>
+<p>prove:</p>
+<span class="math display">\[\begin{aligned}
+&amp;if\enspace U_1 \cap U_2 = \{0\}
+\\\\&amp;0 = u_1 + u_2
+\\\\&amp;u_1 \in U_1 u_2 \in U_2
+\\\\&amp;\because u_1 = -u_2 \in U_2
+\\\\&amp;\therefore u_1 \in U_1 \cap U_2
+\\\\&amp;\therefore u_1 = 0
+\end{aligned}\]</span>
+<p><span class="math inline">\(U_1+U_2\)</span> is a direct sum, reversely,</p>
+<span class="math display">\[\begin{aligned}
+\\\\&amp;U_1+U_2\enspace is\enspace direct\enspace sum
+\\\\&amp;\forall u \in U_1 \cap U_2
+\\\\ &amp;if\enspace u\ne0  \enspace u = 0_1 +u = u + 0_2
+\end{aligned}\]</span>
+<p>Contradiction with assumptions, therefore <span class="math inline">\(u = 0\)</span></p>
+<p></span></p>
+<h1 id="exercise">exercise</h1>
+<h2 id="b">1.B</h2>
+<h3 id="b.1">1.B.1</h3>
+<p><span style="text-align:center"></p>
+<p><span class="math inline">\(-(-v)=-(-1v)=-1(-1v)=(-1 \times -1)v=v\)</span></p>
+<p></span></p>
+<h3 id="b.2">1.B.2</h3>
+<p><span style="text-align:center"></p>
+<p><span class="math inline">\(if\enspace a \ne 0,\frac{1}{a}0_v=0_v =(\frac{1}{a}\times av)=v\)</span></p>
+<p></span></p>
+<h3 id="b.3">1.B.3</h3>
+<span class="math display">\[\begin{aligned}
+&amp;suppose\enspace \exists\vec{x}&#39;\enspace st\enspace 3\vec{x}&#39;+\vec{v}=\vec{w}
+\\\\&amp;3\vec{x}&#39;+\vec{v} = \vec{w}=3\vec{x}+\vec{v}
+\\\\&amp;\Rightarrow \vec{x}&#39;-\vec{x}= 0
+\end{aligned}\]</span>
+<h3 id="b.5">1.B.5</h3>
+<span class="math display">\[\begin{aligned}
+\exists0,st\enspace 0_v+u=u \Rightarrow 0v=0_v\enspace for\enspace \forall v \in V
+\\\\0_v=u-u=(1-1)u=0u
+\end{aligned}\]</span>
+<h3 id="b.6">1.B.6</h3>
+<p><span class="math inline">\(R \cup \{\infty\}\cup \{-\infty\}\)</span> is a vector space can be verified by checking the scalar multiplication and addition between infinity and constant.</p>
+<h2 id="c">1.C</h2>
+<h3 id="c.3">1.C.3</h3>
+<span class="math display">\[\begin{aligned}
+&amp;\forall f,g \in U =\{f:f&#39;(-1)=3f(2),f \in \textbf{R}^{(-4,4)}\}
+\\\\&amp;(f+g)&#39;(-1)= f&#39;(-1)+g&#39;(-1) = 3f(2)+3g(2)= 3(f+g)(2)
+\\\\&amp;\therefore f+g \in U
+\\\\&amp;
+\\\\&amp;(\lambda f)&#39;(-1) = \lambda f&#39;(-1)=3 (\lambda f)(2)
+\\\\&amp;\therefore \lambda f \in U
+\\\\&amp;
+\\\\&amp; 0&#39;(-1)=3\enspace 0(2)=0
+\\\\&amp;\therefore 0\enspace is\enspace in\enspace U
+\end{aligned}\]</span>
+<h3 id="c.6">1.C.6</h3>
+<span class="math display">\[\begin{aligned}
+(a)&amp; a^3=b^3 \Rightarrow a = b\enspace when\enspace a,b \in \mathcal{R}
+\\\\(b)&amp; (1,e^{\pi i2/3},0)+(e^{\pi i4/3},1,0) \notin U
+\end{aligned}\]</span>
+<h4 id="c.7">1.C.7</h4>
+<p><span class="math inline">\(\\{(1,0),(0,0),(0,1)\\}\)</span> is closed under the addition but it is not closed under the scalar multiplication</p>
+<h4 id="c.8">1.C.8</h4>
+<p><span class="math inline">\((\lambda,2\lambda)\cup(\lambda,3\lambda) \lambda \in R\)</span> closed under the scalar multiplication but it is not closed under the addition</p>
+<p><span id="1.C.10"></p>
+<h4 id="c.10">1.C.10</h4>
+<p>\begin{aligned} u,w U_1 U_2 \u+w ,u U_1 \ u+w,u U_2 \u+w, uU_1 U_2 obviously, 0isinthesubsetU_1 U_2 \begin{aligned}</p>
+<p>therefore <span class="math inline">\(U_1 \cap U_2\)</span> is subspace satisfies the three conditions in <a href="#1.7">1.7</a>, <span class="math inline">\(U_1 \cap U_2\)</span> is a subspace.</p>
+<p></span></p>
+<h4 id="c.11">1.C.11</h4>
+<p>using the same method in <a href="#1.C.10">1.C.10</a></p>
+<p><span id="1.C.12"></p>
+<h4 id="c.12">1.C.12</h4>
+<p>from <a href="#1.C.10">1.C.10</a>,we can infer that <span class="math inline">\(U_1 \in U_2 \Rightarrow U_1 \cup U_2\)</span> is a subspace,</p>
+<p>reversely,</p>
+<p>\begin{aligned} U_1 U_2isasubspace \supposev U_1 / U_2 , u U_2 / U_1 (/heremeansquotientofsets) \U_1 U_2isasubspace \v+u U_1 U_2 \supposev+u U_1 \U_1isasubspace \u U_1 \contradicttotheassumption \v+u U_2 \v U_2 \contradicttotheassumption \Thenullhypothesisiswrong \U_1/U_2orU_2/U1isanemptyset \U_2 U_1 or U_1 U_2 \begin{aligned}</p>
+<p></span></p>
+<h4 id="c.13">1.C.13</h4>
+<p>if there exists one subspace contains another, from <a href="#1.C.12">1.C.12</a> we can prove it easily.</p>
+<p>and in another case, each of the three subspaces contains vector which is not contained by other subspaces:</p>
+<p>\begin{aligned} _1 U_1 U_2 U_3 \_2 U_2 U_1 U_3 \_3 U_3 U_1 U_2 \begin{aligned}</p>
+<p><span class="math inline">\(u_1 + u_2 \in U_1 \cup U_2 \cup U_3\)</span>, using the samemethodin <a href="#1.C.12">1.C.12</a> ,<span class="math inline">\(u_1 +u_2 \in U_3 \notin U_2\enspace and\enspace \notin U_1\)</span> can be deduced. and also <span class="math inline">\(u_1 +2u_2 \in U_3 \notin U_2\enspace and\enspace \notin U_1\)</span>, because <span class="math inline">\(U_3\)</span> is a subspace of V, <span class="math inline">\(u_2 = (u_1+2u_2)-(u_1+u_2) \in U_3\)</span>, it is contradict to the assumption. so this case should be discarded.</p>
+<h4 id="c.18">1.C.18</h4>
+<p>It is an example set which contains 0 but does not have addictive inverses.</p>
+<h4 id="c.19---22">1.C.19 - 22</h4>
+<p>19: <span class="math inline">\(W=\{(x,y,0):x,y \in \R\},\enspace U_1=\{(0,y,z):y,z \in \R\},\enspace U_2=\{(0,0,z):z \in \R\}\)</span> 20:<span class="math inline">\(\{(0,x,y,0):x,y \in F\}\)</span> 21:<span class="math inline">\(\{(0,0,x,0,0):x \in F\},\{(0,0,0,x,0):x \in F\},\{(0,0,0,0,x):x \in F\}\)</span></p>
+<h4 id="c.23">1.C.23</h4>
+<p>\begin{aligned} prove: \V = U_1 W \vU_1, v Vandv W \alsoV =U_2W \v U_2 \U_1 U_2 \reverselyU_2 U_1 \U_2 = U_1 \begin{aligned}</p>
+<h4 id="c.24">1.C.24</h4>
+<p>the function is odd and even:</p>
+<p><span class="math inline">\(f(-x) =f(x)=-f(x) \Rightarrow f(x) = 0\\\therefore U_e \cup U_o = {0(x)} \Rightarrow U_e \oplus U_o\)</span></p>
+<p>for all function <span class="math inline">\(g(x)\)</span> in <span class="math inline">\(\R^\R\)</span>, can be expressed by <span class="math inline">\(w(x)+v(x):w(x)=\frac{g(x)+g(-x)}{2},v(x)=\frac{g(x)-g(-x)}{2}\)</span>, where <span class="math inline">\(w(x)\)</span> is an even function, <span class="math inline">\(v(x)\)</span> is an odd function.</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="category-chain-item">线性代数</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-linear-algebra/" class="print-no-link">#线性代数, linear algebra</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>线性空间</div>
+      <div>http://dyf.zone/2022/12/06/linear_algebra1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Duyifei</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年12月6日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/07/linear_algebra2/" title="基和向量">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">基和向量</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/12/03/quantum1/" title="绝热定理及贝瑞相">
+                        <span class="hidden-mobile">绝热定理及贝瑞相</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       Contact me:  <i class="iconfont icon-mail"></i> <a href="mailto:duyifei1619@qq.com" target="_blank"><span>email</span></a>&nbsp <i class="iconfont icon-zhihu-fill"></i><a href="https://www.zhihu.com/people/du-e-nan-zhi-4" target="_blank"><span>肚饿难治</span></a> <br> Powered by  <a href="https://www.hexo.io" target="_blank" rel="nofollow noopener"><span>hexo</span></a> and <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>. 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

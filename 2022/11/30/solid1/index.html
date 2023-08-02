@@ -1,0 +1,832 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/kapibala.jpg">
+  <link rel="icon" href="/img/kapibala.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Duyifei">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="晶体结构 1. Bravais晶格 重复结构的空间位置代表点组成的空间点阵叫做晶格，空间代表点称为格点，空间的重复结构称为基本单元，简称基元。各基元之间位置等价，即站在任何一个基元上看到的风景完全一样，根据数学理论，布拉格格子只有14种。 2. 基矢 三个不共面连接相邻格点的矢量称为基矢 \[ \\{ R &#x3D; n_1a_1+n_2a_2+n_3a_3|n_1,n_2,n_3 \in Z">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.晶体结构与X射线衍射">
+<meta property="og:url" content="http://dyf.zone/2022/11/30/solid1/index.html">
+<meta property="og:site_name" content="dyf&#39;s blog">
+<meta property="og:description" content="晶体结构 1. Bravais晶格 重复结构的空间位置代表点组成的空间点阵叫做晶格，空间代表点称为格点，空间的重复结构称为基本单元，简称基元。各基元之间位置等价，即站在任何一个基元上看到的风景完全一样，根据数学理论，布拉格格子只有14种。 2. 基矢 三个不共面连接相邻格点的矢量称为基矢 \[ \\{ R &#x3D; n_1a_1+n_2a_2+n_3a_3|n_1,n_2,n_3 \in Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dyf.zone/img/solid1/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-19%20155200.png">
+<meta property="og:image" content="http://dyf.zone/img/solid1/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-19%20160227.png">
+<meta property="og:image" content="http://dyf.zone/img/solid1/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-19%20160241.png">
+<meta property="og:image" content="http://dyf.zone/img/solid1/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-19%20162240.png">
+<meta property="og:image" content="http://dyf.zone/img/solid1/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-19%20162948.png">
+<meta property="og:image" content="http://dyf.zone/img/solid1/1.png">
+<meta property="og:image" content="http://dyf.zone/img/solid1/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-19%20162948.png">
+<meta property="article:published_time" content="2022-11-30T14:53:14.000Z">
+<meta property="article:modified_time" content="2023-08-02T01:30:35.063Z">
+<meta property="article:author" content="Duyifei">
+<meta property="article:tag" content="solid physics, physics, 固体物理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://dyf.zone/img/solid1/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-19%20155200.png">
+  
+  
+  
+  <title>1.晶体结构与X射线衍射 - dyf&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dyf.zone","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>行行行</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="1.晶体结构与X射线衍射"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-30 22:53" pubdate>
+          2022年11月30日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">1.晶体结构与X射线衍射</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="晶体结构">晶体结构</h1>
+<h3 id="bravais晶格">1. Bravais晶格</h3>
+<p>重复结构的空间位置代表点组成的空间点阵叫做晶格，空间代表点称为格点，空间的重复结构称为基本单元，简称基元。各基元之间位置等价，即站在任何一个基元上看到的风景完全一样，根据数学理论，布拉格格子只有14种。</p>
+<h3 id="基矢">2. 基矢</h3>
+<p>三个不共面连接相邻格点的矢量称为基矢 <span class="math display">\[
+\\{ R = n_1a_1+n_2a_2+n_3a_3|n_1,n_2,n_3 \in Z \\}
+\]</span></p>
+<h3 id="原胞">3. 原胞</h3>
+<p>以晶矢为三边组成的平行六面体晶胞称为原胞，体积最小，只包含一个格点。Wigner-Sietz原胞：以任一格点为中心，作它的最近邻，次近邻等格点的垂直平分面，由这些面所围成的最小封闭多面体也满足原胞的要求，称为 Wigner Sietz原胞。</p>
+<h3 id="典型结构">4. 典型结构</h3>
+<p>D:_fluid_modules-theme-fluid <img src="/img/solid1/屏幕截图 2022-11-19 155200.png" srcset="/img/loading.gif" lazyload></p>
+<p>基元为一个钠离子和一个氯离子，为面心立方格子。</p>
+<p><img src="/img/solid1/屏幕截图 2022-11-19 160227.png" srcset="/img/loading.gif" lazyload></p>
+<p>基元为一个Ba离子和一个Ti离子和三个O离子，为简单立方格子。</p>
+<p><img src="/img/solid1/屏幕截图 2022-11-19 160241.png" srcset="/img/loading.gif" lazyload></p>
+<p>基元为一个Cs离子和一个Cl离子，为简单立方格子。</p>
+<p><img src="/img/solid1/屏幕截图 2022-11-19 162240.png" srcset="/img/loading.gif" lazyload></p>
+<p>闪锌矿也是这种结构，基元为晶胞内的一个C加上体心或角上的一个C，为面心立方格子。</p>
+<p><img src="/img/solid1/屏幕截图 2022-11-19 162948.png" srcset="/img/loading.gif" lazyload></p>
+<p>体心内的C和表面的C不等价，原因是最近邻的C原子构成的棱柱方向不一样，所以这两构成基元，布拉菲格子为简单六方。</p>
+<h3 id="晶面指数">5. 晶面指数</h3>
+<p>取定原点和晶矢之后，某个面与坐标轴的交点为<span class="math inline">\((h_1,0,0),(0,h_2,0),(0,0,h_3)\)</span>，则与此平行的任何面在物理上是平移不变的，则<span class="math inline">\((1/h_1,1/h_2,1/h_3)\)</span>称为这一族晶面的晶面指数。</p>
+<h3 id="对称和空间群">6. 对称和空间群</h3>
+<p>旋转对称性：旋转<span class="math inline">\(2\pi/n\)</span>后恢复原状，则用<span class="math inline">\(n,C_n\)</span>表示</p>
+<p>反演对称：关于某个点晶胞取反后<span class="math inline">\((x,y,z) \rightarrow_{(0,0,0)} (-x,-y,-z)\)</span>晶胞不变，用<span class="math inline">\(i,C_i\)</span>表示</p>
+<p>镜面对称：关于某个面晶胞取反后<span class="math inline">\((x,y,z) \rightarrow_{(x,y,0)} (x,y,-z)\)</span>晶胞不变，用<span class="math inline">\(m,\sigma\)</span>表示</p>
+<p>象转对称：旋转和反演对称的结合，先旋转<span class="math inline">\(2\pi/n\)</span>后关于某点反演对称后晶胞不变，用<span class="math inline">\(\bar{n}\)</span>表示</p>
+<p>晶体点群23种，加上平移230种。</p>
+<h3 id="倒格子">7. 倒格子</h3>
+<p>定义倒格子的基矢<span class="math inline">\(b_i = \frac{2\pi}{V}\epsilon_{ijk}(a_j\times a_k)\)</span>，<span class="math inline">\(V\)</span>为正格子体积，<span class="math inline">\(a_i\)</span>为正格子基矢，则三个基矢张成了整个倒格子空间。</p>
+<blockquote>
+<p>6.1 theorem: 倒格矢<span class="math inline">\(\\{G=h_1b_1+h_2b_2+h_3b_3|k_1,k_2,k_3 \in Z\\}\)</span>, 与晶面<span class="math inline">\((h_1,h_2,h_3)\)</span>正交，且晶面之间的间隔<span class="math inline">\(d = 2\pi/||G||\)</span></p>
+</blockquote>
+<p>prove:</p>
+<p><span class="math inline">\(g = h_1b_1+h_2b_2+h_3b_3\)</span>，<span class="math inline">\(\frac{1}{h_1}a_1-\frac{1}{h_2}a_2, \frac{1}{h_2}a_1-\frac{1}{h_3}a_3\)</span>与晶面<span class="math inline">\((h_1,h_2,h_3)\)</span>平行,</p>
+<p><span class="math display">\[
+g \cdot (\frac{1}{h_1}a_1-\frac{1}{h_2}a_2)= (h_1b_1+h_2b_2+h_3b_3) \cdot (\frac{1}{h_1}a_1-\frac{1}{h_2}a_2)
+\]</span></p>
+<p><span class="math display">\[
+= a_1 \cdot b_1 - \frac{h_1}{h_2}a_2\cdot b_1 +\frac{h_2}{h_1}a_1\cdot b_2 -a_2\cdot b_2 + (\frac{1}{h_1}a_1-\frac{1}{h_2}a_2) \cdot b_3
+\]</span></p>
+<p><span class="math display">\[
+= 2\pi - 0 + 0 - 2\pi + 0 = 0
+\]</span></p>
+<p>同理<span class="math inline">\(\frac{1}{h_2}a_1-\frac{1}{h_3}a_3\)</span>。</p>
+<p><mark>取所有倒格矢的垂直平分线</mark>，离<span class="math inline">\((0,0,0)\)</span>最近的被分割出的区域称为<mark>第一布里渊区</mark>，次近为第二布里渊区...</p>
+<h3 id="x衍射">7. X衍射</h3>
+<h4 id="laue方程">7.1 Laue方程：</h4>
+<p>假设为弹性散射，<span class="math inline">\(k_0\)</span>为入射波，<span class="math inline">\(k\)</span>为出射波，G为倒格矢，满足Laue的出射波会得到加强。</p>
+<p><span class="math display">\[
+k - k_0 = G
+\]</span></p>
+<h4 id="bragg公式">7.2 Bragg公式：</h4>
+<p>布拉格把原子晶面当成镜面推导出了加强衍射的公式</p>
+<p><span class="math display">\[
+2d sin \theta = n \lambda
+\]</span></p>
+<p>d为晶面间距离，<span class="math inline">\(\theta\)</span>为波矢和晶面的夹角。</p>
+<p>两者等价性推导：</p>
+<p><img src="/img/solid1/1.png" srcset="/img/loading.gif" lazyload title="示意图"></p>
+<p>已知<span class="math inline">\(k - k_0 = G\)</span>，显然G垂直于一组晶面并且晶面间距<span class="math inline">\(d = \frac{2\pi}{|G|}\)</span>如图,</p>
+<p><span style="text-align: center"></p>
+<p>$k G = - |K||G|cos(+) $</p>
+<p>$lms = (G+k_0) G = G^2 +k_0 G $</p>
+<p><span class="math inline">\(= G^2 + |k||G|sin(\theta)\)</span></p>
+<p><span class="math inline">\(rms = - |k||G|sin(\theta)\)</span></p>
+<p><span class="math inline">\(\therefore 2 |k|sin(\theta) = |G|\)</span></p>
+<p><span class="math inline">\(\because d = 2n\pi/|G| |k| = 2\pi/\lambda\)</span></p>
+<p><span class="math inline">\(\therefore 2dsin(\theta) = n\lambda\)</span></p>
+<p></span></p>
+<p>第一行来源于几何关系，第二行来源于Laue方程，第三行来源于弹性散射假设。</p>
+<h4 id="散射因子">7.3 散射因子</h4>
+<p>原子散射因子公式：<span class="math inline">\(f(K) = \int_{r}{e^{iKr}\rho(r)dr}\)</span>, <span class="math inline">\(\rho\)</span> 是电子密度，<span class="math inline">\(K\)</span>是波矢的变化量，积分范围为原子电子云的区域，<span class="math inline">\(f\)</span>描述单原子散射后的光振幅<span class="math inline">\(Af\)</span>。</p>
+<p>几何结构因子：<span class="math inline">\(S(K) = \Sigma_{j=1}^{s} f_j(K)e^{i K \cdot r_j}\)</span>, 就是散射的是晶体的话，算散射振幅和加强点时，需要对晶胞内的所有原子散射因子按照公式进行叠加，<span class="math inline">\(f_i,r_i\)</span>是原子的散射因子以及对于晶胞原点的位矢，<span class="math inline">\(S\)</span>描述晶体散射后的光振幅<span class="math inline">\(ASN\)</span>，N为晶胞个数。</p>
+<h3 id="习题">习题</h3>
+<blockquote>
+<ol type="1">
+<li>证明理想六方最密堆积结构中<span class="math inline">\(c/a=1.633\)</span>, a为六边形边长，c为高</li>
+</ol>
+</blockquote>
+<p><img src="/img/solid1/屏幕截图 2022-11-19 162948.png" srcset="/img/loading.gif" lazyload></p>
+<p>位于中间层的原子和底层的对应的三个原子形成一个正四面体：该正四面体的高度为<span class="math inline">\(h = \sqrt{a^2-(\frac{a}{\sqrt{3}})^2}\)</span>，而上下对称所以<span class="math inline">\(c = 2h\)</span></p>
+<blockquote>
+<ol start="2" type="1">
+<li>若晶胞晶矢<span class="math inline">\(a_1, a_2, a_3\)</span>相互垂直，试求晶面族<span class="math inline">\((h,k,l)\)</span>的面间距</li>
+</ol>
+</blockquote>
+<p>面间距 <span class="math inline">\(d = 2\pi/|G| = 2\pi/|hb_1+kb_2+lb_3|\)</span>，因为正格矢相互正交，</p>
+<p><span class="math display">\[
+a_i \times a_j = \epsilon_{ijk} |a_i||a_j|a_k/|a_k| = b_k \frac{V}{2\pi}
+\]</span></p>
+<p><span class="math display">\[
+\therefore \frac{2\pi}{|a_i|^2} a_i =  b_i
+\]</span> 所以</p>
+<p><span class="math display">\[
+|G| = \sqrt{(hb_1)^2+(kb_2)^2+(lb_3)^3}
+\]</span></p>
+<p><span class="math display">\[
+= 2\pi \sqrt{(h/a_1)^2+(k/a_2)^2+(l/a_3)^2}
+\]</span></p>
+<p><span class="math display">\[
+\therefore d = \frac{1}{\sqrt{(h/a_1)^2+(k/a_2)^2+(l/a_3)^2}}
+\]</span></p>
+<blockquote>
+<ol start="3" type="1">
+<li>在体心立方的晶胞的每个面中心加上一个同类原子，问该种结构的布拉菲格子和基元是什么？</li>
+</ol>
+</blockquote>
+<p>基元应当取为三个面心和体心和一个角上的原子共5个，布拉菲格子为简单立方。</p>
+<blockquote>
+<ol start="4" type="1">
+<li>试求面心立方结构的<span class="math inline">\((1 1 1)\)</span>和<span class="math inline">\((110)\)</span>面的原子面密度</li>
+</ol>
+</blockquote>
+<p><span class="math inline">\((1,1,1)\)</span>面截面大小<span class="math inline">\(S = \frac{\sqrt{3}}{4}(\sqrt{2}a)^2 = \frac{\sqrt{3}}{2}a^2\)</span>，原子个数<span class="math inline">\(\frac{1}{6}*3 +\frac{1}{2}*3\)</span> , <span class="math inline">\(\rho = \frac{4}{\sqrt{3}a^2}\)</span></p>
+<p><span class="math inline">\((1,1,0)\)</span>面截面大小<span class="math inline">\(S =\sqrt{2}a^2\)</span>，原子个数<span class="math inline">\(\frac{1}{4}*4 +\frac{1}{2}*2\)</span> , <span class="math inline">\(\rho = \frac{\sqrt{2}}{a^2}\)</span></p>
+<blockquote>
+<p>试求金刚石的散射因子，并讨论X射线衍射消失的条件</p>
+</blockquote>
+<p>记忆金刚石的结构方法：面心立方，加上四根对角线的四分之一处各有一个C，其中左边右边各有两个，往x-y平面的投影不可能重叠。</p>
+<p>金刚石结构中共有八个原子， 对应的坐标为（基矢为晶矢）</p>
+<p><span class="math display">\[
+(0,0,0),(1/2,1/2,0),(0,1/2,1/2),(1/2,0,1/2)
+\]</span></p>
+<p><span class="math display">\[
+(1/4,1/4,1/4),(3/4,1/4,3/4),(3/4,3/4,1/4),(1/4,3/4,3/4)
+\]</span></p>
+<p>几何结构因子：</p>
+<p><span class="math display">\[
+S(k) = \sum_i {f_i e^{i k\cdot r_i}}
+\]</span></p>
+<p>求和i表示对所有原子求和，由于边缘上的原子只能代表“分数个”原子，所以往往由空间周期性把“分数个”原子移到某个位置凑整。</p>
+<p><span class="math display">\[
+S(k) = (1+e^{ia(k_x+k_y)/2}+e^{ia(k_y+k_z)/2}+e^{ia(k_x+k_z)/2})(1+e^{ia(k_x+k_y+k_z)/4})
+\]</span></p>
+<p>所以消光条件为：<span class="math inline">\(k_x+k_y+k_y = \frac{4\pi}{a}\)</span> or 第一项表达式为0（网上答案不对,这里并没有要求<span class="math inline">\(k_i\)</span>是波矢的整数倍）</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86/" class="category-chain-item">固体物理</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/solid-physics-physics-%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86/" class="print-no-link">#solid physics, physics, 固体物理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>1.晶体结构与X射线衍射</div>
+      <div>http://dyf.zone/2022/11/30/solid1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Duyifei</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月30日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/01/gr2/" title="1. 微分流形定义">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">1. 微分流形定义</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       Contact me:  <i class="iconfont icon-mail"></i> <a href="mailto:duyifei1619@qq.com" target="_blank"><span>email</span></a>&nbsp <i class="iconfont icon-zhihu-fill"></i><a href="https://www.zhihu.com/people/du-e-nan-zhi-4" target="_blank"><span>肚饿难治</span></a> <br> Powered by  <a href="https://www.hexo.io" target="_blank" rel="nofollow noopener"><span>hexo</span></a> and <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>. 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

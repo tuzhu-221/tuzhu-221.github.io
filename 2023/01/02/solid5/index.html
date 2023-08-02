@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/kapibala.jpg">
+  <link rel="icon" href="/img/kapibala.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Duyifei">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="基本近似  波恩奥本海默近似分开原子和电子，原子缓变，电子变化更快 电子电子相互作用，用有效势来简化。 单电子近似：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。 共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动 有效势场 \(𝑉(𝑟)\) 具有平移周期性：这是晶格具有周期性的结果  Bloc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="能带理论">
+<meta property="og:url" content="http://dyf.zone/2023/01/02/solid5/index.html">
+<meta property="og:site_name" content="dyf&#39;s blog">
+<meta property="og:description" content="基本近似  波恩奥本海默近似分开原子和电子，原子缓变，电子变化更快 电子电子相互作用，用有效势来简化。 单电子近似：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。 共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动 有效势场 \(𝑉(𝑟)\) 具有平移周期性：这是晶格具有周期性的结果  Bloc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://dyf.zone/2023/01/02/solid5/%E5%9B%BE%E7%89%871.png">
+<meta property="og:image" content="http://dyf.zone/2023/01/02/solid5/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-01%20180400.png">
+<meta property="article:published_time" content="2023-01-02T14:41:44.000Z">
+<meta property="article:modified_time" content="2023-01-02T15:10:08.228Z">
+<meta property="article:author" content="Duyifei">
+<meta property="article:tag" content="solid physics, physics, 固体物理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://dyf.zone/2023/01/02/solid5/%E5%9B%BE%E7%89%871.png">
+  
+  
+  
+  <title>能带理论 - dyf&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dyf.zone","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>行行行</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="能带理论"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-02 22:41" pubdate>
+          2023年1月2日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          36 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">能带理论</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="基本近似">基本近似</h1>
+<ol type="1">
+<li><p>波恩奥本海默近似分开原子和电子，原子缓变，电子变化更快</p></li>
+<li><p>电子电子相互作用，用有效势来简化。</p></li>
+<li><p><mark>单电子近似</mark>：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。</p></li>
+<li><p>共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动</p></li>
+<li><p>有效势场 <span class="math inline">\(𝑉(𝑟)\)</span> 具有平移周期性：这是晶格具有周期性的结果</p></li>
+</ol>
+<h1 id="bloch-theorem">Bloch theorem</h1>
+<p>在周期性边界条件下，当势能满足周期性时，任意一个本征函数解，存在<span class="math inline">\(k\)</span>使得解满足：</p>
+<span class="math display">\[\begin{aligned}
+\psi(r+R_n) = e^{ik \cdot R_n}\psi(r)
+\end{aligned}\]</span>
+<p>其中<span class="math inline">\(k = \frac{l_1}{N_1}b_1+ \frac{l_2}{N_2}b_2+ \frac{l_3}{N_3}b_3\)</span>，<span class="math inline">\(N_i\)</span>为某方向上的重复单元个数，<span class="math inline">\(l_i\)</span>为某整数，令<span class="math inline">\(\psi(r)=e^{(𝑖k \cdot r)} u(r)\)</span>，则得到：<span class="math inline">\(u(r+R_n) = u(r)\)</span>，<span class="math inline">\(\psi(r)\)</span>称为<mark>布洛赫函数</mark></p>
+<p>证明：</p>
+<p>定义：<span class="math inline">\(T\psi(x) = \psi(x+a)\)</span></p>
+<span class="math display">\[\begin{aligned}
+[T,H]\psi(x) &amp; = T(H(x)\psi(x)) - H(x)(T\psi(x)) 
+\\\\&amp; = H(x+a)\psi(x+a) - H(x)\psi(x+a) 
+\\\\&amp; = H(x+a)\psi(x+a) - H(x+a)\psi(x+a) = 0
+\end{aligned}\]</span>
+<p>于是可找到一组两个算符的共本态： <span class="math inline">\(\varphi_n\)</span></p>
+<ol type="1">
+<li><p><span class="math inline">\(T(l a)T(ma)\varphi_n = \lambda_n(la)\lambda_n(ma) \varphi_n = T((l+m)a)\varphi_n = \lambda_n((l+m)a)\varphi_n\)</span></p></li>
+<li><p>由哈密顿量的周期性可得解的周期性 <span class="math inline">\(|\lambda_n(la)^2| = 1\)</span></p></li>
+</ol>
+<p>由以上两个性质可知<span class="math inline">\(\lambda_n^{la} = e^{ila*c}\)</span>，且<span class="math inline">\(c\)</span>为整数，引入周期性条件，一个<span class="math inline">\((N_1,N_2,N_3)\)</span>的箱子，</p>
+<div style="text-align:center">
+$(r) = (r+N_1*a_1)... _n^{Na} = e^{iNa*c} = 1c =  $
+</div>
+<p>将<span class="math inline">\(c\)</span>写为<span class="math inline">\(k\)</span>则证毕</p>
+<p>拓展到三维得到 <span class="math inline">\(k\)</span>的取值：<span class="math inline">\(k = \sum_i \frac{l_i}{N_i}\vec{b_i}\)</span>，<span class="math inline">\(l_i= 0,1,2,3..., --N_i/2&lt;l_i&lt;N_i/2\)</span>（为了让每个波函数只对应一个<span class="math inline">\(k\)</span>，限制在了第一布里渊区内取值）</p>
+<p>带入薛定谔方程后，得到：</p>
+<span class="math display">\[\begin{aligned}
+&amp;[-\frac{\hbar^2}{2m}(\nabla^2+2ik\cdot\nabla-k^2)+V(r)]u_k(r)= Eu_k(r)
+\\\\&amp;r \in[0,a_1]\times[0,a_2]\times[0,a_3]
+\end{aligned}\]</span>
+<p>周期性边界条件能够解出参数<span class="math inline">\(n\)</span>，是分立的，随 <span class="math inline">\(k\)</span> 变化准连续。给定一个<span class="math inline">\(k\)</span>，就会有一系列分立的<span class="math inline">\(\\{E_{n}\\}_k\)</span>。</p>
+<p>同样的，给定，可以将同一激发态的能级但属于不同<span class="math inline">\(k\)</span>的能级构成的准连续的集合<span class="math inline">\(\\{E_{k}\\}_n\)</span>称为<mark>能带</mark>，两个能带之间没有交叠，这部分能量间隙称为<mark>禁带</mark>。</p>
+<p><span class="math inline">\(k\)</span>被称为<mark>简约波矢</mark>，标志着相邻晶格间的波函数的相位变化，同时也可以代表一组能量本征态的集合。</p>
+<h1 id="近自由电子近似">近自由电子近似</h1>
+<p>凝胶(jellium)模型：将离子实看成均匀分布的正电荷背景，其目的是忽略晶格（离子实）对电子的作用。</p>
+<h2 id="一种超级唯象但是却被划了重点的能隙推导方法">一种超级唯象但是却被划了重点的能隙推导方法</h2>
+<p>假设一个在第五章中的自由电子平面波<span class="math inline">\(\phi =\frac{1}{L} e^{ikr}\)</span>，<span class="math inline">\(k = \frac{\pi}{a}\)</span>，即波矢在第一布里渊区边界上的电子，其在晶格边界发生反射，<span class="math inline">\(k&#39;=-\frac{\pi}{a}\)</span>，波叠加形成了两种波：</p>
+<span class="math display">\[\begin{aligned}
+&amp;\phi_{odd} = \sqrt \frac{2}{L} \sin(\frac{\pi}{a}x)
+\\\\&amp;\phi_{even} = \sqrt \frac{2}{L} \cos(\frac{\pi}{a}x)
+\end{aligned}\]</span>
+<p>将周期势做展开后得到：</p>
+<p><span class="math inline">\(V(r) = V(0) + V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi}{a}r}+..\)</span>，高频振荡项忽略，<span class="math inline">\(V(0)\)</span>代表正电荷背景，同时取<span class="math inline">\(v(-G)= V(G)=V_1\)</span>，计算<span class="math inline">\(\left&lt; \phi_{odd}|\Delta V| \phi_{odd}\right&gt;\)</span> ，<span class="math inline">\(\left&lt; \phi_{even}|\Delta V| \phi_{even}\right&gt;\)</span>，最终得到：</p>
+<span class="math display">\[\begin{aligned}
+\left|\left&lt; \phi_{odd}|\Delta V| \phi_{odd}\right&gt; - \left&lt; \phi_{even}|\Delta V| \phi_{even}\right&gt;\right|  = 2|V_1|
+\end{aligned}\]</span>
+<p><img src="图片1.png" srcset="/img/loading.gif" lazyload></p>
+<p>由图可以看出，在正电荷附近，电子密度更高的波函数，对应的能量越低。</p>
+<h5 id="量子力学微扰论推导">量子力学微扰论推导</h5>
+<p>在正电子背景下，<span class="math inline">\(k=\frac{\pi}{a}\)</span>与<span class="math inline">\(k=-\frac{\pi}{a}\)</span> 是一对简并态，加入微扰：</p>
+<span class="math display">\[\begin{aligned}
+H&#39; = V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi}{a}r} = 2V&#39; \cos(\frac{2\pi}{a}x)
+\end{aligned}\]</span>
+<p>计算<span class="math inline">\(H&#39;\)</span>在<span class="math inline">\(\{k\}\)</span>表象下，<span class="math inline">\(k&#39;,k\)</span>子空间的矩阵得到：</p>
+<p><span class="math display">\[\begin{equation}
+\left( \begin{matrix}
+    0&amp;      V^{\prime}\\\\
+    V^{\prime}&amp;     0\\\\
+\end{matrix} \right)
+\end{equation}\]</span></p>
+<p>最终解出能量的一级修正以及对应的本征态:</p>
+<span class="math display">\[\begin{aligned}
+&amp;\phi_{odd} = \frac{1}{\sqrt2} (\phi_k+\phi_{k&#39;}),E_{odd} =E_0+V&#39;
+\\\\&amp;\phi_{even} = \frac{i}{\sqrt2} (\phi_k-\phi_{k&#39;}),E_{even} =E_0-V&#39;
+\end{aligned}\]</span>
+<h1 id="紧束缚模型">紧束缚模型</h1>
+<p>认为束缚很强时，电子的波函数在某个原子附近时与单个原子势场下的电子波函数类似，而别的原子在该原子处的势场认为是微扰，单个原子下电子的哈密顿量及本征态写法：</p>
+<span class="math display">\[\begin{aligned}
+(T+V_l(r-R_l))\varphi(r-R_l) = \epsilon \varphi(r-R_l)
+\end{aligned}\]</span>
+<p><span class="math inline">\(R_l\)</span>是原子所在的位矢，假设整个晶体微扰的零级波函数写法：</p>
+<p><span class="math display">\[
+\psi(r)= \sum_l C_l\varphi(r-R_l)
+\]</span></p>
+<p>根据布洛赫定理得到：</p>
+<span class="math display">\[\begin{aligned}
+\psi(r)= C \sum_l e^{ikR_l}\varphi(r-R_l)
+\end{aligned}\]</span>
+<p>进一步归一化波函数，<span class="math inline">\(C = \frac{1}{\sqrt N}\)</span>这种近似被称为LCAO近似，考虑所有原子在<span class="math inline">\(R_l\)</span>处的电子造成的势场对应的哈密顿量为：</p>
+<span class="math display">\[\begin{aligned}
+H = \sum_i V_i +T = V_l+T+\sum_i&#39;V_i = H_l+\Delta V
+\end{aligned}\]</span>
+<p>将微扰哈密顿量带入后，得到：</p>
+<span class="math display">\[\begin{aligned}
+E(k) =&amp; \epsilon- \int\varphi^*(r) \Delta V \varphi(r)dr 
+\\\\&amp;- \sum_i&#39; e^{ikR_i}\int\varphi^*(r) \Delta V \varphi(r-R_i)dr
+\end{aligned}\]</span>
+进一步化简，得到：
+<span class="math display">\[\begin{aligned}
+E(k) = \epsilon - \sum_i e^{ikR_i}\int\varphi^*(r) \Delta V \varphi(r-R_i)dr
+\end{aligned}\]</span>
+<h2 id="求解简单立方的s带">求解简单立方的s带</h2>
+<p>扩展到三维以后，<span class="math inline">\(E(\vec k) = \epsilon - \sum_i e^{i\vec k \cdot \vec R_i}\int\varphi^*(\vec r) \Delta V \varphi(\vec r-\vec R_i)d \vec r\)</span>,设<span class="math inline">\(S_0 = \int\varphi^*(\vec r) \Delta V \varphi(\vec r)d\vec r\)</span>，再考虑到S电子态的球对称性，令<span class="math inline">\(S_1 = \int\varphi^*(\vec r) \Delta V \varphi(\vec r-a\vec e_r)d\vec r\)</span>，只考虑最近邻原子的微扰，则<span class="math inline">\(E(\vec k )\)</span>表示为:</p>
+<span class="math display">\[\begin{aligned}
+E(k) = \epsilon -S_0-2S_1(\cos k_x a+\cos k_y a+\cos k_z a)
+\end{aligned}\]</span>
+<h1 id="能带的能态密度">能带的能态密度</h1>
+<p>态密度的定义：</p>
+<span class="math display">\[\begin{aligned}
+g(E) = \frac{dZ}{dE}
+\end{aligned}\]</span>
+<p>再根据声子模密度表达式的推导，简单易得：</p>
+<span class="math display">\[\begin{aligned}
+g(E) = \sum_i g_i(k) = \sum_i 2\int_k \frac{N}{V^*}\delta (E-E(k))dk
+\end{aligned}\]</span>
+<p>2来自于自旋，<span class="math inline">\(V^*\)</span>是布里渊区的大小，N是k点总数或者原子总数。</p>
+<p>第三种表达式由delta函数的性质：</p>
+<p><img src="屏幕截图 2023-01-01 180400.png" srcset="/img/loading.gif" lazyload></p>
+<span class="math display">\[\begin{aligned}
+g(E) =\sum_i 2\int_k \frac{N}{V^*}\frac{dS}{\left|\nabla_kE(k)\right|}
+\end{aligned}\]</span>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86/" class="category-chain-item">固体物理</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/solid-physics-physics-%E5%9B%BA%E4%BD%93%E7%89%A9%E7%90%86/" class="print-no-link">#solid physics, physics, 固体物理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>能带理论</div>
+      <div>http://dyf.zone/2023/01/02/solid5/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Duyifei</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/05/quantum3/" title="含时微扰和跃迁">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">含时微扰和跃迁</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/02/solid4/" title="自由电子气">
+                        <span class="hidden-mobile">自由电子气</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       Contact me:  <i class="iconfont icon-mail"></i> <a href="mailto:duyifei1619@qq.com" target="_blank"><span>email</span></a>&nbsp <i class="iconfont icon-zhihu-fill"></i><a href="https://www.zhihu.com/people/du-e-nan-zhi-4" target="_blank"><span>肚饿难治</span></a> <br> Powered by  <a href="https://www.hexo.io" target="_blank" rel="nofollow noopener"><span>hexo</span></a> and <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>. 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
