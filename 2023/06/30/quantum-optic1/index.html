@@ -16,15 +16,15 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="\[\begin{equation} \begin{aligned} \nabla\times\mathbf{H}&#x3D;{\frac{\partial\mathbf{D}}{\partial t}}\\\\ \nabla\times\mathbf{E}&#x3D;-{\frac{\partial\mathbf{B}}{\partial t}} \\\\\nabla\cdot\mathbf{B} &#x3D; 0">
+    <meta name="description" content="麦克斯韦方程组： \[\begin{equation} \begin{aligned} \nabla\times\mathbf{H}&amp;&#x3D;{\frac{\partial\mathbf{D}}{\partial t}}\\\\ \nabla\times\mathbf{E}&amp;&#x3D;-{\frac{\partial\mathbf{B}}{\partial t}} \\\\\nabla">
 <meta property="og:type" content="article">
 <meta property="og:title" content="光场量子化及光的量子效应">
 <meta property="og:url" content="http://dyf.zone/2023/06/30/quantum-optic1/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="\[\begin{equation} \begin{aligned} \nabla\times\mathbf{H}&#x3D;{\frac{\partial\mathbf{D}}{\partial t}}\\\\ \nabla\times\mathbf{E}&#x3D;-{\frac{\partial\mathbf{B}}{\partial t}} \\\\\nabla\cdot\mathbf{B} &#x3D; 0">
+<meta property="og:description" content="麦克斯韦方程组： \[\begin{equation} \begin{aligned} \nabla\times\mathbf{H}&amp;&#x3D;{\frac{\partial\mathbf{D}}{\partial t}}\\\\ \nabla\times\mathbf{E}&amp;&#x3D;-{\frac{\partial\mathbf{B}}{\partial t}} \\\\\nabla">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-30T05:50:13.000Z">
-<meta property="article:modified_time" content="2023-08-01T12:38:31.813Z">
+<meta property="article:modified_time" content="2023-08-02T12:48:21.837Z">
 <meta property="article:author" content="Duyifei">
 <meta property="article:tag" content="quantum optics, quantum mechanics, quantization of photons">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          614 字
+          2.1k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          6 分钟
+          18 分钟
         
       </span>
     
@@ -273,12 +273,13 @@
             
               <div class="markdown-body">
                 
-                <p><span class="math display">\[\begin{equation}
+                <p>麦克斯韦方程组：</p>
+<p><span class="math display">\[\begin{equation}
 \begin{aligned}
-\nabla\times\mathbf{H}={\frac{\partial\mathbf{D}}{\partial t}}\\\\
-\nabla\times\mathbf{E}=-{\frac{\partial\mathbf{B}}{\partial t}}
-\\\\\nabla\cdot\mathbf{B} = 0
-\\\\\nabla\cdot\mathbf{D}=0.
+\nabla\times\mathbf{H}&amp;={\frac{\partial\mathbf{D}}{\partial t}}\\\\
+\nabla\times\mathbf{E}&amp;=-{\frac{\partial\mathbf{B}}{\partial t}}
+\\\\\nabla\cdot\mathbf{B}&amp; = 0
+\\\\\nabla\cdot\mathbf{D}&amp;=0.
 \end{aligned}
 \end{equation}\]</span></p>
 <h1 id="电磁场的量子化">电磁场的量子化</h1>
@@ -286,12 +287,48 @@
 <p><span class="math display">\[
 E_{x}(z,t)=\sum_{j}A_{j}q_{j}(t)\sin(k_{j}z)
 \]</span></p>
-<p>其中<span class="math inline">\(k_{j} = j\pi/L, j =1,2,3..\)</span>，<span class="math inline">\(A_{j}=\left(\frac{2\nu_{j}^{2}m_{j}}{V\epsilon_{0}}\right)^{1/2}\)</span>，<span class="math inline">\(\nu_{j}=j\pi c/L\)</span></p>
-<p>由<span class="math inline">\(\nabla\times\mathbf{H}=\frac{\partial\mathbf{D}}{\partial t}\)</span></p>
-<p>得到 <span class="math display">\[
+<p>其中<span class="math inline">\(k_{j} = j\pi/L, j =1,2,3..\)</span>，定义系数<span class="math inline">\(A_{j}=\left(\frac{2\nu_{j}^{2}m_{j}}{V\epsilon_{0}}\right)^{1/2}\)</span>，<span class="math inline">\(\nu_{j}=j\pi c/L\)</span>，由<span class="math inline">\(\nabla\times\mathbf{H}=\frac{\partial\mathbf{D}}{\partial t}\)</span>得到：</p>
+<p><span class="math display">\[
 H_{y}=\sum_{j}A_{j}({\frac{\dot{q}_{j}\epsilon_{0}}{k_{j}}})\cos(k_{j}z)
 \]</span></p>
 <p>The classical Hamiltonian for the field is</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\mathcal H&amp;=\frac{1}{2}\int_{V}d\tau(\epsilon_{0}E_{x}^{2}+\mu_{0}H_{y}^{2})
+\\&amp;=\frac{1}{2}\sum_{j}(m_{j}\nu_{j}^{2}q_{j}^{2}+m_{j}\dot{q}_{j}^{2})
+\\&amp;={\frac{1}{2}}\sum_{j}\left(m_{j}v_{j}^{2}q_{j}^{2}+{\frac{p_{j}^{2}}{m_{j}}}\right)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>其中升降算符满足：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;[a_j,a_{j&#39;}] = \delta_{jj&#39;} 
+\\ &amp;[a_{j},a_{j^{\prime}}]=[a_{j}^{\dagger},a_{j^{\prime}}]=0
+\end{aligned}
+\end{equation}\]</span></p>
+<p>则电场和磁场算符写为：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;E_{x}(z,t)=\sum_{j}\mathscr{E}_{j}(a_{j}e^{-i\nu_{j}t}+a_{j}^{\dagger}e^{i\nu_{j}t})\sin k_{j}z
+\\
+&amp;H_{y}(z,t)=-i\epsilon_{0}c\sum_{j}\mathscr{E}_{j}(a_{j}e^{-i\nu_{j}t}-a_{j}^{\dagger}e^{i\nu_{j}t})\cos k_{j}z
+\end{aligned}
+\end{equation}\]</span></p>
+<p>where the quantity <span class="math inline">\(\mathscr{E}_{j}=\left(\frac{\hbar\nu_{j}}{\epsilon_{0}V}\right)^{1/2}\)</span>，自由空间，<span class="math inline">\(k\)</span>可以任意，且可以视作是空腔的箱极限：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;E(r,t)= \sum_{k}{ \hat{\epsilon_{k}} \mathscr{E}_{k} \alpha_k e^{-i\nu_kt+i  k\cdot r} }+ c.c.
+\\&amp;H(r,t)=\frac{1}{\mu_0}\sum_{ k}\frac{ k\times\hat{\epsilon_{k}}}{v_{k}}\mathscr{E}_{k} {\alpha_{k}}e^{-i v_{k}t+i{k\cdot r}}+c.c.
+\end{aligned}
+\end{equation}\]</span></p>
+<p>其中：<span class="math inline">\(\mathscr{E}_{k}=\left(\frac{\hbar\nu_{k}}{2\epsilon_{0}V}\right)^{1/2},k\cdot\hat{\epsilon}_{k}=0\)</span>，易得模密度的表达式：</p>
+<p><span class="math display">\[
+D(\nu)d\nu=\frac{L^{3}\nu^{2}}{\pi^{2}c^{3}}d\nu,
+\]</span></p>
+<p>电场与磁场的对易关系，将电场磁场写为：</p>
+<p><span class="math display">\[
+E(r,t)=\sum_{ k,\lambda}\hat{\epsilon}_{ k}^(\lambda)E_k a_k,\lambda e^{-i\nu_kt+i k\cdot r}+H.c.,
+\]</span></p>
 
                 
               </div>
@@ -361,9 +398,9 @@ H_{y}=\sum_{j}A_{j}({\frac{\dot{q}_{j}\epsilon_{0}}{k_{j}}})\cos(k_{j}z)
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/01/hello-world/" title="Hello World">
+                      <a href="/2023/08/03/superconducting-qubits1/" title="Transmon与谐振子耦合的JC模型">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
+                        <span class="hidden-mobile">Transmon与谐振子耦合的JC模型</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

@@ -16,21 +16,22 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quic">
+    <meta name="description" content="超导量子比特Transmon与谐振腔的耦合JC模型 假如把比特截断到二能级，其与谐振腔相互耦合，则哈密顿量的写法： \[\begin{equation} \begin{aligned} H &#x3D; \hbar w_c \alpha^\dagger \alpha + \hbar w_q \frac{\sigma_z}{2}  +\hbar g I_- \end{aligned} \end{">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://dyf.zone/2023/08/01/hello-world/index.html">
+<meta property="og:title" content="Transmon与谐振子耦合的JC模型">
+<meta property="og:url" content="http://dyf.zone/2023/08/03/superconducting-qubits1/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quic">
+<meta property="og:description" content="超导量子比特Transmon与谐振腔的耦合JC模型 假如把比特截断到二能级，其与谐振腔相互耦合，则哈密顿量的写法： \[\begin{equation} \begin{aligned} H &#x3D; \hbar w_c \alpha^\dagger \alpha + \hbar w_q \frac{\sigma_z}{2}  +\hbar g I_- \end{aligned} \end{">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-01T12:45:05.387Z">
-<meta property="article:modified_time" content="2023-08-01T12:45:05.387Z">
+<meta property="article:published_time" content="2023-08-03T13:17:14.000Z">
+<meta property="article:modified_time" content="2023-08-05T09:00:37.840Z">
 <meta property="article:author" content="Duyifei">
+<meta property="article:tag" content="量子计算,超导量子计算, supercoducting qubits">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - dyf&#39;s blog</title>
+  <title>Transmon与谐振子耦合的JC模型 - dyf&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="Transmon与谐振子耦合的JC模型"></span>
           
         </div>
 
@@ -207,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-01 20:45" pubdate>
-          2023年8月1日 晚上
+        <time datetime="2023-08-03 21:17" pubdate>
+          2023年8月3日 晚上
         </time>
       </span>
     
@@ -219,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          5.1k 字
         
       </span>
     
@@ -230,7 +231,7 @@
         
         
         
-          4 分钟
+          43 分钟
         
       </span>
     
@@ -267,25 +268,137 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">Transmon与谐振子耦合的JC模型</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="超导量子比特transmon与谐振腔的耦合jc模型">超导量子比特Transmon与谐振腔的耦合JC模型</h1>
+<p>假如把比特截断到二能级，其与谐振腔相互耦合，则哈密顿量的写法：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+H = \hbar w_c \alpha^\dagger \alpha + \hbar w_q \frac{\sigma_z}{2} 
++\hbar g I_-
+\end{aligned}
+\end{equation}\]</span></p>
+<p>其中 <span class="math inline">\(I_\pm = \alpha^+ \sigma^- \pm \alpha^- \sigma^+\)</span>，本note试图将这个耦合系统的哈密顿量主动变换到另一坐标系去，变换后的哈密顿量在原坐标系下对角，这个变换的表达式能够帮助我们找到系统在原坐标系的本征能级和本征态。</p>
+<p>首先设算符 <span class="math inline">\(N_q = \left|1\right&gt;\left&lt;1\right|\otimes I + I \otimes \alpha^\dagger \alpha\)</span>， 第一项为比特激发态的投影算符，第二项为光腔的光子数算符，简单认为该算符是整个系统的激发光子数的计数算符。</p>
+<p>首先证明<span class="math inline">\(N_q\)</span>算符与<span class="math inline">\(I_-\)</span>算符对易：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+[N_q,I_-]=&amp;[\left|1\right&gt;\left&lt;1\right|+ \alpha^\dagger \alpha, \alpha^\dagger \sigma^- - \alpha^- \sigma^+]
+\\ =&amp; \alpha^\dagger [\left|1\right&gt;\left&lt;1\right|,\sigma^-] -  \alpha[\left|1\right&gt;\left&lt;1\right|,\sigma^+] 
++ [\alpha^\dagger\alpha,\alpha^\dagger]\sigma^--[\alpha^\dagger\alpha,\alpha]\sigma^+
+\\ =&amp; -\alpha^+ \sigma^- - \alpha^- \sigma^+ + \alpha^+ \sigma^- + \alpha^- \sigma^+ 
+\\ =&amp; 0
+\end{aligned}
+\end{equation}\]</span></p>
+<p>于是<span class="math inline">\(N_q\)</span>与<span class="math inline">\(I_-\)</span>对易，更进一步，简单扩展易知，其与哈密顿量<span class="math inline">\(H\)</span> 对易，所以 <span class="math inline">\(N_q\)</span> 在参与只含有 <span class="math inline">\(I_-\)</span> 与 <span class="math inline">\(H\)</span> 的对易式中时，由于换序的任意性，可以不特殊考虑，将其当作常数处理。</p>
+<p>假设变换<span class="math inline">\(U = e^{- \varLambda{(N_q)}I_{-}}= e^{- D}\)</span>，其中<span class="math inline">\(\varLambda\)</span> 是算符<span class="math inline">\(N_q\)</span>的函数，简单容易证明<span class="math inline">\(U^{\dagger} =e^D\)</span> , 故该变换为幺正变换。</p>
+<p>根据Hadamard引理：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;e^{\hat{A}}\hat{B}e^{-\hat{A}}
+\\=&amp;\sum_{n=0}^{\infty}\frac{1}{n!}\left[ ....\left( n \right) ....\left. \left[ \hat{A} \right. ,\left[ \hat{A},\hat{B} \right] \right] \right] 
+\\=&amp;\sum_{n=0}^{\infty} \frac{1}{n!}C_A^n B
+\end{aligned}
+\end{equation}\]</span></p>
+<p>这里第三行是对第二行对易式的简写，对哈密顿量<span class="math inline">\(H\)</span>以<span class="math inline">\(U\)</span>进行变换：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;U^\dagger H U 
+\\=&amp; e^D H e^{-D}
+\\= &amp; \sum_{n=0}^{\infty} \frac{1}{n!} C^n_{D} H_0 + C^n_{D} \hbar g I_+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>由<span class="math inline">\([I_-,H_0] = \hbar (w_r-w_q) I_+= \hbar \Delta I_+\)</span>可将第一项写为<span class="math inline">\(H_0+\Delta \hbar \sum_{n=0}^{\infty}\frac{1}{(n+1)!}C^n_{\varLambda I_-}I^+\)</span>，于是原式写为：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+U^\dagger H U =H_0+\Delta \hbar \sum_{n=0}^{\infty}\frac{(n+1)\hbar g +\hbar \Delta \varLambda}{(n+1)!}C^n_{\varLambda I_-}I^+
+\end{aligned}
+\end{equation}\]</span></p>
+<p>此时需要计算<span class="math inline">\([I_-,I_+]\)</span>进一步化简：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;C^0_{\varLambda I_-}I^+ = I_+
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+C^1_{\varLambda I_-}I^+ &amp;= \varLambda [I_-,I_+]
+\\&amp;= \varLambda( 2[\alpha^+\sigma_{-},\alpha\sigma_{+}])
+\\&amp;= \varLambda( -2 \alpha^+\alpha \sigma_z - \sigma_{z} -1)
+\\&amp;= \varLambda( -2 \alpha^+\alpha \sigma_z - \sigma_{z} -\sigma_{z}^2)
+\\&amp;= \varLambda( -(2 \alpha^+\alpha +\sigma_z +1) \sigma_z)
+\\&amp;= \varLambda( -(2 \alpha^+\alpha +2 \left|1\right&gt;\left&lt;1\right|) \sigma_z)
+\\&amp; = -2 \varLambda N_q \sigma_z
+\end{aligned}
+\end{equation}\]</span></p>
+<p>进一步的，由 <span class="math inline">\([\sigma_z,I_-] =-2 I_+\)</span>，最终得到表达式：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;C^{2n}_{\varLambda I_-}I^+ = 
+\left(-4\right)^{n}\Lambda^{2n}N_{q}^{n}I_{+}
+\\&amp; C^{2n+1}_{\varLambda I_-}I^+ = 
+ -2 \left(-4\right)^{n}\Lambda^{2n+1}N_{q}^{n+1}\sigma_z
+\end{aligned}
+\end{equation}\]</span></p>
+<p>最终得到变换后的哈密顿量：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+
+H_D = H_0+ \hbar(\frac{\Delta\sin(2\Lambda\sqrt{N_{q}})}{2\sqrt{N_{q}}}+g\cos (2\Lambda\sqrt{N_{q}}))I_+
+\\+2\hbar N_q\sigma_z(\frac{g\sin(2\Lambda\sqrt{N_{q}})}{2\sqrt{N_{q}}}+\frac{\Delta(1-\cos (2\Lambda\sqrt{N_{q}}))}{4N_q})
+\end{aligned}
+\end{equation}\]</span></p>
+<p>为了使得变换后的哈密顿量在原坐标系下对角，<span class="math inline">\(I_+\)</span>项应当为0，故得到<span class="math inline">\(\varLambda(N_q)\)</span>的表达式：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\Lambda(N_{q})=\frac{-\arctan(2\lambda\sqrt{N_{q}})}{2\sqrt{N_{q}}}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>其中 <span class="math inline">\(\lambda = \frac{g}{\Delta}\)</span>，其下将使用该变换得到本征能级和本征态：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+U^\dagger H U \left|n,g\right&gt; &amp;= E_{n,g}\left|g,n\right&gt;
+\Rightarrow
+\\H(U\left|g,n\right&gt;) &amp;= E_n (U\left|g,n\right&gt;)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>则 <span class="math inline">\(H\)</span> 的本征值(借助<span class="math inline">\(H_D\)</span>原坐标系求解得)：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+H^{D}&amp;=H_{0}-\frac{\hbar\Delta}2\left(1-\sqrt{1+4\lambda^{2}N_{q}}\right)\sigma_{z}
+\\E_{g,n}&amp;=\hbar n\omega_{r}-\frac{\hbar}{2}\sqrt{\Delta^{2}+4g^{2}n}
+\\E_{e,n-1}&amp;=\hbar n\omega_{r}+\frac{\hbar}{2}\sqrt{\Delta^{2}+4g^{2}n}
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(H\)</span>的本征态求解，以<span class="math inline">\(\widetilde{\left|n,g\right&gt;} = U\left|n,g\right&gt;\)</span>为例：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+D\left|n,g\right&gt; &amp;= \frac{\arctan(2\lambda \sqrt N_q)}{2\sqrt N_q} I_- \left|n-1,e\right&gt;
+\\&amp;= \frac{\arctan(2\lambda \sqrt n)}{2\sqrt n} \sqrt{n} \left|n-1,e\right&gt;
+\\&amp; = \frac{\arctan(2\lambda \sqrt n)}{2} \left|n-1,e\right&gt;
+\\D\left|n,e\right&gt; &amp; = -\frac{\arctan(2\lambda \sqrt{n+1})}{2} \left|n+1,g\right&gt;
+\end{aligned}
+\end{equation}\]</span></p>
+<p>于是：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\widetilde{\left|n,g\right&gt;} =&amp; U \left|n,g\right&gt; = e^{-D}\left|n,g\right&gt;
+\\ =&amp; \sum_{m=0}^{infty} \frac{1}{(2m)!}(-1)^{2M}D^{2m}\left|n,g\right&gt;
+\\  +&amp;\sum_{m=0}^{infty} \frac{1}{(2m+1)!}(-1)D^{2m+1}\left|n,g\right&gt;
+\\ = &amp; \sum_{m=0}^{infty} \frac{1}{(2m)!}(-1)^{2M}(\frac{-\arctan (2\lambda \sqrt  n)}{2})^2m \left|n,g\right&gt; 
+\\ +&amp; \sum_{m=0}^{infty} \frac{1}{(2m+1)!}(-1)^{m+1}(\frac{-\arctan (2\lambda \sqrt  n)}{2})^2m\left|n,g\right&gt;
+\\ =&amp; \cos (\Theta_n) \left|n,g\right&gt; - \sin (\Theta_n)\left|n-1,e\right&gt;
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(\Theta_n = \arctan{(2\lambda \sqrt{n})}/2\)</span>，同理：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\widetilde{\left|n-1,e\right&gt;} = \sin (\Theta_n) \left|n,g\right&gt; + \cos (\Theta_n)\left|n-1,e\right&gt;
+\end{aligned}
+\end{equation}\]</span></p>
 
                 
               </div>
@@ -295,6 +408,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97-%E8%B6%85%E5%AF%BC%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97-supercoducting-qubits/" class="print-no-link">#量子计算,超导量子计算, supercoducting qubits</a>
+      
+    </div>
+  
 </div>
 
 
@@ -303,8 +423,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://dyf.zone/2023/08/01/hello-world/</div>
+      <div>Transmon与谐振子耦合的JC模型</div>
+      <div>http://dyf.zone/2023/08/03/superconducting-qubits1/</div>
     </div>
     <div class="license-meta">
       
@@ -316,7 +436,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月1日</div>
+          <div>2023年8月3日</div>
         </div>
       
       
