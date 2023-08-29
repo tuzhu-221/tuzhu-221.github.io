@@ -16,15 +16,15 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="假设哈密顿量写为\(\hat{H} &#x3D; \hat{H_0}+\hat{W}\), \(W\)对角元等于0，且满足在\(\hat H_0\)的对角化的表象下： \[ \left&lt;i \right|W\left| j\right&gt; &lt; \left| E_i-E_j\right| \] 在兼并的子空间里\(\left&lt;i \right|W\left| j\right&amp;gt">
+    <meta name="description" content="定义  假设哈密顿量写为 \(\hat{H} &#x3D; \hat{H_0}+\hat{W}\) , 在 \(\hat H_0\) 的对角化的表象下满足：  \(\hat W\) 对角元等于0 \(\left&lt;i \right|W\left| j\right&gt; \ll \left| E_i-E_j\right|\) 在简并的子空间里 \(\left&lt;i \right|W\le">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Schrieffer–Wolff transformation">
 <meta property="og:url" content="http://dyf.zone/2023/02/09/quantum4/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="假设哈密顿量写为\(\hat{H} &#x3D; \hat{H_0}+\hat{W}\), \(W\)对角元等于0，且满足在\(\hat H_0\)的对角化的表象下： \[ \left&lt;i \right|W\left| j\right&gt; &lt; \left| E_i-E_j\right| \] 在兼并的子空间里\(\left&lt;i \right|W\left| j\right&amp;gt">
+<meta property="og:description" content="定义  假设哈密顿量写为 \(\hat{H} &#x3D; \hat{H_0}+\hat{W}\) , 在 \(\hat H_0\) 的对角化的表象下满足：  \(\hat W\) 对角元等于0 \(\left&lt;i \right|W\left| j\right&gt; \ll \left| E_i-E_j\right|\) 在简并的子空间里 \(\left&lt;i \right|W\le">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-09T08:02:02.000Z">
-<meta property="article:modified_time" content="2023-02-12T13:35:30.742Z">
+<meta property="article:modified_time" content="2023-08-21T07:01:55.524Z">
 <meta property="article:author" content="Duyifei">
 <meta property="article:tag" content="量子力学,quantum physics">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          2.7k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          13 分钟
+          23 分钟
         
       </span>
     
@@ -273,46 +273,80 @@
             
               <div class="markdown-body">
                 
-                <p>假设哈密顿量写为<span class="math inline">\(\hat{H} = \hat{H_0}+\hat{W}\)</span>, <span class="math inline">\(W\)</span>对角元等于0，且满足在<span class="math inline">\(\hat H_0\)</span>的对角化的表象下：</p>
-<p><span class="math display">\[
-\left&lt;i \right|W\left| j\right&gt; &lt; \left| E_i-E_j\right|
-\]</span></p>
-<p>在兼并的子空间里<span class="math inline">\(\left&lt;i \right|W\left| j\right&gt; = 0\)</span>，则可以使用S-W变换，该变换将得到一个近似的对角有效哈密顿量：</p>
+                <h1 id="定义">定义</h1>
+<blockquote>
+<p>假设哈密顿量写为 <span class="math inline">\(\hat{H} = \hat{H_0}+\hat{W}\)</span> , 在 <span class="math inline">\(\hat H_0\)</span> 的对角化的表象下满足：</p>
+<ol type="1">
+<li><p><span class="math inline">\(\hat W\)</span> 对角元等于0</p></li>
+<li><p><span class="math inline">\(\left&lt;i \right|W\left| j\right&gt; \ll \left| E_i-E_j\right|\)</span></p></li>
+<li><p>在简并的子空间里 <span class="math inline">\(\left&lt;i \right|W\left| j\right&gt; = 0\)</span></p></li>
+</ol>
+<p>假如算符 <span class="math inline">\(S\)</span> 满足 <span class="math inline">\([\hat S,\hat H_0] = -\hat W\)</span>，则幺正变换 <span class="math inline">\(e^\hat{S}\)</span> 称为Schrieffer–Wolff 变换。</p>
+</blockquote>
 <p>令<span class="math inline">\(U=e^{\hat S}\)</span>，则<span class="math inline">\(U HU^\dagger\)</span>等于：</p>
 <span class="math display">\[\begin{aligned}
-\hat H +[\hat S,\hat H]+\frac{1}{2}[\hat S[\hat S,\hat H]]+ o
+\hat H +[\hat S,\hat H]+\frac{1}{2}[\hat S[\hat S,\hat H]]+ ...
 \\\\= \hat H_0 +\hat W +[\hat S,\hat H_0]+[\hat S,\hat W] 
-\\\\ + \frac{1}{2}[\hat S[\hat S,\hat H_0]]+\frac{1}{2}[\hat S[\hat S,\hat W]]
+\\\\ + \frac{1}{2}[\hat S,[\hat S,\hat H_0]]+\frac{1}{2}[\hat S,[\hat S,\hat W]]...
 \end{aligned}\]</span>
-<p>如果该<span class="math inline">\(S\)</span>能够让<span class="math inline">\([\hat S,\hat H_0] = -\hat W\)</span>，则：</p>
+<p>如果该<span class="math inline">\(S\)</span>能够让 <span class="math inline">\([\hat S,\hat H_0] = -\hat W\)</span>，且<span class="math inline">\(S\)</span>与<span class="math inline">\(W\)</span>相对于<span class="math inline">\(H_0\)</span>来说都是小量，则：</p>
 <span class="math display">\[\begin{aligned}
-U HU^\dagger \approx \hat H_0 +\frac{1}{2} [\hat S,\hat W_0]
+U HU^\dagger &amp;= \hat H_0 +\frac{1}{2} [\hat S,\hat W]+\frac{1}{2}[\hat S,[\hat S,\hat W]]+...
+\\&amp;\approx \hat H_0 +\frac{1}{2} [\hat S,\hat W] + o(S^3)
 \end{aligned}\]</span>
-<p>称这样的变换为S-W变换，具体的：</p>
-<div>
-令<span class="math inline">\(S = \sum_{i\ne j}\frac{V_{ij}}{E_j-E_i}\left| i\right&gt; \left&lt; j\right|\)</span>，且<span class="math inline">\(i,j\)</span>简并也=0则
-</div>
+<h1 id="s的形式">S的形式</h1>
+<blockquote>
+<p><span class="math inline">\(S = -\sum_{i\ne j}\frac{W_{ij}}{E_j-E_i}\left| i\right&gt; \left&lt; j\right|\)</span> 满足上述对易式（简并子空间中S=0）</p>
+</blockquote>
+<p>证明如下：</p>
 <span class="math display">\[\begin{aligned}
-\hat S \hat H_0 &amp;= \sum_{i\ne j}\frac{V_{ij}}{E_j-E_i}\left| i\right&gt; \left&lt; j\right| \sum_{m}E_m \left| m\right&gt; \left&lt; m \right| 
-\\\\ &amp;= \sum_{i\ne m}\frac{V_{im}E_m}{E_j-E_m}\left| i\right&gt; \left&lt; m\right| 
+\hat S \hat H_0 &amp;= \sum_{i\ne j}\frac{-W_{ij}}{E_j-E_i}\left| i\right&gt; \left&lt; j\right| \sum_{m}E_m \left| m\right&gt; \left&lt; m \right| 
+\\\\ &amp;= \sum_{i\ne m}\frac{-W_{im}E_m}{E_m-E_i}\left| i\right&gt; \left&lt; m\right| 
 \end{aligned}\]</span>
-<p>同理：$H_0 S= _{im}| m&gt; &lt; i| $</p>
-<p>因为<span class="math inline">\(V_{ij}=0\)</span>可以将求和扩充到所有的ij,最后得到对易条件：<span class="math inline">\([\hat S,\hat H_0] = -\hat W\)</span></p>
+<p>同理 <span class="math inline">\(H_0 S=\sum_{i\ne m}^{}\frac{-W_{mi}E_m}{E_i-E_m}| m\left&gt;\right&lt; i|\)</span>，因为 <span class="math inline">\(W_{ii}=0\)</span> 可以将求和扩充到所有的 <span class="math inline">\(ij\)</span> ,最后得到对易条件：</p>
+<p><span class="math display">\[\begin{equation}
+[\hat S,\hat H_0] = -\hat W
+\end{equation}\]</span></p>
+<h1 id="微扰处理小量哈密顿量">微扰处理小量哈密顿量</h1>
 <p>将<span class="math inline">\(H&#39; = UHU^\dagger \approx H_0 +\frac{1}{2}[\hat S,\hat W]\)</span>的第二项视作微扰:</p>
 <p>则<span class="math inline">\(H&#39;\)</span>在<span class="math inline">\(H_0\)</span>基下的矩阵元：</p>
-<div style="text-align:center">
-<span class="math inline">\(H&#39;_{ij} = E_n \delta_{ni}\delta_{ji}+ \frac{1}{2}(\left&lt;SW \right&gt;+\left&lt; WS \right&gt;)\)</span>
-</div>
-<br>
-<div style="text-align:center">
-<span class="math inline">\(= E_n \delta_{ni}\delta_{ji}+ \frac{1}{2}(\sum_k S_{ik}W_{kj}+W_{ik}S_{kj})\)</span>
-</div>
-<br>
-<div style="text-align:center">
-<span class="math inline">\(= E_n \delta_{ni}\delta_{ji}+ \frac{1}{2}\sum_k W_{ik}W_{kj}(\frac{1}{d_k-d_i}+\frac{1}{d_k-d_j})\)</span>
-</div>
-<p>最后将<span class="math inline">\(H&#39;_{nn}\)</span>的值视作dressed energy, 视作有效哈密顿量的本征值，然后再用一阶波函数近似的方法将求得的本征态作为dress states，于是可以在对角的近似哈密顿量下讨论问题。</p>
-<p>(有关于这种近似的有效性qutip模拟了，有空再打)</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+H&#39;_{ij} &amp;= E_n \delta_{ni}\delta_{ji}+ \frac{1}{2}(\left&lt;i|SW|j \right&gt;-\left&lt;i|WS|j \right&gt;)
+\\&amp;= E_n \delta_{ni}\delta_{ji}+ \frac{1}{2}(\sum_k S_{ik}W_{kj}+W_{ik}S_{kj})
+\\&amp;=E_n \delta_{ni}\delta_{ji}+ \frac{1}{2}\sum_k W_{ik}W_{kj}(\frac{1}{E_i-E_k}- \frac{1}{E_k-E_j})
+\end{aligned}
+\end{equation}\]</span></p>
+<p>一阶微扰下的本征值：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+E_{i} &amp;=  E_i + \left&lt;i\right|\frac{1}{2}[\hat S,\hat W]|\left|i\right&gt;
+\\ &amp;= E_i +  \frac{1}{2}(\left&lt;i|SW|i \right&gt;-\left&lt;i|WS|i\right&gt;)  
+\\&amp;= H&#39;_{ii} = E_i + \sum_{k \ne i}\frac{|W_{ik}|^2}{E_i-E_k}
+\end{aligned}
+\end{equation}\]</span></p>
+<p>一阶微扰下的本征态：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\left|i&#39;\right&gt; &amp;= \left|i\right&gt; + \sum_{k\ne i} \frac{(\frac{1}{2}[\hat S,\hat W])_{ki}}{E_i -E_k}\left|k\right&gt;
+\\&amp;=  \left|i\right&gt; + \frac{1}{2}  \sum_{k\ne i}  \sum_{m \ne i} W_{km}W_{mi} (\frac{1}{E_k-E_m}- \frac{1}{E_m-E_j}) \frac{1}{E_i -E_k}\left|k\right&gt;
+\end{aligned}
+\end{equation}\]</span></p>
+<p>注意此时得到的哈密顿量本征值在任意坐标系下都是成立的，但欲求哈密顿量的原坐标系下的本征态，需要将<span class="math inline">\(e^{-S}\)</span>作用于求得的本征态。</p>
+<h1 id="例">例</h1>
+<p>假设：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+H_0= \left[
+\begin{matrix}
+0 &amp; 0 &amp; 0\\
+0 &amp; 2.0 &amp; 0\\
+0 &amp; 0 &amp; 5.0
+\end{matrix}\right], W = 
+\left[\begin{matrix}0 &amp; 0.1 &amp; 0.2\\0.1 &amp; 0 &amp; 0.1\\0.2 &amp; 0.1 &amp; 0\end{matrix}\right]
+\end{aligned}
+\end{equation}\]</span></p>
+<p>根据前文 <span class="math inline">\(S\)</span> 的表达式，得到S</p>
 
                 
               </div>
@@ -320,6 +354,27 @@ U HU^\dagger \approx \hat H_0 +\frac{1}{2} [\hat S,\hat W_0]
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" class="category-chain-item">量子力学</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">

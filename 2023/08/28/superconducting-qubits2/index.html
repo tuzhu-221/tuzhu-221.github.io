@@ -16,22 +16,22 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="超导量子比特Transmon与谐振腔的耦合JC模型 假如把比特截断到二能级，其与谐振腔相互耦合，则哈密顿量的写法： \[\begin{equation} \begin{aligned} H &#x3D; \hbar w_c \alpha^\dagger \alpha + \hbar w_q \frac{\sigma_z}{2}  +\hbar g I_- \end{aligned} \end{">
+    <meta name="description" content="drag波 在Transmon的实验中，比特在驱动\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)跃迁时打入\(w_{01}\)的波，但由于仪器和Transmon非谐性不够大等原因，\(w_{12}\)频率的波幅不为0，从而导致跃迁到2能级引起态泄露，参考文献提出drag波可以抵消以上提及的效应进而抑制态泄露。 推导 可以把驱动下的tran">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Transmon与谐振子耦合的JC模型">
-<meta property="og:url" content="http://dyf.zone/2023/08/03/superconducting-qubits1/index.html">
+<meta property="og:title" content="抑制态泄露的drag波">
+<meta property="og:url" content="http://dyf.zone/2023/08/28/superconducting-qubits2/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="超导量子比特Transmon与谐振腔的耦合JC模型 假如把比特截断到二能级，其与谐振腔相互耦合，则哈密顿量的写法： \[\begin{equation} \begin{aligned} H &#x3D; \hbar w_c \alpha^\dagger \alpha + \hbar w_q \frac{\sigma_z}{2}  +\hbar g I_- \end{aligned} \end{">
+<meta property="og:description" content="drag波 在Transmon的实验中，比特在驱动\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)跃迁时打入\(w_{01}\)的波，但由于仪器和Transmon非谐性不够大等原因，\(w_{12}\)频率的波幅不为0，从而导致跃迁到2能级引起态泄露，参考文献提出drag波可以抵消以上提及的效应进而抑制态泄露。 推导 可以把驱动下的tran">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-03T13:17:14.000Z">
-<meta property="article:modified_time" content="2023-08-05T09:04:59.899Z">
+<meta property="article:published_time" content="2023-08-28T08:37:00.000Z">
+<meta property="article:modified_time" content="2023-08-29T11:15:14.062Z">
 <meta property="article:author" content="Duyifei">
 <meta property="article:tag" content="量子计算,超导量子计算, supercoducting qubits">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Transmon与谐振子耦合的JC模型 - dyf&#39;s blog</title>
+  <title>抑制态泄露的drag波 - dyf&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Transmon与谐振子耦合的JC模型"></span>
+            <span id="subtitle" data-typed-text="抑制态泄露的drag波"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-03 21:17" pubdate>
-          2023年8月3日 晚上
+        <time datetime="2023-08-28 16:37" pubdate>
+          2023年8月28日 下午
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.1k 字
+          7.6k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          43 分钟
+          64 分钟
         
       </span>
     
@@ -268,138 +268,139 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Transmon与谐振子耦合的JC模型</h1>
+            <h1 id="seo-header">抑制态泄露的drag波</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="超导量子比特transmon与谐振腔的耦合jc模型">超导量子比特Transmon与谐振腔的耦合JC模型</h1>
-<p>假如把比特截断到二能级，其与谐振腔相互耦合，则哈密顿量的写法：</p>
+                <h1 id="drag波">drag波</h1>
+<p>在Transmon的实验中，比特在驱动<span class="math inline">\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)</span>跃迁时打入<span class="math inline">\(w_{01}\)</span>的波，但由于仪器和Transmon非谐性不够大等原因，<span class="math inline">\(w_{12}\)</span>频率的波幅不为0，从而导致跃迁到2能级引起态泄露，<a target="_blank" rel="noopener" href="https://link.aps.org/doi/10.1103/PhysRevLett.103.110501">参考文献</a>提出drag波可以抵消以上提及的效应进而抑制态泄露。</p>
+<h2 id="推导">推导</h2>
+<p>可以把驱动下的transmon的哈密顿量写成如下格式：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-H = \hbar w_c \alpha^\dagger \alpha + \hbar w_q \frac{\sigma_z}{2} 
-+\hbar g I_-
+H = w_1 \Pi_1 + w_2 \Pi_2 + E(t)(\sigma_{0,1}^+ + \sigma_{0,1}^-)+ 
+\lambda E(t)(\sigma_{1,2}^+ + \sigma_{1,2}^-)
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中 <span class="math inline">\(I_\pm = \alpha^+ \sigma^- \pm \alpha^- \sigma^+\)</span>，本note试图将这个耦合系统的哈密顿量主动变换到另一坐标系去，变换后的哈密顿量在原坐标系下对角，这个变换的表达式能够帮助我们找到系统在原坐标系的本征能级和本征态。</p>
-<p>首先设算符 <span class="math inline">\(N_q = \left|1\right&gt;\left&lt;1\right|\otimes I + I \otimes \alpha^\dagger \alpha\)</span>， 第一项为比特激发态的投影算符，第二项为光腔的光子数算符，简单认为该算符是整个系统的激发光子数的计数算符。</p>
-<p>首先证明<span class="math inline">\(N_q\)</span>算符与<span class="math inline">\(I_-\)</span>算符对易：</p>
+<p>其中<span class="math inline">\(\sigma_{i,i+1}^\pm\)</span>是限制在<span class="math inline">\(\{i,i+1\}\)</span>空间中的升降算符，<span class="math inline">\(E(t) = E^x (t)\cos(w_dt) + E^y (t)\sin(w_dt)\)</span>，这里假设<span class="math inline">\(w_{12}\)</span>的驱动和<span class="math inline">\(w_{01}\)</span>的驱动是线性关系，故假设<span class="math inline">\(\{12\}\)</span>能级的驱动项乘上一常系数<span class="math inline">\(\lambda\)</span>，对哈密顿量旋波近似后（<span class="math inline">\(U= exp(iw_d\Pi_1 + 2iw_d \Pi_2)\)</span>）得到：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-[N_q,I_-]=&amp;[\left|1\right&gt;\left&lt;1\right|+ \alpha^\dagger \alpha, \alpha^\dagger \sigma^- - \alpha^- \sigma^+]
-\\ =&amp; \alpha^\dagger [\left|1\right&gt;\left&lt;1\right|,\sigma^-] -  \alpha[\left|1\right&gt;\left&lt;1\right|,\sigma^+] 
-+ [\alpha^\dagger\alpha,\alpha^\dagger]\sigma^--[\alpha^\dagger\alpha,\alpha]\sigma^+
-\\ =&amp; -\alpha^+ \sigma^- - \alpha^- \sigma^+ + \alpha^+ \sigma^- + \alpha^- \sigma^+ 
-\\ =&amp; 0
+H^R=\sum_{j=1,2}\delta_{j}\Pi_{j}+\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}+\frac{ E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>于是<span class="math inline">\(N_q\)</span>与<span class="math inline">\(I_-\)</span>对易，更进一步，简单扩展易知，其与哈密顿量<span class="math inline">\(H\)</span> 对易，所以 <span class="math inline">\(N_q\)</span> 在参与只含有 <span class="math inline">\(I_-\)</span> 与 <span class="math inline">\(H\)</span> 的对易式中时，由于换序的任意性，可以不特殊考虑，将其当作常数处理。</p>
-<p>假设变换<span class="math inline">\(U = e^{- \varLambda{(N_q)}I_{-}}= e^{- D}\)</span>，其中<span class="math inline">\(\varLambda\)</span> 是算符<span class="math inline">\(N_q\)</span>的函数，简单容易证明<span class="math inline">\(U^{\dagger} =e^D\)</span> , 故该变换为幺正变换。</p>
-<p>根据Hadamard引理：</p>
+<p>其中<span class="math inline">\(\delta_1 = w_1 - w_d\)</span>，<span class="math inline">\(\delta_2 = \Delta + 2\delta_1\)</span>，<span class="math inline">\(\Delta\)</span> 是比特的失谐，这里新定义变换幺正算符<span class="math inline">\(V\)</span>：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-&amp;e^{\hat{A}}\hat{B}e^{-\hat{A}}
-\\=&amp;\sum_{n=0}^{\infty}\frac{1}{n!}\left[ ....\left( n \right) ....\left. \left[ \hat{A} \right. ,\left[ \hat{A},\hat{B} \right] \right] \right] 
-\\=&amp;\sum_{n=0}^{\infty} \frac{1}{n!}C_A^n B
+V = e^S = e^{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>这里第三行是对第二行对易式的简写，对哈密顿量<span class="math inline">\(H\)</span>以<span class="math inline">\(U\)</span>进行变换：</p>
+<p>假如比特在做 <span class="math inline">\(\pi\)</span> 门时<span class="math inline">\(E^x(t_{start}) = 0, E^x(t_{end}) = 0\)</span>，<span class="math inline">\(V(t_{start}) = I, V(t_{end}) = I\)</span> 则V表象变换后的态<span class="math inline">\({\left|\psi\right&gt;}_V (t) = V(t)\left|\psi\right&gt;_{R}\)</span>，既在<span class="math inline">\(\pi\)</span>门结束时，V表象下的态和旋转表象下的态完全一致，可以到V表象下讨论问题。</p>
+<p>将哈密顿量变换导<span class="math inline">\(V\)</span>下<span class="math inline">\(H^V = i \dot V V^\dagger + V H^R V^\dagger\)</span>，其中：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-&amp;U^\dagger H U 
-\\=&amp; e^D H e^{-D}
-\\= &amp; \sum_{n=0}^{\infty} \frac{1}{n!} C^n_{D} H_0 + C^n_{D} \hbar g I_+
+V H^R V^\dagger \approx H_R +[S,H_R]+\frac{1}{2}[S,[S,R]]
 \end{aligned}
 \end{equation}\]</span></p>
-<p>由<span class="math inline">\([I_-,H_0] = \hbar (w_r-w_q) I_+= \hbar \Delta I_+\)</span>可将第一项写为<span class="math inline">\(H_0+\Delta \hbar \sum_{n=0}^{\infty}\frac{1}{(n+1)!}C^n_{\varLambda I_-}I^+\)</span>，于是原式写为：</p>
+<p>分别求：</p>
+<p><span class="math display">\[\begin{equation}
+[S,H_R] = \sum_{j=1,2}[S,\delta_{j}\Pi_{j}] + \sum_{j=1,2}[S,\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}] + \sum_{j=1,2}[S,\frac{ E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y}]
+\end{equation}\]</span></p>
+<p>第一项：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-U^\dagger H U =H_0+\Delta \hbar \sum_{n=0}^{\infty}\frac{(n+1)\hbar g +\hbar \Delta \varLambda}{(n+1)!}C^n_{\varLambda I_-}I^+
+\sum_{j=1,2}[S,\delta_{j}\Pi_{j}] =&amp; [S,\delta_{1}\Pi_{1}] + [S,\delta_{2}\Pi_{2}]
+\\ =&amp; [{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\delta_{1}\Pi_{1}] + [{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\delta_{2}\Pi_{2}]
+\\ =&amp; \frac{-iE^x}{2\Delta}(\delta_{1}[\sigma_{0,1}^y,\Pi_{1}] + \lambda\delta_{1}[\sigma_{1,2}^y,\Pi_{1}] +  (\delta_{2}[\sigma_{0,1}^y,\Pi_{2}] +  \lambda\delta_{2}[\sigma_{1,2}^y,\Pi_{2}]
+\\ =&amp; \frac{-iE^x}{2\Delta}(\delta_{1}(-i)\sigma_{0,1}^x + \lambda\delta_{1}i\sigma_{1,2}^x +  \delta_{2}0+  \lambda\delta_{2}(-i)\sigma_{1,2}^x)
+\\ =&amp; \frac{E^x}{2\Delta}(-\delta_{1}\sigma_{0,1}^x + \lambda\delta_{1}\sigma_{1,2}^x - \lambda\delta_{2}\sigma_{1,2}^x)
+\\ =&amp; \frac{E^x}{2\Delta}(-\delta_{1}\sigma_{0,1}^x + \lambda\delta_{1}\sigma_{1,2}^x - \lambda(2\delta_{1} +\Delta)\sigma_{1,2}^x)
+\\ =&amp; \frac{-E^x}{2\Delta}(\delta_{1}\sigma_{0,1}^x +\lambda(\delta_{1} +\Delta)\sigma_{1,2}^x)
 \end{aligned}
 \end{equation}\]</span></p>
-<p>此时需要计算<span class="math inline">\([I_-,I_+]\)</span>进一步化简：</p>
+<p>第二项：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-&amp;C^0_{\varLambda I_-}I^+ = I_+
+&amp;\sum_{j=1,2}[S,\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}] 
+\\=&amp; [S,\frac{E^x(t)}{2}{\sigma}_{0,1}^{x}] +[S,\frac{E^x(t)}{2}\lambda{\sigma}_{1,2}^{x}]
+\\ =&amp;\frac{E^x(t)}{2}([S,{\sigma}_{0,1}^{x}] +[S,\lambda{\sigma}_{1,2}^{x}]) 
+\\ =&amp;\frac{E^x(t)}{2}([{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},{\sigma}_{0,1}^{x}]+[{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\lambda{\sigma}_{1,2}^{x}]) 
+\\ =&amp;\frac{-iE^x(t)^2}{4\Delta}([{\sigma_{0,1}^y+\lambda\sigma_{1,2}^y},{\sigma}_{0,1}^{x}]
++[{\sigma_{0,1}^y+\lambda\sigma_{1,2}^y},\lambda{\sigma}_{1,2}^{x}]) 
+\\ =&amp;\frac{-iE^x(t)^2}{4\Delta}([{\sigma_{0,1}^y,{\sigma}_{0,1}^{x}]+\lambda[\sigma_{1,2}^y},{\sigma}_{0,1}^{x}]
++\lambda[{\sigma_{0,1}^y,{\sigma}_{1,2}^{x}]+\lambda^2[\sigma_{1,2}^y},{\sigma}_{1,2}^{x}]) 
+\\ =&amp;\frac{-iE^x(t)^2}{4\Delta}((-2i+4i\Pi_1+2i\Pi_2)+\lambda i \sigma_{0,2}^x
++\lambda(-i \sigma_{0,2}^x)+\lambda^2(-2i\Pi_1+2i\Pi_2)) 
 \end{aligned}
 \end{equation}\]</span></p>
+<p>略去常数后：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-C^1_{\varLambda I_-}I^+ &amp;= \varLambda [I_-,I_+]
-\\&amp;= \varLambda( 2[\alpha^+\sigma_{-},\alpha\sigma_{+}])
-\\&amp;= \varLambda( -2 \alpha^+\alpha \sigma_z - \sigma_{z} -1)
-\\&amp;= \varLambda( -2 \alpha^+\alpha \sigma_z - \sigma_{z} -\sigma_{z}^2)
-\\&amp;= \varLambda( -(2 \alpha^+\alpha +\sigma_z +1) \sigma_z)
-\\&amp;= \varLambda( -(2 \alpha^+\alpha +2 \left|1\right&gt;\left&lt;1\right|) \sigma_z)
-\\&amp; = -2 \varLambda N_q \sigma_z
+=&amp;\frac{E^x(t)^2}{4\Delta}((4\Pi_1+2\Pi_2)+\lambda  \sigma_{0,2}^x+\lambda(-\sigma_{0,2}^x)+\lambda^2(-2\Pi_1+2\Pi_2)) 
+\\=&amp; \frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
 \end{aligned}
 \end{equation}\]</span></p>
-<p>进一步的，由 <span class="math inline">\([\sigma_z,I_-] =-2 I_+\)</span>，最终得到表达式：</p>
+<p>显然 <span class="math inline">\(\left[S,H_R\right]\)</span> 第三项为0，故得到 <span class="math inline">\(\left[S,H_{R}\right]\)</span> 等于：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-&amp;C^{2n}_{\varLambda I_-}I^+ = 
-\left(-4\right)^{n}\Lambda^{2n}N_{q}^{n}I_{+}
-\\&amp; C^{2n+1}_{\varLambda I_-}I^+ = 
- -2 \left(-4\right)^{n}\Lambda^{2n+1}N_{q}^{n+1}\sigma_z
+=&amp; \frac{-E^x}{2\Delta}(\delta_{1}\sigma_{0,1}^x +\lambda(\delta_{1} +\Delta)\sigma_{1,2}^x)
++ \frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
+\\=&amp; \frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x \lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x-\frac{E^x\lambda }{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
 \end{aligned}
 \end{equation}\]</span></p>
-<p>最终得到变换后的哈密顿量：</p>
+<p>由实验中驱动的振幅远小于比特的失谐，既<span class="math inline">\(E^x \ll \Delta\)</span>，保留哈密顿量中含有<span class="math inline">\(frac{E^x}{\Delta}\)</span>的0，1次项。<span class="math inline">\([S,[S,H_R]]\)</span>中<span class="math inline">\(\frac{E^x}{\Delta}\)</span>一次项有：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
+-&amp;\left[S,\frac{E^x\lambda }{2}\sigma_{1,2}^x\right] 
+\\&amp;=- [-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta,\frac{E^x\lambda }{2}\sigma_{1,2}^x ]
+\\ &amp;=- \frac{-i{E^x}^2\lambda}{4\Delta}[(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y),\sigma_{1,2}^x ]
+\\ &amp;=- \frac{-i{E^x}^2\lambda}{4\Delta}([\sigma_{0,1}^y,\sigma_{1,2}^x ]+\lambda[\sigma_{1,2}^y,\sigma_{1,2}^x ])
+\\ &amp;=- (\frac{-{E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{-{E^x}^2\lambda^2}{4\Delta}(2\Pi_1 - 2\Pi_2))
+\\ &amp;= \frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_2
+\end{aligned}
+\end{equation}\]</span></p>
+<p>综上所述：</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+H^V &amp;= i \dot V V^\dagger + V H^R V^\dagger
+\\&amp; =  \dot E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta + H_R + [S,H_R] + \frac{1}{2}  [S[S,H_R]]...
+\\&amp; \approx  \dot  E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta + \sum_{j=1,2}\delta_{j}\Pi_{j}+\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}+\frac{ E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y} +
 
-H_D = H_0+ \hbar(\frac{\Delta\sin(2\Lambda\sqrt{N_{q}})}{2\sqrt{N_{q}}}+g\cos (2\Lambda\sqrt{N_{q}}))I_+
-\\+2\hbar N_q\sigma_z(\frac{g\sin(2\Lambda\sqrt{N_{q}})}{2\sqrt{N_{q}}}+\frac{\Delta(1-\cos (2\Lambda\sqrt{N_{q}}))}{4N_q})
+\\&amp;\frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x \lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x - \frac{E^x\lambda }{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2 +
+\\&amp; \frac{1}{2}  (\frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_2 ) +o(\frac{E^x}{\Delta})
+
+\\&amp; =  \dot E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta 
+
++ \delta_{1}\Pi_{1}+ \delta_{2}\Pi_{2}
++\frac{E^x(t)}{2}{\sigma}_{0,1}^{x}+\frac{ E^{y}(t)}{2}{\sigma}_{0,1}^{y}
++\frac{E^x(t)}{2}\lambda{\sigma}_{1,2}^{x}+\frac{ E^{y}(t)}{2}\lambda{\sigma}_{1,2}^{y}
+
+\\&amp;\frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x \lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x - \frac{E^x\lambda }{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2 +
+\\&amp; \frac{1}{2}  (\frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_2 ) +o(\frac{E^x}{\Delta})
+
 \end{aligned}
 \end{equation}\]</span></p>
-<p>为了使得变换后的哈密顿量在原坐标系下对角，<span class="math inline">\(I_+\)</span>项应当为0，故得到<span class="math inline">\(\varLambda(N_q)\)</span>的表达式：</p>
+<p>整理得：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-\Lambda(N_{q})=\frac{-\arctan(2\lambda\sqrt{N_{q}})}{2\sqrt{N_{q}}}
+H_V=&amp; (\delta_1+\frac{E^x(t)^2(4- \lambda^2)}{4\Delta})\Pi_1
++ (\delta_2  +\frac{E^x(t)^2(2+\lambda^2)}{4\Delta})\Pi_2
+\\&amp;+ (\frac{\dot E^x}{2\Delta}+E^y/2)(\sigma_{0,1}^y+\lambda \sigma_{1,2}^y)
+\\&amp; + 
+\frac{ E^x}{2} (1-\frac{\delta_1}{\Delta}) \sigma_{0,1}^x - \frac{ E^x \lambda \delta_1}{2\Delta}\sigma_{1,2}^x + \frac{ {E^x}^2\lambda}{8\Delta} \sigma_{0,2}^x
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中 <span class="math inline">\(\lambda = \frac{g}{\Delta}\)</span>，其下将使用该变换得到本征能级和本征态：</p>
+<p>当满足<span class="math inline">\(E^{y}=-\frac{\dot E^{x}}{\Delta}\)</span>以及<span class="math inline">\(\delta_{1}=\frac{(\lambda^{2}-4){E^x}^2}{4\Delta}\)</span>时，第一行第一项和第二行为0，且最后一行中态泄露项皆为小量可忽略，减少了态泄露。更高阶的结果（算不动了）：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-U^\dagger H U \left|n,g\right&gt; &amp;= E_{n,g}\left|g,n\right&gt;
-\Rightarrow
-\\H(U\left|g,n\right&gt;) &amp;= E_n (U\left|g,n\right&gt;)
+E^{x}(t)&amp;=E_{\pi}+\frac{(\lambda^{2}-4)E_{\pi}^{3}}{8\Delta^{2}}-\frac{(13\lambda^{4}-76\lambda^{2}+112)E_{\pi}^{5}}{128\Delta^{4}}
+\\&amp; E^{y}(t)=-\frac{\dot{E}_{\pi}}{\Delta}+\frac{33(\lambda^{2}-2)E_{\pi}^{2}\dot{E}_{\pi}}{24\Delta^{3}}
+
+\\\delta_{1}(t)&amp;=-\frac{(\lambda^{2}-4)E_{\pi}^{2}}{4\Delta}-\frac{(\lambda^{4}-7\lambda^{2}+12)E_{\pi}^{4}}{16\Delta^{3}}
+
 \end{aligned}
 \end{equation}\]</span></p>
-<p>则 <span class="math inline">\(H\)</span> 的本征值(借助<span class="math inline">\(H_D\)</span>原坐标系求解得)：</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-H^{D}&amp;=H_{0}-\frac{\hbar\Delta}2\left(1-\sqrt{1+4\lambda^{2}N_{q}}\right)\sigma_{z}
-\\E_{g,n}&amp;=\hbar n\omega_{r}-\frac{\hbar}{2}\sqrt{\Delta^{2}+4g^{2}n}
-\\E_{e,n-1}&amp;=\hbar n\omega_{r}+\frac{\hbar}{2}\sqrt{\Delta^{2}+4g^{2}n}
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math inline">\(H\)</span>的本征态求解，以<span class="math inline">\(\widetilde{\left|n,g\right&gt;} = U\left|n,g\right&gt;\)</span>为例：</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-D\left|n,g\right&gt; &amp;= \frac{\arctan(2\lambda \sqrt N_q)}{2\sqrt N_q} I_- \left|n-1,e\right&gt;
-\\&amp;= \frac{\arctan(2\lambda \sqrt n)}{2\sqrt n} \sqrt{n} \left|n-1,e\right&gt;
-\\&amp; = \frac{\arctan(2\lambda \sqrt n)}{2} \left|n-1,e\right&gt;
-\\D\left|n,e\right&gt; &amp; = -\frac{\arctan(2\lambda \sqrt{n+1})}{2} \left|n+1,g\right&gt;
-\end{aligned}
-\end{equation}\]</span></p>
-<p>于是：</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-\widetilde{\left|n,g\right&gt;} =&amp; U \left|n,g\right&gt; = e^{-D}\left|n,g\right&gt;
-\\ =&amp; \sum_{m=0}^{infty} \frac{1}{(2m)!}(-1)^{2M}D^{2m}\left|n,g\right&gt;
-\\  +&amp;\sum_{m=0}^{infty} \frac{1}{(2m+1)!}(-1)D^{2m+1}\left|n,g\right&gt;
-\\ = &amp; \sum_{m=0}^{infty} \frac{1}{(2m)!}(-1)^{2M}(\frac{-\arctan (2\lambda \sqrt  n)}{2})^2m \left|n,g\right&gt; 
-\\ +&amp; \sum_{m=0}^{infty} \frac{1}{(2m+1)!}(-1)^{m+1}(\frac{-\arctan (2\lambda \sqrt  n)}{2})^2m\left|n,g\right&gt;
-\\ =&amp; \cos (\Theta_n) \left|n,g\right&gt; - \sin (\Theta_n)\left|n-1,e\right&gt;
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math inline">\(\Theta_n = \arctan{(2\lambda \sqrt{n})}/2\)</span>，同理：</p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-\widetilde{\left|n-1,e\right&gt;} = \sin (\Theta_n) \left|n,g\right&gt; + \cos (\Theta_n)\left|n-1,e\right&gt;
-\end{aligned}
-\end{equation}\]</span></p>
-<p><a target="_blank" rel="noopener" href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.79.013819">推导来源与参考文献</a></p>
+<p>其中<span class="math inline">\(E_{pi}\)</span> 是驱动比特打入的<span class="math inline">\(\pi\)</span>脉冲的振幅，而向y通道混入的<span class="math inline">\(E^y\)</span>波称为drag波。</p>
 
                 
               </div>
@@ -407,6 +408,27 @@ D\left|n,g\right&gt; &amp;= \frac{\arctan(2\lambda \sqrt N_q)}{2\sqrt N_q} I_- \
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/supercoducting-quantum-computing/" class="category-chain-item">supercoducting quantum computing</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
@@ -424,8 +446,8 @@ D\left|n,g\right&gt; &amp;= \frac{\arctan(2\lambda \sqrt N_q)}{2\sqrt N_q} I_- \
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Transmon与谐振子耦合的JC模型</div>
-      <div>http://dyf.zone/2023/08/03/superconducting-qubits1/</div>
+      <div>抑制态泄露的drag波</div>
+      <div>http://dyf.zone/2023/08/28/superconducting-qubits2/</div>
     </div>
     <div class="license-meta">
       
@@ -437,7 +459,7 @@ D\left|n,g\right&gt; &amp;= \frac{\arctan(2\lambda \sqrt N_q)}{2\sqrt N_q} I_- \
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月3日</div>
+          <div>2023年8月28日</div>
         </div>
       
       
@@ -469,18 +491,12 @@ D\left|n,g\right&gt; &amp;= \frac{\arctan(2\lambda \sqrt N_q)}{2\sqrt N_q} I_- \
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/28/superconducting-qubits2/" title="抑制态泄露的drag波">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">抑制态泄露的drag波</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/30/quantum-optic1/" title="光场量子化及光的量子效应">
-                        <span class="hidden-mobile">光场量子化及光的量子效应</span>
+                      <a href="/2023/08/03/superconducting-qubits1/" title="Transmon与谐振子耦合的JC模型">
+                        <span class="hidden-mobile">Transmon与谐振子耦合的JC模型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
