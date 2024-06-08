@@ -275,22 +275,38 @@
                 
                 <h1 id="killing场和超曲面">killing场和超曲面</h1>
 <h2 id="killing场定义">killing场定义：</h2>
-<p>假设流形<span class="math inline">\((M,g_{ab})\)</span>上<span class="math inline">\(v\)</span>矢量场对应的单参微分同胚映射是保度规映射，既<span class="math inline">\(\phi_t^* g_{ab} = g_{ab}\)</span>，则称<span class="math inline">\(v\)</span>为killing场</p>
+<p>假设流形<span class="math inline">\((M,g_{ab})\)</span>上<span
+class="math inline">\(v\)</span>矢量场对应的单参微分同胚映射是保度规映射，既<span
+class="math inline">\(\phi_t^* g_{ab} = g_{ab}\)</span>，则称<span
+class="math inline">\(v\)</span>为killing场</p>
 <h2 id="theorem1">theorem1:</h2>
-<p><span class="math inline">\(v\)</span>是killing场等价于<span class="math inline">\(g_{ab}\)</span>关于<span class="math inline">\(v\)</span>的李导数等于0等价于killing方程：</p>
+<p><span class="math inline">\(v\)</span>是killing场等价于<span
+class="math inline">\(g_{ab}\)</span>关于<span
+class="math inline">\(v\)</span>的李导数等于0等价于killing方程：</p>
 <p><span class="math display">\[
-\nabla_av_b +\nabla_bv_a = 0 
+\nabla_av_b +\nabla_bv_a = 0
 \]</span></p>
 <p>证明：</p>
 <p>由李导数的定义</p>
 <div style="text-align:center">
-<span class="math inline">\(\mathscr{L}_v g_{ab} = \lim_{t \rightarrow 0}\frac{\phi_t^*g_{ab}-g_{ab}}{t}\)</span>
+<span class="math inline">\(\mathscr{L}_v g_{ab} = \lim_{t \rightarrow
+0}\frac{\phi_t^*g_{ab}-g_{ab}}{t}\)</span>
 </div>
-<p>显然<span class="math inline">\(v\)</span>是killing场可直接推出<span class="math inline">\(g_{ab}\)</span>关于<span class="math inline">\(v\)</span>的李导数等于0，反过来，由李导数等于0，选取适配坐标系，得到：<span class="math inline">\(\frac{\partial g_{\mu\nu}}{\partial x_1}=0\)</span>，所以<span class="math inline">\(g_{\mu\nu}\)</span>在积分曲线上积分曲线相连的两点值相等。</p>
-<p>设<span class="math inline">\(\phi\)</span>从<span class="math inline">\(p\)</span>点映射到<span class="math inline">\(q\)</span>点</p>
+<p>显然<span class="math inline">\(v\)</span>是killing场可直接推出<span
+class="math inline">\(g_{ab}\)</span>关于<span
+class="math inline">\(v\)</span>的李导数等于0，反过来，由李导数等于0，选取适配坐标系，得到：<span
+class="math inline">\(\frac{\partial g_{\mu\nu}}{\partial
+x_1}=0\)</span>，所以<span
+class="math inline">\(g_{\mu\nu}\)</span>在积分曲线上积分曲线相连的两点值相等。</p>
+<p>设<span class="math inline">\(\phi\)</span>从<span
+class="math inline">\(p\)</span>点映射到<span
+class="math inline">\(q\)</span>点</p>
 <span class="math display">\[\begin{aligned}
-g_{\mu\nu}\mid_q &amp;= g_{ab}(\frac{\partial}{\partial x^\mu})^a (\frac{\partial}{\partial x^\nu})^b\mid_q
-\\\\\phi_t^* g_{\mu\nu}\mid_q &amp;= \phi_t^* (g_{ab}(\frac{\partial}{\partial x^\mu})^a (\frac{\partial}{\partial x^\nu})^b)\mid_q
+g_{\mu\nu}\mid_q &amp;= g_{ab}(\frac{\partial}{\partial x^\mu})^a
+(\frac{\partial}{\partial x^\nu})^b\mid_q
+\\\\\phi_t^* g_{\mu\nu}\mid_q &amp;= \phi_t^*
+(g_{ab}(\frac{\partial}{\partial x^\mu})^a (\frac{\partial}{\partial
+x^\nu})^b)\mid_q
 \end{aligned}\]</span>
 <div style="text-align:center">
 $ = _a^c _b^d ( _t^*g_{ab}_t^*()^c _t^*()^d)_p$
@@ -298,13 +314,18 @@ $ = _a^c _b^d ( _t^*g_{ab}_t^*()^c _t^*()^d)_p$
 <span class="math display">\[\begin{aligned}
 &amp;\phi_t^*(\frac{\partial}{\partial x^\nu})^c \mid_p f(p)
 \\\\=&amp; \phi_{-t*}(\frac{\partial}{\partial x^\nu})^c \mid_p f(p)
-\\\\ =&amp; (\frac{\partial}{\partial x&#39;^\nu})^c\mid_q f(\phi_{-t}(q))
+\\\\ =&amp; (\frac{\partial}{\partial x&#39;^\nu})^c\mid_q
+f(\phi_{-t}(q))
 \end{aligned}\]</span>
-<p>由适配坐标系的定义: <span class="math inline">\(f(\phi_{-t}(q)) = F&#39;(x&#39;^{1}-t,x&#39;^{2},x&#39;^{3}...x&#39;^{n}) = F(x^1,x^2,...x^n)\)</span></p>
+<p>由适配坐标系的定义: <span class="math inline">\(f(\phi_{-t}(q)) =
+F&#39;(x&#39;^{1}-t,x&#39;^{2},x&#39;^{3}...x&#39;^{n}) =
+F(x^1,x^2,...x^n)\)</span></p>
 <p>所以</p>
 <span class="math display">\[\begin{aligned}
 &amp;\phi_t^* (\frac{\partial}{\partial x&#39;^\nu})^c\mid_p f(p)
-\\\\&amp; = (\frac{\partial}{\partial x&#39;^\nu})^c\mid_q f&#39;(q) = \frac{\partial F&#39;}{\partial x&#39;^\nu}  = \frac{\partial F}{\partial x^\nu}
+\\\\&amp; = (\frac{\partial}{\partial x&#39;^\nu})^c\mid_q f&#39;(q) =
+\frac{\partial F&#39;}{\partial x&#39;^\nu}  = \frac{\partial
+F}{\partial x^\nu}
 \\\\&amp; =  (\frac{\partial}{\partial x^\nu})^c\mid_p f(p)
 \end{aligned}\]</span>
 <p>得到$_t^*()^c _p =()^c _q $，所以：</p>
@@ -313,50 +334,81 @@ $ _a^c _b^d ( _t^*g_{ab}_t^*()^c _t^*()^d)_p$
 </div>
 <p><br></p>
 <div style="text-align:center">
-<span class="math inline">\(= \delta_a^c \delta_b^d ( \phi_t^*g_{ab}\otimes (\frac{\partial}{\partial x^\mu})^c \otimes (\frac{\partial}{\partial x^\nu})^d)\mid_p\)</span>
+<span class="math inline">\(= \delta_a^c \delta_b^d (
+\phi_t^*g_{ab}\otimes (\frac{\partial}{\partial x^\mu})^c \otimes
+(\frac{\partial}{\partial x^\nu})^d)\mid_p\)</span>
 </div>
 <p><br></p>
 <div style="text-align:center">
-<span class="math inline">\(g_{\mu\nu} \mid_q = \phi_t^*g_{\mu\nu} \mid_p\)</span>
+<span class="math inline">\(g_{\mu\nu} \mid_q = \phi_t^*g_{\mu\nu}
+\mid_p\)</span>
 </div>
-<p>最后由在积分曲线上<span class="math inline">\(g_{\mu\nu}\)</span>为常数得到<span class="math inline">\(\phi_t^* g_{ab} = g_{ab}\)</span>，一二等价证毕</p>
+<p>最后由在积分曲线上<span
+class="math inline">\(g_{\mu\nu}\)</span>为常数得到<span
+class="math inline">\(\phi_t^* g_{ab} =
+g_{ab}\)</span>，一二等价证毕</p>
 <p>由李导数作用于二阶张量的运算法则由：</p>
 <div style="text-align:center">
-<span class="math inline">\(\mathscr{L}_v(g_{ab}) = v^c \nabla_c g_{ab} + g_{ac} \nabla_b v^c + g_{cb} \nabla_a v^c\)</span>
+<span class="math inline">\(\mathscr{L}_v(g_{ab}) = v^c \nabla_c g_{ab}
++ g_{ac} \nabla_b v^c + g_{cb} \nabla_a v^c\)</span>
 </div>
 <p><br></p>
 <div style="text-align:center">
 $ = _b v_a + _a v_b = 0 $
 </div>
 <h2 id="theorem-2">theorem 2:</h2>
-<p>如果度规张量的所有分量关于某个坐标<span class="math inline">\(x\)</span>的导数为0，则<span class="math inline">\(x\)</span>的坐标基矢是killing矢量场。</p>
-<p>选取该坐标基矢场<span class="math inline">\((\frac{\partial }{\partial x})^a\)</span>的适配坐标系，则得</p>
+<p>如果度规张量的所有分量关于某个坐标<span
+class="math inline">\(x\)</span>的导数为0，则<span
+class="math inline">\(x\)</span>的坐标基矢是killing矢量场。</p>
+<p>选取该坐标基矢场<span class="math inline">\((\frac{\partial
+}{\partial x})^a\)</span>的适配坐标系，则得</p>
 <div style="text-align:center">
 <span class="math inline">\(\mathscr{L}_{v}g_{ab}=0\)</span>
 </div>
 <h2 id="theorem-3">theorem 3:</h2>
-<p><span class="math inline">\(T\)</span>是测地线的切矢，<span class="math inline">\(v\)</span>是killing矢量场，有：<span class="math inline">\(T^a\nabla_a (T^bv_b) = 0\)</span>，也就是说killing场和切矢的内积沿测地线不变</p>
+<p><span class="math inline">\(T\)</span>是测地线的切矢，<span
+class="math inline">\(v\)</span>是killing矢量场，有：<span
+class="math inline">\(T^a\nabla_a (T^bv_b) =
+0\)</span>，也就是说killing场和切矢的内积沿测地线不变</p>
 <span class="math display">\[\begin{aligned}
-&amp;T^a\nabla_a (T^bv_b) 
+&amp;T^a\nabla_a (T^bv_b)
 \\\\ &amp;= v_b T^a\nabla_a T^b +T^b T^a\nabla_a v_b
 \\\\ &amp;=  T^{(b} T^{a)}\nabla_a v_b
 \\\\ &amp;=  T^{(b} T^{a)}\nabla_{[a} v_{b]}
 \\\\ &amp;=  0
 \end{aligned}\]</span>
-<p>第一行是莱布尼兹律，第二行来源于测地线定义，第三行是同一个向量不同抽象记号可以加对称记号，第四行是因为killing矢量场<span class="math inline">\(\nabla_a v_b + \nabla_b v_a = 0 \Rightarrow \nabla_{[a} v_{b]} = \nabla_{a} v_{b}\)</span></p>
+<p>第一行是莱布尼兹律，第二行来源于测地线定义，第三行是同一个向量不同抽象记号可以加对称记号，第四行是因为killing矢量场<span
+class="math inline">\(\nabla_a v_b + \nabla_b v_a = 0 \Rightarrow
+\nabla_{[a} v_{b]} = \nabla_{a} v_{b}\)</span></p>
 <h2 id="theorem-4">theorem 4:</h2>
-<p>一个n维流形最多有<span class="math inline">\(\frac{n(n+1)}{2}\)</span>个killing矢量场。（未证）</p>
+<p>一个n维流形最多有<span
+class="math inline">\(\frac{n(n+1)}{2}\)</span>个killing矢量场。（未证）</p>
 <h2 id="theorem-5">theorem 5:</h2>
 <p>证明二维闵氏空间的boost-killing矢量场与洛伦兹变换对应。</p>
-<p>boost矢量场：<span class="math inline">\(v= t(\frac{\partial}{\partial x})^a +x(\frac{\partial}{\partial t})^a\)</span></p>
+<p>boost矢量场：<span class="math inline">\(v=
+t(\frac{\partial}{\partial x})^a +x(\frac{\partial}{\partial
+t})^a\)</span></p>
 <p>首先证明它在二维闵氏空间是killing矢量场。</p>
-<p>先给出一对新坐标，<span class="math inline">\((\phi,\eta)\)</span>，st, <span class="math inline">\(x = \eta \cosh \phi, t = \eta \sinh \phi\)</span>, 通过坐标变换轻易将<span class="math inline">\(g_{ab}\)</span>展开为<span class="math inline">\((d\eta)_a(d\eta)_b - \eta^2 (d\phi)_a(d\phi)_b\)</span>，由theorem2，得到：<span class="math inline">\(\phi\)</span>的坐标基矢场是killing矢量场。通过坐标变换的关系易得</p>
+<p>先给出一对新坐标，<span
+class="math inline">\((\phi,\eta)\)</span>，st, <span
+class="math inline">\(x = \eta \cosh \phi, t = \eta \sinh \phi\)</span>,
+通过坐标变换轻易将<span class="math inline">\(g_{ab}\)</span>展开为<span
+class="math inline">\((d\eta)_a(d\eta)_b - \eta^2
+(d\phi)_a(d\phi)_b\)</span>，由theorem2，得到：<span
+class="math inline">\(\phi\)</span>的坐标基矢场是killing矢量场。通过坐标变换的关系易得</p>
 <p><span class="math display">\[
-(\frac{\partial}{\partial \phi})^a= t(\frac{\partial}{\partial x})^a +x(\frac{\partial}{\partial t})^a
+(\frac{\partial}{\partial \phi})^a= t(\frac{\partial}{\partial x})^a
++x(\frac{\partial}{\partial t})^a
 \]</span></p>
-<p>假设点<span class="math inline">\(q(t_0,x_0) or (phi_0,\eta_0 )\)</span>，通过boost-killing矢量场的单参微分同胚群元<span class="math inline">\(\phi_\Delta\)</span>映射到了<span class="math inline">\(q\)</span>，则由被动观点可知，<span class="math inline">\(q\)</span>的坐标可以视作<span class="math inline">\(p\)</span>的新坐标，欲求解q点为起点的积分曲线，由切矢在坐标基矢的展开式表达式：</p>
+<p>假设点<span class="math inline">\(q(t_0,x_0) or (phi_0,\eta_0
+)\)</span>，通过boost-killing矢量场的单参微分同胚群元<span
+class="math inline">\(\phi_\Delta\)</span>映射到了<span
+class="math inline">\(q\)</span>，则由被动观点可知，<span
+class="math inline">\(q\)</span>的坐标可以视作<span
+class="math inline">\(p\)</span>的新坐标，欲求解q点为起点的积分曲线，由切矢在坐标基矢的展开式表达式：</p>
 <p><span class="math display">\[
-(\frac{\partial}{\partial t})^a =\frac{d x^\mu}{dt} (\frac{\partial}{\partial x^\mu})^a
+(\frac{\partial}{\partial t})^a =\frac{d x^\mu}{dt}
+(\frac{\partial}{\partial x^\mu})^a
 \]</span></p>
 <p>得到：</p>
 <span class="math display">\[\begin{aligned}
@@ -364,8 +416,11 @@ $ = _b v_a + _a v_b = 0 $
 \\\\ &amp; x(\phi) = A \cosh \phi + B  \sinh \phi
 \\\\ &amp;t = A \sinh \phi + B  \cosh \phi
 \end{aligned}\]</span>
-<p>再带入初始条件得到<span class="math inline">\(A=x_0\)</span>，<span class="math inline">\(B=t_0\)</span></p>
-<p>令<span class="math inline">\(tanh=v\)</span>，则<span class="math inline">\(sinh= (v^{-2}-1)^{-\frac{1}{2}}\)</span>，<span class="math inline">\(cosh=(1-v^2)^{-\frac{1}{2}}\)</span></p>
+<p>再带入初始条件得到<span class="math inline">\(A=x_0\)</span>，<span
+class="math inline">\(B=t_0\)</span></p>
+<p>令<span class="math inline">\(tanh=v\)</span>，则<span
+class="math inline">\(sinh= (v^{-2}-1)^{-\frac{1}{2}}\)</span>，<span
+class="math inline">\(cosh=(1-v^2)^{-\frac{1}{2}}\)</span></p>
 <p>化简即为：</p>
 <span class="math display">\[\begin{aligned}
 x = \frac{1}{\sqrt{1-v^2}} (x_0+vt_0)

@@ -274,71 +274,139 @@
               <div class="markdown-body">
                 
                 <h4 id="绝热定理">绝热定理</h4>
-<p>当量子态开始绝热演化时，展开系数写为<span class="math inline">\(\psi(0)=\sum_{n}c_n\varphi_n(0)\)</span>, 则 <span class="math inline">\(t\)</span> 时刻的量子态写为：</p>
+<p>当量子态开始绝热演化时，展开系数写为<span
+class="math inline">\(\psi(0)=\sum_{n}c_n\varphi_n(0)\)</span>, 则 <span
+class="math inline">\(t\)</span> 时刻的量子态写为：</p>
 <p><span class="math display">\[
 \psi(t) = \sum_nc_n \varphi_n(t)e^{i\theta_n}e^{i\gamma_n}
 \]</span></p>
-<p><span class="math inline">\(\varphi_n(t)\)</span>是哈密顿量在 <span class="math inline">\(t\)</span> 时刻的第n个本征态，</p>
-<p><span class="math inline">\(\theta_n = -\frac{1}{\hbar}\int_0^{t}E_n(t)dt,~ \gamma_n = i\int_0^t\left&lt; \varphi_n|\dot{ \varphi_n}\right&gt; dt\)</span></p>
+<p><span class="math inline">\(\varphi_n(t)\)</span>是哈密顿量在 <span
+class="math inline">\(t\)</span> 时刻的第n个本征态，</p>
+<p><span class="math inline">\(\theta_n =
+-\frac{1}{\hbar}\int_0^{t}E_n(t)dt,~ \gamma_n = i\int_0^t\left&lt;
+\varphi_n|\dot{ \varphi_n}\right&gt; dt\)</span></p>
 <p>证明：</p>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\(\left| \psi \right&gt;(t) = \sum_n C_n(t)e^{i\theta_{n}(t)}\left| n \right&gt;(t)\)</span></p>
-<p><span class="math inline">\(\theta_{n}(t) = - \int \frac{E_n(t)}{\hbar}dt\)</span></p>
-<p><span class="math inline">\(\left&lt;m\right| \left( t\right) i\hbar \dot{\left| \psi \right&gt;}\left( t\right)\)</span></p>
-<p><span class="math inline">\(=i\hbar \left&lt; m\right|(\sum _{n}\dot{C_n(t)}e^{i\theta _{n}\left( t\right) }\left|n \right&gt;\left( t\right)\)</span></p>
-<p><span class="math inline">\(+C_n(t)(i\dot\theta_n(t)e^{i\theta(t)}\left| n \right&gt;(t)+C_n(t)e^{i\theta_n(t)}\dot{\left|n\right&gt;}(t))\)</span></p>
-<p><span class="math inline">\(\dot \theta (t) = -\frac{E_n(t)}{\hbar}\)</span></p>
-<p><span class="math inline">\(= i\hbar \dot c_m(t)e^{i\theta_m(t)}+c_m(t)E_m(t)e^{i \theta _m(t)}+\sum_n c_n(t)e^{i\theta_n(t)}\left&lt; m\right|\dot{ \left| n\right&gt;}(t)\)</span></p>
-<p><span class="math inline">\(\left&lt; m\right| (t)\hat H(t) \left| \psi \right&gt;(t)\)</span></p>
-<p><span class="math inline">\(=\left&lt; m\right| (t)\hat H(t)\sum_i C_i(t)e^{i\theta_i(t)}\left|i\right&gt;(t)\)</span></p>
-<p><span class="math inline">\(= E_m(t)C_m(t)e^{i\theta_m(t)}\)</span></p>
+<p><span class="math inline">\(\left| \psi \right&gt;(t) = \sum_n
+C_n(t)e^{i\theta_{n}(t)}\left| n \right&gt;(t)\)</span></p>
+<p><span class="math inline">\(\theta_{n}(t) = - \int
+\frac{E_n(t)}{\hbar}dt\)</span></p>
+<p><span class="math inline">\(\left&lt;m\right| \left( t\right) i\hbar
+\dot{\left| \psi \right&gt;}\left( t\right)\)</span></p>
+<p><span class="math inline">\(=i\hbar \left&lt; m\right|(\sum
+_{n}\dot{C_n(t)}e^{i\theta _{n}\left( t\right) }\left|n \right&gt;\left(
+t\right)\)</span></p>
+<p><span
+class="math inline">\(+C_n(t)(i\dot\theta_n(t)e^{i\theta(t)}\left| n
+\right&gt;(t)+C_n(t)e^{i\theta_n(t)}\dot{\left|n\right&gt;}(t))\)</span></p>
+<p><span class="math inline">\(\dot \theta (t) =
+-\frac{E_n(t)}{\hbar}\)</span></p>
+<p><span class="math inline">\(= i\hbar \dot
+c_m(t)e^{i\theta_m(t)}+c_m(t)E_m(t)e^{i \theta _m(t)}+\sum_n
+c_n(t)e^{i\theta_n(t)}\left&lt; m\right|\dot{ \left|
+n\right&gt;}(t)\)</span></p>
+<p><span class="math inline">\(\left&lt; m\right| (t)\hat H(t) \left|
+\psi \right&gt;(t)\)</span></p>
+<p><span class="math inline">\(=\left&lt; m\right| (t)\hat H(t)\sum_i
+C_i(t)e^{i\theta_i(t)}\left|i\right&gt;(t)\)</span></p>
+<p><span class="math inline">\(=
+E_m(t)C_m(t)e^{i\theta_m(t)}\)</span></p>
 <p>$E_m(t)C_m(t)e^{i_m(t)} $</p>
-<p><span class="math inline">\(= i\hbar \dot c_m(t)e^{i\theta_m(t)}+c_m(t)E_m(t)e^{i \theta _m(t)}+\sum_n c_n(t)e^{i\theta_n(t)}\left&lt; m\right|\dot{ \left| n\right&gt;}(t)\)</span></p>
-<p><span class="math inline">\(\dot C_m(t) = \frac{i}{\hbar} \sum_n C_n(t) e^{i(\theta_n(t)-\theta_m(t))}\left&lt; m|\dot n \right&gt;\)</span></p>
-<p><span class="math inline">\(According \quad to \quad \hat H \left|n \right&gt; = E_n \hat H \left|n \right&gt;\)</span></p>
-<p>$&lt; m |  | n&gt; =( E_n -E_m ) &lt; m|n&gt; $</p>
-<p><span class="math inline">\(if \quad m \ne n \dot{C_m}(t) = \frac{i}{\hbar} C_m(t)\left&lt;m|\dot m\right&gt; + \frac{i}{\hbar}\sum&#39;_n \frac{\left&lt; m\right| \dot {\hat H}\left|m\right&gt;}{E_n-E_m}\)</span></p>
+<p><span class="math inline">\(= i\hbar \dot
+c_m(t)e^{i\theta_m(t)}+c_m(t)E_m(t)e^{i \theta _m(t)}+\sum_n
+c_n(t)e^{i\theta_n(t)}\left&lt; m\right|\dot{ \left|
+n\right&gt;}(t)\)</span></p>
+<p><span class="math inline">\(\dot C_m(t) = \frac{i}{\hbar} \sum_n
+C_n(t) e^{i(\theta_n(t)-\theta_m(t))}\left&lt; m|\dot n
+\right&gt;\)</span></p>
+<p><span class="math inline">\(According \quad to \quad \hat H \left|n
+\right&gt; = E_n \hat H \left|n \right&gt;\)</span></p>
+<p>$&lt; m | | n&gt; =( E_n -E_m ) &lt; m|n&gt; $</p>
+<p><span class="math inline">\(if \quad m \ne n \dot{C_m}(t) =
+\frac{i}{\hbar} C_m(t)\left&lt;m|\dot m\right&gt; +
+\frac{i}{\hbar}\sum&#39;_n \frac{\left&lt; m\right| \dot {\hat
+H}\left|m\right&gt;}{E_n-E_m}\)</span></p>
 <p></span></p>
-<p>当第二项远远小于第一项时，称为绝热条件，则得到绝热定理，<span class="math inline">\(\left&lt;m|\dot m\right&gt;\)</span>为实数，则证明不会对振幅产生影响。</p>
+<p>当第二项远远小于第一项时，称为绝热条件，则得到绝热定理，<span
+class="math inline">\(\left&lt;m|\dot
+m\right&gt;\)</span>为实数，则证明不会对振幅产生影响。</p>
 <h4 id="berry-相">berry 相</h4>
-<p><span class="math inline">\(\gamma_n = i\int_0^t\left&lt; \varphi_n|\dot{ \varphi_n}\right&gt;dt\)</span> 被称为几何相。假设系统 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(R\)</span> 的函数，<span class="math inline">\(R\)</span>是一些线性无关的参量，于是可以把系统演化看作是R空间中以参数 <span class="math inline">\(t\)</span> 来演化的的一条轨迹，当系统演化一个周期回到初态后，则：</p>
+<p><span class="math inline">\(\gamma_n = i\int_0^t\left&lt;
+\varphi_n|\dot{ \varphi_n}\right&gt;dt\)</span> 被称为几何相。假设系统
+<span class="math inline">\(H\)</span> 是 <span
+class="math inline">\(R\)</span> 的函数，<span
+class="math inline">\(R\)</span>是一些线性无关的参量，于是可以把系统演化看作是R空间中以参数
+<span class="math inline">\(t\)</span>
+来演化的的一条轨迹，当系统演化一个周期回到初态后，则：</p>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\(\gamma_n = i\int_0^t\left&lt; \varphi_n|\dot{ \varphi_n}\right&gt;dt\)</span></p>
+<p><span class="math inline">\(\gamma_n = i\int_0^t\left&lt;
+\varphi_n|\dot{ \varphi_n}\right&gt;dt\)</span></p>
 <p>$ = i_0^t&lt; _n|_R |_n&gt;(R_i/t)~dt$</p>
-<p><span class="math inline">\(= i\int_{R_0}^{R_T=R_0}\left&lt; \varphi_n|\nabla_R| \varphi_n\right&gt;\cdot d\vec{R}\)</span></p>
+<p><span class="math inline">\(= i\int_{R_0}^{R_T=R_0}\left&lt;
+\varphi_n|\nabla_R| \varphi_n\right&gt;\cdot d\vec{R}\)</span></p>
 <p>$ =i _R&lt; _n|_R |_n&gt; dS$</p>
 <p></span></p>
-<p>称这个<span class="math inline">\(R_n\)</span>空间上的积分结果为berry相</p>
+<p>称这个<span
+class="math inline">\(R_n\)</span>空间上的积分结果为berry相</p>
 <p>（具体计算方法的分析以及流形参数空间R的讨论见微分几何与广义相对论附录）</p>
-<p>某点的<span class="math inline">\(B_n(R) = \nabla_R\times \left&lt; \varphi_n|\nabla_R |\varphi_n\right&gt;\)</span>的计算公式：</p>
+<p>某点的<span class="math inline">\(B_n(R) = \nabla_R\times \left&lt;
+\varphi_n|\nabla_R |\varphi_n\right&gt;\)</span>的计算公式：</p>
 <p><span class="math display">\[
-B_n(R) = i \sum^{}_{m\ne n} \frac{\left&lt;n\right|(R)[\nabla_R H]\left|m\right&gt;(R)\times\left&lt;m\right|(R)[\nabla_R H]\left|n\right&gt;(R)}{(E_n-E_m)^2}
+B_n(R) = i \sum^{}_{m\ne n} \frac{\left&lt;n\right|(R)[\nabla_R
+H]\left|m\right&gt;(R)\times\left&lt;m\right|(R)[\nabla_R
+H]\left|n\right&gt;(R)}{(E_n-E_m)^2}
 \]</span></p>
 <h4 id="自旋态二能级绝热演化推导">自旋态二能级绝热演化推导：</h4>
-<p>假设原子在空间中受到磁场的作用 <span class="math inline">\(\hat H(t) = -\hat{\mu} \cdot B = -\frac{2\mu}{\hbar} \hat{S} \cdot B(t)\)</span>，<span class="math inline">\(B\)</span> 在随时缓慢旋转，所以可以将B本身视作参数空间，从而推导绝热演化的情况，初态位于<span class="math inline">\(S_z = \frac{\hbar}{2}\)</span> 态上</p>
+<p>假设原子在空间中受到磁场的作用 <span class="math inline">\(\hat H(t)
+= -\hat{\mu} \cdot B = -\frac{2\mu}{\hbar} \hat{S} \cdot
+B(t)\)</span>，<span class="math inline">\(B\)</span>
+在随时缓慢旋转，所以可以将B本身视作参数空间，从而推导绝热演化的情况，初态位于<span
+class="math inline">\(S_z = \frac{\hbar}{2}\)</span> 态上</p>
 <p>任意<span class="math inline">\(B\)</span>对应的本征值：</p>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\(\hat H = -\frac{2\mu}{\hbar} \hat{S} \cdot B(t)\)</span></p>
+<p><span class="math inline">\(\hat H = -\frac{2\mu}{\hbar} \hat{S}
+\cdot B(t)\)</span></p>
 <p><span class="math display">\[
- = -\mu B\left( \begin{matrix}
-    \cos \varphi&amp;       \cos \theta \sin \varphi +\sin \theta \sin \varphi i\\\\
-    \cos \theta \sin \varphi -\sin \theta \sin \varphi i&amp;       -\cos \varphi\\\\
+= -\mu B\left( \begin{matrix}
+    \cos \varphi&amp;       \cos \theta \sin \varphi +\sin \theta \sin
+\varphi i\\\\
+    \cos \theta \sin \varphi -\sin \theta \sin \varphi
+i&amp;       -\cos \varphi\\\\
 \end{matrix} \right)\\\\
 \]</span></p>
 <p><span class="math display">\[
 E_{\pm}:root ~of: -\mu B\left| \begin{matrix}
-    \cos \varphi- \mu   &amp;   \cos \theta \sin \varphi +\sin \theta \sin \varphi i\\\\
-    \cos \theta \sin \varphi -\sin \theta \sin \varphi i&amp;       -\cos \varphi-\mu\\\\
+    \cos \varphi- \mu   &amp;   \cos \theta \sin \varphi +\sin \theta
+\sin \varphi i\\\\
+    \cos \theta \sin \varphi -\sin \theta \sin \varphi
+i&amp;       -\cos \varphi-\mu\\\\
 \end{matrix} \right|=0\\\\
 \]</span></p>
 <p><span class="math inline">\(E_{\pm}= \pm \mu B\)</span></p>
 <p></span></p>
-<p>还需求 <span class="math inline">\(\left&lt; -\right| \nabla_B H \left| +\right&gt;\)</span>,<span class="math inline">\(\left&lt; +\right| \nabla_B H \left| -\right&gt;\)</span>来求解贝瑞相，</p>
-<p><span class="math inline">\(\nabla_B H = - \frac{2\mu}{\hbar}(\hat S_x \nabla_B B_x+\hat S_y \nabla_B B_y +\hat S_z \nabla_B B_z) = - \frac{2\mu}{\hbar} \hat S\)</span></p>
-<p>选取 <span class="math inline">\(\left| \pm\right&gt;\)</span> 为基，则<span class="math inline">\(S\)</span>表示为<span class="math inline">\(\frac{1}{2}(S_++S_-)\hat x + \frac{1}{2i}(S_+ - S_-)\hat y + S_Z \hat z\)</span>，则：<span class="math inline">\(\left&lt; \mp\right| \nabla_B H \left| \pm \right&gt;= \frac{\hbar}{2}(\hat x\mp i\hat y)\)</span>，此时的坐标系选择是以<span class="math inline">\(B\)</span>方向为<span class="math inline">\(Z\)</span>的坐标系。</p>
-<p>带入求贝瑞项的公式得：<span class="math inline">\(D_\pm(B) = \mp \frac{1}{2\mu B^2}\vec B\)</span></p>
-<p>则假设磁场由 <span class="math inline">\(B=B_0\hat z\)</span> 绝热变化一圈，则对应的 <span class="math inline">\(\left| +\right&gt;\)</span> 态积累的相因子：</p>
-<p><span class="math inline">\(\phi_{Barry} = \oint_l D_+(\vec B) \cdot d\vec B\)</span>, <span class="math inline">\(l\)</span> 为<span class="math inline">\(B\)</span>在B空间内的演化路径</p>
+<p>还需求 <span class="math inline">\(\left&lt; -\right| \nabla_B H
+\left| +\right&gt;\)</span>,<span class="math inline">\(\left&lt;
++\right| \nabla_B H \left| -\right&gt;\)</span>来求解贝瑞相，</p>
+<p><span class="math inline">\(\nabla_B H = - \frac{2\mu}{\hbar}(\hat
+S_x \nabla_B B_x+\hat S_y \nabla_B B_y +\hat S_z \nabla_B B_z) = -
+\frac{2\mu}{\hbar} \hat S\)</span></p>
+<p>选取 <span class="math inline">\(\left| \pm\right&gt;\)</span>
+为基，则<span class="math inline">\(S\)</span>表示为<span
+class="math inline">\(\frac{1}{2}(S_++S_-)\hat x + \frac{1}{2i}(S_+ -
+S_-)\hat y + S_Z \hat z\)</span>，则：<span
+class="math inline">\(\left&lt; \mp\right| \nabla_B H \left| \pm
+\right&gt;= \frac{\hbar}{2}(\hat x\mp i\hat
+y)\)</span>，此时的坐标系选择是以<span
+class="math inline">\(B\)</span>方向为<span
+class="math inline">\(Z\)</span>的坐标系。</p>
+<p>带入求贝瑞项的公式得：<span class="math inline">\(D_\pm(B) = \mp
+\frac{1}{2\mu B^2}\vec B\)</span></p>
+<p>则假设磁场由 <span class="math inline">\(B=B_0\hat z\)</span>
+绝热变化一圈，则对应的 <span class="math inline">\(\left|
++\right&gt;\)</span> 态积累的相因子：</p>
+<p><span class="math inline">\(\phi_{Barry} = \oint_l D_+(\vec B) \cdot
+d\vec B\)</span>, <span class="math inline">\(l\)</span> 为<span
+class="math inline">\(B\)</span>在B空间内的演化路径</p>
 
                 
               </div>

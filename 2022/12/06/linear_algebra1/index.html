@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Vector Space 1.1 vector space  A vector space  is a set (denoted by \(V\)) along with an addition and a scalar multiplication satisfying the following properties. \[\begin{aligned} \forall &amp;u,">
+    <meta name="description" content="Vector Space 1.1 vector space  A vector space  is a set (denoted by \(V\)) along with an addition and a scalar multiplication satisfying the following properties. \[\begin{aligned} \forall &amp;u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性空间">
 <meta property="og:url" content="http://dyf.zone/2022/12/06/linear_algebra1/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="Vector Space 1.1 vector space  A vector space  is a set (denoted by \(V\)) along with an addition and a scalar multiplication satisfying the following properties. \[\begin{aligned} \forall &amp;u,">
+<meta property="og:description" content="Vector Space 1.1 vector space  A vector space  is a set (denoted by \(V\)) along with an addition and a scalar multiplication satisfying the following properties. \[\begin{aligned} \forall &amp;u">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-06T14:21:51.000Z">
 <meta property="article:modified_time" content="2022-12-07T01:20:51.043Z">
@@ -275,7 +275,9 @@
                 
                 <h1 id="vector-space">Vector Space</h1>
 <h2 id="vector-space-1">1.1 vector space</h2>
-<p><span id="1.1"> A vector space </span> is a set (denoted by <span class="math inline">\(V\)</span>) along with an addition and a scalar multiplication satisfying the following properties.</p>
+<p><span id="1.1"> A vector space </span> is a set (denoted by <span
+class="math inline">\(V\)</span>) along with an addition and a scalar
+multiplication satisfying the following properties.</p>
 <span class="math display">\[\begin{aligned}
 \forall &amp;u,v,w \in V, a,b \in F
 \\\\&amp;(1)u+v = v+u
@@ -286,14 +288,19 @@
 \\\\ &amp;(6)a(u+v)=au+av,(a+b)u=au+bu
 \end{aligned}\]</span>
 <h2 id="fs">1.2 <span class="math inline">\(F^S\)</span></h2>
-<p><span class="math inline">\(F^S\)</span> denotes a function from S to F, such as <span class="math inline">\(F^2\)</span>,$F^ $, $ R^{[1,2]}$, and <span class="math inline">\(F^n\)</span> also can be expressed by <span class="math inline">\(\\{x_1,x_2,......, x_n:x_i \in F \enspace for \enspace i =1,2,3,...,n \\}\)</span></p>
+<p><span class="math inline">\(F^S\)</span> denotes a function from S to
+F, such as <span class="math inline">\(F^2\)</span>,$F^ $, $ R^{[1,2]}$,
+and <span class="math inline">\(F^n\)</span> also can be expressed by
+<span class="math inline">\(\\{x_1,x_2,......, x_n:x_i \in F \enspace
+for \enspace i =1,2,3,...,n \\}\)</span></p>
 <p>the scalar multiplication and addition are defined by:</p>
 <span class="math display">\[\begin{aligned}
 &amp;f,g \in F^S, x \in S
 \\\\&amp;(f+g)(x)=f(x)+g(x)
 \\\\&amp;(\lambda g)(x)= \lambda g(x)
 \end{aligned}\]</span>
-<h2 id="unique-additive-identity-and-unique-additive-inverse">1.3 unique additive identity and unique additive inverse</h2>
+<h2 id="unique-additive-identity-and-unique-additive-inverse">1.3 unique
+additive identity and unique additive inverse</h2>
 <p>prove:</p>
 <p>(zero here means vector 0)</p>
 <span class="math display">\[\begin{aligned}
@@ -306,7 +313,7 @@
 \end{aligned}\]</span>
 <h2 id="vector-0-and-number-0">1.4 vector 0 and number 0</h2>
 <span class="math display">\[\begin{aligned}
- 0v&amp;=(0+0)v=0v+0v
+0v&amp;=(0+0)v=0v+0v
 \\\\  \therefore 0v &amp;= 0
 \\\\  a0_v&amp;=a(v-v)=av -av=0_v
 \end{aligned}\]</span>
@@ -319,7 +326,8 @@
 \end{aligned}\]</span>
 <p></span></p>
 <h2 id="subspace">1.6 subspace</h2>
-<p>A subset of V is a subspace if it inherites addition and multiplication defined on V and it is a vector space.</p>
+<p>A subset of V is a subspace if it inherites addition and
+multiplication defined on V and it is a vector space.</p>
 <p><span id="1.7"></p>
 <h2 id="conditions-for-a-subspace">1.7 conditions for a subspace</h2>
 <p>U is a subspace of V if and only if:</p>
@@ -328,37 +336,57 @@
 \\\\ &amp;(2)\forall u,w \in U\Rightarrow u+w \in U
 \\\\ &amp;(3)\forall a\in F,v\in U, av \in U
 \end{aligned}\]</span>
-<p>I'll deduce <span class="math inline">\(U\)</span> is a linear space <a href="#1.1">1.1</a> from the assumptions above.</p>
-<p><a href="#1.1">1.1</a>(1),(2) is easy to get because U is the subset of V and condition(2) ensures <span class="math inline">\(v+w \in U\)</span>.</p>
+<p>I'll deduce <span class="math inline">\(U\)</span> is a linear space
+<a href="#1.1">1.1</a> from the assumptions above.</p>
+<p><a href="#1.1">1.1</a>(1),(2) is easy to get because U is the subset
+of V and condition(2) ensures <span class="math inline">\(v+w \in
+U\)</span>.</p>
 <p><a href="#1.1">1.1</a>(3) is equal to condition(2).</p>
-<p><a href="#1.1">1.1</a>(4): according to condition(3)，we could know <span class="math inline">\(-v = -1v \in U\)</span> (see <a href="#1.5">1.5</a>) , which means every element has its own additive inverse in <span class="math inline">\(U\)</span></p>
-<p><a href="#1.1">1.1</a>(5) <span class="math inline">\(1 \in F\)</span></p>
-<p><a href="#1.1">1.1</a>(6) can be seen as <span class="math inline">\(U\)</span> is a subset of <span class="math inline">\(V\)</span> and condition(2)(3) ensures <span class="math inline">\(av+bw \in U\)</span>.</p>
+<p><a href="#1.1">1.1</a>(4): according to condition(3)，we could know
+<span class="math inline">\(-v = -1v \in U\)</span> (see <a
+href="#1.5">1.5</a>) , which means every element has its own additive
+inverse in <span class="math inline">\(U\)</span></p>
+<p><a href="#1.1">1.1</a>(5) <span class="math inline">\(1 \in
+F\)</span></p>
+<p><a href="#1.1">1.1</a>(6) can be seen as <span
+class="math inline">\(U\)</span> is a subset of <span
+class="math inline">\(V\)</span> and condition(2)(3) ensures <span
+class="math inline">\(av+bw \in U\)</span>.</p>
 <p>conversely, easy to prove.</p>
 <p></span></p>
 <h2 id="sum-of-subspaces">1.8 sum of subspaces</h2>
-<p><span class="math inline">\(U_1,U_2,......,U_n\)</span> are subsets of V, define sum of these subspaces by:</p>
+<p><span class="math inline">\(U_1,U_2,......,U_n\)</span> are subsets
+of V, define sum of these subspaces by:</p>
 <span class="math display">\[\begin{aligned}
 U_1+U_2......+U_n = \\{u_1+u_2+u_3...+u_n:u_i \in U_i,i=1,2,3...,n\\}
 \begin{aligned}
 
-If $U_1,U_2,......,U_n$ are subspaces of V and each element in $U_1+U_2......+U_n$ can only be expressed uniquely in $u_1+u_2+u_3+......+u_n$, we call $U_1+U_2......+U_n$  is a direct sum,we use $U_1 \oplus U_2 \oplus ..... U_n$ to denote it.
+If $U_1,U_2,......,U_n$ are subspaces of V and each element in
+$U_1+U_2......+U_n$ can only be expressed uniquely in
+$u_1+u_2+u_3+......+u_n$, we call $U_1+U_2......+U_n$  is a direct
+sum,we use $U_1 \oplus U_2 \oplus ..... U_n$ to denote it.
 
 ## 1.9 condition of direct sum
 
-$U_1,U_2,......,U_n$ is subspace of V,  $U_1+U_2+U_3...+U_n$ is direct sum if and only if $0$ can only be expressed uniquely in $0_1+0_2+0_3......+0_n$
+$U_1,U_2,......,U_n$ is subspace of V,  $U_1+U_2+U_3...+U_n$ is direct
+sum if and only if $0$ can only be expressed uniquely in
+$0_1+0_2+0_3......+0_n$
 
 prove:
 
 \begin{aligned}
-&amp;suppose \enspace 0 = 0_1+0_2+0_3......+0_n 
-\\\\ &amp;if\enspace \exists u = u_1+u_2...+u_n=u_1&#39;+u_2&#39;...u_n&#39;
+&amp;suppose \enspace 0 = 0_1+0_2+0_3......+0_n
+\\\\ &amp;if\enspace \exists u =
+u_1+u_2...+u_n=u_1&#39;+u_2&#39;...u_n&#39;
 \\\\ &amp;0 = u-u=(u_1&#39;-u_1)+(u_2&#39;-u_2)...+(u_n&#39;-u_n)
 \end{aligned}\]</span>
-<p>Because 0 can only be expressed in one way, <span class="math inline">\(u_i = u_i&#39;\)</span>, which means <span class="math inline">\(U_1+U_2...+U_n\)</span> is a direct sum</p>
+<p>Because 0 can only be expressed in one way, <span
+class="math inline">\(u_i = u_i&#39;\)</span>, which means <span
+class="math inline">\(U_1+U_2...+U_n\)</span> is a direct sum</p>
 <p><span id="1.10"></p>
 <h2 id="direct-sum-of-two-subspace">1.10 direct sum of two subspace</h2>
-<p><span class="math inline">\(U_1+U_2\)</span> is a direct sum if and only if <span class="math inline">\(U_1 \cap U_2 =\\{0\\}\)</span></p>
+<p><span class="math inline">\(U_1+U_2\)</span> is a direct sum if and
+only if <span class="math inline">\(U_1 \cap U_2 =\\{0\\}\)</span></p>
 <p>prove:</p>
 <span class="math display">\[\begin{aligned}
 &amp;if\enspace U_1 \cap U_2 = \{0\}
@@ -368,37 +396,45 @@ prove:
 \\\\&amp;\therefore u_1 \in U_1 \cap U_2
 \\\\&amp;\therefore u_1 = 0
 \end{aligned}\]</span>
-<p><span class="math inline">\(U_1+U_2\)</span> is a direct sum, reversely,</p>
+<p><span class="math inline">\(U_1+U_2\)</span> is a direct sum,
+reversely,</p>
 <span class="math display">\[\begin{aligned}
 \\\\&amp;U_1+U_2\enspace is\enspace direct\enspace sum
 \\\\&amp;\forall u \in U_1 \cap U_2
 \\\\ &amp;if\enspace u\ne0  \enspace u = 0_1 +u = u + 0_2
 \end{aligned}\]</span>
-<p>Contradiction with assumptions, therefore <span class="math inline">\(u = 0\)</span></p>
+<p>Contradiction with assumptions, therefore <span
+class="math inline">\(u = 0\)</span></p>
 <p></span></p>
 <h1 id="exercise">exercise</h1>
 <h2 id="b">1.B</h2>
 <h3 id="b.1">1.B.1</h3>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\(-(-v)=-(-1v)=-1(-1v)=(-1 \times -1)v=v\)</span></p>
+<p><span class="math inline">\(-(-v)=-(-1v)=-1(-1v)=(-1 \times
+-1)v=v\)</span></p>
 <p></span></p>
 <h3 id="b.2">1.B.2</h3>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\(if\enspace a \ne 0,\frac{1}{a}0_v=0_v =(\frac{1}{a}\times av)=v\)</span></p>
+<p><span class="math inline">\(if\enspace a \ne 0,\frac{1}{a}0_v=0_v
+=(\frac{1}{a}\times av)=v\)</span></p>
 <p></span></p>
 <h3 id="b.3">1.B.3</h3>
 <span class="math display">\[\begin{aligned}
-&amp;suppose\enspace \exists\vec{x}&#39;\enspace st\enspace 3\vec{x}&#39;+\vec{v}=\vec{w}
+&amp;suppose\enspace \exists\vec{x}&#39;\enspace st\enspace
+3\vec{x}&#39;+\vec{v}=\vec{w}
 \\\\&amp;3\vec{x}&#39;+\vec{v} = \vec{w}=3\vec{x}+\vec{v}
 \\\\&amp;\Rightarrow \vec{x}&#39;-\vec{x}= 0
 \end{aligned}\]</span>
 <h3 id="b.5">1.B.5</h3>
 <span class="math display">\[\begin{aligned}
-\exists0,st\enspace 0_v+u=u \Rightarrow 0v=0_v\enspace for\enspace \forall v \in V
+\exists0,st\enspace 0_v+u=u \Rightarrow 0v=0_v\enspace for\enspace
+\forall v \in V
 \\\\0_v=u-u=(1-1)u=0u
 \end{aligned}\]</span>
 <h3 id="b.6">1.B.6</h3>
-<p><span class="math inline">\(R \cup \{\infty\}\cup \{-\infty\}\)</span> is a vector space can be verified by checking the scalar multiplication and addition between infinity and constant.</p>
+<p><span class="math inline">\(R \cup \{\infty\}\cup
+\{-\infty\}\)</span> is a vector space can be verified by checking the
+scalar multiplication and addition between infinity and constant.</p>
 <h2 id="c">1.C</h2>
 <h3 id="c.3">1.C.3</h3>
 <span class="math display">\[\begin{aligned}
@@ -414,41 +450,78 @@ prove:
 \end{aligned}\]</span>
 <h3 id="c.6">1.C.6</h3>
 <span class="math display">\[\begin{aligned}
-(a)&amp; a^3=b^3 \Rightarrow a = b\enspace when\enspace a,b \in \mathcal{R}
+(a)&amp; a^3=b^3 \Rightarrow a = b\enspace when\enspace a,b \in
+\mathcal{R}
 \\\\(b)&amp; (1,e^{\pi i2/3},0)+(e^{\pi i4/3},1,0) \notin U
 \end{aligned}\]</span>
 <h4 id="c.7">1.C.7</h4>
-<p><span class="math inline">\(\\{(1,0),(0,0),(0,1)\\}\)</span> is closed under the addition but it is not closed under the scalar multiplication</p>
+<p><span class="math inline">\(\\{(1,0),(0,0),(0,1)\\}\)</span> is
+closed under the addition but it is not closed under the scalar
+multiplication</p>
 <h4 id="c.8">1.C.8</h4>
-<p><span class="math inline">\((\lambda,2\lambda)\cup(\lambda,3\lambda) \lambda \in R\)</span> closed under the scalar multiplication but it is not closed under the addition</p>
+<p><span class="math inline">\((\lambda,2\lambda)\cup(\lambda,3\lambda)
+\lambda \in R\)</span> closed under the scalar multiplication but it is
+not closed under the addition</p>
 <p><span id="1.C.10"></p>
 <h4 id="c.10">1.C.10</h4>
-<p>\begin{aligned} u,w U_1 U_2 \u+w ,u U_1 \ u+w,u U_2 \u+w, uU_1 U_2 obviously, 0isinthesubsetU_1 U_2 \begin{aligned}</p>
-<p>therefore <span class="math inline">\(U_1 \cap U_2\)</span> is subspace satisfies the three conditions in <a href="#1.7">1.7</a>, <span class="math inline">\(U_1 \cap U_2\)</span> is a subspace.</p>
+<p>\begin{aligned} u,w U_1 U_2 \u+w ,u U_1 \ u+w,u U_2 \u+w, uU_1 U_2
+obviously, 0isinthesubsetU_1 U_2 \begin{aligned}</p>
+<p>therefore <span class="math inline">\(U_1 \cap U_2\)</span> is
+subspace satisfies the three conditions in <a href="#1.7">1.7</a>, <span
+class="math inline">\(U_1 \cap U_2\)</span> is a subspace.</p>
 <p></span></p>
 <h4 id="c.11">1.C.11</h4>
 <p>using the same method in <a href="#1.C.10">1.C.10</a></p>
 <p><span id="1.C.12"></p>
 <h4 id="c.12">1.C.12</h4>
-<p>from <a href="#1.C.10">1.C.10</a>,we can infer that <span class="math inline">\(U_1 \in U_2 \Rightarrow U_1 \cup U_2\)</span> is a subspace,</p>
+<p>from <a href="#1.C.10">1.C.10</a>,we can infer that <span
+class="math inline">\(U_1 \in U_2 \Rightarrow U_1 \cup U_2\)</span> is a
+subspace,</p>
 <p>reversely,</p>
-<p>\begin{aligned} U_1 U_2isasubspace \supposev U_1 / U_2 , u U_2 / U_1 (/heremeansquotientofsets) \U_1 U_2isasubspace \v+u U_1 U_2 \supposev+u U_1 \U_1isasubspace \u U_1 \contradicttotheassumption \v+u U_2 \v U_2 \contradicttotheassumption \Thenullhypothesisiswrong \U_1/U_2orU_2/U1isanemptyset \U_2 U_1 or U_1 U_2 \begin{aligned}</p>
+<p>\begin{aligned} U_1 U_2isasubspace \supposev U_1 / U_2 , u U_2 / U_1
+(/heremeansquotientofsets) \U_1 U_2isasubspace \v+u U_1 U_2 \supposev+u
+U_1 \U_1isasubspace \u U_1 \contradicttotheassumption \v+u U_2 \v U_2
+\contradicttotheassumption \Thenullhypothesisiswrong
+\U_1/U_2orU_2/U1isanemptyset \U_2 U_1 or U_1 U_2 \begin{aligned}</p>
 <p></span></p>
 <h4 id="c.13">1.C.13</h4>
-<p>if there exists one subspace contains another, from <a href="#1.C.12">1.C.12</a> we can prove it easily.</p>
-<p>and in another case, each of the three subspaces contains vector which is not contained by other subspaces:</p>
-<p>\begin{aligned} _1 U_1 U_2 U_3 \_2 U_2 U_1 U_3 \_3 U_3 U_1 U_2 \begin{aligned}</p>
-<p><span class="math inline">\(u_1 + u_2 \in U_1 \cup U_2 \cup U_3\)</span>, using the samemethodin <a href="#1.C.12">1.C.12</a> ,<span class="math inline">\(u_1 +u_2 \in U_3 \notin U_2\enspace and\enspace \notin U_1\)</span> can be deduced. and also <span class="math inline">\(u_1 +2u_2 \in U_3 \notin U_2\enspace and\enspace \notin U_1\)</span>, because <span class="math inline">\(U_3\)</span> is a subspace of V, <span class="math inline">\(u_2 = (u_1+2u_2)-(u_1+u_2) \in U_3\)</span>, it is contradict to the assumption. so this case should be discarded.</p>
+<p>if there exists one subspace contains another, from <a
+href="#1.C.12">1.C.12</a> we can prove it easily.</p>
+<p>and in another case, each of the three subspaces contains vector
+which is not contained by other subspaces:</p>
+<p>\begin{aligned} _1 U_1 U_2 U_3 \_2 U_2 U_1 U_3 \_3 U_3 U_1 U_2
+\begin{aligned}</p>
+<p><span class="math inline">\(u_1 + u_2 \in U_1 \cup U_2 \cup
+U_3\)</span>, using the samemethodin <a href="#1.C.12">1.C.12</a> ,<span
+class="math inline">\(u_1 +u_2 \in U_3 \notin U_2\enspace and\enspace
+\notin U_1\)</span> can be deduced. and also <span
+class="math inline">\(u_1 +2u_2 \in U_3 \notin U_2\enspace and\enspace
+\notin U_1\)</span>, because <span class="math inline">\(U_3\)</span> is
+a subspace of V, <span class="math inline">\(u_2 = (u_1+2u_2)-(u_1+u_2)
+\in U_3\)</span>, it is contradict to the assumption. so this case
+should be discarded.</p>
 <h4 id="c.18">1.C.18</h4>
-<p>It is an example set which contains 0 but does not have addictive inverses.</p>
+<p>It is an example set which contains 0 but does not have addictive
+inverses.</p>
 <h4 id="c.19---22">1.C.19 - 22</h4>
-<p>19: <span class="math inline">\(W=\{(x,y,0):x,y \in \R\},\enspace U_1=\{(0,y,z):y,z \in \R\},\enspace U_2=\{(0,0,z):z \in \R\}\)</span> 20:<span class="math inline">\(\{(0,x,y,0):x,y \in F\}\)</span> 21:<span class="math inline">\(\{(0,0,x,0,0):x \in F\},\{(0,0,0,x,0):x \in F\},\{(0,0,0,0,x):x \in F\}\)</span></p>
+<p>19: <span class="math inline">\(W=\{(x,y,0):x,y \in \R\},\enspace
+U_1=\{(0,y,z):y,z \in \R\},\enspace U_2=\{(0,0,z):z \in \R\}\)</span>
+20:<span class="math inline">\(\{(0,x,y,0):x,y \in F\}\)</span> 21:<span
+class="math inline">\(\{(0,0,x,0,0):x \in F\},\{(0,0,0,x,0):x \in
+F\},\{(0,0,0,0,x):x \in F\}\)</span></p>
 <h4 id="c.23">1.C.23</h4>
-<p>\begin{aligned} prove: \V = U_1 W \vU_1, v Vandv W \alsoV =U_2W \v U_2 \U_1 U_2 \reverselyU_2 U_1 \U_2 = U_1 \begin{aligned}</p>
+<p>\begin{aligned} prove: \V = U_1 W \vU_1, v Vandv W \alsoV =U_2W \v
+U_2 \U_1 U_2 \reverselyU_2 U_1 \U_2 = U_1 \begin{aligned}</p>
 <h4 id="c.24">1.C.24</h4>
 <p>the function is odd and even:</p>
-<p><span class="math inline">\(f(-x) =f(x)=-f(x) \Rightarrow f(x) = 0\\\therefore U_e \cup U_o = {0(x)} \Rightarrow U_e \oplus U_o\)</span></p>
-<p>for all function <span class="math inline">\(g(x)\)</span> in <span class="math inline">\(\R^\R\)</span>, can be expressed by <span class="math inline">\(w(x)+v(x):w(x)=\frac{g(x)+g(-x)}{2},v(x)=\frac{g(x)-g(-x)}{2}\)</span>, where <span class="math inline">\(w(x)\)</span> is an even function, <span class="math inline">\(v(x)\)</span> is an odd function.</p>
+<p><span class="math inline">\(f(-x) =f(x)=-f(x) \Rightarrow f(x) =
+0\\\therefore U_e \cup U_o = {0(x)} \Rightarrow U_e \oplus
+U_o\)</span></p>
+<p>for all function <span class="math inline">\(g(x)\)</span> in <span
+class="math inline">\(\R^\R\)</span>, can be expressed by <span
+class="math inline">\(w(x)+v(x):w(x)=\frac{g(x)+g(-x)}{2},v(x)=\frac{g(x)-g(-x)}{2}\)</span>,
+where <span class="math inline">\(w(x)\)</span> is an even function,
+<span class="math inline">\(v(x)\)</span> is an odd function.</p>
 
                 
               </div>

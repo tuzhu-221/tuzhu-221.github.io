@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="经典测量理论 一个物理学量用 \(x\) 表示（可以是离散的，也可以是连续的，一维或者多维都行），在测量前并不知道其具体的取值，但是知道其取值范围，并且由于经验或者别的信息，知道他在每个取值上的概率分布 \(P(x)\)（先验概率分布 或者 state-of-knowledge）。 假设似然函数（likelihood function）已知，其定义为：\(P(y|x)\)，在 \(x\) 给定">
+    <meta name="description" content="经典测量理论 一个物理学量用 \(x\) 表示（可以是离散的，也可以是连续的，一维或者多维都行），在测量前并不知道其具体的取值，但是知道其取值范围，并且由于经验或者别的信息，知道他在每个取值上的概率分布 \(P(x)\)（先验概率分布 或者 state-of-knowledge）。 假设似然函数（likelihood function）已知，其定义为：\(P(y|x)\)，在 \(x\)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测量理论1">
 <meta property="og:url" content="http://dyf.zone/2023/03/27/measurement1/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="经典测量理论 一个物理学量用 \(x\) 表示（可以是离散的，也可以是连续的，一维或者多维都行），在测量前并不知道其具体的取值，但是知道其取值范围，并且由于经验或者别的信息，知道他在每个取值上的概率分布 \(P(x)\)（先验概率分布 或者 state-of-knowledge）。 假设似然函数（likelihood function）已知，其定义为：\(P(y|x)\)，在 \(x\) 给定">
+<meta property="og:description" content="经典测量理论 一个物理学量用 \(x\) 表示（可以是离散的，也可以是连续的，一维或者多维都行），在测量前并不知道其具体的取值，但是知道其取值范围，并且由于经验或者别的信息，知道他在每个取值上的概率分布 \(P(x)\)（先验概率分布 或者 state-of-knowledge）。 假设似然函数（likelihood function）已知，其定义为：\(P(y|x)\)，在 \(x\)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://dyf.zone/2023/03/27/measurement1/measure.gif">
 <meta property="article:published_time" content="2023-03-27T07:42:23.000Z">
@@ -276,53 +276,100 @@
               <div class="markdown-body">
                 
                 <h1 id="经典测量理论">经典测量理论</h1>
-<p>一个物理学量用 <span class="math inline">\(x\)</span> 表示（可以是离散的，也可以是连续的，一维或者多维都行），在测量前并不知道其具体的取值，但是知道其取值范围，并且由于经验或者别的信息，知道他在每个取值上的概率分布 <span class="math inline">\(P(x)\)</span>（先验概率分布 或者 state-of-knowledge）。</p>
-<p>假设似然函数（likelihood function）已知，其定义为：<span class="math inline">\(P(y|x)\)</span>，在 <span class="math inline">\(x\)</span> 给定的条件下，<span class="math inline">\(y\)</span> 被测得的概率。</p>
-<p>在单次测量中，我们得到一次测量结果<span class="math inline">\(y_0\)</span>，根据测量结果对我们的 state-of-knowledge 进行更新，这个过程叫做完成了一次测量。</p>
+<p>一个物理学量用 <span class="math inline">\(x\)</span>
+表示（可以是离散的，也可以是连续的，一维或者多维都行），在测量前并不知道其具体的取值，但是知道其取值范围，并且由于经验或者别的信息，知道他在每个取值上的概率分布
+<span class="math inline">\(P(x)\)</span>（先验概率分布 或者
+state-of-knowledge）。</p>
+<p>假设似然函数（likelihood function）已知，其定义为：<span
+class="math inline">\(P(y|x)\)</span>，在 <span
+class="math inline">\(x\)</span> 给定的条件下，<span
+class="math inline">\(y\)</span> 被测得的概率。</p>
+<p>在单次测量中，我们得到一次测量结果<span
+class="math inline">\(y_0\)</span>，根据测量结果对我们的
+state-of-knowledge 进行更新，这个过程叫做完成了一次测量。</p>
 <p>由贝叶斯定理：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-P(x|y_0) = \frac{P(xy_0)}{P(y_0)} = \frac{P(y_0|x)P(x)}{\sum_x P(y_0|x)P(x)}
+P(x|y_0) = \frac{P(xy_0)}{P(y_0)} = \frac{P(y_0|x)P(x)}{\sum_x
+P(y_0|x)P(x)}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>等式右边 <span class="math inline">\(P(x)\)</span> 代表测量前我们对参量 <span class="math inline">\(x\)</span> 的知识（state-of-knowledge），<span class="math inline">\(P(y_0|x)\)</span>则是似然函数，测量发生后，根据测量结果我们将知识更新为 <span class="math inline">\(P(x|y_0)\)</span>。</p>
-<p>任意 <span class="math inline">\(N\)</span> 次测量，彼此之间都是无关，<span class="math inline">\(x\)</span> 的概率分布可以写为：</p>
+<p>等式右边 <span class="math inline">\(P(x)\)</span>
+代表测量前我们对参量 <span class="math inline">\(x\)</span>
+的知识（state-of-knowledge），<span
+class="math inline">\(P(y_0|x)\)</span>则是似然函数，测量发生后，根据测量结果我们将知识更新为
+<span class="math inline">\(P(x|y_0)\)</span>。</p>
+<p>任意 <span class="math inline">\(N\)</span>
+次测量，彼此之间都是无关，<span class="math inline">\(x\)</span>
+的概率分布可以写为：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-P(x|y_1,y_2,..y_N) &amp;= \frac{P(y_N|x,y_1,y_2,...y_{N-1})P(x|y_1,y_2,...y_{N-1})}{\mathcal{N_{y_i}}}
-\\\\ &amp;=  \frac{P(y_N|x,...)P(y_{N-1}|x,...)...P(y_{1}|x)P(x)}{\Pi_i \mathcal{N}_i }
+P(x|y_1,y_2,..y_N) &amp;=
+\frac{P(y_N|x,y_1,y_2,...y_{N-1})P(x|y_1,y_2,...y_{N-1})}{\mathcal{N_{y_i}}}
+\\\\ &amp;=  \frac{P(y_N|x,...)P(y_{N-1}|x,...)...P(y_{1}|x)P(x)}{\Pi_i
+\mathcal{N}_i }
 \end{aligned}
 \end{equation}\]</span></p>
 <p>其中</p>
 <div>
-<span class="math inline">\(\mathcal{N}_{i} = \sum_x P(y_i|x,...)P(x|y_1,y_2,...y_{i-1})\)</span>
+<span class="math inline">\(\mathcal{N}_{i} = \sum_x
+P(y_i|x,...)P(x|y_1,y_2,...y_{i-1})\)</span>
 </div>
 <p>原式化简为：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-P(x|y_1,y_2,..y_N) &amp;= \Pi_i \frac{P(y_i|x,y_1,y_2,...y_{i-1})}{\sum_x P(y_i|x,y_1,y_2,...y_{i-1})P(x|y_1,y_2,...y_{i-1})}
-\\\\ &amp; = \Pi_i \frac{P(y_i|x)}{\sum_x P(y_i|x)P(x|y_1,y_2,...y_{i-1})} P(x)
+P(x|y_1,y_2,..y_N) &amp;= \Pi_i
+\frac{P(y_i|x,y_1,y_2,...y_{i-1})}{\sum_x
+P(y_i|x,y_1,y_2,...y_{i-1})P(x|y_1,y_2,...y_{i-1})}
+\\\\ &amp; = \Pi_i \frac{P(y_i|x)}{\sum_x
+P(y_i|x)P(x|y_1,y_2,...y_{i-1})} P(x)
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中，变量相互之间无关，意味着每次测量后似然关系没有改变既<span class="math inline">\(P(y_i|x,y_1,y_2,...y_{i-1}) = P(y_i|x)\)</span>，也就是测量并没有改变物理量的大小(当然我觉得弱关联近似成立也是有可能的)。</p>
+<p>其中，变量相互之间无关，意味着每次测量后似然关系没有改变既<span
+class="math inline">\(P(y_i|x,y_1,y_2,...y_{i-1}) =
+P(y_i|x)\)</span>，也就是测量并没有改变物理量的大小(当然我觉得弱关联近似成立也是有可能的)。</p>
 <p>实际上下方的归一化系数不太重要，重要的是分母上方的乘积，可以直接相乘之后再做归一化。</p>
-<p>在实际测量中，往往由于测量误差是由多个相互独立的随机变量造成的影响，所以 <span class="math inline">\(P(y|x)\)</span> 似然函数往往为gauss型函数。同样，在经过多次测量后，任意给定一个物理量的取值<span class="math inline">\(x_0\)</span>，想求该物理量取值为<span class="math inline">\(x_0\)</span>的概率可以写为：</p>
+<p>在实际测量中，往往由于测量误差是由多个相互独立的随机变量造成的影响，所以
+<span class="math inline">\(P(y|x)\)</span>
+似然函数往往为gauss型函数。同样，在经过多次测量后，任意给定一个物理量的取值<span
+class="math inline">\(x_0\)</span>，想求该物理量取值为<span
+class="math inline">\(x_0\)</span>的概率可以写为：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 P(x_0|y_1,y_2,..y_N) &amp;= P(y_1|x_0)P(y_2|x_0)P(y_3|x_0)... P(x_0)/N
-\\\\ &amp;= \mathscr{F}^{-1}(\tilde P(w_1) * \tilde P(w_2)... \tilde P(w_N)) P(x_0)/N
+\\\\ &amp;= \mathscr{F}^{-1}(\tilde P(w_1) * \tilde P(w_2)... \tilde
+P(w_N)) P(x_0)/N
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中 <span class="math inline">\(\tilde P(w)\)</span> 为概率 <span class="math inline">\(P(y|x_0)\)</span> 关于 <span class="math inline">\(y\)</span> 的傅里叶变换，内部代表对其卷积，<mark>假设 <span class="math inline">\(\tilde P(w)\)</span> 为方差有限且在无穷上可积的函数</mark>，则可以将其归一化后看作是 <span class="math inline">\(w\)</span> 上的一个概率分布，再根据</p>
+<p>其中 <span class="math inline">\(\tilde P(w)\)</span> 为概率 <span
+class="math inline">\(P(y|x_0)\)</span> 关于 <span
+class="math inline">\(y\)</span>
+的傅里叶变换，内部代表对其卷积，<mark>假设 <span
+class="math inline">\(\tilde P(w)\)</span>
+为方差有限且在无穷上可积的函数</mark>，则可以将其归一化后看作是 <span
+class="math inline">\(w\)</span> 上的一个概率分布，再根据</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 P(x+y) = P(x) *P(y)
 \end{aligned}
 \end{equation}\]</span></p>
-<p>可知，$P(x_0|y_1,y_2,..y_N) = ^{-1}(CP(w_1+w_2+w_3...w_n)) <span class="math inline">\(，再由中心极限定理可知，\)</span>CP(w_1+w_2+w_3...w_n)$ 满足gauss分布，所以其傅里叶变换也是gauss分布。</p>
-<p>在绝大多数情况下，对物理量的初始知识并不重要，不会影响到最终结果，但不是绝对的，为了避免 prior states-of-knowledge 对测量产生影响，需要选定特殊的先验知识来表达对物理量 “一无所知”，同时得考虑到测量的鲁棒性，也就是一些outliers不能对测量结果产生巨大的影响，得选用一些特殊的先验知识，具体的参看<a target="_blank" rel="noopener" href="https://www.cambridge.org/cn/academic/subjects/physics/theoretical-physics-and-mathematical-physics/probability-theory-logic-science?format=HB&amp;isbn=9780521592710">书 part2 chapter21</a></p>
+<p>可知，$P(x_0|y_1,y_2,..y_N) = ^{-1}(CP(w_1+w_2+w_3...w_n)) <span
+class="math inline">\(，再由中心极限定理可知，\)</span>CP(w_1+w_2+w_3...w_n)$
+满足gauss分布，所以其傅里叶变换也是gauss分布。</p>
+<p>在绝大多数情况下，对物理量的初始知识并不重要，不会影响到最终结果，但不是绝对的，为了避免
+prior states-of-knowledge
+对测量产生影响，需要选定特殊的先验知识来表达对物理量
+“一无所知”，同时得考虑到测量的鲁棒性，也就是一些outliers不能对测量结果产生巨大的影响，得选用一些特殊的先验知识，具体的参看<a
+target="_blank" rel="noopener" href="https://www.cambridge.org/cn/academic/subjects/physics/theoretical-physics-and-mathematical-physics/probability-theory-logic-science?format=HB&amp;isbn=9780521592710">书
+part2 chapter21</a></p>
 <h1 id="一次经典的长度测量">一次经典的长度测量</h1>
-<p>对一把长度为20的尺子进行测量，对恒为正数且完全无知的测量值prior知识的写法最好写为 <span class="math inline">\(p(x) = a/x\)</span>，其中 <span class="math inline">\(a\)</span> 为某个任意常数，由于肉眼和仪器导致误差呈现高斯分布，假设其<span class="math inline">\(\sigma = 0.5\)</span>，对应的like-hood关系也是高斯的 <span class="math inline">\(\sigma = 0.5\)</span> 的函数。</p>
+<p>对一把长度为20的尺子进行测量，对恒为正数且完全无知的测量值prior知识的写法最好写为
+<span class="math inline">\(p(x) = a/x\)</span>，其中 <span
+class="math inline">\(a\)</span>
+为某个任意常数，由于肉眼和仪器导致误差呈现高斯分布，假设其<span
+class="math inline">\(\sigma =
+0.5\)</span>，对应的like-hood关系也是高斯的 <span
+class="math inline">\(\sigma = 0.5\)</span> 的函数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">from</span> matplotlib.animation <span class="hljs-keyword">import</span> FuncAnimation<br><br>fig,ax = plt.subplots(figsize=(<span class="hljs-number">1</span>*<span class="hljs-number">12</span>,<span class="hljs-number">1</span>*<span class="hljs-number">9</span>),facecolor=<span class="hljs-string">&#x27;white&#x27;</span>,edgecolor=<span class="hljs-string">&#x27;white&#x27;</span>)<br><br><span class="hljs-comment"># 测量的参数</span><br>N = <span class="hljs-number">300</span> <span class="hljs-comment">#测量的次数</span><br>sigma = <span class="hljs-number">0.5</span> <span class="hljs-comment">#like-hood 呈高斯型，其方差</span><br>x0 = <span class="hljs-number">20</span> <span class="hljs-comment">#尺子的长度</span><br>errors = np.random.normal(mu, sigma, N)<br>measures  = x0+errors <span class="hljs-comment">#测量结果</span><br><br><span class="hljs-comment">#作图</span><br><br>x = np.linspace(<span class="hljs-number">19</span>,<span class="hljs-number">21</span>,<span class="hljs-number">20000</span>)<br>state_of_knowledge = [<span class="hljs-number">100</span>/i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> x] <span class="hljs-comment">#图像上只呈现19-21的变化</span><br>    <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">init</span>():<br>    <span class="hljs-keyword">global</span> state_of_knowledge<br>    state_of_knowledge = state_of_knowledge/<span class="hljs-built_in">sum</span>(state_of_knowledge)<br>    ax.axvline(x0, linestyle=<span class="hljs-string">&#x27;--&#x27;</span>, color=<span class="hljs-string">&#x27;black&#x27;</span>)<br>    line, = ax.plot(x,state_of_knowledge)<br>    <span class="hljs-keyword">return</span> line<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">measurement_value</span>): <span class="hljs-comment">#一个frame代表一次测量</span><br>    <span class="hljs-keyword">global</span> state_of_knowledge<br>    ax.clear()<br>    ax.axvline(x0, linestyle=<span class="hljs-string">&#x27;--&#x27;</span>, color=<span class="hljs-string">&#x27;black&#x27;</span>)<br>    state_of_knowledge = [state_of_knowledge[i]*np.exp(-(x[i]-<span class="hljs-number">20</span>)**<span class="hljs-number">2</span>/<span class="hljs-number">2</span>/sigma**<span class="hljs-number">2</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">20000</span>)]<br>    state_of_knowledge = state_of_knowledge/<span class="hljs-built_in">sum</span>(state_of_knowledge)<br>    line, = ax.plot(x,state_of_knowledge)<br>    <span class="hljs-keyword">return</span> line<br><br>anim = FuncAnimation(fig,update,frames=measures,interval=<span class="hljs-number">30</span>,init_func = init) <span class="hljs-comment">#每一秒完成30次测量</span><br>anim.save(<span class="hljs-string">&quot;measure.gif&quot;</span>)<br></code></pre></td></tr></table></figure>
 <p><img src="measure.gif" srcset="/img/loading.gif" lazyload width="80%"></p>
 

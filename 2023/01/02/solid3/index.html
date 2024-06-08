@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一维单原子链 加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：\(M\frac{d^2u_n}{dt^2}&#x3D; \beta(u_{n+1}+u_{n-1}-2u_n)\) 代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系： \[\begin{aligned} u_n &#x3D; \sum^{}_{l} A_l e^{-iw_">
+    <meta name="description" content="一维单原子链 加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：\(M\frac{d^2u_n}{dt^2}&#x3D; \beta(u_{n+1}+u_{n-1}-2u_n)\) 代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系： \[\begin{aligned} u_n &#x3D; \sum^{}_{l} A_l e^{-iw">
 <meta property="og:type" content="article">
 <meta property="og:title" content="晶格振动">
 <meta property="og:url" content="http://dyf.zone/2023/01/02/solid3/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="一维单原子链 加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：\(M\frac{d^2u_n}{dt^2}&#x3D; \beta(u_{n+1}+u_{n-1}-2u_n)\) 代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系： \[\begin{aligned} u_n &#x3D; \sum^{}_{l} A_l e^{-iw_">
+<meta property="og:description" content="一维单原子链 加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：\(M\frac{d^2u_n}{dt^2}&#x3D; \beta(u_{n+1}+u_{n-1}-2u_n)\) 代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系： \[\begin{aligned} u_n &#x3D; \sum^{}_{l} A_l e^{-iw">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://dyf.zone/2023/01/02/solid3/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-25%20175006.png">
 <meta property="og:image" content="http://dyf.zone/2023/01/02/solid3/3E0B5AE836EBB34B602A8B51A62691D5.png">
@@ -277,7 +277,9 @@
               <div class="markdown-body">
                 
                 <h1 id="一维单原子链">一维单原子链</h1>
-<p>加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：<span class="math inline">\(M\frac{d^2u_n}{dt^2}= \beta(u_{n+1}+u_{n-1}-2u_n)\)</span></p>
+<p>加入简谐近似（既认为单原子链的相互作用截断到位移的二阶项），以及只考虑最近邻原子的作用后，得运动方程：<span
+class="math inline">\(M\frac{d^2u_n}{dt^2}=
+\beta(u_{n+1}+u_{n-1}-2u_n)\)</span></p>
 <p>代入周期性边界条件以及周期性的平移对称不变性，我们得到通解以及色散关系：</p>
 <span class="math display">\[\begin{aligned}
 u_n = \sum^{}_{l} A_l e^{-iw_lt}e^{inaq}
@@ -286,66 +288,94 @@ u_n = \sum^{}_{l} A_l e^{-iw_lt}e^{inaq}
 <h3 id="一维双原子晶格振动">一维双原子晶格振动</h3>
 <p>同样的方法解出色散关系</p>
 <p><span class="math display">\[
-w^2(q) = \frac{\beta}{M_1M_2}[M_1+M_2 \pm \sqrt{M_1^2+M_2^2+2M_1M_2cosqa}]
+w^2(q) = \frac{\beta}{M_1M_2}[M_1+M_2 \pm
+\sqrt{M_1^2+M_2^2+2M_1M_2cosqa}]
 \]</span></p>
 <p><img src="屏幕截图 2022-11-25 175006.png" srcset="/img/loading.gif" lazyload></p>
-<p>在q趋向于0的时候，<span class="math inline">\(w\)</span>趋向于0的波称为声学支。声学支代表的振动模式相邻原子振动方向同向，另一支称为光学支，相邻原子振动方向相反，同时由于这种振动模式会产生迅速变化的电偶极矩，与光发生相互作用。</p>
-<p>三维的同理，N个原胞，每个原胞s个原子，解出来(没证明)3支声学波，<span class="math inline">\(3s-3\)</span>支光学波</p>
+<p>在q趋向于0的时候，<span
+class="math inline">\(w\)</span>趋向于0的波称为声学支。声学支代表的振动模式相邻原子振动方向同向，另一支称为光学支，相邻原子振动方向相反，同时由于这种振动模式会产生迅速变化的电偶极矩，与光发生相互作用。</p>
+<p>三维的同理，N个原胞，每个原胞s个原子，解出来(没证明)3支声学波，<span
+class="math inline">\(3s-3\)</span>支光学波</p>
 <h3 id="声子">4. 声子</h3>
 <p>单原子链晶格振动的量子化(简谐近似，只考虑最近邻原子间的相互作用)：</p>
 <div style="text-align:center">
-<span class="math inline">\(H = T+U = \frac{1}{2} M \sum^{}_{n}\dot u_n^2 + \frac{1}{2} \beta \sum^{}_{n}(u_{n-1}-u_n)^2\)</span>
+<span class="math inline">\(H = T+U = \frac{1}{2} M \sum^{}_{n}\dot
+u_n^2 + \frac{1}{2} \beta \sum^{}_{n}(u_{n-1}-u_n)^2\)</span>
 </div>
-<p>欲对<span class="math inline">\(H\)</span>的形式进行变化方便看出具体形式，做变量代换：</p>
-<p><span class="math inline">\(u_n(t) = \sum^{}_{l} A_l(t) e^{-iw_lt}e^{inaq_l}\)</span>，其中<span class="math inline">\(q_l=\frac{2\pi l}{Na},-\frac{N}{2}\leq l&lt;\frac{N}{2}\)</span></p>
-<p>令 <span class="math inline">\(Q_l(t) = (NM)^{\frac{1}{2}}A_l e^{-iw_l t}\)</span> 则</p>
+<p>欲对<span
+class="math inline">\(H\)</span>的形式进行变化方便看出具体形式，做变量代换：</p>
+<p><span class="math inline">\(u_n(t) = \sum^{}_{l} A_l(t)
+e^{-iw_lt}e^{inaq_l}\)</span>，其中<span
+class="math inline">\(q_l=\frac{2\pi l}{Na},-\frac{N}{2}\leq
+l&lt;\frac{N}{2}\)</span></p>
+<p>令 <span class="math inline">\(Q_l(t) = (NM)^{\frac{1}{2}}A_l
+e^{-iw_l t}\)</span> 则</p>
 <span class="math display">\[\begin{aligned}
 u_n = (NM)^{-\frac{1}{2}}\sum^{}_{l}Q_l e^{inaq_l}
 \\\\Q_l = (\frac{M}{N})^{1/2}\sum_n u_ne^{-inaq}
 \end{aligned}\]</span>
 <blockquote>
-<p>正交性条件：<span class="math inline">\(\frac{1}{N} \sum_n e^{ina(q_l-q_{l&#39;})} = \delta _{ll&#39;}\)</span> (易证)</p>
+<p>正交性条件：<span class="math inline">\(\frac{1}{N} \sum_n
+e^{ina(q_l-q_{l&#39;})} = \delta _{ll&#39;}\)</span> (易证)</p>
 </blockquote>
 <blockquote>
-<p>由<span class="math inline">\(u_n\)</span>为实数可推得 <span class="math inline">\(Q_l* = Q_{-l}\)</span></p>
+<p>由<span class="math inline">\(u_n\)</span>为实数可推得 <span
+class="math inline">\(Q_l* = Q_{-l}\)</span></p>
 </blockquote>
 <span class="math display">\[\begin{aligned}
 T &amp;= \frac{M}{2} \sum^N_n \dot u_n^2
-\\\\ &amp;= \frac{1}{2N} \sum^N_{n=0} \sum_{l&#39;}\sum_l \dot Q_l \dot Q_{l&#39;}e^{ina(q_l+q_{l&#39;})}
-\\\\ &amp;= \frac{1}{2} \sum_l \sum_{l&#39;} \dot Q_l \dot Q_{l&#39;} \delta_{ll&#39;}
+\\\\ &amp;= \frac{1}{2N} \sum^N_{n=0} \sum_{l&#39;}\sum_l \dot Q_l \dot
+Q_{l&#39;}e^{ina(q_l+q_{l&#39;})}
+\\\\ &amp;= \frac{1}{2} \sum_l \sum_{l&#39;} \dot Q_l \dot Q_{l&#39;}
+\delta_{ll&#39;}
 \\\\ &amp;= \frac{1}{2} \sum_l  \dot Q_l ^2
 \end{aligned}\]</span>
 <p>第二行由定义，第三行由正交性条件</p>
 <div style="text-align:center">
-<span class="math inline">\(V= \frac{1}{2} \beta \sum^{N}_{n=0}(u_{n-1}-u_n)^2\)</span>
+<span class="math inline">\(V= \frac{1}{2} \beta
+\sum^{N}_{n=0}(u_{n-1}-u_n)^2\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(=\frac{1}{2} \beta \sum^{N}_{n=0}u_{n-1}^2 - 2u_{n-1}u_n + u_n^2\)</span>
+<span class="math inline">\(=\frac{1}{2} \beta \sum^{N}_{n=0}u_{n-1}^2 -
+2u_{n-1}u_n + u_n^2\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(= \beta \sum^{N}_{n=0}u_{n}^2 - u_{n-1}u_n\)</span>
+<span class="math inline">\(= \beta \sum^{N}_{n=0}u_{n}^2 -
+u_{n-1}u_n\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(=\frac{1}{NM}\beta \sum_n\sum_{l}\sum_{l&#39;} Q_lQ_{l&#39;} e^{inaq_l}e^{inaq_{l&#39;}}(1 - e^{-iaq_l})\)</span>
+<span class="math inline">\(=\frac{1}{NM}\beta
+\sum_n\sum_{l}\sum_{l&#39;} Q_lQ_{l&#39;} e^{inaq_l}e^{inaq_{l&#39;}}(1
+- e^{-iaq_l})\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(= \frac{\beta}{M} \sum_{l} Q_lQ_{l}*(1 - e^{-iaq_l})\)</span>
+<span class="math inline">\(= \frac{\beta}{M} \sum_{l} Q_lQ_{l}*(1 -
+e^{-iaq_l})\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(= \frac{(1-cos(aq))\beta}{2M} \sum_{l} Q_lQ_{l}^*\)</span>
+<span class="math inline">\(= \frac{(1-cos(aq))\beta}{2M} \sum_{l}
+Q_lQ_{l}^*\)</span>
 </div>
 <br>
 <div style="text-align:center">
 <span class="math inline">\(= w_l^2 Q_lQ_{l}^*\)</span>
 </div>
-<p>第三个等号来源于周期性边界条件，第六个等号来源于<span class="math inline">\(V\)</span>是实数，所以可以取实部，第七个等号来源于一维振子解的色散关系，可以理解为用这个定义了<span class="math inline">\(w_l\)</span>，显然是一个谐振子哈密顿量，后面可以把对应的能量子定义为声子。</p>
+<p>第三个等号来源于周期性边界条件，第六个等号来源于<span
+class="math inline">\(V\)</span>是实数，所以可以取实部，第七个等号来源于一维振子解的色散关系，可以理解为用这个定义了<span
+class="math inline">\(w_l\)</span>，显然是一个谐振子哈密顿量，后面可以把对应的能量子定义为声子。</p>
 <h4 id="声子性质">声子性质</h4>
-<p>从基态<span class="math inline">\(n_l = 0\)</span> 到激发态<span class="math inline">\(n_l (≠ 0)\)</span> 的能量差为<span class="math inline">\(n_l ћω_l\)</span>，这一过程可以看成是产生了<span class="math inline">\(n_l\)</span>个频率<span class="math inline">\(ћω_l\)</span>的声子，每个声子的能量为<span class="math inline">\(ћω_l\)</span>。（元激发）波矢q的方向代表格波的传播方向，也代表声子的运动方向，<span class="math inline">\(\hbar q\)</span> 称为声子的准动量。</p>
+<p>从基态<span class="math inline">\(n_l = 0\)</span> 到激发态<span
+class="math inline">\(n_l (≠ 0)\)</span> 的能量差为<span
+class="math inline">\(n_l ћω_l\)</span>，这一过程可以看成是产生了<span
+class="math inline">\(n_l\)</span>个频率<span
+class="math inline">\(ћω_l\)</span>的声子，每个声子的能量为<span
+class="math inline">\(ћω_l\)</span>。（元激发）波矢q的方向代表格波的传播方向，也代表声子的运动方向，<span
+class="math inline">\(\hbar q\)</span> 称为声子的准动量。</p>
 <h3 id="离子晶体的红外光学性质">离子晶体的红外光学性质</h3>
 <h4 id="光学模">光学模</h4>
 <p>光学模是正负离子相对振动的一种振动模式，如图所示：</p>
@@ -356,7 +386,12 @@ T &amp;= \frac{M}{2} \sum^N_n \dot u_n^2
 \frac{d^2W}{dt^2} = b_{11} W +b_{12}E
 \\\\ p = b_{12}W +b_{22}E
 \end{aligned}\]</span>
-<p><span class="math inline">\(W = (\mu n)^{-\frac{1}{2}}(u_+ - u_-)\)</span>，<span class="math inline">\(n\)</span> 为单位体积内的原胞数，<span class="math inline">\(\mu\)</span> 是折合质量，<span class="math inline">\(u_+(u_-)\)</span>是正(负)离子的振动位移，<span class="math inline">\(b_{ij}\)</span>为待定系数。</p>
+<p><span class="math inline">\(W = (\mu n)^{-\frac{1}{2}}(u_+ -
+u_-)\)</span>，<span class="math inline">\(n\)</span>
+为单位体积内的原胞数，<span class="math inline">\(\mu\)</span>
+是折合质量，<span
+class="math inline">\(u_+(u_-)\)</span>是正(负)离子的振动位移，<span
+class="math inline">\(b_{ij}\)</span>为待定系数。</p>
 <h4 id="lst关系">LST关系</h4>
 <span class="math display">\[\begin{aligned}
 b_{11}&amp;= -w_{TO}^2
@@ -370,35 +405,54 @@ b_{11}&amp;= -w_{TO}^2
 <blockquote>
 <p>在一维单原子晶格中，若考虑每一原子与其余原子都有相互作用，在简谐近似下求格波的色散关系</p>
 </blockquote>
-<span class="math inline">\(ij\)</span>原子的相互距离：<span class="math inline">\(x_{ij} = x_i -x_j\)</span> , <span class="math inline">\(x_i = x_i^0 +u_i\)</span> ,<span class="math inline">\(u_i\)</span>为振幅，<span class="math inline">\(x_i^0\)</span>为平衡位置
+<span class="math inline">\(ij\)</span>原子的相互距离：<span
+class="math inline">\(x_{ij} = x_i -x_j\)</span> , <span
+class="math inline">\(x_i = x_i^0 +u_i\)</span> ,<span
+class="math inline">\(u_i\)</span>为振幅，<span
+class="math inline">\(x_i^0\)</span>为平衡位置
 <div style="text-align:center">
-<span class="math inline">\(U = \frac{1}{2} \sum^N_{i,j}\phi(x_{ij}^0) + \frac{\partial \phi}{\partial x_{ij}}|_{x_{ij}^0}u_{ij}+\frac{1}{2}\frac{\partial^2 \phi}{\partial x_{ij}^2}|_{x_{ij}^0} u_{ij}^2\)</span>
+<span class="math inline">\(U = \frac{1}{2} \sum^N_{i,j}\phi(x_{ij}^0) +
+\frac{\partial \phi}{\partial
+x_{ij}}|_{x_{ij}^0}u_{ij}+\frac{1}{2}\frac{\partial^2 \phi}{\partial
+x_{ij}^2}|_{x_{ij}^0} u_{ij}^2\)</span>
 </div>
 <div style="text-align:center">
-<span class="math inline">\(= \frac{1}{4}\frac{\partial^2 \phi}{\partial x_{ij}^2}|_{x_{ij}^0} u_{ij}^2\)</span>
+<span class="math inline">\(= \frac{1}{4}\frac{\partial^2 \phi}{\partial
+x_{ij}^2}|_{x_{ij}^0} u_{ij}^2\)</span>
 </div>
 <p>去掉了常数，以及在稳定状态下一阶导为0。</p>
 <div style="text-align:center">
-<span class="math inline">\(M \ddot u_{n} = - \frac{\partial U}{\partial u_n} = -\sum_{j} \beta_{nj} (u_n-u_j)\)</span>
+<span class="math inline">\(M \ddot u_{n} = - \frac{\partial U}{\partial
+u_n} = -\sum_{j} \beta_{nj} (u_n-u_j)\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(M \ddot u_{n} = - \sum_{j=0}^{\frac{N}{2}} \beta_{n,{n+j}} (u_{n+j}-2u_{n}+u_{n-j})\)</span>
+<span class="math inline">\(M \ddot u_{n} = - \sum_{j=0}^{\frac{N}{2}}
+\beta_{n,{n+j}} (u_{n+j}-2u_{n}+u_{n-j})\)</span>
 </div>
-<p>假设解的形式为：<span class="math inline">\(u_n = e^{iwt-inaq}\)</span> 代入得： <span class="math inline">\(w^2 = \frac{2}{M} \sum_j^{N/2} (1- cos(jaq))\)</span></p>
+<p>假设解的形式为：<span class="math inline">\(u_n =
+e^{iwt-inaq}\)</span> 代入得： <span class="math inline">\(w^2 =
+\frac{2}{M} \sum_j^{N/2} (1- cos(jaq))\)</span></p>
 <blockquote>
-<p>设有一维双原子晶格，两种原子的质量相等，最近邻原子的力常量交错等于<span class="math inline">\(\beta_1\)</span>和<span class="math inline">\(\beta_2\)</span>，求色散关系</p>
+<p>设有一维双原子晶格，两种原子的质量相等，最近邻原子的力常量交错等于<span
+class="math inline">\(\beta_1\)</span>和<span
+class="math inline">\(\beta_2\)</span>，求色散关系</p>
 </blockquote>
 <span class="math display">\[\begin{aligned}
 M \ddot u_n = \beta_1(v_{n+1} -u_n) + \beta_2 (v_{n}-u_{n})
 \\\\  M \ddot v_n = \beta_2(u_{n} -v_n) + \beta_1 (u_{n-1}-v_{n})
 \end{aligned}\]</span>
-<p><span class="math inline">\(v_n, u_n\)</span>分别代表两种不同原子的振动表达式。将试探解 <span class="math inline">\(v_n = Ae^{iwt-inaq}, u_n =B e^{iwt-inaq}\)</span>，带入得：</p>
+<p><span class="math inline">\(v_n,
+u_n\)</span>分别代表两种不同原子的振动表达式。将试探解 <span
+class="math inline">\(v_n = Ae^{iwt-inaq}, u_n =B
+e^{iwt-inaq}\)</span>，带入得：</p>
 <span class="math display">\[\begin{aligned}
 (-Mw^2 +\beta_1+\beta_2) B - (\beta_1e^{-iaq}+\beta_2)A = 0
 \\\\(\beta_2+\beta_1e^{iaq})B - (\rho_2+\rho_1- Mw^2)A = 0
 \end{aligned}\]</span>
-<p>由系数行列式等于0得到：<span class="math inline">\(w^2 = \frac{\beta_1+\beta_2 \pm \sqrt{2\beta_1\beta_2cos(aq)+\beta_1^2+\beta^2}}{M}\)</span></p>
+<p>由系数行列式等于0得到：<span class="math inline">\(w^2 =
+\frac{\beta_1+\beta_2 \pm
+\sqrt{2\beta_1\beta_2cos(aq)+\beta_1^2+\beta^2}}{M}\)</span></p>
 <blockquote>
 <ol start="3" type="1">
 <li>求一维单原子晶格的格波的模密度以及低温热容：</li>
@@ -406,17 +460,28 @@ M \ddot u_n = \beta_1(v_{n+1} -u_n) + \beta_2 (v_{n}-u_{n})
 </blockquote>
 模密度的表达式：
 <span class="math display">\[\begin{aligned}
-g(w) &amp;= \sum_i g_i(w) = \sum_i \frac{dN_i}{dw} 
+g(w) &amp;= \sum_i g_i(w) = \sum_i \frac{dN_i}{dw}
 \\\\&amp; = \sum_i\frac{d \sum_k\Omega(w-w_i(k))}{dw}
 \\\\ &amp;= \sum_i \sum_k\delta(w-w_i(k))
 \\\\ &amp;=\sum_i \frac{N}{V^*} \int \delta(w-w_i(k))dk
 \end{aligned}\]</span>
-<p><span class="math inline">\(i\)</span>代表不同的支，第三个等式 <span class="math inline">\(\Omega\)</span> 代表阶跃函数，代表对<span class="math inline">\(k\)</span>空间的每个波矢所对应的频率计数，比<span class="math inline">\(w\)</span>低的记1，最后一个等号对k空间近似连续化，<span class="math inline">\(V^*\)</span>代表<span class="math inline">\(k\)</span>空间大小，<span class="math inline">\(N\)</span>代表k点的个数，由<span class="math inline">\(w^2 = \frac{2\beta}{M}(1-cos(ka))\)</span> 得到 <span class="math inline">\(2wdw = \frac{2\beta}{M}a sin(ka)dk\)</span></p>
+<p><span class="math inline">\(i\)</span>代表不同的支，第三个等式 <span
+class="math inline">\(\Omega\)</span> 代表阶跃函数，代表对<span
+class="math inline">\(k\)</span>空间的每个波矢所对应的频率计数，比<span
+class="math inline">\(w\)</span>低的记1，最后一个等号对k空间近似连续化，<span
+class="math inline">\(V^*\)</span>代表<span
+class="math inline">\(k\)</span>空间大小，<span
+class="math inline">\(N\)</span>代表k点的个数，由<span
+class="math inline">\(w^2 = \frac{2\beta}{M}(1-cos(ka))\)</span> 得到
+<span class="math inline">\(2wdw = \frac{2\beta}{M}a
+sin(ka)dk\)</span></p>
 <p>于是模密度表达式：</p>
 <span class="math display">\[\begin{aligned}
 &amp;\sum_i \frac{N}{V^*} \int \delta(w-w_i(k))dk
-\\\\&amp; = \frac{LN}{2\pi} \int \delta(w-w(k))\frac{w(k)dw(k)}{\frac{\beta}{M}a\sin(\arccos(1-\frac{Mw(k)^2}{2\beta}))}
-\\\\&amp; =  \frac{LN}{2\pi}\frac{w}{\frac{\beta}{M}a\sin(\arccos(1-\frac{Mw^2}{2\beta}))}
+\\\\&amp; = \frac{LN}{2\pi} \int
+\delta(w-w(k))\frac{w(k)dw(k)}{\frac{\beta}{M}a\sin(\arccos(1-\frac{Mw(k)^2}{2\beta}))}
+\\\\&amp;
+=  \frac{LN}{2\pi}\frac{w}{\frac{\beta}{M}a\sin(\arccos(1-\frac{Mw^2}{2\beta}))}
 \end{aligned}\]</span>
 <p>低温热容:</p>
 系统的配分函数：
@@ -432,45 +497,73 @@ C_v = \frac{1}{k_BT^2}\frac{\partial^2 lnZ}{\partial \beta^2}
 <p>则：</p>
 <span class="math display">\[\begin{aligned}
 \ln Z =&amp; -\sum_w ~\ln(2 \sinh(\beta\hbar w_i/2))
-\\\\ =&amp; -\frac{1}{N}\int_0^{w_{max}} g(w)\ln(2 \sinh(\beta\hbar w/2)) dw
-\\\\ &amp;\frac{\partial^2 lnZ}{\partial \beta^2} = \frac{1}{N} \int_0^{w_{max}} g(w)(\frac{\hbar w}{2})^2\frac{1}{\cosh(\beta\hbar w/2)\tanh^2(\beta\hbar w/2)} dw
+\\\\ =&amp; -\frac{1}{N}\int_0^{w_{max}} g(w)\ln(2 \sinh(\beta\hbar
+w/2)) dw
+\\\\ &amp;\frac{\partial^2 lnZ}{\partial \beta^2} = \frac{1}{N}
+\int_0^{w_{max}} g(w)(\frac{\hbar w}{2})^2\frac{1}{\cosh(\beta\hbar
+w/2)\tanh^2(\beta\hbar w/2)} dw
 \end{aligned}\]</span>
-<p><span class="math inline">\(N\)</span>为总波模数，由于代求低温热容，低温下 <span class="math inline">\(w\)</span> 小的起主要贡献，大的由<span class="math inline">\(\frac{\partial^2 lnZ}{\partial \beta^2}\)</span> 表达式可看出，趋近于0，所以可以近似将 <span class="math inline">\(g(w)\)</span> 在 <span class="math inline">\(w\ll 1\)</span> 时的表达式替换到积分中，则：</p>
+<p><span
+class="math inline">\(N\)</span>为总波模数，由于代求低温热容，低温下
+<span class="math inline">\(w\)</span> 小的起主要贡献，大的由<span
+class="math inline">\(\frac{\partial^2 lnZ}{\partial \beta^2}\)</span>
+表达式可看出，趋近于0，所以可以近似将 <span
+class="math inline">\(g(w)\)</span> 在 <span class="math inline">\(w\ll
+1\)</span> 时的表达式替换到积分中，则：</p>
 <span class="math display">\[\begin{aligned}
-\sin(\arccos(1-\frac{Mw(k)^2}{2\beta_u}))= \sqrt{1-(1-\frac{Mw^2}{2\beta_u})^2} \approx \sqrt{M/\beta_u}w
-\\\\g(w) = \frac{NL}{2\pi}\frac{w}{\frac{\beta_u}{M}a\sin(\arccos(1-\frac{Mw^2}{2\beta}))} = \frac{NL}{2\pi a}\sqrt\frac{M}{\beta_u}
+\sin(\arccos(1-\frac{Mw(k)^2}{2\beta_u}))=
+\sqrt{1-(1-\frac{Mw^2}{2\beta_u})^2} \approx \sqrt{M/\beta_u}w
+\\\\g(w) =
+\frac{NL}{2\pi}\frac{w}{\frac{\beta_u}{M}a\sin(\arccos(1-\frac{Mw^2}{2\beta}))}
+= \frac{NL}{2\pi a}\sqrt\frac{M}{\beta_u}
 \end{aligned}\]</span>
-<p>为了区别，<span class="math inline">\(\beta_u\)</span>表示晶格振动中的力常量。</p>
+<p>为了区别，<span
+class="math inline">\(\beta_u\)</span>表示晶格振动中的力常量。</p>
 <p>则低温热容：</p>
 <span class="math display">\[\begin{aligned}
 C_v &amp;= \frac{1}{k_BT^2}\frac{\partial^2 lnZ}{\partial \beta^2}
-\\\\&amp;= \frac{1}{k_BT^2}\frac{1}{N} \int_0^{w_{max}} g(w)(\frac{\hbar w}{2})^2\frac{1}{\cosh^2(\beta\hbar w/2)\tanh^2(\beta\hbar w/2)} dw
-\\\\&amp;\approx\frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}  \int_0^{w_{max}} (\frac{\hbar w}{2})^2\frac{1}{\sinh^2(\beta\hbar w/2)} dw
-\\\\&amp;\approx\frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}  \int_0^{\infty} (\frac{\hbar w}{2})^2\frac{1}{\sinh^2(\beta\hbar w/2)} dw
-\\\\&amp;=\frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}\int_0^{\infty} \frac{2}{\beta^3\hbar}x^2\frac{1}{\sinh^2 x} dx
-\\\\&amp; = \frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}\frac{2}{\beta^3\hbar} I
+\\\\&amp;= \frac{1}{k_BT^2}\frac{1}{N} \int_0^{w_{max}} g(w)(\frac{\hbar
+w}{2})^2\frac{1}{\cosh^2(\beta\hbar w/2)\tanh^2(\beta\hbar w/2)} dw
+\\\\&amp;\approx\frac{L}{2\pi a k_BT^2
+}\sqrt\frac{M}{\beta_u}  \int_0^{w_{max}} (\frac{\hbar
+w}{2})^2\frac{1}{\sinh^2(\beta\hbar w/2)} dw
+\\\\&amp;\approx\frac{L}{2\pi a k_BT^2
+}\sqrt\frac{M}{\beta_u}  \int_0^{\infty} (\frac{\hbar
+w}{2})^2\frac{1}{\sinh^2(\beta\hbar w/2)} dw
+\\\\&amp;=\frac{L}{2\pi a k_BT^2 }\sqrt\frac{M}{\beta_u}\int_0^{\infty}
+\frac{2}{\beta^3\hbar}x^2\frac{1}{\sinh^2 x} dx
+\\\\&amp; = \frac{L}{2\pi a k_BT^2
+}\sqrt\frac{M}{\beta_u}\frac{2}{\beta^3\hbar} I
 \\\\&amp; = \frac{K_B^2L}{a\pi \hbar}\sqrt\frac{M}{\beta_u} I T
 \end{aligned}\]</span>
-<p><span class="math inline">\(I\)</span>代表积分值，结果与<span class="math inline">\(T\)</span>呈一次方关系</p>
+<p><span class="math inline">\(I\)</span>代表积分值，结果与<span
+class="math inline">\(T\)</span>呈一次方关系</p>
 <blockquote>
 <p>运用德拜模型计算低温下的晶体热容</p>
 </blockquote>
-<p><mark>德拜假设低温下起主要作用的都是声学模，其色散关系可以近似为<span class="math inline">\(w=cq\)</span></mark></p>
-<p>则频率密度<span class="math inline">\(g(w) = \frac{1}{V^*} \int \delta(w-w(q))dq =\frac{l}{\pi c}\)</span></p>
+<p><mark>德拜假设低温下起主要作用的都是声学模，其色散关系可以近似为<span
+class="math inline">\(w=cq\)</span></mark></p>
+<p>则频率密度<span class="math inline">\(g(w) = \frac{1}{V^*} \int
+\delta(w-w(q))dq =\frac{l}{\pi c}\)</span></p>
 <p>则热容的表达式：</p>
 <span class="math display">\[\begin{aligned}
-C_v &amp;= \frac{\partial\sum_w  E_w}{\partial T} = \frac{\sum_w\partial (\frac{1}{2}\hbar w+\bar n\hbar w)}{\partial T} 
-\\\\&amp;= \frac{\partial\sum_w \bar n\hbar w}{\partial T} 
-\\\\&amp;= \frac{\partial}{\partial T}\int \frac{1}{N}\frac{g(w)dw}{e^{\frac{1}{2}\hbar w}-1}\frac{1}{2}\hbar w
-\\\\&amp;=\frac{l}{\pi c} \frac{k_bT^2}{\hbar}\int_0^\infty\frac{x^2e^x}{(e^{x}-1)^2}dx
+C_v &amp;= \frac{\partial\sum_w  E_w}{\partial T} = \frac{\sum_w\partial
+(\frac{1}{2}\hbar w+\bar n\hbar w)}{\partial T}
+\\\\&amp;= \frac{\partial\sum_w \bar n\hbar w}{\partial T}
+\\\\&amp;= \frac{\partial}{\partial T}\int
+\frac{1}{N}\frac{g(w)dw}{e^{\frac{1}{2}\hbar w}-1}\frac{1}{2}\hbar w
+\\\\&amp;=\frac{l}{\pi c}
+\frac{k_bT^2}{\hbar}\int_0^\infty\frac{x^2e^x}{(e^{x}-1)^2}dx
 \end{aligned}\]</span>
 <blockquote>
-<p>证明一维单原子晶格中，激发出一个<span class="math inline">\(\hbar q_0\)</span>的声子后动量不变。</p>
+<p>证明一维单原子晶格中，激发出一个<span class="math inline">\(\hbar
+q_0\)</span>的声子后动量不变。</p>
 </blockquote>
 不妨令初始状态初动量为0，激发一个声子后，整体动量：
 <span class="math display">\[\begin{aligned}
 p =&amp; \sum_n m \dot u_n  
-\\\\ =&amp;\sum_n m \sum_q \dot e^{iwt-inaq} = iw \sum_n m e^{iwt-inaq_0} 
+\\\\ =&amp;\sum_n m \sum_q \dot e^{iwt-inaq} = iw \sum_n m
+e^{iwt-inaq_0}
 \\\\=&amp; iwm e^{iwt}\sum_n e^{-inaq} = 0
 \end{aligned}\]</span>
 <p>最后一个等式来源于等比数列求和</p>

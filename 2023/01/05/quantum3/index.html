@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="含时微扰 在相互作用表象下，薛定谔方程写为： \(i \hbar \dot U_I &#x3D; V_I U_I，U_I(t &#x3D; 0) &#x3D; I\) 于是将\(U_I\)积出来，得到： \[\begin{aligned} U_I &amp;&#x3D; I + \frac{1}{i \hbar}\int_{0}^{t} V_IU_Idt \\\\&amp;&#x3D; I + \frac{1}{i \hbar}\in">
+    <meta name="description" content="含时微扰 在相互作用表象下，薛定谔方程写为： \(i \hbar \dot U_I &#x3D; V_I U_I，U_I(t &#x3D; 0) &#x3D; I\) 于是将\(U_I\)积出来，得到： \[\begin{aligned} U_I &amp;&#x3D; I + \frac{1}{i \hbar}\int_{0}^{t} V_IU_Idt \\\\&amp;&#x3D; I + \frac{1}{i \hbar}\i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="含时微扰和跃迁">
 <meta property="og:url" content="http://dyf.zone/2023/01/05/quantum3/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="含时微扰 在相互作用表象下，薛定谔方程写为： \(i \hbar \dot U_I &#x3D; V_I U_I，U_I(t &#x3D; 0) &#x3D; I\) 于是将\(U_I\)积出来，得到： \[\begin{aligned} U_I &amp;&#x3D; I + \frac{1}{i \hbar}\int_{0}^{t} V_IU_Idt \\\\&amp;&#x3D; I + \frac{1}{i \hbar}\in">
+<meta property="og:description" content="含时微扰 在相互作用表象下，薛定谔方程写为： \(i \hbar \dot U_I &#x3D; V_I U_I，U_I(t &#x3D; 0) &#x3D; I\) 于是将\(U_I\)积出来，得到： \[\begin{aligned} U_I &amp;&#x3D; I + \frac{1}{i \hbar}\int_{0}^{t} V_IU_Idt \\\\&amp;&#x3D; I + \frac{1}{i \hbar}\i">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-05T09:25:06.000Z">
 <meta property="article:modified_time" content="2023-01-05T13:19:40.173Z">
@@ -275,48 +275,72 @@
                 
                 <h1 id="含时微扰">含时微扰</h1>
 <p>在相互作用表象下，薛定谔方程写为：</p>
-<p><span class="math inline">\(i \hbar \dot U_I = V_I U_I，U_I(t = 0) = I\)</span></p>
+<p><span class="math inline">\(i \hbar \dot U_I = V_I U_I，U_I(t = 0) =
+I\)</span></p>
 <p>于是将<span class="math inline">\(U_I\)</span>积出来，得到：</p>
 <span class="math display">\[\begin{aligned}
 U_I &amp;= I + \frac{1}{i \hbar}\int_{0}^{t} V_IU_Idt
-\\\\&amp;= I + \frac{1}{i \hbar}\int_{0}^{t} V_Idt 
-\\\\&amp;+ (\frac{1}{i \hbar})^2\int_{0}^{t}\int_{0}^{t} V_I(t)V_I(t&#39;)U_Idtdt&#39; 
+\\\\&amp;= I + \frac{1}{i \hbar}\int_{0}^{t} V_Idt
+\\\\&amp;+ (\frac{1}{i \hbar})^2\int_{0}^{t}\int_{0}^{t}
+V_I(t)V_I(t&#39;)U_Idtdt&#39;
 \\\\\approx&amp;= I + \frac{1}{i \hbar}\int_{0}^{t} V_Idt
-\\\\&amp;+ (\frac{1}{i \hbar})^2\int_{0}^{t}\int_{0}^{t} V_I(t)V_I(t&#39;)dtdt&#39;
+\\\\&amp;+ (\frac{1}{i \hbar})^2\int_{0}^{t}\int_{0}^{t}
+V_I(t)V_I(t&#39;)dtdt&#39;
 \end{aligned}\]</span>
-<p>令<span class="math inline">\(\left|\psi \right&gt; = \sum_n C_n(t) e^{iE_n t/\hbar} \left|n \right&gt;\)</span>，则<span class="math inline">\(\left|\psi \right&gt;_I = \sum_n C_n(t) \left|n \right&gt;\)</span>,</p>
+<p>令<span class="math inline">\(\left|\psi \right&gt; = \sum_n C_n(t)
+e^{iE_n t/\hbar} \left|n \right&gt;\)</span>，则<span
+class="math inline">\(\left|\psi \right&gt;_I = \sum_n C_n(t) \left|n
+\right&gt;\)</span>,</p>
 <div style="text-align:center">
-<span class="math inline">\({\left|\psi \right&gt;}_I (t) = U_I \sum_n C_n(t) \left| n \right&gt;\)</span>
+<span class="math inline">\({\left|\psi \right&gt;}_I (t) = U_I \sum_n
+C_n(t) \left| n \right&gt;\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(=\sum_n C_n \left| n \right&gt;+\sum_m \sum_n C_n(0) \frac{1}{i\hbar} \left| m \right&gt;\int^t_0\left&lt; m|V_I |n\right&gt;\)</span>
+<span class="math inline">\(=\sum_n C_n \left| n \right&gt;+\sum_m
+\sum_n C_n(0) \frac{1}{i\hbar} \left| m \right&gt;\int^t_0\left&lt;
+m|V_I |n\right&gt;\)</span>
 </div>
-<p>当<span class="math inline">\(C_n(0) = \delta_{nk}\)</span>时，原式化简为：</p>
+<p>当<span class="math inline">\(C_n(0) =
+\delta_{nk}\)</span>时，原式化简为：</p>
 <div style="text-align:center">
-<span class="math inline">\(=\left| k \right&gt; + \sum_m \frac{1}{i\hbar} \int^t_0 \left&lt; m|V_I |k\right&gt; \left| m \right&gt;\)</span>
+<span class="math inline">\(=\left| k \right&gt; + \sum_m
+\frac{1}{i\hbar} \int^t_0 \left&lt; m|V_I |k\right&gt; \left| m
+\right&gt;\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(=\left| k \right&gt; + \sum_m \frac{1}{i\hbar} \int^t_0 e^{i(E_m-E_k)t/\hbar}\left&lt; m|V_S |k\right&gt; \left| m \right&gt;\)</span>
+<span class="math inline">\(=\left| k \right&gt; + \sum_m
+\frac{1}{i\hbar} \int^t_0 e^{i(E_m-E_k)t/\hbar}\left&lt; m|V_S
+|k\right&gt; \left| m \right&gt;\)</span>
 </div>
-<p>为了便于计算，转换到了薛定谔表象下，定义<span class="math inline">\(t\)</span>时刻的从k态跃迁到m态的几率为：</p>
+<p>为了便于计算，转换到了薛定谔表象下，定义<span
+class="math inline">\(t\)</span>时刻的从k态跃迁到m态的几率为：</p>
 <p><span class="math display">\[
-P_{k\rightarrow m} = \left| C_m(t)\right| = \left|\frac{1}{i\hbar} \int^t_0 e^{i(E_m-E_k)t/\hbar}\left&lt; m|V_S |k\right&gt; \right|^2
+P_{k\rightarrow m} = \left| C_m(t)\right| = \left|\frac{1}{i\hbar}
+\int^t_0 e^{i(E_m-E_k)t/\hbar}\left&lt; m|V_S |k\right&gt; \right|^2
 \]</span></p>
 <h1 id="常微扰和简谐微扰">常微扰和简谐微扰</h1>
-<p>简谐微扰<span class="math inline">\(V = W(x) e^{iwt} +W^* (x)e^{-iwt}\)</span>，计算跃迁频率表达式：</p>
+<p>简谐微扰<span class="math inline">\(V = W(x) e^{iwt} +W^*
+(x)e^{-iwt}\)</span>，计算跃迁频率表达式：</p>
 <span class="math display">\[\begin{aligned}
-&amp;\frac{1}{\hbar^2} \left| \int_0^{t} \left&lt;f|V(x) |i\right&gt;e^{i(E_m-E_k)t/\hbar}dt \right|^2
-\\\\=&amp;   \frac{1}{\hbar^2} | t \left&lt;f|W(x) |i\right&gt; e^{i(w+w_{fi}t)/2}\frac{\sin[(w+w_{fi})t/2]}{(w+w_{fi})t/2}
-\\\\=&amp; t \left&lt;f|W^*(x) |i\right&gt; e^{i(w-w_{fi}t)/2}\frac{\sin[(w-w_{fi})t/2]}{(w-w_{fi})t/2} |^2
+&amp;\frac{1}{\hbar^2} \left| \int_0^{t} \left&lt;f|V(x)
+|i\right&gt;e^{i(E_m-E_k)t/\hbar}dt \right|^2
+\\\\=&amp;   \frac{1}{\hbar^2} | t \left&lt;f|W(x) |i\right&gt;
+e^{i(w+w_{fi}t)/2}\frac{\sin[(w+w_{fi})t/2]}{(w+w_{fi})t/2}
+\\\\=&amp; t \left&lt;f|W^*(x) |i\right&gt;
+e^{i(w-w_{fi}t)/2}\frac{\sin[(w-w_{fi})t/2]}{(w-w_{fi})t/2} |^2
 \end{aligned}\]</span>
-<p>当<span class="math inline">\(w+w_{fi} \approx 0\)</span>时，第一项起主要影响，再由delta函数的弱极限定义，得到</p>
+<p>当<span class="math inline">\(w+w_{fi} \approx
+0\)</span>时，第一项起主要影响，再由delta函数的弱极限定义，得到</p>
 <p><span class="math display">\[
 P \approx \frac{2\pi t}{\hbar}|W_fi|^2 \delta(E_f-E_i-\hbar w)
 \]</span></p>
-<p>同理<span class="math inline">\(w- w_{fi} \approx 0\)</span>，<span class="math inline">\(P \approx \frac{2\pi t}{\hbar}|W^*_fi|^2 \delta(E_f-E_i+\hbar w)\)</span></p>
-<p>所以共振跃迁的条件为 <span class="math inline">\(\hbar w = E_f -E_i\)</span></p>
+<p>同理<span class="math inline">\(w- w_{fi} \approx 0\)</span>，<span
+class="math inline">\(P \approx \frac{2\pi t}{\hbar}|W^*_fi|^2
+\delta(E_f-E_i+\hbar w)\)</span></p>
+<p>所以共振跃迁的条件为 <span class="math inline">\(\hbar w = E_f
+-E_i\)</span></p>
 
                 
               </div>

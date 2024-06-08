@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="拉回和推前映射 假设 \(\phi\) 是从流形\(M\)映射到流形\(N\)的映射，则拉回映射\(\phi^*:\mathscr{F}_N \rightarrow \mathscr{F}_M\) 定义为: \(\phi^* (f)\mid _p &#x3D; f(\phi(p))\) \(p\)是流形\(M\)上的点，\(f\)是流形\(N\)上的标量场，有了拉回映射后，可以定义推前映射：  \">
+    <meta name="description" content="拉回和推前映射 假设 \(\phi\) 是从流形\(M\)映射到流形\(N\)的映射，则拉回映射\(\phi^*:\mathscr{F}_N \rightarrow \mathscr{F}_M\) 定义为: \(\phi^* (f)\mid _p &#x3D; f(\phi(p))\) \(p\)是流形\(M\)上的点，\(f\)是流形\(N\)上的标量场，有了拉回映射后，可以定义推前映射：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5.推前拉回映射和李导数">
 <meta property="og:url" content="http://dyf.zone/2022/12/07/gr3/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="拉回和推前映射 假设 \(\phi\) 是从流形\(M\)映射到流形\(N\)的映射，则拉回映射\(\phi^*:\mathscr{F}_N \rightarrow \mathscr{F}_M\) 定义为: \(\phi^* (f)\mid _p &#x3D; f(\phi(p))\) \(p\)是流形\(M\)上的点，\(f\)是流形\(N\)上的标量场，有了拉回映射后，可以定义推前映射：  \">
+<meta property="og:description" content="拉回和推前映射 假设 \(\phi\) 是从流形\(M\)映射到流形\(N\)的映射，则拉回映射\(\phi^*:\mathscr{F}_N \rightarrow \mathscr{F}_M\) 定义为: \(\phi^* (f)\mid _p &#x3D; f(\phi(p))\) \(p\)是流形\(M\)上的点，\(f\)是流形\(N\)上的标量场，有了拉回映射后，可以定义推前映射：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-07T08:33:17.000Z">
 <meta property="article:modified_time" content="2023-01-19T04:50:51.352Z">
@@ -274,103 +274,198 @@
               <div class="markdown-body">
                 
                 <h1 id="拉回和推前映射">拉回和推前映射</h1>
-<p>假设 <span class="math inline">\(\phi\)</span> 是从流形<span class="math inline">\(M\)</span>映射到流形<span class="math inline">\(N\)</span>的映射，则拉回映射<span class="math inline">\(\phi^*:\mathscr{F}_N \rightarrow \mathscr{F}_M\)</span> 定义为:</p>
-<p><span style="text-align:center"><span class="math inline">\(\phi^* (f)\mid _p = f(\phi(p))\)</span><span></p>
-<p><span class="math inline">\(p\)</span>是流形<span class="math inline">\(M\)</span>上的点，<span class="math inline">\(f\)</span>是流形<span class="math inline">\(N\)</span>上的标量场，有了拉回映射后，可以定义推前映射：</p>
+<p>假设 <span class="math inline">\(\phi\)</span> 是从流形<span
+class="math inline">\(M\)</span>映射到流形<span
+class="math inline">\(N\)</span>的映射，则拉回映射<span
+class="math inline">\(\phi^*:\mathscr{F}_N \rightarrow
+\mathscr{F}_M\)</span> 定义为:</p>
+<p><span style="text-align:center"><span class="math inline">\(\phi^*
+(f)\mid _p = f(\phi(p))\)</span><span></p>
+<p><span class="math inline">\(p\)</span>是流形<span
+class="math inline">\(M\)</span>上的点，<span
+class="math inline">\(f\)</span>是流形<span
+class="math inline">\(N\)</span>上的标量场，有了拉回映射后，可以定义推前映射：</p>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\([\phi_* (v)] f = v (\phi^* f)\)</span></p>
+<p><span class="math inline">\([\phi_* (v)] f = v (\phi^*
+f)\)</span></p>
 <p></span></p>
-<p><span class="math inline">\(v\)</span>是<span class="math inline">\(M\)</span>上的矢量场，<span class="math inline">\(f\)</span>是<span class="math inline">\(N\)</span>上的标量场。进一步可以推广到<span class="math inline">\((0,l),(l,0)\)</span>型的张量：</p>
+<p><span class="math inline">\(v\)</span>是<span
+class="math inline">\(M\)</span>上的矢量场，<span
+class="math inline">\(f\)</span>是<span
+class="math inline">\(N\)</span>上的标量场。进一步可以推广到<span
+class="math inline">\((0,l),(l,0)\)</span>型的张量：</p>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\([\phi^* T_{ab...}]v_1^av_2^b ... = T_{ab...} (\phi_* v_1^a)(\phi_* v_2^b)..\)</span></p>
-<p>importantly, <span class="math inline">\((\phi^* w_a) v^a = w_a (\phi^* v^a)\)</span> is well defined.</p>
+<p><span class="math inline">\([\phi^* T_{ab...}]v_1^av_2^b ... =
+T_{ab...} (\phi_* v_1^a)(\phi_* v_2^b)..\)</span></p>
+<p>importantly, <span class="math inline">\((\phi^* w_a) v^a = w_a
+(\phi^* v^a)\)</span> is well defined.</p>
 <p>so:</p>
-<p><span class="math inline">\([\phi_* T^{ab...}]w_a^1w_b^1 ... = T^{ab...} (\phi^* w_a^1)(\phi^* w_b^1)..\)</span></p>
+<p><span class="math inline">\([\phi_* T^{ab...}]w_a^1w_b^1 ... =
+T^{ab...} (\phi^* w_a^1)(\phi^* w_b^1)..\)</span></p>
 <p></span></p>
-<p>假如<span class="math inline">\(\phi\)</span>是微分同胚，进一步可以推广到<span class="math inline">\((k,l)\)</span>型张量，以<span class="math inline">\((1,1)\)</span>型为例</p>
+<p>假如<span
+class="math inline">\(\phi\)</span>是微分同胚，进一步可以推广到<span
+class="math inline">\((k,l)\)</span>型张量，以<span
+class="math inline">\((1,1)\)</span>型为例</p>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\((\phi^* T_a^{\enspace b})v^aw_b =T_a^{\enspace b}(\phi_*v^a)(\phi_*w_b)\)</span></p>
-<p><span class="math inline">\((\phi_* T_a^{\enspace b})v^aw_b =T_a^{\enspace b}(\phi^* v^a)(\phi^* w_b)\)</span></p>
+<p><span class="math inline">\((\phi^* T_a^{\enspace b})v^aw_b
+=T_a^{\enspace b}(\phi_*v^a)(\phi_*w_b)\)</span></p>
+<p><span class="math inline">\((\phi_* T_a^{\enspace b})v^aw_b
+=T_a^{\enspace b}(\phi^* v^a)(\phi^* w_b)\)</span></p>
 <p></span></p>
-<p>第一个式子将 <span class="math inline">\(N\)</span> 上的张量映射到 <span class="math inline">\(M\)</span> 上，此处<span class="math inline">\(\phi_* w\)</span>的和<span class="math inline">\(\phi^* v\)</span>没有定义，则定义</p>
+<p>第一个式子将 <span class="math inline">\(N\)</span> 上的张量映射到
+<span class="math inline">\(M\)</span> 上，此处<span
+class="math inline">\(\phi_* w\)</span>的和<span
+class="math inline">\(\phi^* v\)</span>没有定义，则定义</p>
 <p><span style="text-align:center"></p>
 <p><span class="math inline">\(\phi^* v = \phi^{-1}_{*}v\)</span></p>
 <p><span class="math inline">\(\phi_* w = \phi^{-1*}w\)</span></p>
 <p></span></p>
 <h2 id="主被动观点和新新老老老新">主被动观点和“新新老=老老新”：</h2>
 <blockquote>
-<p>由于<span class="math inline">\(M\)</span>和<span class="math inline">\(N\)</span>微分同胚，主动观点指认为映射<span class="math inline">\(\phi\)</span>将<span class="math inline">\(M\)</span>上的点和张量等变换了<span class="math inline">\(N\)</span>上，而被动观点认为映射<span class="math inline">\(\phi^{-1}\)</span>将<span class="math inline">\(N\)</span>的点和张量的基(以及张量)映射到了<span class="math inline">\(M\)</span>上，从而导致了<span class="math inline">\(M\)</span>引入了一个新基，所以认为映射<span class="math inline">\(\phi\)</span>引入了一个坐标变换。</p>
+<p>由于<span class="math inline">\(M\)</span>和<span
+class="math inline">\(N\)</span>微分同胚，主动观点指认为映射<span
+class="math inline">\(\phi\)</span>将<span
+class="math inline">\(M\)</span>上的点和张量等变换了<span
+class="math inline">\(N\)</span>上，而被动观点认为映射<span
+class="math inline">\(\phi^{-1}\)</span>将<span
+class="math inline">\(N\)</span>的点和张量的基(以及张量)映射到了<span
+class="math inline">\(M\)</span>上，从而导致了<span
+class="math inline">\(M\)</span>引入了一个新基，所以认为映射<span
+class="math inline">\(\phi\)</span>引入了一个坐标变换。</p>
 </blockquote>
 <blockquote>
-<p>新点（<span class="math inline">\(\phi(p)\)</span>）的新张量<span class="math inline">\((\phi_* T)\)</span>在老坐标系（<span class="math inline">\(N\)</span>上的原有坐标系<span class="math inline">\({(\frac{\partial }{\partial x^\nu})^a}\)</span>）的展开分量等于老点（<span class="math inline">\(p\)</span>）的老张量（<span class="math inline">\(T\)</span>）在新坐标系（<span class="math inline">\(\phi^*{(\frac{\partial }{\partial x^\nu})^a}\)</span>，由<span class="math inline">\(N\)</span>上的原有坐标系在<span class="math inline">\(M\)</span>上诱导出来的新坐标系）的展开分量。</p>
+<p>新点（<span class="math inline">\(\phi(p)\)</span>）的新张量<span
+class="math inline">\((\phi_* T)\)</span>在老坐标系（<span
+class="math inline">\(N\)</span>上的原有坐标系<span
+class="math inline">\({(\frac{\partial }{\partial
+x^\nu})^a}\)</span>）的展开分量等于老点（<span
+class="math inline">\(p\)</span>）的老张量（<span
+class="math inline">\(T\)</span>）在新坐标系（<span
+class="math inline">\(\phi^*{(\frac{\partial }{\partial
+x^\nu})^a}\)</span>，由<span
+class="math inline">\(N\)</span>上的原有坐标系在<span
+class="math inline">\(M\)</span>上诱导出来的新坐标系）的展开分量。</p>
 </blockquote>
 <blockquote>
 <div style="text-align:center">
-<span class="math inline">\(\phi_{*}T^{\nu_1\nu_2...}_{\enspace\enspace\mu_1\mu_2...}\mid _{\phi_t(p)}\)</span> = <span class="math inline">\(T_{v_1v_2...}^{\quad \nu_1\nu_2...}|_p\)</span>
+<span
+class="math inline">\(\phi_{*}T^{\nu_1\nu_2...}_{\enspace\enspace\mu_1\mu_2...}\mid
+_{\phi_t(p)}\)</span> = <span class="math inline">\(T_{v_1v_2...}^{\quad
+\nu_1\nu_2...}|_p\)</span>
 </div>
 </blockquote>
 <blockquote>
 <p>prove: （以(1,1)型张量为例）</p>
 </blockquote>
 <div style="text-align:center">
-<span class="math inline">\((\phi_*T)_{\mu}^{\;\; \nu}|_{\phi(p)}\)</span>=<span class="math inline">\((\phi_*T)_{a}^{\;\; b}(\frac{\partial}{\partial x^\mu})^a (dx^\nu)_b|_{\phi(p)}\)</span>
+<span class="math inline">\((\phi_*T)_{\mu}^{\;\;
+\nu}|_{\phi(p)}\)</span>=<span class="math inline">\((\phi_*T)_{a}^{\;\;
+b}(\frac{\partial}{\partial x^\mu})^a (dx^\nu)_b|_{\phi(p)}\)</span>
 </div>
 <p><br></p>
 <div style="text-align:center">
-<p><span class="math inline">\(=(T)_{a}^{\enspace b}(\phi^*\frac{\partial }{\partial x^\mu})^a (\phi^*dx^\nu)_b \mid _{p}\)</span></p>
+<p><span class="math inline">\(=(T)_{a}^{\enspace
+b}(\phi^*\frac{\partial }{\partial x^\mu})^a (\phi^*dx^\nu)_b \mid
+_{p}\)</span></p>
 </div>
 <blockquote>
 <p>第一个等号来自于分量定义，第二个等号来自于推前映射的定义，</p>
 </blockquote>
 <h1 id="李导数">李导数</h1>
 <h2 id="定义">定义：</h2>
-<p>给定一个矢量场<span class="math inline">\(v\)</span>，则由该矢量场可以给出一个单参微分同胚群，记作<span class="math inline">\(\phi_t\)</span>，则李导数定义为：</p>
+<p>给定一个矢量场<span
+class="math inline">\(v\)</span>，则由该矢量场可以给出一个单参微分同胚群，记作<span
+class="math inline">\(\phi_t\)</span>，则李导数定义为：</p>
 <div style="text-align:center">
-<span class="math inline">\(\mathscr{L}_v T^{..}_{..}\)</span>=<span class="math inline">\(\lim_{t\rightarrow0} \frac{\phi_{t}^{*}T^{...}_{...} -T^{...}_{...}}{t}\)</span>
+<span class="math inline">\(\mathscr{L}_v T^{..}_{..}\)</span>=<span
+class="math inline">\(\lim_{t\rightarrow0}
+\frac{\phi_{t}^{*}T^{...}_{...} -T^{...}_{...}}{t}\)</span>
 </div>
-<h2 id="theorem1-mathscrl_v-f-vf">theorem1: <span class="math inline">\(\mathscr{L}_v f = v(f)\)</span></h2>
-<p>首先，矢量场所给出的单参微分(局域的)同胚群满足：取一点<span class="math inline">\(p\)</span>为起点，则由矢量场给定的积分曲线有<span class="math inline">\(C(t) = \phi_t(p)\)</span></p>
+<h2 id="theorem1-mathscrl_v-f-vf">theorem1: <span
+class="math inline">\(\mathscr{L}_v f = v(f)\)</span></h2>
+<p>首先，矢量场所给出的单参微分(局域的)同胚群满足：取一点<span
+class="math inline">\(p\)</span>为起点，则由矢量场给定的积分曲线有<span
+class="math inline">\(C(t) = \phi_t(p)\)</span></p>
 <div style="text-align:center">
-<span class="math inline">\(\mathscr{L}_v f\)</span>=<span class="math inline">\(\lim_{t\rightarrow0} \frac{\phi_t^*f - f}{t}\)</span>=<span class="math inline">\(\lim_{t\rightarrow0} \frac{f(\phi_t(p)) - f(p)}{t}\)</span>=<span class="math inline">\(\lim_{t\rightarrow0} \frac{f(C(t))- f(C(0))}{t}\)</span>
+<span class="math inline">\(\mathscr{L}_v f\)</span>=<span
+class="math inline">\(\lim_{t\rightarrow0} \frac{\phi_t^*f -
+f}{t}\)</span>=<span class="math inline">\(\lim_{t\rightarrow0}
+\frac{f(\phi_t(p)) - f(p)}{t}\)</span>=<span
+class="math inline">\(\lim_{t\rightarrow0} \frac{f(C(t))-
+f(C(0))}{t}\)</span>
 </div>
 <p><br></p>
 <div>
-最后一式即为<span class="math inline">\(\frac{\partial }{\partial t}(f)\)</span>定义
+最后一式即为<span class="math inline">\(\frac{\partial }{\partial
+t}(f)\)</span>定义
 </div>
 <h2 id="theorem2">theorem2:</h2>
 <div>
-在适配坐标系下，<span class="math inline">\(\mathscr{L}_v T^{...}_{...}\)</span> = <span class="math inline">\(\frac{\partial T_{...}^{...}}{\partial x_1}\)</span>
+在适配坐标系下，<span class="math inline">\(\mathscr{L}_v
+T^{...}_{...}\)</span> = <span class="math inline">\(\frac{\partial
+T_{...}^{...}}{\partial x_1}\)</span>
 </div>
-<p><mark>适配坐标系</mark>即以p的坐标<span class="math inline">\((0,x_2,x_3,...)\)</span>，p的积分曲线<span class="math inline">\(C(t)\)</span>上的点<span class="math inline">\(q\)</span>的坐标为<span class="math inline">\((t,x_2,x_3,...)\)</span>，<span class="math inline">\(v\)</span>为<span class="math inline">\(\frac{\partial }{\partial x_1}\)</span>的坐标系。</p>
+<p><mark>适配坐标系</mark>即以p的坐标<span
+class="math inline">\((0,x_2,x_3,...)\)</span>，p的积分曲线<span
+class="math inline">\(C(t)\)</span>上的点<span
+class="math inline">\(q\)</span>的坐标为<span
+class="math inline">\((t,x_2,x_3,...)\)</span>，<span
+class="math inline">\(v\)</span>为<span
+class="math inline">\(\frac{\partial }{\partial
+x_1}\)</span>的坐标系。</p>
 <p>便于说明，采用<span class="math inline">\((1,1)\)</span>型张量</p>
 <div style="text-align:center">
-<span class="math inline">\(\mathscr{L} T^{\enspace \mu}_{\nu}\)</span>=<span class="math inline">\(\lim_{t\rightarrow 0} \frac{\phi_{t}^{*}T^{\enspace \mu}_{\nu} -T^{\enspace \mu}_{\nu}}{t}\)</span> =<span class="math inline">\(lim_{t\rightarrow 0} \frac{\phi_{-t*}T^{\enspace \mu}_{\nu} -T^{\enspace \mu}_{\nu}}{t}\)</span>
+<span class="math inline">\(\mathscr{L} T^{\enspace
+\mu}_{\nu}\)</span>=<span class="math inline">\(\lim_{t\rightarrow 0}
+\frac{\phi_{t}^{*}T^{\enspace \mu}_{\nu} -T^{\enspace
+\mu}_{\nu}}{t}\)</span> =<span class="math inline">\(lim_{t\rightarrow
+0} \frac{\phi_{-t*}T^{\enspace \mu}_{\nu} -T^{\enspace
+\mu}_{\nu}}{t}\)</span>
 </div>
 <p><br></p>
 <div>
-由推前映射的新点新张量在老坐标系下的展开等于“老老新”有，<span class="math inline">\(\phi_{-t*}T^{\enspace \mu}_{\nu}\mid _{p}\)</span>=<span class="math inline">\(T&#39;^{\enspace \mu}_{\nu}\mid _{\phi(t)(p)}\)</span>
+由推前映射的新点新张量在老坐标系下的展开等于“老老新”有，<span
+class="math inline">\(\phi_{-t*}T^{\enspace \mu}_{\nu}\mid
+_{p}\)</span>=<span class="math inline">\(T&#39;^{\enspace
+\mu}_{\nu}\mid _{\phi(t)(p)}\)</span>
 </div>
-<p>再由老点由<span class="math inline">\(\phi^{-1}\)</span>诱导的新坐标等于新点在老坐标系下的坐标有（可以证明这样规定的新坐标是微分同胚映射）：</p>
-<p><span class="math inline">\(x&#39;^{\mu}=x&#39;^{\mu}+t\delta_{1\mu}\)</span></p>
+<p>再由老点由<span
+class="math inline">\(\phi^{-1}\)</span>诱导的新坐标等于新点在老坐标系下的坐标有（可以证明这样规定的新坐标是微分同胚映射）：</p>
+<p><span
+class="math inline">\(x&#39;^{\mu}=x&#39;^{\mu}+t\delta_{1\mu}\)</span></p>
 <p>所以</p>
 <div style="text-align:center">
-<span class="math inline">\(T&#39;^{\enspace \mu}_{\nu}\mid _{\phi(t)(p)}\)</span> = <span class="math inline">\((\frac{\partial x&#39;^\mu}{\partial x^\sigma}\frac{\partial x^\eta}{\partial x&#39;^\nu}T^{\enspace \sigma}_{\eta}\mid _{\phi(t)(p)})\)</span> = <span class="math inline">\(T^{\enspace \mu}_{\nu}\mid _{\phi(t)(p)}\)</span>
+<span class="math inline">\(T&#39;^{\enspace \mu}_{\nu}\mid
+_{\phi(t)(p)}\)</span> = <span class="math inline">\((\frac{\partial
+x&#39;^\mu}{\partial x^\sigma}\frac{\partial x^\eta}{\partial
+x&#39;^\nu}T^{\enspace \sigma}_{\eta}\mid _{\phi(t)(p)})\)</span> =
+<span class="math inline">\(T^{\enspace \mu}_{\nu}\mid
+_{\phi(t)(p)}\)</span>
 </div>
 <p>所以李导数写为:</p>
 <div style="text-align:center">
-<span class="math inline">\(\mathscr{L} T^{\enspace \mu}_{\nu}\)</span> = <span class="math inline">\(\lim_{t\rightarrow 0} \frac{T^{\enspace \mu}_{\nu}\mid _{\phi_t(p)} -T^{\enspace \mu}_{\nu}\mid _{p}}{t}\)</span>
+<span class="math inline">\(\mathscr{L} T^{\enspace \mu}_{\nu}\)</span>
+= <span class="math inline">\(\lim_{t\rightarrow 0} \frac{T^{\enspace
+\mu}_{\nu}\mid _{\phi_t(p)} -T^{\enspace \mu}_{\nu}\mid
+_{p}}{t}\)</span>
 </div>
 <p><br></p>
 <div style="text-align:center">
-<span class="math inline">\(= (\frac{\partial }{\partial t})T^{\enspace \mu}_{\nu}\)</span> = $()T^{}_{} = $
+<span class="math inline">\(= (\frac{\partial }{\partial t})T^{\enspace
+\mu}_{\nu}\)</span> = $()T^{}_{} = $
 </div>
 <h2 id="theorem3">theorem3:</h2>
-<p><span class="math inline">\(\mathscr{L}_v u^a = [v,u]^a\)</span> and <span class="math inline">\(\mathscr{L}_v w_a = v^a \nabla_b w_a+ w^a \nabla_b v_a\)</span></p>
+<p><span class="math inline">\(\mathscr{L}_v u^a = [v,u]^a\)</span> and
+<span class="math inline">\(\mathscr{L}_v w_a = v^a \nabla_b w_a+ w^a
+\nabla_b v_a\)</span></p>
 <p>显然根据李导数的定义，与坐标系的选择无关，所以为了简化证明，可以选择适配坐标系，现证明第二条：</p>
-<p><span class="math inline">\(\mathscr{L}_v (w_av^a)= v(w_a v^a) = v_b \nabla^b(w_av^a) = v^b(w_a\nabla_bv^a + v^a\nabla_b w_a)\)</span></p>
+<p><span class="math inline">\(\mathscr{L}_v (w_av^a)= v(w_a v^a) = v_b
+\nabla^b(w_av^a) = v^b(w_a\nabla_bv^a + v^a\nabla_b w_a)\)</span></p>
 <p>第一个等号来源于李导数对标量场的作用，第二个来源于导数算符对矢量作用的改写，同时：</p>
 <p>再由theorem2和偏微分求导的莱布尼兹律说明李导数满足莱布尼兹律，则：</p>
-<p><span class="math inline">\(\mathscr{L}_v (w_bv^b) = w_a \mathscr{L}_v (v^b) + v^b\mathscr{L}_v (w_b)\)</span></p>
+<p><span class="math inline">\(\mathscr{L}_v (w_bv^b) = w_a
+\mathscr{L}_v (v^b) + v^b\mathscr{L}_v (w_b)\)</span></p>
 <p>$ =w_b [v,v]^b + v^b_v (w_b) = v^b_v (w_b)$</p>
 
                 

@@ -16,24 +16,24 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="建议使用黑色主题  常用库 1234import numpy as npimport matplotlib.pyplot as pltimport matplotlib as mplimport scipy as sp 1 数值计算的根本概念 1.1 浮点数的存储方法： $A &#x3D; 1.5 &#x3D; 2 * 0.75 &#x3D; 2 * （0.5+0.25）&#x3D; 2^{1} * (2{-1}+2{-">
+    <meta name="description" content="建议使用黑色主题  常用库 1234import numpy as npimport matplotlib.pyplot as pltimport matplotlib as mplimport scipy as sp 1 数值计算的根本概念 1.1 浮点数的存储方法： $A &#x3D; 1.5 &#x3D; 2 * 0.75 &#x3D; 2 * （0.5+0.25）&#x3D; 2^{1} * (2{-1}+2{">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用的一些算法">
 <meta property="og:url" content="http://dyf.zone/2023/01/17/algothrim/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="建议使用黑色主题  常用库 1234import numpy as npimport matplotlib.pyplot as pltimport matplotlib as mplimport scipy as sp 1 数值计算的根本概念 1.1 浮点数的存储方法： $A &#x3D; 1.5 &#x3D; 2 * 0.75 &#x3D; 2 * （0.5+0.25）&#x3D; 2^{1} * (2{-1}+2{-">
+<meta property="og:description" content="建议使用黑色主题  常用库 1234import numpy as npimport matplotlib.pyplot as pltimport matplotlib as mplimport scipy as sp 1 数值计算的根本概念 1.1 浮点数的存储方法： $A &#x3D; 1.5 &#x3D; 2 * 0.75 &#x3D; 2 * （0.5+0.25）&#x3D; 2^{1} * (2{-1}+2{">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://dyf.zone/2023/01/17/algothrim/output_11_0.png">
-<meta property="og:image" content="http://dyf.zone/2023/01/17/algothrim/output_14_0.png">
+<meta property="og:image" content="http://dyf.zone/file/algothrim/output_14_0.png">
+<meta property="og:image" content="http://dyf.zone/file/algothrim/output_11_0.png">
 <meta property="og:image" content="http://dyf.zone/2023/01/17/algothrim/output_31_0.png">
 <meta property="og:image" content="http://dyf.zone/2023/01/17/algothrim/output_34_0.png">
 <meta property="og:image" content="http://dyf.zone/2023/01/17/algothrim/output_50_0.png">
 <meta property="article:published_time" content="2023-01-17T10:52:14.000Z">
-<meta property="article:modified_time" content="2023-01-17T16:48:19.478Z">
+<meta property="article:modified_time" content="2024-02-24T08:10:54.702Z">
 <meta property="article:author" content="Duyifei">
 <meta property="article:tag" content="computing science,计算数学，计算物理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://dyf.zone/2023/01/17/algothrim/output_11_0.png">
+<meta name="twitter:image" content="http://dyf.zone/file/algothrim/output_14_0.png">
   
   
   
@@ -286,7 +286,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> matplotlib <span class="hljs-keyword">as</span> mpl<br><span class="hljs-keyword">import</span> scipy <span class="hljs-keyword">as</span> sp<br></code></pre></td></tr></table></figure>
 <h1 id="数值计算的根本概念">1 数值计算的根本概念</h1>
 <h2 id="浮点数的存储方法">1.1 浮点数的存储方法：</h2>
-<p>$A = 1.5 = 2 * 0.75 = 2 * （0.5+0.25）= 2^{1} * (2<sup>{-1}+2</sup>{-2} ) $</p>
+<p>$A = 1.5 = 2 * 0.75 = 2 * （0.5+0.25）= 2^{1} *
+(2<sup>{-1}+2</sup>{-2} ) $</p>
 <table>
 <thead>
 <tr class="header">
@@ -312,30 +313,39 @@
 <!--  -->
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">a = <span class="hljs-number">1</span><br>count = <span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> <span class="hljs-number">1</span> + a &gt; <span class="hljs-number">1</span>:<br>    a = a/<span class="hljs-number">10</span><br>    count += <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(count)<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">16</code></pre>
-<p>可知python的机器精度在<span class="math inline">\(10^{-16}\)</span>左右，机器精度可以理解为所能存储和操作的最小的数的单元，但是一般计算涉及不到那么小的舍入误差，</p>
+<p>可知python的机器精度在<span
+class="math inline">\(10^{-16}\)</span>左右，机器精度可以理解为所能存储和操作的最小的数的单元，但是一般计算涉及不到那么小的舍入误差，</p>
 <p>避免方法有：</p>
 <p>1.避免过于临近的数相减</p>
 <p>2.减少运算次数</p>
 <p>3.尽量选取合适的单位制使得乘除法的数字在1附近</p>
-<p>4.有一些递推算法，类似于待求值<span class="math inline">\(S_n=a*S_{n-1},a&gt;1\)</span>这种，会不断放大舍入误差，也不可取</p>
+<p>4.有一些递推算法，类似于待求值<span
+class="math inline">\(S_n=a*S_{n-1},a&gt;1\)</span>这种，会不断放大舍入误差，也不可取</p>
 <h1 id="函数求值">2 函数求值</h1>
 <h3 id="泰勒展开">2.1 泰勒展开</h3>
-<p><span class="math inline">\(f(x)= \frac{sin(x)}{x}\)</span>类的函数在奇点（0）附近，由于舍入误差的原因，会出现不规则的震荡，这会儿需要用解析的方法对函数进行近似</p>
+<p><span class="math inline">\(f(x)=
+\frac{sin(x)}{x}\)</span>类的函数在奇点（0）附近，由于舍入误差的原因，会出现不规则的震荡，这会儿需要用解析的方法对函数进行近似</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">x = np.linspace(<span class="hljs-number">1e-20</span>,<span class="hljs-number">1e-15</span>,<span class="hljs-number">10000</span>)<br>y = [np.sin(i)/i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> x]<br>%matplotlib inline<br>plt.plot(x,y)<br>plt.show()<br></code></pre></td></tr></table></figure>
-<p><img src="output_11_0.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/file/algothrim/output_14_0.png" srcset="/img/loading.gif" lazyload /></p>
 <p>numpy应该已经处理过这个问题了</p>
-<p><span class="math inline">\(f(x) = \frac{sinx}{x}=\frac{x-\frac{x^3}{3!}...}{x} = 1 - \frac{x^2}{3!}...\)</span></p>
+<p><span class="math inline">\(f(x) =
+\frac{sinx}{x}=\frac{x-\frac{x^3}{3!}...}{x} = 1 -
+\frac{x^2}{3!}...\)</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">x = np.linspace(<span class="hljs-number">1e-16</span>,<span class="hljs-number">1e-15</span>,<span class="hljs-number">10000</span>)<br>y = [<span class="hljs-number">1</span>-i**<span class="hljs-number">2</span>/np.math.factorial(<span class="hljs-number">3</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> x]<br>%matplotlib inline<br>plt.plot(x,y)<br>plt.show()<br></code></pre></td></tr></table></figure>
-<p><img src="output_14_0.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/file/algothrim/output_11_0.png" srcset="/img/loading.gif" lazyload /></p>
 <h3 id="级数求解与阶乘求解">级数求解与阶乘求解</h3>
-<p>一般为了简化求解，<span class="math inline">\((x -x_0)^k\)</span> 由 <span class="math inline">\((x-x_0)^{k-1}\)</span>生成，并且一般会做截断，同时阶乘会化成ln和exp的形式</p>
+<p>一般为了简化求解，<span class="math inline">\((x -x_0)^k\)</span> 由
+<span
+class="math inline">\((x-x_0)^{k-1}\)</span>生成，并且一般会做截断，同时阶乘会化成ln和exp的形式</p>
 <p>$e^{0.5} = <em>{i}{}, ln(i!) = </em>{1}^i ln(n) $</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(np.exp(<span class="hljs-number">0.5</span>))<br>diff_x = <span class="hljs-number">0.5</span> - <span class="hljs-number">0</span><br>fact_ln = <span class="hljs-number">0</span><br>diff_x_n = (<span class="hljs-number">0.5</span>-<span class="hljs-number">0</span>)**<span class="hljs-number">0</span><br>result = diff_x_n/<span class="hljs-number">1</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">121</span>):<br>    fact_ln += np.log(i)<br>    factorial_n = np.exp(fact_ln)<span class="hljs-comment">#ln,exp生成阶乘</span><br>    diff_x_n = diff_x_n*diff_x<span class="hljs-comment">#递推生成递推公式</span><br>    result += diff_x_n/factorial_n<br>    <br><span class="hljs-built_in">print</span>(result)<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">1.6487212707001282
 1.6487212707001278</code></pre>
 <h1 id="数值计算的根本概念-1">3 数值计算的根本概念</h1>
 <h3 id="迭代法求根">3.1 迭代法求根</h3>
-<p>迭代法求<span class="math inline">\(x^2-5x+4=0\)</span>的根，迭代公式为<span class="math inline">\(x_n = \frac{x_{n-1}^2~~+4}{5}\)</span></p>
+<p>迭代法求<span
+class="math inline">\(x^2-5x+4=0\)</span>的根，迭代公式为<span
+class="math inline">\(x_n = \frac{x_{n-1}^2~~+4}{5}\)</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">solve_eq</span>(<span class="hljs-params">x, re_fun, tol,init_point = <span class="hljs-number">1</span></span>): <br>    step = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">if</span> init_point == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">type</span>(x) != <span class="hljs-built_in">list</span>:<br>        x = [x,re_fun([x])]<br>        step = <span class="hljs-number">1</span> <span class="hljs-comment">#手动算了一个点</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">distance</span>(<span class="hljs-params">x</span>):<br>        <span class="hljs-keyword">return</span> np.<span class="hljs-built_in">abs</span>(x[-<span class="hljs-number">1</span>]-x[-<span class="hljs-number">2</span>]) <br>    <br>    <span class="hljs-keyword">while</span> (distance(x) &gt; tol):<br>        x.append(re_fun(x))<br>        step += <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> x,step<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun_iteration</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> (x[-<span class="hljs-number">1</span>]**<span class="hljs-number">2</span>+<span class="hljs-number">4</span>)/<span class="hljs-number">5</span><br><br>solve_eq(<span class="hljs-number">2</span>,fun_iteration,<span class="hljs-number">1e-5</span>)<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">([2,
   1.6,
@@ -355,15 +365,19 @@
   1.0000027328764378],
  15)</code></pre>
 <p>收敛条件：</p>
-<p><span class="math inline">\(g&#39;(x)\mid_\{x_{n}\}&lt;1\)</span>时一定收敛，也就是初值点和迭代点落在<span class="math inline">\(|g&#39;(x)|&lt;1\)</span> 的区间内</p>
+<p><span
+class="math inline">\(g&#39;(x)\mid_\{x_{n}\}&lt;1\)</span>时一定收敛，也就是初值点和迭代点落在<span
+class="math inline">\(|g&#39;(x)|&lt;1\)</span> 的区间内</p>
 <p>prove:</p>
 <p><span class="math inline">\(g(x)\)</span>代表迭代公式：</p>
 <span class="math display">\[\begin{aligned}
-&amp;x_{i+1}-x_{i} = g(x_{i}) - g(x_{i-1}) = g(\epsilon)|x_i-x_{i-1}| 
-\\\\ &amp;if ~ g(\epsilon) &lt;1 \Rightarrow x_{i+1}-x_{i}&lt; |x_i-x_{i-1}| 
+&amp;x_{i+1}-x_{i} = g(x_{i}) - g(x_{i-1}) = g(\epsilon)|x_i-x_{i-1}|
+\\\\ &amp;if ~ g(\epsilon) &lt;1 \Rightarrow x_{i+1}-x_{i}&lt;
+|x_i-x_{i-1}|
 \end{aligned}\]</span>
 <p>所以所有迭代过程中取值范围内的迭代公式的导数值都小于1,迭代恒收敛(实际上还与迭代方向有关，若迭代反向，导数值迟早大于1，也有可能实际并没有解)</p>
-<p>牛顿迭代法：<span class="math inline">\(x_{n+1} =x_{n}-f(x_n)/f&#39;(x_n)\)</span></p>
+<p>牛顿迭代法：<span class="math inline">\(x_{n+1}
+=x_{n}-f(x_n)/f&#39;(x_n)\)</span></p>
 <p>此时<span class="math inline">\(f(x) = x^2-5x+4\)</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun_newton</span>(<span class="hljs-params">x</span>):<br>     <span class="hljs-keyword">return</span> x[-<span class="hljs-number">1</span>]-(x[-<span class="hljs-number">1</span>]**<span class="hljs-number">2</span>-<span class="hljs-number">5</span>*x[-<span class="hljs-number">1</span>]+<span class="hljs-number">4</span>)/(<span class="hljs-number">2</span>*x[-<span class="hljs-number">1</span>]-<span class="hljs-number">5</span>)<br>solve_eq(<span class="hljs-number">2</span>,fun_newton,<span class="hljs-number">1e-10</span>)<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">([2,
@@ -375,7 +389,8 @@
   1.0,
   1.0],
  7)</code></pre>
-<p>弦截法：(用差商代替微商)：<span class="math inline">\(x_{n+1} =x_{n}-f(x_n)\frac{x_k-x_{k-1}}{f(x_k)-f(x_{k-1})}\)</span></p>
+<p>弦截法：(用差商代替微商)：<span class="math inline">\(x_{n+1}
+=x_{n}-f(x_n)\frac{x_k-x_{k-1}}{f(x_k)-f(x_{k-1})}\)</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> x**<span class="hljs-number">2</span>-x*<span class="hljs-number">5</span>+<span class="hljs-number">4</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun_string</span>(<span class="hljs-params">x</span>):<br>    <span class="hljs-keyword">return</span> x[-<span class="hljs-number">1</span>]-(x[-<span class="hljs-number">1</span>]-x[-<span class="hljs-number">2</span>])/(f(x[-<span class="hljs-number">1</span>])-f(x[-<span class="hljs-number">2</span>]))*f(x[-<span class="hljs-number">1</span>])<br>solve_eq([<span class="hljs-number">2</span>,<span class="hljs-number">1.8</span>],fun_string,<span class="hljs-number">1e-10</span>,init_point = <span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">([2,
   1.8,
@@ -390,15 +405,18 @@
  8)</code></pre>
 <h1 id="函数插值">4 函数插值</h1>
 <h3 id="拉格朗日插值">4.1 拉格朗日插值</h3>
-<p><span class="math inline">\(\phi(x) = y_0 l_0(x)+ y_1 l_1(x) + y_2 l_2(x) + y_3 l_3(x)...\)</span></p>
-<p><span class="math inline">\(l_i(x) = \frac{(x-x_0)(x-x_1)...(x-x_n)}{(x_i-x_0)(x_i-x_1)..(x_i-x_n)}\)</span></p>
-<p>插目标函数：<span class="math inline">\(f(x) = e^{2x} - x^2\)</span></p>
+<p><span class="math inline">\(\phi(x) = y_0 l_0(x)+ y_1 l_1(x) + y_2
+l_2(x) + y_3 l_3(x)...\)</span></p>
+<p><span class="math inline">\(l_i(x) =
+\frac{(x-x_0)(x-x_1)...(x-x_n)}{(x_i-x_0)(x_i-x_1)..(x_i-x_n)}\)</span></p>
+<p>插目标函数：<span class="math inline">\(f(x) = e^{2x} -
+x^2\)</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># scipy的拉格朗日插值</span><br><span class="hljs-keyword">from</span> scipy.interpolate <span class="hljs-keyword">import</span> lagrange<br>x=np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)<br>y = np.exp(<span class="hljs-number">2</span>*x)-x**<span class="hljs-number">2</span><br>poly = lagrange(x, y)<br>x1 = np.linspace(-<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1000</span>)<br><br><span class="hljs-comment">#手算的插值</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">lagrange_dyf</span>(<span class="hljs-params">x,y,x_target</span>):<br>    result = <span class="hljs-number">0</span><br>    component = <span class="hljs-built_in">list</span>()<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x)):<br>        tem = <span class="hljs-number">1</span><br>        <span class="hljs-comment">#计算第n个插值多项式</span><br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,i):<br>            tem *= (x_target - x[j])/(x[i] - x[j])<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(x)):<br>            tem *= (x_target - x[j])/(x[i] - x[j])<br>        tem *= y[i]<br>        result += tem<br>    <span class="hljs-keyword">return</span> result<br><br>%matplotlib inline<br>fig, ax = plt.subplots(<span class="hljs-number">1</span>)<br>plt.scatter(x,y,label =<span class="hljs-string">&quot;data&quot;</span>)<br>plt.plot(x1,[poly(i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> x1],label = <span class="hljs-string">r&quot;interpolate curve created by scipy&quot;</span>,linestyle = <span class="hljs-string">&quot;--&quot;</span>)<br>plt.plot(x1,[lagrange_dyf(x,y,i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> x1],label = <span class="hljs-string">r&quot;interpolate_curve&quot;</span>,linestyle = <span class="hljs-string">&quot;:&quot;</span>)<br>ax.legend();  <span class="hljs-comment"># Add a legend.</span><br>ax.set_xlabel(<span class="hljs-string">&#x27;x&#x27;</span>)  <span class="hljs-comment"># Add an x-label to the axes.</span><br>ax.set_ylabel(<span class="hljs-string">&#x27;y&#x27;</span>)  <span class="hljs-comment"># Add a y-label to the axes.</span><br>ax.set_title(<span class="hljs-string">&quot;lagrange&quot;</span>)  <span class="hljs-comment"># Add a title to the axes.</span><br>plt.show()<br></code></pre></td></tr></table></figure>
 <p><img src="output_31_0.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="牛顿插值">4.2 牛顿插值</h3>
 <p>插值表达式为:</p>
 <span class="math display">\[\begin{aligned}
-p(x) = f\[x_0\](x-x_0) +  f\[x_0,x_1\](x-x_0)(x-x_1) 
+p(x) = f\[x_0\](x-x_0) +  f\[x_0,x_1\](x-x_0)(x-x_1)
 \\\\+ f\[x_0,x_1,x_2\](x-x_0)(x-x_1)(x-x_2)...
 \end{aligned}\]</span>
 <p>优势在于便于扩展，每次多一个数据点，不用重新算插值系数和插值基，同时插值基的大小顺序没有关系，插值系数有对称性。</p>
@@ -413,14 +431,24 @@ T = \sum_{i}{(f(x_i)+f(x_{i+1}))\frac{\Delta x_i}{2}}
 <p>误差分析：</p>
 <p>某一个矩形积分区间中：</p>
 <span class="math display">\[\begin{aligned}
-&amp;T_{theory} - T_{numerical} = F(x_{i+1})-F(x_i) - (f(x_i)+f(x_{i+1}))\frac{\Delta x_i}{2}
-\\\\ &amp;= F&#39;(x_i) \Delta x_i +\frac{1}{2}F&#39;&#39;(x_i) \Delta x_i ^2 + \frac{1}{6}F&#39;&#39;&#39;(x_i)\Delta x_i ^3 - f(x_i)\Delta x_i 
-\\\\&amp;- \frac{1}{2} f&#39;(x_i)\Delta x_i ^2 -\frac{1}{4}f&#39;&#39;(x_i)\Delta x_i ^3
+&amp;T_{theory} - T_{numerical} = F(x_{i+1})-F(x_i) -
+(f(x_i)+f(x_{i+1}))\frac{\Delta x_i}{2}
+\\\\ &amp;= F&#39;(x_i) \Delta x_i +\frac{1}{2}F&#39;&#39;(x_i) \Delta
+x_i ^2 + \frac{1}{6}F&#39;&#39;&#39;(x_i)\Delta x_i ^3 - f(x_i)\Delta
+x_i
+\\\\&amp;- \frac{1}{2} f&#39;(x_i)\Delta x_i ^2
+-\frac{1}{4}f&#39;&#39;(x_i)\Delta x_i ^3
 \\\\ &amp;= \frac{1}{12} f&#39;&#39;(x_i) \Delta x_i ^3
 \end{aligned}\]</span>
-<p><span class="math inline">\(F(x)\)</span> 是 <span class="math inline">\(f(x)\)</span> 的原函数，第二行来源于在<span class="math inline">\(x_{i+1}\)</span>的泰勒展开，所以将所有梯形分区的误差加一起后得到最大误差上限<span class="math inline">\((b-a)\frac{w^3}{12}M\)</span>，<span class="math inline">\(M\)</span>为f(x)导数区间的最大值，w是分割长度，b,a,积分上下限</p>
+<p><span class="math inline">\(F(x)\)</span> 是 <span
+class="math inline">\(f(x)\)</span> 的原函数，第二行来源于在<span
+class="math inline">\(x_{i+1}\)</span>的泰勒展开，所以将所有梯形分区的误差加一起后得到最大误差上限<span
+class="math inline">\((b-a)\frac{w^3}{12}M\)</span>，<span
+class="math inline">\(M\)</span>为f(x)导数区间的最大值，w是分割长度，b,a,积分上下限</p>
 <blockquote>
-<p>物理中常用的积分与求和相互转换 <span class="math inline">\(\int_a^b f(x)dx = \frac{(b-a)}{N}\sum_i^N f(x_i),x_i = a+\frac{b-a}{N} i= \sum_i^N f(x_i) \Delta V\)</span>,转换成了求面积</p>
+<p>物理中常用的积分与求和相互转换 <span class="math inline">\(\int_a^b
+f(x)dx = \frac{(b-a)}{N}\sum_i^N f(x_i),x_i = a+\frac{b-a}{N} i=
+\sum_i^N f(x_i) \Delta V\)</span>,转换成了求面积</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#f(x) = sin(x) a = 0 ,b = pi</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">intergrate_Trapezoid</span>(<span class="hljs-params">func,a,b,N</span>):<br>    x = np.linspace(a,b,N)<br>    w = (b-a)/N<br>    y = [func(i) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> x]<br>    T = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x)-<span class="hljs-number">1</span>):<br>        T += (y[i] + y[i+<span class="hljs-number">1</span>])*w/<span class="hljs-number">2</span><br>    <span class="hljs-keyword">return</span> T<br><span class="hljs-built_in">print</span>(intergrate_Trapezoid(np.sin,<span class="hljs-number">0</span>,np.pi,<span class="hljs-number">100000</span>))<br><br><span class="hljs-keyword">import</span> scipy.integrate <span class="hljs-keyword">as</span> integrate<br><span class="hljs-built_in">print</span>(integrate.quad(np.sin,<span class="hljs-number">0</span>,np.pi))<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">1.9999799998355314
@@ -429,11 +457,14 @@ T = \sum_{i}{(f(x_i)+f(x_{i+1}))\frac{\Delta x_i}{2}}
 <p>推导：</p>
 <p>由三点插值的拉格朗日插值公式：</p>
 <span class="math display">\[\begin{aligned}
-p(x) =&amp; f(x_0) \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)} 
-\\\\&amp; + f(x_1) \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} 
+p(x) =&amp; f(x_0) \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}
+\\\\&amp; + f(x_1) \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}
 \\\\&amp;+ f(x_2) \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
 \end{aligned}\]</span>
-<p>取<span class="math inline">\(x_1\)</span>在<span class="math inline">\(x_0\)</span>和<span class="math inline">\(x_2\)</span>的中点，计算<span class="math inline">\(\int^{x_2}_{x_0}p(x)dx\)</span>为：</p>
+<p>取<span class="math inline">\(x_1\)</span>在<span
+class="math inline">\(x_0\)</span>和<span
+class="math inline">\(x_2\)</span>的中点，计算<span
+class="math inline">\(\int^{x_2}_{x_0}p(x)dx\)</span>为：</p>
 <p><span class="math display">\[
 I = \frac{x_2-x_0}{6}[f(x_0)+4f(x_1)+f(x_2)]
 \]</span></p>
@@ -443,23 +474,29 @@ I = \frac{x_2-x_0}{6}[f(x_0)+4f(x_1)+f(x_2)]
 (2.0, 2.220446049250313e-14)</code></pre>
 <p>高阶积分公式及隆贝格积分略</p>
 <h3 id="高斯积分公式">5.3 高斯积分公式</h3>
-<p>可以用多项式去插值对应的待积分函数，并且通过变量代换变到<span class="math inline">\([-1,1]\)</span>的区间上通过几个关键的函数点(高斯点)对插值的多项式进行求解。</p>
+<p>可以用多项式去插值对应的待积分函数，并且通过变量代换变到<span
+class="math inline">\([-1,1]\)</span>的区间上通过几个关键的函数点(高斯点)对插值的多项式进行求解。</p>
 <p>以两点高斯积分为例：</p>
 <span class="math display">\[\begin{aligned}
 &amp;p(-\frac{1}{\sqrt{3}})+ p(\frac{1}{\sqrt{3}}) = \int^1_{-1} p(x) dx
-\\\\&amp;p(x) = ax^3+bx^2+cx+d 
+\\\\&amp;p(x) = ax^3+bx^2+cx+d
 \end{aligned}\]</span>
 则求积分的思路变为：
 <div style="text-align:center">
-<span class="math inline">\(\int^b_a f(x)dx = \sum^{i} \int^{x_i+w}_{x_i}f(x)dx\)</span>
+<span class="math inline">\(\int^b_a f(x)dx = \sum^{i}
+\int^{x_i+w}_{x_i}f(x)dx\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(= \sum^{i} \int^{1}_{-1}\frac{w}{2} f(\frac{w}{2}x&#39;+x_i+\frac{w}{2})dx&#39;\)</span>
+<span class="math inline">\(= \sum^{i} \int^{1}_{-1}\frac{w}{2}
+f(\frac{w}{2}x&#39;+x_i+\frac{w}{2})dx&#39;\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(\approx \sum_{i} \frac{w}{2}(f(\frac{w}{2}\frac{1}{\sqrt 3}+x_i+\frac{w}{2})+f(-\frac{w}{2}\frac{1}{\sqrt 3}+x_i+\frac{w}{2}))\)</span>
+<span class="math inline">\(\approx \sum_{i}
+\frac{w}{2}(f(\frac{w}{2}\frac{1}{\sqrt
+3}+x_i+\frac{w}{2})+f(-\frac{w}{2}\frac{1}{\sqrt
+3}+x_i+\frac{w}{2}))\)</span>
 </div>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> scipy.special <span class="hljs-keyword">import</span> roots_legendre <span class="hljs-comment">#用于得到对应的高斯点 </span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">integrate_gauss</span>(<span class="hljs-params">func,a,b,N</span>):<br>    x = np.linspace(a,b,N)<br>    w = (b-a)/N<br>    T = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x)-<span class="hljs-number">1</span>):<br>        T += w/<span class="hljs-number">2</span>*(func(w/<span class="hljs-number">2</span>/np.sqrt(<span class="hljs-number">3</span>)+x[i]+w/<span class="hljs-number">2</span>)+func(-w/<span class="hljs-number">2</span>/np.sqrt(<span class="hljs-number">3</span>)+x[i]+w/<span class="hljs-number">2</span>))<br>    <span class="hljs-keyword">return</span> T<br><span class="hljs-built_in">print</span>(integrate_gauss(np.sin,<span class="hljs-number">0</span>,np.pi,<span class="hljs-number">100000</span>))<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">integrate_gauss_n</span>(<span class="hljs-params">func,a,b,N,n</span>):<span class="hljs-comment">#n是高斯点的个数</span><br>    x = np.linspace(a,b,N)<br>    w = (b-a)/N<br>    T = <span class="hljs-number">0</span><br>    x_gauss,a = roots_legendre(n) <span class="hljs-comment"># scipy可以方便得到高斯点w以及对应的权重a</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x)-<span class="hljs-number">1</span>):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(x_gauss)):<br>            T += a[j]*w/<span class="hljs-number">2</span>*func(w/<span class="hljs-number">2</span>*x_gauss[j]+x[i]+w/<span class="hljs-number">2</span>)<br>    <span class="hljs-keyword">return</span> T<br><span class="hljs-built_in">print</span>(integrate_gauss_n(np.sin,<span class="hljs-number">0</span>,np.pi,<span class="hljs-number">100000</span>,<span class="hljs-number">5</span>))<br><br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">1.9999799999999983
@@ -468,36 +505,56 @@ I = \frac{x_2-x_0}{6}[f(x_0)+4f(x_1)+f(x_2)]
 <h4 id="解析处理">5.4.1 解析处理</h4>
 <p>换元法对奇点降阶，(小于1阶的都可以)</p>
 <p><span class="math display">\[
-\int^{\frac{\pi}{2}}_0 \frac{f(x)}{\sqrt x} dx = \int^{\sqrt \frac{\pi}{2}}_0 \frac{f(x(u))}{u} 2u du
+\int^{\frac{\pi}{2}}_0 \frac{f(x)}{\sqrt x} dx = \int^{\sqrt
+\frac{\pi}{2}}_0 \frac{f(x(u))}{u} 2u du
 \]</span></p>
 <p>如果积分两端都是奇点，可以将区间分割成两部分分别求解,用分布积分等处理</p>
 <h4 id="分布积分">5.2.分布积分</h4>
-<p>如<span class="math inline">\(\int_{\epsilon}^a f(x)/x dx\)</span>型的，$^{}_{x}f(x) <span class="math inline">\(,因为积分下限太小时可能算不准，需要将积分变形提出\)</span>ln()$的表达式</p>
+<p>如<span class="math inline">\(\int_{\epsilon}^a f(x)/x
+dx\)</span>型的，$^{}_{x}f(x) <span
+class="math inline">\(,因为积分下限太小时可能算不准，需要将积分变形提出\)</span>ln()$的表达式</p>
 <span class="math display">\[\begin{aligned}
-\int_{\epsilon}^a \frac{sinx}{x^2}dx &amp;= \int_{\epsilon}^a \frac{sinx/x}{x} dx 
-\\\\&amp;= \int_{\epsilon}^a \frac{sinx/x-1}{x} dx +\int_{\epsilon}^a \frac{1}{x} dx 
-\\\\&amp;=  \int_{\epsilon}^{\delta} \frac{sinx/x-1}{x} dx + \int_{\delta}^a \frac{sinx/x-1}{x} dx 
+\int_{\epsilon}^a \frac{sinx}{x^2}dx &amp;= \int_{\epsilon}^a
+\frac{sinx/x}{x} dx
+\\\\&amp;= \int_{\epsilon}^a \frac{sinx/x-1}{x} dx +\int_{\epsilon}^a
+\frac{1}{x} dx
+\\\\&amp;=  \int_{\epsilon}^{\delta} \frac{sinx/x-1}{x} dx +
+\int_{\delta}^a \frac{sinx/x-1}{x} dx
 \\\\&amp;+ \ln(a) -\ln(\epsilon)
-\\\\&amp;= \int_{\epsilon}^{\delta} \frac{1- 1 + \frac{1}{3!}x^3 - \frac{1}{5!}x^5 ..}{x} dx + 
+\\\\&amp;= \int_{\epsilon}^{\delta} \frac{1- 1 + \frac{1}{3!}x^3 -
+\frac{1}{5!}x^5 ..}{x} dx +
 \\\\&amp;\int_{\delta}^a \frac{sinx/x-1}{x} dx + \ln(a) -\ln(\epsilon)
 \end{aligned}\]</span>
 <p>若是有无穷区间的积分，不能简单截断，因为不能证明后面的积分是可忽略的量，而是要通过换元的方法去积分</p>
 <h1 id="有限离散傅里叶变换">有限离散傅里叶变换</h1>
-<p>f(t)是<span class="math inline">\([0,t_{end}]\)</span>区间上的函数</p>
+<p>f(t)是<span
+class="math inline">\([0,t_{end}]\)</span>区间上的函数</p>
 <p>变换公式：</p>
 <p><span style="text-align:center"></p>
-<p><span class="math inline">\(F(w_n) = \sum^{N-1}_{l=0}f(t_l) e^{-i\frac{2\pi l}{N}}\)</span></p>
-<p><span class="math inline">\(f(t_l) = \sum^{N-1}_{k=0}F(w_n) e^{i\frac{2\pi n}{N}}\)</span></p>
+<p><span class="math inline">\(F(w_n) = \sum^{N-1}_{l=0}f(t_l)
+e^{-i\frac{2\pi l}{N}}\)</span></p>
+<p><span class="math inline">\(f(t_l) = \sum^{N-1}_{k=0}F(w_n)
+e^{i\frac{2\pi n}{N}}\)</span></p>
 <p></span></p>
-<p>该变换主要用于频谱分析.需要的量为<span class="math inline">\(|{F(w_l)}|\)</span>，与傅里叶变换<span class="math inline">\(F(w_l)\)</span>相比，该变换相差一个常数因子，见<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21314374/answer/2361985353">知乎回答</a></p>
-<p>横坐标对应于<span class="math inline">\(w_l= \frac{2\pi l }{N\Delta t}\)</span>，<span class="math inline">\(\Delta t\)</span>为取样间隔</p>
+<p>该变换主要用于频谱分析.需要的量为<span
+class="math inline">\(|{F(w_l)}|\)</span>，与傅里叶变换<span
+class="math inline">\(F(w_l)\)</span>相比，该变换相差一个常数因子，见<a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/21314374/answer/2361985353">知乎回答</a></p>
+<p>横坐标对应于<span class="math inline">\(w_l= \frac{2\pi l }{N\Delta
+t}\)</span>，<span class="math inline">\(\Delta t\)</span>为取样间隔</p>
 <p>将 $f(t) =e<sup>{-200t</sup>2} $ 做DFT变换</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python">t_end = <span class="hljs-number">1</span><br>N = <span class="hljs-number">400</span> <span class="hljs-comment">#不能少于两个点</span><br>t = np.linspace(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*np.pi*t_end,N)<span class="hljs-comment">#是等距的点</span><br>delta_t = t[<span class="hljs-number">1</span>] - t[<span class="hljs-number">0</span>] <br>y = np.exp(-t**<span class="hljs-number">2</span>*<span class="hljs-number">200</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">DFT_trans</span>(<span class="hljs-params">f</span>):<span class="hljs-comment">#f是传入其中的采样点的np.array</span><br>    F = <span class="hljs-built_in">list</span>()<br>    N = <span class="hljs-built_in">len</span>(f)<br>    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):<br>        tem = <span class="hljs-number">0</span> <span class="hljs-comment">#容器</span><br>        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N):<br>            tem += f[l]*np.exp(-<span class="hljs-number">1.j</span>*k*<span class="hljs-number">2</span>*np.pi*l/N)<br>        F.append(tem)<br>    <span class="hljs-keyword">return</span> np.array(F)   <br><br><span class="hljs-keyword">import</span> scipy.fft <span class="hljs-keyword">as</span> fft<br>N = <span class="hljs-built_in">len</span>(y)<br><span class="hljs-comment">#fft.fft(y)</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs python">w0 = np.linspace(-<span class="hljs-number">2</span>*np.pi/delta_t,<span class="hljs-number">0</span>,N)<br>w1 = np.linspace(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*np.pi/delta_t,N)<br>%matplotlib inline<br>fig, ax = plt.subplots(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br><span class="hljs-comment">#plt.scatter(x,y,label =&quot;data&quot;)</span><br>ax[<span class="hljs-number">0</span>].plot(w1,<span class="hljs-built_in">abs</span>(fft.fft(y)),label = <span class="hljs-string">r&quot;FFT by Scipy&quot;</span>,color=<span class="hljs-string">&quot;blue&quot;</span>,linestyle = <span class="hljs-string">&quot;--&quot;</span>)<br>ax[<span class="hljs-number">0</span>].plot(w0,<span class="hljs-built_in">abs</span>(fft.fft(y)),color=<span class="hljs-string">&quot;blue&quot;</span>)<br>ax[<span class="hljs-number">0</span>].plot(w0,<span class="hljs-built_in">abs</span>(DFT_trans(y)),label = <span class="hljs-string">r&quot;DFT&quot;</span>,color=<span class="hljs-string">&quot;red&quot;</span>,linestyle = <span class="hljs-string">&quot;-.&quot;</span>)<br>ax[<span class="hljs-number">0</span>].plot(w1,<span class="hljs-built_in">abs</span>(DFT_trans(y)),color=<span class="hljs-string">&quot;red&quot;</span>)<br>ax[<span class="hljs-number">0</span>].legend();  <span class="hljs-comment"># Add a legend.</span><br>ax[<span class="hljs-number">0</span>].set_xlabel(<span class="hljs-string">&#x27;w&#x27;</span>)  <span class="hljs-comment"># Add an x-label to the axes.</span><br>ax[<span class="hljs-number">0</span>].set_ylabel(<span class="hljs-string">&#x27;F\&#x27;(w)&#x27;</span>)  <span class="hljs-comment"># Add a y-label to the axes.</span><br>ax[<span class="hljs-number">0</span>].set_title(<span class="hljs-string">&quot;DFT transforms&quot;</span>)  <span class="hljs-comment"># Add a title to the axes.</span><br><br><span class="hljs-comment">## 更改点数后再画</span><br>N = <span class="hljs-number">200</span> <span class="hljs-comment">#不能少于两个点</span><br>t = np.linspace(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*np.pi*t_end,N)<span class="hljs-comment">#是等距的点</span><br>delta_t = t[<span class="hljs-number">1</span>] - t[<span class="hljs-number">0</span>] <br>y = np.exp(-t**<span class="hljs-number">2</span>*<span class="hljs-number">200</span>)<br>w0 = np.linspace(-<span class="hljs-number">2</span>*np.pi/delta_t,<span class="hljs-number">0</span>,N)<br>w1 = np.linspace(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*np.pi/delta_t,N)<br><br>ax[<span class="hljs-number">1</span>].plot(w1,<span class="hljs-built_in">abs</span>(fft.fft(y)),label = <span class="hljs-string">r&quot;FFT by Scipy&quot;</span>,color=<span class="hljs-string">&quot;blue&quot;</span>,linestyle = <span class="hljs-string">&quot;--&quot;</span>)<br>ax[<span class="hljs-number">1</span>].plot(w0,<span class="hljs-built_in">abs</span>(fft.fft(y)),color=<span class="hljs-string">&quot;blue&quot;</span>)<br>ax[<span class="hljs-number">1</span>].plot(w0,<span class="hljs-built_in">abs</span>(DFT_trans(y)),label = <span class="hljs-string">r&quot;DFT&quot;</span>,color=<span class="hljs-string">&quot;red&quot;</span>,linestyle = <span class="hljs-string">&quot;-.&quot;</span>)<br>ax[<span class="hljs-number">1</span>].plot(w1,<span class="hljs-built_in">abs</span>(DFT_trans(y)),color=<span class="hljs-string">&quot;red&quot;</span>)<br>ax[<span class="hljs-number">1</span>].legend();  <span class="hljs-comment"># Add a legend.</span><br>ax[<span class="hljs-number">1</span>].set_xlabel(<span class="hljs-string">&#x27;w&#x27;</span>)  <span class="hljs-comment"># Add an x-label to the axes.</span><br>ax[<span class="hljs-number">1</span>].set_ylabel(<span class="hljs-string">&#x27;F\&#x27;(w)&#x27;</span>)  <span class="hljs-comment"># Add a y-label to the axes.</span><br>ax[<span class="hljs-number">1</span>].set_title(<span class="hljs-string">&quot;DFT transforms&quot;</span>)  <span class="hljs-comment"># Add a title to the axes.</span><br>plt.show()<br></code></pre></td></tr></table></figure>
 <p><img src="output_50_0.png" srcset="/img/loading.gif" lazyload></p>
-<p>由于是<span class="math inline">\(f&#39;(w)\)</span>是周期函数，所以出现的峰值不一定就是正确的，需要更改取点数的多少从而更改w的范围从而更改<span class="math inline">\(f&#39;(w)\)</span>的周期来判断是不是真峰，没有移动的峰才是真峰，显然0点附近的高斯波包才是真峰。</p>
+<p>由于是<span
+class="math inline">\(f&#39;(w)\)</span>是周期函数，所以出现的峰值不一定就是正确的，需要更改取点数的多少从而更改w的范围从而更改<span
+class="math inline">\(f&#39;(w)\)</span>的周期来判断是不是真峰，没有移动的峰才是真峰，显然0点附近的高斯波包才是真峰。</p>
 <h1 id="矩阵求解之lu分解">矩阵求解之LU分解</h1>
-<p>若矩阵<span class="math inline">\(A=LU\)</span>,则求解<span class="math inline">\(Ax=b\)</span>可转换成<span class="math inline">\(Ly=b\)</span>再求解<span class="math inline">\(Ux = y\)</span>，<span class="math inline">\(L\)</span>为下三角矩阵，<span class="math inline">\(U\)</span>为上三角矩阵</p>
+<p>若矩阵<span class="math inline">\(A=LU\)</span>,则求解<span
+class="math inline">\(Ax=b\)</span>可转换成<span
+class="math inline">\(Ly=b\)</span>再求解<span class="math inline">\(Ux
+= y\)</span>，<span class="math inline">\(L\)</span>为下三角矩阵，<span
+class="math inline">\(U\)</span>为上三角矩阵</p>
 <h2 id="cholesky-分解">Cholesky 分解</h2>
 <p>根据计算数学理论，一个正定对称矩阵一定可以做LU分解</p>
 由：
@@ -506,7 +563,7 @@ I = \frac{x_2-x_0}{6}[f(x_0)+4f(x_1)+f(x_2)]
 \hat{A}_{ii} = \left( \begin{matrix}
     a_{ii}&amp;     \alpha\\\\
     \alpha ^T&amp;      A_{i+1i+1}
-\end{matrix} \right) 
+\end{matrix} \right)
 \]</span></p>
 </div>
 <p><br></p>
@@ -518,16 +575,17 @@ I = \frac{x_2-x_0}{6}[f(x_0)+4f(x_1)+f(x_2)]
 \end{matrix} \right) \left( \begin{matrix}
     u_{ii}&amp;     u\\\\
     0&amp;      U_{i+1i+1}
-\end{matrix} \right) 
+\end{matrix} \right)
 \]</span></p>
 </div>
 <p>得到具体算法：</p>
 <span class="math display">\[\begin{aligned}
 &amp;u_{ii} = \sqrt{a_{11}}
-\\\\&amp;u_{ij} = \frac{a_{ij}}{a_{ii}} 
+\\\\&amp;u_{ij} = \frac{a_{ij}}{a_{ii}}
 \end{aligned}\]</span>
 <div style="text-align:center">
-<span class="math inline">\(\hat{A}_{i+1i+1}=U_{i+1i+1}^T U_{i+1i+1} = A_{i+1i+1}-u^Tu\)</span>
+<span class="math inline">\(\hat{A}_{i+1i+1}=U_{i+1i+1}^T U_{i+1i+1} =
+A_{i+1i+1}-u^Tu\)</span>
 </div>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">Cholesky_factorization</span>(<span class="hljs-params">A</span>):<span class="hljs-comment">#A是对角正定矩阵</span><br>    U = np.zeros(A.shape)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,A.shape[<span class="hljs-number">0</span>]-<span class="hljs-number">1</span>): <span class="hljs-comment">#只用遍历到倒数第二行</span><br>        U[i][i] = np.sqrt(A[i][i])<br>        u_vec = A[i][i+<span class="hljs-number">1</span>:A.shape[<span class="hljs-number">1</span>]]/U[i][i]<br>        tem = np.zeros(A.shape[<span class="hljs-number">1</span>] - u_vec.shape[<span class="hljs-number">0</span>]) <span class="hljs-comment"># 用于对A操作，得到Ahat</span><br>        u_vec = np.append(tem,u_vec)<br>        A = A - np.outer(u_vec,u_vec) <span class="hljs-comment">#将A hat用A右下角来储存</span><br>        U[i] = U[i]+ u_vec <br>        U[-<span class="hljs-number">1</span>][-<span class="hljs-number">1</span>] = np.sqrt(A[-<span class="hljs-number">1</span>][-<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">return</span> U<br>A = np.array([[<span class="hljs-number">3</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[-<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>]])<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;U矩阵：\n&quot;</span>,Cholesky_factorization(A))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;L矩阵：\n&quot;</span>,np.linalg.cholesky(A)) <span class="hljs-comment"># numpy自带的分解</span><br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">U矩阵：
@@ -552,7 +610,7 @@ L矩阵：
     0\\\\
     2\\\\
     -\frac{1}{3}\\
-\end{array} \right] 
+\end{array} \right]
 \]</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python">A =np.array([[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">10</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>]])<br>U = Cholesky_factorization(A)<br>L = U.transpose()<br>b = np.array([<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,-<span class="hljs-number">1</span>/<span class="hljs-number">3</span>])<br><span class="hljs-comment">#先求解y</span><br>y = [b[<span class="hljs-number">0</span>]/L[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]] <span class="hljs-comment">#先把y1处理了</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(b)):<br>    tem = b[i]<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,i):<br>        tem = tem - L[i][j]*y[j]<br>    tem = tem/L[i][i]<br>    y.append(tem)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;y:&quot;</span>,y)<br><span class="hljs-comment">#求解x</span><br>x = np.zeros(<span class="hljs-built_in">len</span>(y))<br>x[-<span class="hljs-number">1</span>] = y[-<span class="hljs-number">1</span>]/U[-<span class="hljs-number">1</span>][-<span class="hljs-number">1</span>]<span class="hljs-comment">#先把y1处理了</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(y)-<span class="hljs-number">1</span>,-<span class="hljs-number">1</span>,-<span class="hljs-number">1</span>):<br>    tem = y[i]<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(y)-<span class="hljs-number">1</span>,i,-<span class="hljs-number">1</span>):<br>        tem = tem - U[i][j]*x[j]<br>    tem = tem/U[i][i]<br>    x[i] = tem<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;x:&quot;</span>,x)<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">y: [0.0, 2.0, -1.6499158227686108]
@@ -562,29 +620,65 @@ x: [-8.33333333  3.16666667 -1.16666667]</code></pre>
 x: [-8.33333333  3.16666667 -1.16666667]
 直接计算x: [-8.33333333  3.16666667 -1.16666667]</code></pre>
 <h3 id="高斯消去法得lu分解">2. 高斯消去法得LU分解</h3>
-<p>假设<span class="math inline">\(A\)</span>通过<span class="math inline">\(n\)</span>次消去操作后变为上三角矩阵<span class="math inline">\(U\)</span>，既：</p>
+<p>假设<span class="math inline">\(A\)</span>通过<span
+class="math inline">\(n\)</span>次消去操作后变为上三角矩阵<span
+class="math inline">\(U\)</span>，既：</p>
 <span class="math display">\[\begin{aligned}
-&amp;L_1^{-1}..L_{n-1}^{-1}L_n^{-1}L_nL_{n-1}...L_1 A 
+&amp;L_1^{-1}..L_{n-1}^{-1}L_n^{-1}L_nL_{n-1}...L_1 A
 \\\\&amp;= S (L_nL_{n-1}...L_1 A) = SU = A
-\\\\&amp;S= L_1^{-1}..L_{n-1}^{-1}L_n^{-1} 
+\\\\&amp;S= L_1^{-1}..L_{n-1}^{-1}L_n^{-1}
 \end{aligned}\]</span>
 <p>由消去操作对应的变换矩阵为下三角矩阵，且容易证明下三角矩阵的乘积仍然是下三角矩阵，可知S是下三角矩阵</p>
-<p>同时容易证明<span class="math inline">\(S_{ij}= \frac{a_{ii}}{a_{ij}}\)</span>，通过矩阵的分量乘积表达式以及消去法的变换矩阵的特征易得</p>
+<p>同时容易证明<span class="math inline">\(S_{ij}=
+\frac{a_{ii}}{a_{ij}}\)</span>，通过矩阵的分量乘积表达式以及消去法的变换矩阵的特征易得</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#假设是A是full pivoting的，也就是恰当排序使得在分解过程中不存在对角元为0的情况</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">gauss_elimination_LU</span>(<span class="hljs-params">A</span>):<br>    <span class="hljs-comment">#a是系数矩阵，b是方程的非齐次值,a得满足一定条件,先将a分解成LU矩阵</span><br>    N = A.shape[<span class="hljs-number">0</span>]<br>    L = np.identity(N)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,N):<br>        <span class="hljs-keyword">if</span> A[i][i] != <span class="hljs-number">0</span>:<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>,N):<span class="hljs-comment">#消去</span><br>                <span class="hljs-keyword">if</span> A[i][j] != <span class="hljs-number">0</span>:<br>                    tem = A[i][j]/A[i][i]<br>                    A[j] = A[j] - tem*A[i]<br>                    L[j][i] = tem<br>                <span class="hljs-keyword">else</span>:<br>                    <span class="hljs-keyword">pass</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;A不是恰当排序的&quot;</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    <span class="hljs-keyword">return</span> L,A<br></code></pre></td></tr></table></figure>
 <h1 id="求解实矩阵的本征值">求解实矩阵的本征值</h1>
 <h2 id="householder变换">Householder变换</h2>
-<p>存在向量<span class="math inline">\(\left|w \right&gt;\)</span>与<span class="math inline">\(\left|e_0 \right&gt;\)</span>，欲找到映射<span class="math inline">\(H\)</span>，使得<span class="math inline">\(H \left|w \right&gt; = ||w||\left|e_0 \right&gt;\)</span>，这个映射被定义为Householder变换，容易验证：</p>
+<p>存在向量<span class="math inline">\(\left|w
+\right&gt;\)</span>与<span class="math inline">\(\left|e_0
+\right&gt;\)</span>，欲找到映射<span
+class="math inline">\(H\)</span>，使得<span class="math inline">\(H
+\left|w \right&gt; = ||w||\left|e_0
+\right&gt;\)</span>，这个映射被定义为Householder变换，容易验证：</p>
 <span class="math display">\[\begin{aligned}
-H &amp;= I - \frac{2\left| v\right&gt;\left&lt; v \right|}{\left&lt; v|v \right&gt;} 
+H &amp;= I - \frac{2\left| v\right&gt;\left&lt; v \right|}{\left&lt; v|v
+\right&gt;}
 \\\\v &amp;= \left|w \right&gt; \pm ||w||\left|e_0 \right&gt;
 \end{aligned}\]</span>
 <p>同时也容易验证<span class="math inline">\(HH = I,H^T = H\)</span></p>
 <h2 id="qr分解">QR分解</h2>
-<p>矩阵<span class="math inline">\(A_0\)</span>的第一行列向量为<span class="math inline">\(w\)</span>，<span class="math inline">\(e_0\)</span>为矩阵的基矢量，则可以得到<span class="math inline">\(H_0A_0 = A_1\)</span>，<span class="math inline">\(A_1\)</span>的第一行列向量除了00元都为0，再考虑<span class="math inline">\(U_1 = e_1 \oplus e_2...\oplus e_n\)</span>空间以及<span class="math inline">\(A_1&#39; = A_1 \mid_{U_1}\)</span>，同样的操作得到子空间上的<span class="math inline">\(H_1&#39;A_1&#39; = A_2&#39;\)</span>，<span class="math inline">\(H_1&#39;\)</span>是子空间上的映射,在子空间的矩阵表达式中除了11元都为0，令<span class="math inline">\(H_1 e_i = H_1&#39;e_i \enspace i&gt;0, H_1 e_0 = e_0\)</span>，则可得到<span class="math inline">\(H_1H_0 A_0 = A_2\)</span>，<span class="math inline">\(A_2\)</span>的前两列的下三角元都为0，同样的方法，最终<span class="math inline">\(n\)</span>步后，得到上三角矩阵<span class="math inline">\(A_n\)</span>，以及<span class="math inline">\(H_nH_{n-1}...H_{0}A_0 = A_n\)</span>，再由<span class="math inline">\(H\)</span>的性质得到<span class="math inline">\(A_0 = H_0H_1...H_nA_n\)</span>，于是得到正交矩阵<span class="math inline">\(Q=H_0H_1...H_n\)</span>和上三角矩阵<span class="math inline">\(R = A_n\)</span></p>
+<p>矩阵<span class="math inline">\(A_0\)</span>的第一行列向量为<span
+class="math inline">\(w\)</span>，<span
+class="math inline">\(e_0\)</span>为矩阵的基矢量，则可以得到<span
+class="math inline">\(H_0A_0 = A_1\)</span>，<span
+class="math inline">\(A_1\)</span>的第一行列向量除了00元都为0，再考虑<span
+class="math inline">\(U_1 = e_1 \oplus e_2...\oplus
+e_n\)</span>空间以及<span class="math inline">\(A_1&#39; = A_1
+\mid_{U_1}\)</span>，同样的操作得到子空间上的<span
+class="math inline">\(H_1&#39;A_1&#39; = A_2&#39;\)</span>，<span
+class="math inline">\(H_1&#39;\)</span>是子空间上的映射,在子空间的矩阵表达式中除了11元都为0，令<span
+class="math inline">\(H_1 e_i = H_1&#39;e_i \enspace i&gt;0, H_1 e_0 =
+e_0\)</span>，则可得到<span class="math inline">\(H_1H_0 A_0 =
+A_2\)</span>，<span
+class="math inline">\(A_2\)</span>的前两列的下三角元都为0，同样的方法，最终<span
+class="math inline">\(n\)</span>步后，得到上三角矩阵<span
+class="math inline">\(A_n\)</span>，以及<span
+class="math inline">\(H_nH_{n-1}...H_{0}A_0 = A_n\)</span>，再由<span
+class="math inline">\(H\)</span>的性质得到<span
+class="math inline">\(A_0 =
+H_0H_1...H_nA_n\)</span>，于是得到正交矩阵<span
+class="math inline">\(Q=H_0H_1...H_n\)</span>和上三角矩阵<span
+class="math inline">\(R = A_n\)</span></p>
 <h2 id="求解特征值">求解特征值</h2>
-<p>想要求实矩阵<span class="math inline">\(A_i\)</span>的本征值，对<span class="math inline">\(A_i=QR\)</span>做合同变换<span class="math inline">\(A_{i+1}=QQRQ^T = RQ\)</span>，则<span class="math inline">\(A_i\)</span>的本征值全都相同，由一个数学理论可以得到，<span class="math inline">\(i\rightarrow \infty\)</span>时，<span class="math inline">\(A_i\)</span>趋近于上三角矩阵，再由上三角矩阵的对角元既为特征值</p>
+<p>想要求实矩阵<span class="math inline">\(A_i\)</span>的本征值，对<span
+class="math inline">\(A_i=QR\)</span>做合同变换<span
+class="math inline">\(A_{i+1}=QQRQ^T = RQ\)</span>，则<span
+class="math inline">\(A_i\)</span>的本征值全都相同，由一个数学理论可以得到，<span
+class="math inline">\(i\rightarrow \infty\)</span>时，<span
+class="math inline">\(A_i\)</span>趋近于上三角矩阵，再由上三角矩阵的对角元既为特征值</p>
 <p>留一个我参考的文章</p>
-<p><a href="NotesOnHouseholderQR.pdf">Notes on Householder QR Factorization</a> 侵删</p>
+<p><a href="NotesOnHouseholderQR.pdf">Notes on Householder QR
+Factorization</a> 侵删</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">QR_factorization</span>(<span class="hljs-params">A</span>):<span class="hljs-comment">#为了简单，这里讨论实数矩阵</span><br>    A = np.array(A,dtype=<span class="hljs-built_in">float</span>)<br>    N = A.shape[<span class="hljs-number">0</span>]<br>    Householder_Matrix = <span class="hljs-built_in">list</span>()<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N-<span class="hljs-number">1</span>):     <span class="hljs-comment">#来源于参考文献</span><br>        <span class="hljs-comment">#print(A[i:,i])</span><br>        alpha = np.linalg.norm(A[i:,i])<br>        signi = np.sign(A[i][i])<br>        rho = -signi * alpha<br>        nu1 = A[i][i] - rho <br>        u2 = A[i+<span class="hljs-number">1</span>:,i]/nu1<br>        tau = (<span class="hljs-number">1</span> + np.dot(u2,u2))/<span class="hljs-number">2</span><br>        <span class="hljs-comment">#记录使用的Householder变换的矩阵</span><br>        tem_matrix = np.identity(N,dtype = <span class="hljs-built_in">float</span>)<br>        tem_matrix[i:,i:] = np.identity(N-i) - np.outer(np.insert(u2,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>),np.insert(u2,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>))/tau<br>        Householder_Matrix.append(tem_matrix)<br>        <span class="hljs-comment">#print(Householder_Matrix[-1])</span><br>        <span class="hljs-comment">#print(np.matmul(Householder_Matrix[-1],A))</span><br>        <span class="hljs-comment">#手动求解变换后的对角矩阵，减少矩阵运算的次数</span><br>        A[i][i] = rho<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>,N):<br>            A[j][i] = <span class="hljs-number">0</span><br>        w12T = (A[i,i+<span class="hljs-number">1</span>:] + np.matmul(A[i+<span class="hljs-number">1</span>:,i+<span class="hljs-number">1</span>:],u2))/tau<br>        A[i,i+<span class="hljs-number">1</span>:] = A[i,i+<span class="hljs-number">1</span>:] - w12T <br>        A[i+<span class="hljs-number">1</span>:,i+<span class="hljs-number">1</span>:] = A[i+<span class="hljs-number">1</span>:,i+<span class="hljs-number">1</span>:] - np.outer(u2,w12T)<br>        Q = np.identity(N)<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> Householder_Matrix:<br>            Q = np.matmul(Q,j)<br>    <span class="hljs-keyword">return</span> Q,A<br></code></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">A = np.array([[<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]])<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_eigen_values</span>(<span class="hljs-params">A</span>):<span class="hljs-comment">#A是一个有特征值的实矩阵，没写判断条件,所以用的实对称矩阵检验</span><br>    tol = <span class="hljs-number">1</span><br>    N = A.shape[<span class="hljs-number">0</span>]<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-number">10000</span>):<br>        tol = <span class="hljs-number">0</span><br>        Q,R = QR_factorization(A)<br>        A = np.matmul(R,Q)<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,N):<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N-<span class="hljs-number">1</span>,i,-<span class="hljs-number">1</span>):<br>                tol += np.<span class="hljs-built_in">abs</span>(A[j][i])<br>    <span class="hljs-keyword">return</span> np.array([A[i][i] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(N)])<br><span class="hljs-built_in">print</span>(get_eigen_values(A))<br>np.linalg.eigvals(A)<br></code></pre></td></tr></table></figure>
 <pre><code class="hljs">[8.11753167 2.13093256 0.75153577]
@@ -679,9 +773,9 @@ array([8.11753167, 0.75153577, 2.13093256])</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/09/quantum4/" title="Schrieffer–Wolff transformation">
+                      <a href="/2023/02/25/quantum6/" title="二次量子化和场算符">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Schrieffer–Wolff transformation</span>
+                        <span class="hidden-mobile">二次量子化和场算符</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="drag波 在Transmon的实验中，比特在驱动\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)跃迁时打入\(w_{01}\)的波，但由于仪器和Transmon非谐性不够大等原因，\(w_{12}\)频率的波幅不为0，从而导致跃迁到2能级引起态泄露，参考文献提出drag波可以抵消以上提及的效应进而抑制态泄露。 推导 可以把驱动下的tran">
+    <meta name="description" content="drag波 在Transmon的实验中，比特在驱动\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)跃迁时打入\(w_{01}\)的波，但由于仪器和Transmon非谐性不够大等原因，\(w_{12}\)频率的波幅不为0，从而导致跃迁到2能级引起态泄露，参考文献提出drag波可以抵消以上提及的效应进而抑制态泄露。 推导 可以把驱动下的tra">
 <meta property="og:type" content="article">
 <meta property="og:title" content="抑制态泄露的drag波">
 <meta property="og:url" content="http://dyf.zone/2023/08/28/superconducting-qubits2/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="drag波 在Transmon的实验中，比特在驱动\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)跃迁时打入\(w_{01}\)的波，但由于仪器和Transmon非谐性不够大等原因，\(w_{12}\)频率的波幅不为0，从而导致跃迁到2能级引起态泄露，参考文献提出drag波可以抵消以上提及的效应进而抑制态泄露。 推导 可以把驱动下的tran">
+<meta property="og:description" content="drag波 在Transmon的实验中，比特在驱动\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)跃迁时打入\(w_{01}\)的波，但由于仪器和Transmon非谐性不够大等原因，\(w_{12}\)频率的波幅不为0，从而导致跃迁到2能级引起态泄露，参考文献提出drag波可以抵消以上提及的效应进而抑制态泄露。 推导 可以把驱动下的tra">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-28T08:37:00.000Z">
 <meta property="article:modified_time" content="2023-08-29T11:15:14.062Z">
@@ -274,29 +274,57 @@
               <div class="markdown-body">
                 
                 <h1 id="drag波">drag波</h1>
-<p>在Transmon的实验中，比特在驱动<span class="math inline">\(\left|0\right&gt;\rightarrow \left|1\right&gt;\)</span>跃迁时打入<span class="math inline">\(w_{01}\)</span>的波，但由于仪器和Transmon非谐性不够大等原因，<span class="math inline">\(w_{12}\)</span>频率的波幅不为0，从而导致跃迁到2能级引起态泄露，<a target="_blank" rel="noopener" href="https://link.aps.org/doi/10.1103/PhysRevLett.103.110501">参考文献</a>提出drag波可以抵消以上提及的效应进而抑制态泄露。</p>
+<p>在Transmon的实验中，比特在驱动<span
+class="math inline">\(\left|0\right&gt;\rightarrow
+\left|1\right&gt;\)</span>跃迁时打入<span
+class="math inline">\(w_{01}\)</span>的波，但由于仪器和Transmon非谐性不够大等原因，<span
+class="math inline">\(w_{12}\)</span>频率的波幅不为0，从而导致跃迁到2能级引起态泄露，<a
+target="_blank" rel="noopener" href="https://link.aps.org/doi/10.1103/PhysRevLett.103.110501">参考文献</a>提出drag波可以抵消以上提及的效应进而抑制态泄露。</p>
 <h2 id="推导">推导</h2>
 <p>可以把驱动下的transmon的哈密顿量写成如下格式：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-H = w_1 \Pi_1 + w_2 \Pi_2 + E(t)(\sigma_{0,1}^+ + \sigma_{0,1}^-)+ 
+H = w_1 \Pi_1 + w_2 \Pi_2 + E(t)(\sigma_{0,1}^+ + \sigma_{0,1}^-)+
 \lambda E(t)(\sigma_{1,2}^+ + \sigma_{1,2}^-)
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中<span class="math inline">\(\sigma_{i,i+1}^\pm\)</span>是限制在<span class="math inline">\(\{i,i+1\}\)</span>空间中的升降算符，<span class="math inline">\(E(t) = E^x (t)\cos(w_dt) + E^y (t)\sin(w_dt)\)</span>，这里假设<span class="math inline">\(w_{12}\)</span>的驱动和<span class="math inline">\(w_{01}\)</span>的驱动是线性关系，故假设<span class="math inline">\(\{12\}\)</span>能级的驱动项乘上一常系数<span class="math inline">\(\lambda\)</span>，对哈密顿量旋波近似后（<span class="math inline">\(U= exp(iw_d\Pi_1 + 2iw_d \Pi_2)\)</span>）得到：</p>
+<p>其中<span
+class="math inline">\(\sigma_{i,i+1}^\pm\)</span>是限制在<span
+class="math inline">\(\{i,i+1\}\)</span>空间中的升降算符，<span
+class="math inline">\(E(t) = E^x (t)\cos(w_dt) + E^y
+(t)\sin(w_dt)\)</span>，这里假设<span
+class="math inline">\(w_{12}\)</span>的驱动和<span
+class="math inline">\(w_{01}\)</span>的驱动是线性关系，故假设<span
+class="math inline">\(\{12\}\)</span>能级的驱动项乘上一常系数<span
+class="math inline">\(\lambda\)</span>，对哈密顿量旋波近似后（<span
+class="math inline">\(U= exp(iw_d\Pi_1 + 2iw_d
+\Pi_2)\)</span>）得到：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-H^R=\sum_{j=1,2}\delta_{j}\Pi_{j}+\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}+\frac{ E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y}
+H^R=\sum_{j=1,2}\delta_{j}\Pi_{j}+\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}+\frac{
+E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中<span class="math inline">\(\delta_1 = w_1 - w_d\)</span>，<span class="math inline">\(\delta_2 = \Delta + 2\delta_1\)</span>，<span class="math inline">\(\Delta\)</span> 是比特的失谐，这里新定义变换幺正算符<span class="math inline">\(V\)</span>：</p>
+<p>其中<span class="math inline">\(\delta_1 = w_1 - w_d\)</span>，<span
+class="math inline">\(\delta_2 = \Delta + 2\delta_1\)</span>，<span
+class="math inline">\(\Delta\)</span>
+是比特的失谐，这里新定义变换幺正算符<span
+class="math inline">\(V\)</span>：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 V = e^S = e^{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>假如比特在做 <span class="math inline">\(\pi\)</span> 门时<span class="math inline">\(E^x(t_{start}) = 0, E^x(t_{end}) = 0\)</span>，<span class="math inline">\(V(t_{start}) = I, V(t_{end}) = I\)</span> 则V表象变换后的态<span class="math inline">\({\left|\psi\right&gt;}_V (t) = V(t)\left|\psi\right&gt;_{R}\)</span>，既在<span class="math inline">\(\pi\)</span>门结束时，V表象下的态和旋转表象下的态完全一致，可以到V表象下讨论问题。</p>
-<p>将哈密顿量变换导<span class="math inline">\(V\)</span>下<span class="math inline">\(H^V = i \dot V V^\dagger + V H^R V^\dagger\)</span>，其中：</p>
+<p>假如比特在做 <span class="math inline">\(\pi\)</span> 门时<span
+class="math inline">\(E^x(t_{start}) = 0, E^x(t_{end}) =
+0\)</span>，<span class="math inline">\(V(t_{start}) = I, V(t_{end}) =
+I\)</span> 则V表象变换后的态<span
+class="math inline">\({\left|\psi\right&gt;}_V (t) =
+V(t)\left|\psi\right&gt;_{R}\)</span>，既在<span
+class="math inline">\(\pi\)</span>门结束时，V表象下的态和旋转表象下的态完全一致，可以到V表象下讨论问题。</p>
+<p>将哈密顿量变换导<span class="math inline">\(V\)</span>下<span
+class="math inline">\(H^V = i \dot V V^\dagger + V H^R
+V^\dagger\)</span>，其中：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 V H^R V^\dagger \approx H_R +[S,H_R]+\frac{1}{2}[S,[S,R]]
@@ -304,79 +332,136 @@ V H^R V^\dagger \approx H_R +[S,H_R]+\frac{1}{2}[S,[S,R]]
 \end{equation}\]</span></p>
 <p>分别求：</p>
 <p><span class="math display">\[\begin{equation}
-[S,H_R] = \sum_{j=1,2}[S,\delta_{j}\Pi_{j}] + \sum_{j=1,2}[S,\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}] + \sum_{j=1,2}[S,\frac{ E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y}]
+[S,H_R] = \sum_{j=1,2}[S,\delta_{j}\Pi_{j}] +
+\sum_{j=1,2}[S,\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}] +
+\sum_{j=1,2}[S,\frac{ E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y}]
 \end{equation}\]</span></p>
 <p>第一项：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-\sum_{j=1,2}[S,\delta_{j}\Pi_{j}] =&amp; [S,\delta_{1}\Pi_{1}] + [S,\delta_{2}\Pi_{2}]
-\\ =&amp; [{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\delta_{1}\Pi_{1}] + [{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\delta_{2}\Pi_{2}]
-\\ =&amp; \frac{-iE^x}{2\Delta}(\delta_{1}[\sigma_{0,1}^y,\Pi_{1}] + \lambda\delta_{1}[\sigma_{1,2}^y,\Pi_{1}] +  (\delta_{2}[\sigma_{0,1}^y,\Pi_{2}] +  \lambda\delta_{2}[\sigma_{1,2}^y,\Pi_{2}]
-\\ =&amp; \frac{-iE^x}{2\Delta}(\delta_{1}(-i)\sigma_{0,1}^x + \lambda\delta_{1}i\sigma_{1,2}^x +  \delta_{2}0+  \lambda\delta_{2}(-i)\sigma_{1,2}^x)
-\\ =&amp; \frac{E^x}{2\Delta}(-\delta_{1}\sigma_{0,1}^x + \lambda\delta_{1}\sigma_{1,2}^x - \lambda\delta_{2}\sigma_{1,2}^x)
-\\ =&amp; \frac{E^x}{2\Delta}(-\delta_{1}\sigma_{0,1}^x + \lambda\delta_{1}\sigma_{1,2}^x - \lambda(2\delta_{1} +\Delta)\sigma_{1,2}^x)
-\\ =&amp; \frac{-E^x}{2\Delta}(\delta_{1}\sigma_{0,1}^x +\lambda(\delta_{1} +\Delta)\sigma_{1,2}^x)
+\sum_{j=1,2}[S,\delta_{j}\Pi_{j}] =&amp; [S,\delta_{1}\Pi_{1}] +
+[S,\delta_{2}\Pi_{2}]
+\\ =&amp;
+[{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\delta_{1}\Pi_{1}]
++
+[{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\delta_{2}\Pi_{2}]
+\\ =&amp; \frac{-iE^x}{2\Delta}(\delta_{1}[\sigma_{0,1}^y,\Pi_{1}] +
+\lambda\delta_{1}[\sigma_{1,2}^y,\Pi_{1}]
++  (\delta_{2}[\sigma_{0,1}^y,\Pi_{2}]
++  \lambda\delta_{2}[\sigma_{1,2}^y,\Pi_{2}]
+\\ =&amp; \frac{-iE^x}{2\Delta}(\delta_{1}(-i)\sigma_{0,1}^x +
+\lambda\delta_{1}i\sigma_{1,2}^x
++  \delta_{2}0+  \lambda\delta_{2}(-i)\sigma_{1,2}^x)
+\\ =&amp; \frac{E^x}{2\Delta}(-\delta_{1}\sigma_{0,1}^x +
+\lambda\delta_{1}\sigma_{1,2}^x - \lambda\delta_{2}\sigma_{1,2}^x)
+\\ =&amp; \frac{E^x}{2\Delta}(-\delta_{1}\sigma_{0,1}^x +
+\lambda\delta_{1}\sigma_{1,2}^x - \lambda(2\delta_{1}
++\Delta)\sigma_{1,2}^x)
+\\ =&amp; \frac{-E^x}{2\Delta}(\delta_{1}\sigma_{0,1}^x
++\lambda(\delta_{1} +\Delta)\sigma_{1,2}^x)
 \end{aligned}
 \end{equation}\]</span></p>
 <p>第二项：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-&amp;\sum_{j=1,2}[S,\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}] 
-\\=&amp; [S,\frac{E^x(t)}{2}{\sigma}_{0,1}^{x}] +[S,\frac{E^x(t)}{2}\lambda{\sigma}_{1,2}^{x}]
-\\ =&amp;\frac{E^x(t)}{2}([S,{\sigma}_{0,1}^{x}] +[S,\lambda{\sigma}_{1,2}^{x}]) 
-\\ =&amp;\frac{E^x(t)}{2}([{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},{\sigma}_{0,1}^{x}]+[{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\lambda{\sigma}_{1,2}^{x}]) 
-\\ =&amp;\frac{-iE^x(t)^2}{4\Delta}([{\sigma_{0,1}^y+\lambda\sigma_{1,2}^y},{\sigma}_{0,1}^{x}]
-+[{\sigma_{0,1}^y+\lambda\sigma_{1,2}^y},\lambda{\sigma}_{1,2}^{x}]) 
-\\ =&amp;\frac{-iE^x(t)^2}{4\Delta}([{\sigma_{0,1}^y,{\sigma}_{0,1}^{x}]+\lambda[\sigma_{1,2}^y},{\sigma}_{0,1}^{x}]
-+\lambda[{\sigma_{0,1}^y,{\sigma}_{1,2}^{x}]+\lambda^2[\sigma_{1,2}^y},{\sigma}_{1,2}^{x}]) 
-\\ =&amp;\frac{-iE^x(t)^2}{4\Delta}((-2i+4i\Pi_1+2i\Pi_2)+\lambda i \sigma_{0,2}^x
-+\lambda(-i \sigma_{0,2}^x)+\lambda^2(-2i\Pi_1+2i\Pi_2)) 
+&amp;\sum_{j=1,2}[S,\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}]
+\\=&amp; [S,\frac{E^x(t)}{2}{\sigma}_{0,1}^{x}]
++[S,\frac{E^x(t)}{2}\lambda{\sigma}_{1,2}^{x}]
+\\ =&amp;\frac{E^x(t)}{2}([S,{\sigma}_{0,1}^{x}]
++[S,\lambda{\sigma}_{1,2}^{x}])
+\\
+=&amp;\frac{E^x(t)}{2}([{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},{\sigma}_{0,1}^{x}]+[{-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta},\lambda{\sigma}_{1,2}^{x}])
+\\
+=&amp;\frac{-iE^x(t)^2}{4\Delta}([{\sigma_{0,1}^y+\lambda\sigma_{1,2}^y},{\sigma}_{0,1}^{x}]
++[{\sigma_{0,1}^y+\lambda\sigma_{1,2}^y},\lambda{\sigma}_{1,2}^{x}])
+\\
+=&amp;\frac{-iE^x(t)^2}{4\Delta}([{\sigma_{0,1}^y,{\sigma}_{0,1}^{x}]+\lambda[\sigma_{1,2}^y},{\sigma}_{0,1}^{x}]
++\lambda[{\sigma_{0,1}^y,{\sigma}_{1,2}^{x}]+\lambda^2[\sigma_{1,2}^y},{\sigma}_{1,2}^{x}])
+\\ =&amp;\frac{-iE^x(t)^2}{4\Delta}((-2i+4i\Pi_1+2i\Pi_2)+\lambda i
+\sigma_{0,2}^x
++\lambda(-i \sigma_{0,2}^x)+\lambda^2(-2i\Pi_1+2i\Pi_2))
 \end{aligned}
 \end{equation}\]</span></p>
 <p>略去常数后：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-=&amp;\frac{E^x(t)^2}{4\Delta}((4\Pi_1+2\Pi_2)+\lambda  \sigma_{0,2}^x+\lambda(-\sigma_{0,2}^x)+\lambda^2(-2\Pi_1+2\Pi_2)) 
-\\=&amp; \frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
+=&amp;\frac{E^x(t)^2}{4\Delta}((4\Pi_1+2\Pi_2)+\lambda  \sigma_{0,2}^x+\lambda(-\sigma_{0,2}^x)+\lambda^2(-2\Pi_1+2\Pi_2))
+\\=&amp; \frac{E^x(t)^2(4-
+2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
 \end{aligned}
 \end{equation}\]</span></p>
-<p>显然 <span class="math inline">\(\left[S,H_R\right]\)</span> 第三项为0，故得到 <span class="math inline">\(\left[S,H_{R}\right]\)</span> 等于：</p>
+<p>显然 <span class="math inline">\(\left[S,H_R\right]\)</span>
+第三项为0，故得到 <span
+class="math inline">\(\left[S,H_{R}\right]\)</span> 等于：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-=&amp; \frac{-E^x}{2\Delta}(\delta_{1}\sigma_{0,1}^x +\lambda(\delta_{1} +\Delta)\sigma_{1,2}^x)
-+ \frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
-\\=&amp; \frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x \lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x-\frac{E^x\lambda }{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
+=&amp; \frac{-E^x}{2\Delta}(\delta_{1}\sigma_{0,1}^x +\lambda(\delta_{1}
++\Delta)\sigma_{1,2}^x)
++ \frac{E^x(t)^2(4-
+2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
+\\=&amp; \frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x
+\lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x-\frac{E^x\lambda
+}{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4-
+2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2
 \end{aligned}
 \end{equation}\]</span></p>
-<p>由实验中驱动的振幅远小于比特的失谐，既<span class="math inline">\(E^x \ll \Delta\)</span>，保留哈密顿量中含有<span class="math inline">\(frac{E^x}{\Delta}\)</span>的0，1次项。<span class="math inline">\([S,[S,H_R]]\)</span>中<span class="math inline">\(\frac{E^x}{\Delta}\)</span>一次项有：</p>
+<p>由实验中驱动的振幅远小于比特的失谐，既<span class="math inline">\(E^x
+\ll \Delta\)</span>，保留哈密顿量中含有<span
+class="math inline">\(frac{E^x}{\Delta}\)</span>的0，1次项。<span
+class="math inline">\([S,[S,H_R]]\)</span>中<span
+class="math inline">\(\frac{E^x}{\Delta}\)</span>一次项有：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
--&amp;\left[S,\frac{E^x\lambda }{2}\sigma_{1,2}^x\right] 
-\\&amp;=- [-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta,\frac{E^x\lambda }{2}\sigma_{1,2}^x ]
-\\ &amp;=- \frac{-i{E^x}^2\lambda}{4\Delta}[(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y),\sigma_{1,2}^x ]
-\\ &amp;=- \frac{-i{E^x}^2\lambda}{4\Delta}([\sigma_{0,1}^y,\sigma_{1,2}^x ]+\lambda[\sigma_{1,2}^y,\sigma_{1,2}^x ])
-\\ &amp;=- (\frac{-{E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{-{E^x}^2\lambda^2}{4\Delta}(2\Pi_1 - 2\Pi_2))
-\\ &amp;= \frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_2
+-&amp;\left[S,\frac{E^x\lambda }{2}\sigma_{1,2}^x\right]
+\\&amp;=-
+[-iE^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta,\frac{E^x\lambda
+}{2}\sigma_{1,2}^x ]
+\\ &amp;=-
+\frac{-i{E^x}^2\lambda}{4\Delta}[(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y),\sigma_{1,2}^x
+]
+\\ &amp;=-
+\frac{-i{E^x}^2\lambda}{4\Delta}([\sigma_{0,1}^y,\sigma_{1,2}^x
+]+\lambda[\sigma_{1,2}^y,\sigma_{1,2}^x ])
+\\ &amp;=- (\frac{-{E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+
+\frac{-{E^x}^2\lambda^2}{4\Delta}(2\Pi_1 - 2\Pi_2))
+\\ &amp;= \frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{
+{E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_2
 \end{aligned}
 \end{equation}\]</span></p>
 <p>综上所述：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 H^V &amp;= i \dot V V^\dagger + V H^R V^\dagger
-\\&amp; =  \dot E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta + H_R + [S,H_R] + \frac{1}{2}  [S[S,H_R]]...
-\\&amp; \approx  \dot  E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta + \sum_{j=1,2}\delta_{j}\Pi_{j}+\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}+\frac{ E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y} +
+\\&amp; =  \dot E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta + H_R
++ [S,H_R] + \frac{1}{2}  [S[S,H_R]]...
+\\&amp; \approx  \dot  E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta
++
+\sum_{j=1,2}\delta_{j}\Pi_{j}+\frac{E^x(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{x}+\frac{
+E^{y}(t)}{2}\lambda_{j}{\sigma}_{j-1,j}^{y} +
 
-\\&amp;\frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x \lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x - \frac{E^x\lambda }{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2 +
-\\&amp; \frac{1}{2}  (\frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_2 ) +o(\frac{E^x}{\Delta})
+\\&amp;\frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x
+\lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x - \frac{E^x\lambda
+}{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4-
+2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2 +
+\\&amp; \frac{1}{2}  (\frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+
+\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{
+{E^x}^2\lambda^2}{2\Delta}\Pi_2 ) +o(\frac{E^x}{\Delta})
 
-\\&amp; =  \dot E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta 
+\\&amp; =  \dot E^x(\sigma_{0,1}^y+\lambda\sigma_{1,2}^y)/2\Delta
 
 + \delta_{1}\Pi_{1}+ \delta_{2}\Pi_{2}
-+\frac{E^x(t)}{2}{\sigma}_{0,1}^{x}+\frac{ E^{y}(t)}{2}{\sigma}_{0,1}^{y}
-+\frac{E^x(t)}{2}\lambda{\sigma}_{1,2}^{x}+\frac{ E^{y}(t)}{2}\lambda{\sigma}_{1,2}^{y}
++\frac{E^x(t)}{2}{\sigma}_{0,1}^{x}+\frac{
+E^{y}(t)}{2}{\sigma}_{0,1}^{y}
++\frac{E^x(t)}{2}\lambda{\sigma}_{1,2}^{x}+\frac{
+E^{y}(t)}{2}\lambda{\sigma}_{1,2}^{y}
 
-\\&amp;\frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x \lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x - \frac{E^x\lambda }{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4- 2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2 +
-\\&amp; \frac{1}{2}  (\frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+ \frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_2 ) +o(\frac{E^x}{\Delta})
+\\&amp;\frac{-E^x\delta_1 }{2\Delta}\sigma_{0,1}^x - \frac{E^x
+\lambda\delta_{1} }{2\Delta}\sigma_{1,2}^x - \frac{E^x\lambda
+}{2}\sigma_{1,2}^x+\frac{E^x(t)^2(4-
+2\lambda^2)}{4\Delta}\Pi_1+\frac{E^x(t)^2(2+2\lambda^2)}{4\Delta}\Pi_2 +
+\\&amp; \frac{1}{2}  (\frac{ {E^x}^2\lambda}{4\Delta}\sigma_{0,2}^x+
+\frac{ {E^x}^2\lambda^2}{2\Delta}\Pi_1 -\frac{
+{E^x}^2\lambda^2}{2\Delta}\Pi_2 ) +o(\frac{E^x}{\Delta})
 
 \end{aligned}
 \end{equation}\]</span></p>
@@ -385,22 +470,30 @@ H^V &amp;= i \dot V V^\dagger + V H^R V^\dagger
 \begin{aligned}
 H_V=&amp; (\delta_1+\frac{E^x(t)^2(4- \lambda^2)}{4\Delta})\Pi_1
 + (\delta_2  +\frac{E^x(t)^2(2+\lambda^2)}{4\Delta})\Pi_2
-\\&amp;+ (\frac{\dot E^x}{2\Delta}+E^y/2)(\sigma_{0,1}^y+\lambda \sigma_{1,2}^y)
-\\&amp; + 
-\frac{ E^x}{2} (1-\frac{\delta_1}{\Delta}) \sigma_{0,1}^x - \frac{ E^x \lambda \delta_1}{2\Delta}\sigma_{1,2}^x + \frac{ {E^x}^2\lambda}{8\Delta} \sigma_{0,2}^x
+\\&amp;+ (\frac{\dot E^x}{2\Delta}+E^y/2)(\sigma_{0,1}^y+\lambda
+\sigma_{1,2}^y)
+\\&amp; +
+\frac{ E^x}{2} (1-\frac{\delta_1}{\Delta}) \sigma_{0,1}^x - \frac{ E^x
+\lambda \delta_1}{2\Delta}\sigma_{1,2}^x + \frac{
+{E^x}^2\lambda}{8\Delta} \sigma_{0,2}^x
 \end{aligned}
 \end{equation}\]</span></p>
-<p>当满足<span class="math inline">\(E^{y}=-\frac{\dot E^{x}}{\Delta}\)</span>以及<span class="math inline">\(\delta_{1}=\frac{(\lambda^{2}-4){E^x}^2}{4\Delta}\)</span>时，第一行第一项和第二行为0，且最后一行中态泄露项皆为小量可忽略，减少了态泄露。更高阶的结果（算不动了）：</p>
+<p>当满足<span class="math inline">\(E^{y}=-\frac{\dot
+E^{x}}{\Delta}\)</span>以及<span
+class="math inline">\(\delta_{1}=\frac{(\lambda^{2}-4){E^x}^2}{4\Delta}\)</span>时，第一行第一项和第二行为0，且最后一行中态泄露项皆为小量可忽略，减少了态泄露。更高阶的结果（算不动了）：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 E^{x}(t)&amp;=E_{\pi}+\frac{(\lambda^{2}-4)E_{\pi}^{3}}{8\Delta^{2}}-\frac{(13\lambda^{4}-76\lambda^{2}+112)E_{\pi}^{5}}{128\Delta^{4}}
-\\&amp; E^{y}(t)=-\frac{\dot{E}_{\pi}}{\Delta}+\frac{33(\lambda^{2}-2)E_{\pi}^{2}\dot{E}_{\pi}}{24\Delta^{3}}
+\\&amp;
+E^{y}(t)=-\frac{\dot{E}_{\pi}}{\Delta}+\frac{33(\lambda^{2}-2)E_{\pi}^{2}\dot{E}_{\pi}}{24\Delta^{3}}
 
 \\\delta_{1}(t)&amp;=-\frac{(\lambda^{2}-4)E_{\pi}^{2}}{4\Delta}-\frac{(\lambda^{4}-7\lambda^{2}+12)E_{\pi}^{4}}{16\Delta^{3}}
 
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中<span class="math inline">\(E_{pi}\)</span> 是驱动比特打入的<span class="math inline">\(\pi\)</span>脉冲的振幅，而向y通道混入的<span class="math inline">\(E^y\)</span>波称为drag波。</p>
+<p>其中<span class="math inline">\(E_{pi}\)</span> 是驱动比特打入的<span
+class="math inline">\(\pi\)</span>脉冲的振幅，而向y通道混入的<span
+class="math inline">\(E^y\)</span>波称为drag波。</p>
 
                 
               </div>
@@ -490,6 +583,12 @@ E^{x}(t)&amp;=E_{\pi}+\frac{(\lambda^{2}-4)E_{\pi}^{3}}{8\Delta^{2}}-\frac{(13\l
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/09/26/superconducting-qubits3/" title="比特与腔耦合的系统近似解耦方法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">比特与腔耦合的系统近似解耦方法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

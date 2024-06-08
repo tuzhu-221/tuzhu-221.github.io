@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本近似  波恩奥本海默近似分开原子和电子，原子缓变，电子变化更快 电子电子相互作用，用有效势来简化。 单电子近似：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。 共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动 有效势场 \(𝑉(𝑟)\) 具有平移周期性：这是晶格具有周期性的结果  Bloc">
+    <meta name="description" content="基本近似  波恩奥本海默近似分开原子和电子，原子缓变，电子变化更快 电子电子相互作用，用有效势来简化。 单电子近似：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。 共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动 有效势场 \(𝑉(𝑟)\) 具有平移周期性：这是晶格具有周期性的结果  Blo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="能带理论">
 <meta property="og:url" content="http://dyf.zone/2023/01/02/solid5/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="基本近似  波恩奥本海默近似分开原子和电子，原子缓变，电子变化更快 电子电子相互作用，用有效势来简化。 单电子近似：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。 共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动 有效势场 \(𝑉(𝑟)\) 具有平移周期性：这是晶格具有周期性的结果  Bloc">
+<meta property="og:description" content="基本近似  波恩奥本海默近似分开原子和电子，原子缓变，电子变化更快 电子电子相互作用，用有效势来简化。 单电子近似：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。 共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动 有效势场 \(𝑉(𝑟)\) 具有平移周期性：这是晶格具有周期性的结果  Blo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://dyf.zone/2023/01/02/solid5/%E5%9B%BE%E7%89%871.png">
 <meta property="og:image" content="http://dyf.zone/2023/01/02/solid5/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-01-01%20180400.png">
@@ -282,61 +282,109 @@
 <li><p>电子电子相互作用，用有效势来简化。</p></li>
 <li><p><mark>单电子近似</mark>：将每个电子的运动看成是独立的在一个等效势场中的单电子运动，从而将多电子问题简化为单电子问题。</p></li>
 <li><p>共有化电子：是能带理论的基本概念，固体中的电子不再束缚于个别的原子，而是在整个固体内运动</p></li>
-<li><p>有效势场 <span class="math inline">\(𝑉(𝑟)\)</span> 具有平移周期性：这是晶格具有周期性的结果</p></li>
+<li><p>有效势场 <span class="math inline">\(𝑉(𝑟)\)</span>
+具有平移周期性：这是晶格具有周期性的结果</p></li>
 </ol>
 <h1 id="bloch-theorem">Bloch theorem</h1>
-<p>在周期性边界条件下，当势能满足周期性时，任意一个本征函数解，存在<span class="math inline">\(k\)</span>使得解满足：</p>
+<p>在周期性边界条件下，当势能满足周期性时，任意一个本征函数解，存在<span
+class="math inline">\(k\)</span>使得解满足：</p>
 <span class="math display">\[\begin{aligned}
 \psi(r+R_n) = e^{ik \cdot R_n}\psi(r)
 \end{aligned}\]</span>
-<p>其中<span class="math inline">\(k = \frac{l_1}{N_1}b_1+ \frac{l_2}{N_2}b_2+ \frac{l_3}{N_3}b_3\)</span>，<span class="math inline">\(N_i\)</span>为某方向上的重复单元个数，<span class="math inline">\(l_i\)</span>为某整数，令<span class="math inline">\(\psi(r)=e^{(𝑖k \cdot r)} u(r)\)</span>，则得到：<span class="math inline">\(u(r+R_n) = u(r)\)</span>，<span class="math inline">\(\psi(r)\)</span>称为<mark>布洛赫函数</mark></p>
+<p>其中<span class="math inline">\(k = \frac{l_1}{N_1}b_1+
+\frac{l_2}{N_2}b_2+ \frac{l_3}{N_3}b_3\)</span>，<span
+class="math inline">\(N_i\)</span>为某方向上的重复单元个数，<span
+class="math inline">\(l_i\)</span>为某整数，令<span
+class="math inline">\(\psi(r)=e^{(𝑖k \cdot r)}
+u(r)\)</span>，则得到：<span class="math inline">\(u(r+R_n) =
+u(r)\)</span>，<span
+class="math inline">\(\psi(r)\)</span>称为<mark>布洛赫函数</mark></p>
 <p>证明：</p>
 <p>定义：<span class="math inline">\(T\psi(x) = \psi(x+a)\)</span></p>
 <span class="math display">\[\begin{aligned}
-[T,H]\psi(x) &amp; = T(H(x)\psi(x)) - H(x)(T\psi(x)) 
-\\\\&amp; = H(x+a)\psi(x+a) - H(x)\psi(x+a) 
+[T,H]\psi(x) &amp; = T(H(x)\psi(x)) - H(x)(T\psi(x))
+\\\\&amp; = H(x+a)\psi(x+a) - H(x)\psi(x+a)
 \\\\&amp; = H(x+a)\psi(x+a) - H(x+a)\psi(x+a) = 0
 \end{aligned}\]</span>
-<p>于是可找到一组两个算符的共本态： <span class="math inline">\(\varphi_n\)</span></p>
+<p>于是可找到一组两个算符的共本态： <span
+class="math inline">\(\varphi_n\)</span></p>
 <ol type="1">
-<li><p><span class="math inline">\(T(l a)T(ma)\varphi_n = \lambda_n(la)\lambda_n(ma) \varphi_n = T((l+m)a)\varphi_n = \lambda_n((l+m)a)\varphi_n\)</span></p></li>
-<li><p>由哈密顿量的周期性可得解的周期性 <span class="math inline">\(|\lambda_n(la)^2| = 1\)</span></p></li>
+<li><p><span class="math inline">\(T(l a)T(ma)\varphi_n =
+\lambda_n(la)\lambda_n(ma) \varphi_n = T((l+m)a)\varphi_n =
+\lambda_n((l+m)a)\varphi_n\)</span></p></li>
+<li><p>由哈密顿量的周期性可得解的周期性 <span
+class="math inline">\(|\lambda_n(la)^2| = 1\)</span></p></li>
 </ol>
-<p>由以上两个性质可知<span class="math inline">\(\lambda_n^{la} = e^{ila*c}\)</span>，且<span class="math inline">\(c\)</span>为整数，引入周期性条件，一个<span class="math inline">\((N_1,N_2,N_3)\)</span>的箱子，</p>
+<p>由以上两个性质可知<span class="math inline">\(\lambda_n^{la} =
+e^{ila*c}\)</span>，且<span
+class="math inline">\(c\)</span>为整数，引入周期性条件，一个<span
+class="math inline">\((N_1,N_2,N_3)\)</span>的箱子，</p>
 <div style="text-align:center">
-$(r) = (r+N_1*a_1)... _n^{Na} = e^{iNa*c} = 1c =  $
+$(r) = (r+N_1*a_1)... _n^{Na} = e^{iNa*c} = 1c = $
 </div>
-<p>将<span class="math inline">\(c\)</span>写为<span class="math inline">\(k\)</span>则证毕</p>
-<p>拓展到三维得到 <span class="math inline">\(k\)</span>的取值：<span class="math inline">\(k = \sum_i \frac{l_i}{N_i}\vec{b_i}\)</span>，<span class="math inline">\(l_i= 0,1,2,3..., --N_i/2&lt;l_i&lt;N_i/2\)</span>（为了让每个波函数只对应一个<span class="math inline">\(k\)</span>，限制在了第一布里渊区内取值）</p>
+<p>将<span class="math inline">\(c\)</span>写为<span
+class="math inline">\(k\)</span>则证毕</p>
+<p>拓展到三维得到 <span class="math inline">\(k\)</span>的取值：<span
+class="math inline">\(k = \sum_i
+\frac{l_i}{N_i}\vec{b_i}\)</span>，<span class="math inline">\(l_i=
+0,1,2,3...,
+--N_i/2&lt;l_i&lt;N_i/2\)</span>（为了让每个波函数只对应一个<span
+class="math inline">\(k\)</span>，限制在了第一布里渊区内取值）</p>
 <p>带入薛定谔方程后，得到：</p>
 <span class="math display">\[\begin{aligned}
-&amp;[-\frac{\hbar^2}{2m}(\nabla^2+2ik\cdot\nabla-k^2)+V(r)]u_k(r)= Eu_k(r)
+&amp;[-\frac{\hbar^2}{2m}(\nabla^2+2ik\cdot\nabla-k^2)+V(r)]u_k(r)=
+Eu_k(r)
 \\\\&amp;r \in[0,a_1]\times[0,a_2]\times[0,a_3]
 \end{aligned}\]</span>
-<p>周期性边界条件能够解出参数<span class="math inline">\(n\)</span>，是分立的，随 <span class="math inline">\(k\)</span> 变化准连续。给定一个<span class="math inline">\(k\)</span>，就会有一系列分立的<span class="math inline">\(\\{E_{n}\\}_k\)</span>。</p>
-<p>同样的，给定，可以将同一激发态的能级但属于不同<span class="math inline">\(k\)</span>的能级构成的准连续的集合<span class="math inline">\(\\{E_{k}\\}_n\)</span>称为<mark>能带</mark>，两个能带之间没有交叠，这部分能量间隙称为<mark>禁带</mark>。</p>
-<p><span class="math inline">\(k\)</span>被称为<mark>简约波矢</mark>，标志着相邻晶格间的波函数的相位变化，同时也可以代表一组能量本征态的集合。</p>
+<p>周期性边界条件能够解出参数<span
+class="math inline">\(n\)</span>，是分立的，随 <span
+class="math inline">\(k\)</span> 变化准连续。给定一个<span
+class="math inline">\(k\)</span>，就会有一系列分立的<span
+class="math inline">\(\\{E_{n}\\}_k\)</span>。</p>
+<p>同样的，给定，可以将同一激发态的能级但属于不同<span
+class="math inline">\(k\)</span>的能级构成的准连续的集合<span
+class="math inline">\(\\{E_{k}\\}_n\)</span>称为<mark>能带</mark>，两个能带之间没有交叠，这部分能量间隙称为<mark>禁带</mark>。</p>
+<p><span
+class="math inline">\(k\)</span>被称为<mark>简约波矢</mark>，标志着相邻晶格间的波函数的相位变化，同时也可以代表一组能量本征态的集合。</p>
 <h1 id="近自由电子近似">近自由电子近似</h1>
 <p>凝胶(jellium)模型：将离子实看成均匀分布的正电荷背景，其目的是忽略晶格（离子实）对电子的作用。</p>
-<h2 id="一种超级唯象但是却被划了重点的能隙推导方法">一种超级唯象但是却被划了重点的能隙推导方法</h2>
-<p>假设一个在第五章中的自由电子平面波<span class="math inline">\(\phi =\frac{1}{L} e^{ikr}\)</span>，<span class="math inline">\(k = \frac{\pi}{a}\)</span>，即波矢在第一布里渊区边界上的电子，其在晶格边界发生反射，<span class="math inline">\(k&#39;=-\frac{\pi}{a}\)</span>，波叠加形成了两种波：</p>
+<h2
+id="一种超级唯象但是却被划了重点的能隙推导方法">一种超级唯象但是却被划了重点的能隙推导方法</h2>
+<p>假设一个在第五章中的自由电子平面波<span class="math inline">\(\phi
+=\frac{1}{L} e^{ikr}\)</span>，<span class="math inline">\(k =
+\frac{\pi}{a}\)</span>，即波矢在第一布里渊区边界上的电子，其在晶格边界发生反射，<span
+class="math inline">\(k&#39;=-\frac{\pi}{a}\)</span>，波叠加形成了两种波：</p>
 <span class="math display">\[\begin{aligned}
 &amp;\phi_{odd} = \sqrt \frac{2}{L} \sin(\frac{\pi}{a}x)
 \\\\&amp;\phi_{even} = \sqrt \frac{2}{L} \cos(\frac{\pi}{a}x)
 \end{aligned}\]</span>
 <p>将周期势做展开后得到：</p>
-<p><span class="math inline">\(V(r) = V(0) + V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi}{a}r}+..\)</span>，高频振荡项忽略，<span class="math inline">\(V(0)\)</span>代表正电荷背景，同时取<span class="math inline">\(v(-G)= V(G)=V_1\)</span>，计算<span class="math inline">\(\left&lt; \phi_{odd}|\Delta V| \phi_{odd}\right&gt;\)</span> ，<span class="math inline">\(\left&lt; \phi_{even}|\Delta V| \phi_{even}\right&gt;\)</span>，最终得到：</p>
+<p><span class="math inline">\(V(r) = V(0) +
+V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi}{a}r}+..\)</span>，高频振荡项忽略，<span
+class="math inline">\(V(0)\)</span>代表正电荷背景，同时取<span
+class="math inline">\(v(-G)= V(G)=V_1\)</span>，计算<span
+class="math inline">\(\left&lt; \phi_{odd}|\Delta V|
+\phi_{odd}\right&gt;\)</span> ，<span class="math inline">\(\left&lt;
+\phi_{even}|\Delta V| \phi_{even}\right&gt;\)</span>，最终得到：</p>
 <span class="math display">\[\begin{aligned}
-\left|\left&lt; \phi_{odd}|\Delta V| \phi_{odd}\right&gt; - \left&lt; \phi_{even}|\Delta V| \phi_{even}\right&gt;\right|  = 2|V_1|
+\left|\left&lt; \phi_{odd}|\Delta V| \phi_{odd}\right&gt; - \left&lt;
+\phi_{even}|\Delta V| \phi_{even}\right&gt;\right|  = 2|V_1|
 \end{aligned}\]</span>
 <p><img src="图片1.png" srcset="/img/loading.gif" lazyload></p>
 <p>由图可以看出，在正电荷附近，电子密度更高的波函数，对应的能量越低。</p>
 <h5 id="量子力学微扰论推导">量子力学微扰论推导</h5>
-<p>在正电子背景下，<span class="math inline">\(k=\frac{\pi}{a}\)</span>与<span class="math inline">\(k=-\frac{\pi}{a}\)</span> 是一对简并态，加入微扰：</p>
+<p>在正电子背景下，<span
+class="math inline">\(k=\frac{\pi}{a}\)</span>与<span
+class="math inline">\(k=-\frac{\pi}{a}\)</span>
+是一对简并态，加入微扰：</p>
 <span class="math display">\[\begin{aligned}
-H&#39; = V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi}{a}r} = 2V&#39; \cos(\frac{2\pi}{a}x)
+H&#39; =
+V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi}{a}r}
+= 2V&#39; \cos(\frac{2\pi}{a}x)
 \end{aligned}\]</span>
-<p>计算<span class="math inline">\(H&#39;\)</span>在<span class="math inline">\(\{k\}\)</span>表象下，<span class="math inline">\(k&#39;,k\)</span>子空间的矩阵得到：</p>
+<p>计算<span class="math inline">\(H&#39;\)</span>在<span
+class="math inline">\(\{k\}\)</span>表象下，<span
+class="math inline">\(k&#39;,k\)</span>子空间的矩阵得到：</p>
 <p><span class="math display">\[\begin{equation}
 \left( \begin{matrix}
     0&amp;      V^{\prime}\\\\
@@ -345,15 +393,18 @@ H&#39; = V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi
 \end{equation}\]</span></p>
 <p>最终解出能量的一级修正以及对应的本征态:</p>
 <span class="math display">\[\begin{aligned}
-&amp;\phi_{odd} = \frac{1}{\sqrt2} (\phi_k+\phi_{k&#39;}),E_{odd} =E_0+V&#39;
-\\\\&amp;\phi_{even} = \frac{i}{\sqrt2} (\phi_k-\phi_{k&#39;}),E_{even} =E_0-V&#39;
+&amp;\phi_{odd} = \frac{1}{\sqrt2} (\phi_k+\phi_{k&#39;}),E_{odd}
+=E_0+V&#39;
+\\\\&amp;\phi_{even} = \frac{i}{\sqrt2} (\phi_k-\phi_{k&#39;}),E_{even}
+=E_0-V&#39;
 \end{aligned}\]</span>
 <h1 id="紧束缚模型">紧束缚模型</h1>
 <p>认为束缚很强时，电子的波函数在某个原子附近时与单个原子势场下的电子波函数类似，而别的原子在该原子处的势场认为是微扰，单个原子下电子的哈密顿量及本征态写法：</p>
 <span class="math display">\[\begin{aligned}
 (T+V_l(r-R_l))\varphi(r-R_l) = \epsilon \varphi(r-R_l)
 \end{aligned}\]</span>
-<p><span class="math inline">\(R_l\)</span>是原子所在的位矢，假设整个晶体微扰的零级波函数写法：</p>
+<p><span
+class="math inline">\(R_l\)</span>是原子所在的位矢，假设整个晶体微扰的零级波函数写法：</p>
 <p><span class="math display">\[
 \psi(r)= \sum_l C_l\varphi(r-R_l)
 \]</span></p>
@@ -361,21 +412,32 @@ H&#39; = V(\frac{2\pi}{a})e^{i\frac{2\pi}{a}r}+V(-\frac{2\pi}{a})e^{-i\frac{2\pi
 <span class="math display">\[\begin{aligned}
 \psi(r)= C \sum_l e^{ikR_l}\varphi(r-R_l)
 \end{aligned}\]</span>
-<p>进一步归一化波函数，<span class="math inline">\(C = \frac{1}{\sqrt N}\)</span>这种近似被称为LCAO近似，考虑所有原子在<span class="math inline">\(R_l\)</span>处的电子造成的势场对应的哈密顿量为：</p>
+<p>进一步归一化波函数，<span class="math inline">\(C = \frac{1}{\sqrt
+N}\)</span>这种近似被称为LCAO近似，考虑所有原子在<span
+class="math inline">\(R_l\)</span>处的电子造成的势场对应的哈密顿量为：</p>
 <span class="math display">\[\begin{aligned}
 H = \sum_i V_i +T = V_l+T+\sum_i&#39;V_i = H_l+\Delta V
 \end{aligned}\]</span>
 <p>将微扰哈密顿量带入后，得到：</p>
 <span class="math display">\[\begin{aligned}
-E(k) =&amp; \epsilon- \int\varphi^*(r) \Delta V \varphi(r)dr 
-\\\\&amp;- \sum_i&#39; e^{ikR_i}\int\varphi^*(r) \Delta V \varphi(r-R_i)dr
+E(k) =&amp; \epsilon- \int\varphi^*(r) \Delta V \varphi(r)dr
+\\\\&amp;- \sum_i&#39; e^{ikR_i}\int\varphi^*(r) \Delta V
+\varphi(r-R_i)dr
 \end{aligned}\]</span>
 进一步化简，得到：
 <span class="math display">\[\begin{aligned}
-E(k) = \epsilon - \sum_i e^{ikR_i}\int\varphi^*(r) \Delta V \varphi(r-R_i)dr
+E(k) = \epsilon - \sum_i e^{ikR_i}\int\varphi^*(r) \Delta V
+\varphi(r-R_i)dr
 \end{aligned}\]</span>
 <h2 id="求解简单立方的s带">求解简单立方的s带</h2>
-<p>扩展到三维以后，<span class="math inline">\(E(\vec k) = \epsilon - \sum_i e^{i\vec k \cdot \vec R_i}\int\varphi^*(\vec r) \Delta V \varphi(\vec r-\vec R_i)d \vec r\)</span>,设<span class="math inline">\(S_0 = \int\varphi^*(\vec r) \Delta V \varphi(\vec r)d\vec r\)</span>，再考虑到S电子态的球对称性，令<span class="math inline">\(S_1 = \int\varphi^*(\vec r) \Delta V \varphi(\vec r-a\vec e_r)d\vec r\)</span>，只考虑最近邻原子的微扰，则<span class="math inline">\(E(\vec k )\)</span>表示为:</p>
+<p>扩展到三维以后，<span class="math inline">\(E(\vec k) = \epsilon -
+\sum_i e^{i\vec k \cdot \vec R_i}\int\varphi^*(\vec r) \Delta V
+\varphi(\vec r-\vec R_i)d \vec r\)</span>,设<span
+class="math inline">\(S_0 = \int\varphi^*(\vec r) \Delta V \varphi(\vec
+r)d\vec r\)</span>，再考虑到S电子态的球对称性，令<span
+class="math inline">\(S_1 = \int\varphi^*(\vec r) \Delta V \varphi(\vec
+r-a\vec e_r)d\vec r\)</span>，只考虑最近邻原子的微扰，则<span
+class="math inline">\(E(\vec k )\)</span>表示为:</p>
 <span class="math display">\[\begin{aligned}
 E(k) = \epsilon -S_0-2S_1(\cos k_x a+\cos k_y a+\cos k_z a)
 \end{aligned}\]</span>
@@ -388,7 +450,8 @@ g(E) = \frac{dZ}{dE}
 <span class="math display">\[\begin{aligned}
 g(E) = \sum_i g_i(k) = \sum_i 2\int_k \frac{N}{V^*}\delta (E-E(k))dk
 \end{aligned}\]</span>
-<p>2来自于自旋，<span class="math inline">\(V^*\)</span>是布里渊区的大小，N是k点总数或者原子总数。</p>
+<p>2来自于自旋，<span
+class="math inline">\(V^*\)</span>是布里渊区的大小，N是k点总数或者原子总数。</p>
 <p>第三种表达式由delta函数的性质：</p>
 <p><img src="屏幕截图 2023-01-01 180400.png" srcset="/img/loading.gif" lazyload></p>
 <span class="math display">\[\begin{aligned}

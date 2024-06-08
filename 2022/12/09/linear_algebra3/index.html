@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="内积空间 定义： 在线性空间的基础上定义了内积运算的空间，内积运算需满足以下性质： \[\begin{aligned} &amp;\left&lt;u,u \right&gt; \ge 0  \\\\&amp;\left&lt;u_1+u_2,v \right&gt; &#x3D; \left&lt;u_1,v \right&gt; + \left&lt;u_2,v \right&gt; \\\">
+    <meta name="description" content="内积空间 定义： 在线性空间的基础上定义了内积运算的空间，内积运算需满足以下性质： \[\begin{aligned} &amp;\left&lt;u,u \right&gt; \ge 0 \\\\&amp;\left&lt;u_1+u_2,v \right&gt; &#x3D; \left&lt;u_1,v \right&gt; + \left&lt;u_2,v \right&gt; \\\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="内积空间">
 <meta property="og:url" content="http://dyf.zone/2022/12/09/linear_algebra3/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="内积空间 定义： 在线性空间的基础上定义了内积运算的空间，内积运算需满足以下性质： \[\begin{aligned} &amp;\left&lt;u,u \right&gt; \ge 0  \\\\&amp;\left&lt;u_1+u_2,v \right&gt; &#x3D; \left&lt;u_1,v \right&gt; + \left&lt;u_2,v \right&gt; \\\">
+<meta property="og:description" content="内积空间 定义： 在线性空间的基础上定义了内积运算的空间，内积运算需满足以下性质： \[\begin{aligned} &amp;\left&lt;u,u \right&gt; \ge 0 \\\\&amp;\left&lt;u_1+u_2,v \right&gt; &#x3D; \left&lt;u_1,v \right&gt; + \left&lt;u_2,v \right&gt; \\\">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://dyf.zone/2022/12/09/linear_algebra3/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-12-09%20164406.png">
 <meta property="og:image" content="http://dyf.zone/2022/12/09/linear_algebra3/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-12-09%20164332.png">
@@ -282,37 +282,57 @@
 <h2 id="定义">定义：</h2>
 <p>在线性空间的基础上定义了内积运算的空间，内积运算需满足以下性质：</p>
 <span class="math display">\[\begin{aligned}
-&amp;\left&lt;u,u \right&gt; \ge 0 
-\\\\&amp;\left&lt;u_1+u_2,v \right&gt; = \left&lt;u_1,v \right&gt; + \left&lt;u_2,v \right&gt;
-\\\\&amp;\left&lt;\lambda u,v \right&gt; = \lambda \left&lt;u,v \right&gt;
+&amp;\left&lt;u,u \right&gt; \ge 0
+\\\\&amp;\left&lt;u_1+u_2,v \right&gt; = \left&lt;u_1,v \right&gt; +
+\left&lt;u_2,v \right&gt;
+\\\\&amp;\left&lt;\lambda u,v \right&gt; = \lambda \left&lt;u,v
+\right&gt;
 \\\\&amp;\left&lt;u,v \right&gt;^* = \left&lt;v,u \right&gt;
 \\\\&amp;if \enspace  \left&lt;u,u \right&gt; = 0 \Rightarrow u = 0
 \end{aligned}\]</span>
 <p>我认为可以看作是一类度规的定义</p>
 <p>由定义轻易有：</p>
 <span class="math display">\[\begin{aligned}
-&amp;\left&lt;u,v_1 + v_2 \right&gt;=\left&lt;u,v_1\right&gt;+\left&lt;u,v_2\right&gt;
+&amp;\left&lt;u,v_1 + v_2
+\right&gt;=\left&lt;u,v_1\right&gt;+\left&lt;u,v_2\right&gt;
 \\\\&amp;\left&lt;u,0\right&gt; = \left&lt;0,v\right&gt; = 0
 \end{aligned}\]</span>
 <h2 id="范数norm">范数（norm）</h2>
-<p>定义为<span class="math inline">\(\sqrt{\left&lt;v,v \right&gt;}\)</span>, 记作<span class="math inline">\(||v||\)</span></p>
+<p>定义为<span class="math inline">\(\sqrt{\left&lt;v,v
+\right&gt;}\)</span>, 记作<span class="math inline">\(||v||\)</span></p>
 <h3 id="properties">properties:</h3>
 <ol type="1">
 <li><span class="math inline">\(||v|| =0 \Rightarrow v = 0\)</span></li>
-<li><span class="math inline">\(||\lambda v|| = |\lambda|\enspace ||v||\)</span></li>
+<li><span class="math inline">\(||\lambda v|| = |\lambda|\enspace
+||v||\)</span></li>
 </ol>
 <h2 id="正交">正交：</h2>
-<p>定义为$&lt;u,v &gt; =0 $，则称 <span class="math inline">\(u\)</span>，<span class="math inline">\(v\)</span> 正交</p>
-<p>Pythagorean Theorem：如果 <span class="math inline">\(u\)</span>，<span class="math inline">\(v\)</span> 正交，则<span class="math inline">\(||v+u||^2 = ||v||^2 +||u||^2\)</span></p>
+<p>定义为$&lt;u,v &gt; =0 $，则称 <span
+class="math inline">\(u\)</span>，<span class="math inline">\(v\)</span>
+正交</p>
+<p>Pythagorean Theorem：如果 <span
+class="math inline">\(u\)</span>，<span class="math inline">\(v\)</span>
+正交，则<span class="math inline">\(||v+u||^2 = ||v||^2
++||u||^2\)</span></p>
 <h2 id="cauchyschwarz-inequality">Cauchy–Schwarz Inequality：</h2>
 <p><span style="text:align:center"></p>
-<p><span class="math inline">\(|\left&lt;v,u \right&gt;| \le ||u||\enspace ||v||\)</span></p>
+<p><span class="math inline">\(|\left&lt;v,u \right&gt;| \le
+||u||\enspace ||v||\)</span></p>
 <p></span></p>
-<p><mark>分解</mark>：易证得如果 <span class="math inline">\(v \ne 0\)</span>，任意一个向量<span class="math inline">\(u\)</span>都可以表示为：<span class="math inline">\(u = \frac{\left&lt;u,v \right&gt;}{||v||^2}v+ w\)</span>，其中<span class="math inline">\(w = u - \frac{\left&lt;u,v\right&gt;}{||v||^2}v\)</span>，<span class="math inline">\(w\)</span>与<span class="math inline">\(v\)</span>正交</p>
+<p><mark>分解</mark>：易证得如果 <span class="math inline">\(v \ne
+0\)</span>，任意一个向量<span
+class="math inline">\(u\)</span>都可以表示为：<span
+class="math inline">\(u = \frac{\left&lt;u,v \right&gt;}{||v||^2}v+
+w\)</span>，其中<span class="math inline">\(w = u -
+\frac{\left&lt;u,v\right&gt;}{||v||^2}v\)</span>，<span
+class="math inline">\(w\)</span>与<span
+class="math inline">\(v\)</span>正交</p>
 <span class="math display">\[\begin{aligned}
-&amp; (||u||\enspace  ||v||)^2  = \left&lt;u,u \right&gt;\left&lt;v,v \right&gt;
+&amp; (||u||\enspace  ||v||)^2  = \left&lt;u,u \right&gt;\left&lt;v,v
+\right&gt;
 \\\\&amp; = \left&lt;cv+w,cv+w \right&gt;\left&lt;v,v \right&gt;
-\\\\&amp; = (c^2\left&lt;v,v \right&gt;+\left&lt;w,w \right&gt;)\left&lt;v,v \right&gt;
+\\\\&amp; = (c^2\left&lt;v,v \right&gt;+\left&lt;w,w
+\right&gt;)\left&lt;v,v \right&gt;
 \\\\&amp; \ge  c^2\left&lt;v,v \right&gt;^2
 \\\\&amp; = \left&lt;u,v \right&gt;^2
 \end{aligned}\]</span>
@@ -322,38 +342,65 @@
 \]</span></p>
 <p>prove:</p>
 <span class="math display">\[\begin{aligned}
-&amp;\left&lt;u+v,u+v\right&gt; = ||u||^2+||v||^2+2Re(\left&lt;u,v\right&gt;)
+&amp;\left&lt;u+v,u+v\right&gt; =
+||u||^2+||v||^2+2Re(\left&lt;u,v\right&gt;)
 \\\\&amp; \le ||u||^2+||v||^2+2|\left&lt;u,v\right&gt;|
 \\\\&amp;  \le ||u||^2+||v||^2+2||u||\enspace ||v||
 \\\\&amp; \le (||u||+||v||)^2
 \end{aligned}\]</span>
 <p>第二行是因为复数的模长大于等于实部长度，第三行有柯西施瓦兹不等式。</p>
 <h2 id="parallelogram-equality">Parallelogram Equality</h2>
-<p><span class="math inline">\(||u+v||^2 + ||u-v||^2 =2 (||u||^2+||v||^2)\)</span> 易证</p>
+<p><span class="math inline">\(||u+v||^2 + ||u-v||^2 =2
+(||u||^2+||v||^2)\)</span> 易证</p>
 <h1 id="习题">习题</h1>
 <h2 id="a.3">6.A.3</h2>
 <p><img src="屏幕截图 2022-12-09 164406.png" srcset="/img/loading.gif" lazyload></p>
 <p>问题的关键点在于证明数域是实数域的时候，由存在某个矢量的范数大于0以及内积的其他性质可推得所有矢量的模的正定性。</p>
-<p>假设<span class="math inline">\(v\)</span>与自己的内积大于0，<span class="math inline">\(u\)</span>与自己的内积小于0，则设矢量：<span class="math inline">\(w_t = v+(1-t)(u-t)\)</span></p>
-<p>设<span class="math inline">\(f(t) = \left&lt;w_t,w_t\right&gt; = (1-t)^2 \left&lt;v,v\right&gt;+t^2\left&lt;u,u\right&gt;\)</span>，再由实连续函数的介值定理，存在一个t_0属于<span class="math inline">\([0,1]\)</span>，st,<span class="math inline">\(f(t_0) = 0\)</span></p>
-<p><span class="math inline">\(v_{t_0}\)</span>与自己的内积等于0，可知<span class="math inline">\(v_{t_0}=0\)</span>，所以<span class="math inline">\(v\)</span> 与<span class="math inline">\(u\)</span>共线，所以矛盾，证毕</p>
+<p>假设<span class="math inline">\(v\)</span>与自己的内积大于0，<span
+class="math inline">\(u\)</span>与自己的内积小于0，则设矢量：<span
+class="math inline">\(w_t = v+(1-t)(u-t)\)</span></p>
+<p>设<span class="math inline">\(f(t) = \left&lt;w_t,w_t\right&gt; =
+(1-t)^2
+\left&lt;v,v\right&gt;+t^2\left&lt;u,u\right&gt;\)</span>，再由实连续函数的介值定理，存在一个t_0属于<span
+class="math inline">\([0,1]\)</span>，st,<span
+class="math inline">\(f(t_0) = 0\)</span></p>
+<p><span
+class="math inline">\(v_{t_0}\)</span>与自己的内积等于0，可知<span
+class="math inline">\(v_{t_0}=0\)</span>，所以<span
+class="math inline">\(v\)</span> 与<span
+class="math inline">\(u\)</span>共线，所以矛盾，证毕</p>
 <h2 id="a.9">6.A.9</h2>
 <p><img src="屏幕截图 2022-12-09 164332.png" srcset="/img/loading.gif" lazyload></p>
 <p>显然不等式左右两边都大于0，将待求不等式左右两边同时平方得：</p>
 <p><span class="math display">\[
-||u||^2 +||v||^2 -||u||^2\enspace ||v||^2 \ge 2|\left&lt;u,v\right&gt;|- |\left&lt;u,v\right&gt;|^2
+||u||^2 +||v||^2 -||u||^2\enspace ||v||^2 \ge 2|\left&lt;u,v\right&gt;|-
+|\left&lt;u,v\right&gt;|^2
 \]</span></p>
 <p>同时对左边进行缩放：</p>
-<p><span class="math inline">\(lms \ge 2||u||\enspace ||v|| - (||u||\enspace ||v||)^2\)</span></p>
-<p>令f(x) = <span class="math inline">\(2x -x^2\)</span>，则 <span class="math inline">\(lms \ge f(||u||\enspace ||v||),rms = f(|\left&lt;u,v\right&gt;|)\)</span>，由<span class="math inline">\(f(x)\)</span>在<span class="math inline">\([0,1]\)</span>的变化趋势以及<span class="math inline">\(||u||\enspace ||v|| \ge |\left&lt;u,v\right&gt;|\)</span>可知，<span class="math inline">\(lms\ge f(||u||\enspace ||v||) \ge f(|\left&lt;u,v\right&gt;|)=rms\)</span>，证毕</p>
+<p><span class="math inline">\(lms \ge 2||u||\enspace ||v|| -
+(||u||\enspace ||v||)^2\)</span></p>
+<p>令f(x) = <span class="math inline">\(2x -x^2\)</span>，则 <span
+class="math inline">\(lms \ge f(||u||\enspace ||v||),rms =
+f(|\left&lt;u,v\right&gt;|)\)</span>，由<span
+class="math inline">\(f(x)\)</span>在<span
+class="math inline">\([0,1]\)</span>的变化趋势以及<span
+class="math inline">\(||u||\enspace ||v|| \ge
+|\left&lt;u,v\right&gt;|\)</span>可知，<span
+class="math inline">\(lms\ge f(||u||\enspace ||v||) \ge
+f(|\left&lt;u,v\right&gt;|)=rms\)</span>，证毕</p>
 <h2 id="a.12">6.A.12</h2>
 <p><img src="屏幕截图 2022-12-09 165649.png" srcset="/img/loading.gif" lazyload></p>
-<p>由<span class="math inline">\(R^n\)</span>欧式内积空间上的<span class="math inline">\((x_1,x_2,...x_n)\)</span>与<span class="math inline">\((1,1,1,..,1)\)</span>的Cauchy–Schwarz不等式易证得。</p>
+<p>由<span class="math inline">\(R^n\)</span>欧式内积空间上的<span
+class="math inline">\((x_1,x_2,...x_n)\)</span>与<span
+class="math inline">\((1,1,1,..,1)\)</span>的Cauchy–Schwarz不等式易证得。</p>
 <h2 id="a.18">6.A.18</h2>
 <p><img src="屏幕截图 2022-12-12 183808.png" srcset="/img/loading.gif" lazyload></p>
 <p>由三角不等式有：</p>
-<p><span class="math inline">\(((x_1+x_2)^p+(y_1+y_2)^p)^{\frac{1}{p}}\le (x_1^p+y_1^p)^{\frac{1}{p}}+(x_2^p+y_2^p)^{\frac{1}{p}}\)</span></p>
-<p>取点<span class="math inline">\((x_1,y_1)=(1,-1),(x_2,y_2)=(1,1)\)</span>，得到不等式：</p>
+<p><span
+class="math inline">\(((x_1+x_2)^p+(y_1+y_2)^p)^{\frac{1}{p}}\le
+(x_1^p+y_1^p)^{\frac{1}{p}}+(x_2^p+y_2^p)^{\frac{1}{p}}\)</span></p>
+<p>取点<span
+class="math inline">\((x_1,y_1)=(1,-1),(x_2,y_2)=(1,1)\)</span>，得到不等式：</p>
 <p><span class="math display">\[
 4&lt;  (1+(-1)^p){\frac{1}{p}}
 \]</span></p>

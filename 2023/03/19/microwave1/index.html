@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="微波的定义  频段在 \(30Hz-300GHz\) 之间的电磁波被称为微波，由电动力学中，导体的透射深度 \(\Delta &#x3D; \sqrt{\frac{2}{w\mu\sigma}}\) 可知，电磁波在微波频段的透射深度在 \(10^{-6}m\) 左右，于是采用传输线来传播电磁波，与经典电路不同，微波导线不具有对应的“电信号”。 采用化场为路的思想，也方便将经典电路中的处理方法过渡到微波">
+    <meta name="description" content="微波的定义  频段在 \(30Hz-300GHz\) 之间的电磁波被称为微波，由电动力学中，导体的透射深度 \(\Delta &#x3D; \sqrt{\frac{2}{w\mu\sigma}}\) 可知，电磁波在微波频段的透射深度在 \(10^{-6}m\) 左右，于是采用传输线来传播电磁波，与经典电路不同，微波导线不具有对应的“电信号”。 采用化场为路的思想，也方便将经典电路中的处理方法过渡">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微波电路基本概念">
 <meta property="og:url" content="http://dyf.zone/2023/03/19/microwave1/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="微波的定义  频段在 \(30Hz-300GHz\) 之间的电磁波被称为微波，由电动力学中，导体的透射深度 \(\Delta &#x3D; \sqrt{\frac{2}{w\mu\sigma}}\) 可知，电磁波在微波频段的透射深度在 \(10^{-6}m\) 左右，于是采用传输线来传播电磁波，与经典电路不同，微波导线不具有对应的“电信号”。 采用化场为路的思想，也方便将经典电路中的处理方法过渡到微波">
+<meta property="og:description" content="微波的定义  频段在 \(30Hz-300GHz\) 之间的电磁波被称为微波，由电动力学中，导体的透射深度 \(\Delta &#x3D; \sqrt{\frac{2}{w\mu\sigma}}\) 可知，电磁波在微波频段的透射深度在 \(10^{-6}m\) 左右，于是采用传输线来传播电磁波，与经典电路不同，微波导线不具有对应的“电信号”。 采用化场为路的思想，也方便将经典电路中的处理方法过渡">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://dyf.zone/2023/03/19/microwave1/1.png">
 <meta property="og:image" content="http://dyf.zone/2023/03/19/microwave1/4.png">
@@ -282,7 +282,12 @@
                 
                 <h1 id="微波的定义">微波的定义</h1>
 <p><img src="1.png" srcset="/img/loading.gif" lazyload width="70%"></p>
-<p>频段在 <span class="math inline">\(30Hz-300GHz\)</span> 之间的电磁波被称为微波，由电动力学中，导体的透射深度 <span class="math inline">\(\Delta = \sqrt{\frac{2}{w\mu\sigma}}\)</span> 可知，电磁波在微波频段的透射深度在 <span class="math inline">\(10^{-6}m\)</span> 左右，于是采用传输线来传播电磁波，与经典电路不同，微波导线不具有对应的“电信号”。</p>
+<p>频段在 <span class="math inline">\(30Hz-300GHz\)</span>
+之间的电磁波被称为微波，由电动力学中，导体的透射深度 <span
+class="math inline">\(\Delta = \sqrt{\frac{2}{w\mu\sigma}}\)</span>
+可知，电磁波在微波频段的透射深度在 <span
+class="math inline">\(10^{-6}m\)</span>
+左右，于是采用传输线来传播电磁波，与经典电路不同，微波导线不具有对应的“电信号”。</p>
 <p>采用化场为路的思想，也方便将经典电路中的处理方法过渡到微波电路中，可以将传输线理论运用到微波电路中，其电流和电压可以与电磁波的电场和磁场的场分量作一个对应，其具体对应关系：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
@@ -293,76 +298,107 @@
 <p>将解空气中的麦克斯韦方程组改写为解微波电路中“电压”和“电流”的分布问题，于是单色电磁波的传播方程与电报方程相互等价：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-&amp;\frac{\partial^2 E_x}{\partial z^2} + w^2/C_{lignt} E_x = 0 
-\\\\&amp; \frac{\partial^2 u}{\partial z^2} + w^2LC u = 0 
+&amp;\frac{\partial^2 E_x}{\partial z^2} + w^2/C_{lignt} E_x = 0
+\\\\&amp; \frac{\partial^2 u}{\partial z^2} + w^2LC u = 0
 \end{aligned}
 \end{equation}\]</span></p>
-<p>而<span class="math inline">\(Z_0 = \frac{L}{C}\)</span> 类似于平面波中的波阻，用于描述电场与磁场的比例关系。</p>
+<p>而<span class="math inline">\(Z_0 = \frac{L}{C}\)</span>
+类似于平面波中的波阻，用于描述电场与磁场的比例关系。</p>
 <p><img src="4.png" srcset="/img/loading.gif" lazyload width="100%"></p>
 <h1 id="传输线理论原理">传输线理论原理</h1>
 <p>能够用传统直流电路或者低频交流电路的处理方法直接解决的电路称为集总电路，其中电信号的波动所对应的电磁波波长远远大于其电路尺寸，而当输入低频交流讯号，但传输距离很远时，其上的电压电流由于导线和大地的电容，导线的电感和电阻呈现波动，其信号传播满足电报员方程，这种电路被称为分布电路。</p>
 <p><img src="5.png" srcset="/img/loading.gif" lazyload width=" %"></p>
 <p>如图所示，其为传输线的一般结构，对应于微波电路</p>
 <p><img src="6.jpg" srcset="/img/loading.gif" lazyload width="75%"></p>
-<p>建立两套坐标系，<span class="math inline">\(z=l-z&#39;\)</span>，通过解方程可知，波的传播一般解对应：</p>
+<p>建立两套坐标系，<span
+class="math inline">\(z=l-z&#39;\)</span>，通过解方程可知，波的传播一般解对应：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 &amp;u(z) = A_1 e^{-j\beta z} +A_2 e^{j\beta z}
 \\\\&amp;i(z) = \frac{1}{Z_0} (A_1 e^{-j\beta z} - A_2 e^{j\beta z} )
 \end{aligned}
 \end{equation}\]</span></p>
-<p><span class="math inline">\(\beta = w\sqrt{LC}\)</span>，项1对应正向传播的波，而项2对应负向传播的波，通过限定其输入的<span class="math inline">\(U_0,I_0\)</span> 可以解出系数从而解出波其上的<span class="math inline">\(u,i\)</span>分布，或者给出输出条件 <span class="math inline">\(U_l,I_l\)</span> 也可以得到电流电压分布，此时使用<span class="math inline">\(z&#39;\)</span> 坐标系更为方便。</p>
-<p>假设负载处的电压为 <span class="math inline">\(U_l\)</span>, 电流为 <span class="math inline">\(I_l\)</span>，通过解方程得到系数，传输线上的电压写为：</p>
+<p><span class="math inline">\(\beta =
+w\sqrt{LC}\)</span>，项1对应正向传播的波，而项2对应负向传播的波，通过限定其输入的<span
+class="math inline">\(U_0,I_0\)</span> 可以解出系数从而解出波其上的<span
+class="math inline">\(u,i\)</span>分布，或者给出输出条件 <span
+class="math inline">\(U_l,I_l\)</span>
+也可以得到电流电压分布，此时使用<span
+class="math inline">\(z&#39;\)</span> 坐标系更为方便。</p>
+<p>假设负载处的电压为 <span class="math inline">\(U_l\)</span>, 电流为
+<span
+class="math inline">\(I_l\)</span>，通过解方程得到系数，传输线上的电压写为：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 u(z&#39;) &amp;= U_l \cos(\beta z&#39;) + j I_lZ_0\sin(\beta z&#39;)
-\\\\ &amp;= \frac{(U_l+Z_0I_l)}{2} e^{j\beta z&#39;}  + \frac{(U_l-Z_0I_l)}{2} e^{-j\beta z&#39;} 
-\\\\ i(z&#39;) &amp;= \frac{ju(l)}{Z_0} \cos(\beta z&#39;)+ i(l)\sin(\beta z&#39;)
-\\\\ &amp;= \frac{(U_l+Z_0I_l)}{2Z_0} e^{j\beta z&#39;}  -\frac{(U_l-Z_0I_l)}{2Z_0} e^{-j\beta z&#39;} 
+\\\\ &amp;= \frac{(U_l+Z_0I_l)}{2} e^{j\beta z&#39;}  +
+\frac{(U_l-Z_0I_l)}{2} e^{-j\beta z&#39;}
+\\\\ i(z&#39;) &amp;= \frac{ju(l)}{Z_0} \cos(\beta z&#39;)+
+i(l)\sin(\beta z&#39;)
+\\\\ &amp;= \frac{(U_l+Z_0I_l)}{2Z_0} e^{j\beta
+z&#39;}  -\frac{(U_l-Z_0I_l)}{2Z_0} e^{-j\beta z&#39;}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>定义某点处的反射系数 <span class="math inline">\(\Gamma= \frac{u-Z_0i}{u+Z_0i}\)</span>，其模长代表某点处两个方向的波的电压振幅比值，俯角代表相位差，定义阻抗 <span class="math inline">\(Z = u/i\)</span>。</p>
-<p>根据通解，容易得到，在 <span class="math inline">\(z&#39;\)</span> 处的反射系数和阻抗有：</p>
+<p>定义某点处的反射系数 <span class="math inline">\(\Gamma=
+\frac{u-Z_0i}{u+Z_0i}\)</span>，其模长代表某点处两个方向的波的电压振幅比值，俯角代表相位差，定义阻抗
+<span class="math inline">\(Z = u/i\)</span>。</p>
+<p>根据通解，容易得到，在 <span class="math inline">\(z&#39;\)</span>
+处的反射系数和阻抗有：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 &amp;\Gamma(z&#39;) = \Gamma_l e^{-2j\beta z&#39;}
-\\\\&amp;Z(z&#39;) = Z_l \frac{1+\Gamma(z&#39;)}{1-\Gamma(z&#39;)} 
+\\\\&amp;Z(z&#39;) = Z_l \frac{1+\Gamma(z&#39;)}{1-\Gamma(z&#39;)}
 \end{aligned}
 \end{equation}\]</span></p>
 <h1 id="传输线状态分析">传输线状态分析</h1>
 <h2 id="行波和全驻波状态">行波和全驻波状态</h2>
-<p>当<span class="math inline">\(Z_l = Z_0\)</span> 时， <span class="math inline">\(\Gamma_l=0\)</span>，通过变量代换$z = l- z' $，容易将波表达式写为：</p>
+<p>当<span class="math inline">\(Z_l = Z_0\)</span> 时， <span
+class="math inline">\(\Gamma_l=0\)</span>，通过变量代换$z = l- z'
+$，容易将波表达式写为：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-u(z) &amp;= \frac{U_l+Z_0I_l}{2}e^{j\beta l} e^{-j\beta z} + \frac{U_l-Z_0I_l}{2}e^{-j\beta l} e^{j\beta z}
- \\\\ &amp;= \frac{U_l+Z_0I_l}{2}e^{j\beta l} e^{-j\beta z} =   \frac{U_0+Z_0I_0}{2} e^{- i\beta z}
+u(z) &amp;= \frac{U_l+Z_0I_l}{2}e^{j\beta l} e^{-j\beta z} +
+\frac{U_l-Z_0I_l}{2}e^{-j\beta l} e^{j\beta z}
+\\\\ &amp;= \frac{U_l+Z_0I_l}{2}e^{j\beta l} e^{-j\beta z}
+=   \frac{U_0+Z_0I_0}{2} e^{- i\beta z}
 \end{aligned}
 \end{equation}\]</span></p>
-<p><span class="math inline">\(U_0,I_0\)</span>为波源处的电压电流，只存在从波源向负载输入方向的波，从而波源处向内发出任意单色波，都不会被反射，这种情况被称为行波状态。</p>
-<p>容易证得当负载为纯电抗时，既<mark> <span class="math inline">\(Z_l = jX_l\)</span> 时与电路中的<span class="math inline">\(|\Gamma(z&#39;)| = |\Gamma_l| = 1\)</span>等价</mark>，所以可以把反射系数写为<span class="math inline">\(\Gamma_l = e^{i\varphi_l}\)</span></p>
+<p><span
+class="math inline">\(U_0,I_0\)</span>为波源处的电压电流，只存在从波源向负载输入方向的波，从而波源处向内发出任意单色波，都不会被反射，这种情况被称为行波状态。</p>
+<p>容易证得当负载为纯电抗时，既<mark> <span class="math inline">\(Z_l =
+jX_l\)</span> 时与电路中的<span class="math inline">\(|\Gamma(z&#39;)| =
+|\Gamma_l| = 1\)</span>等价</mark>，所以可以把反射系数写为<span
+class="math inline">\(\Gamma_l = e^{i\varphi_l}\)</span></p>
 <p>任意处的阻抗：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-Z(z&#39;) &amp;= \frac{Z_l+jZ_0\tan(\beta z&#39;)}{Z_0+jZ_l\tan(\beta z&#39;)}
-  \\\\ &amp;= jZ_0\frac{X_l/Z_0 +\tan(\beta z&#39;)}{1 -X_l/Z_0 \tan(\beta z&#39;)} 
+Z(z&#39;) &amp;= \frac{Z_l+jZ_0\tan(\beta z&#39;)}{Z_0+jZ_l\tan(\beta
+z&#39;)}
+  \\\\ &amp;= jZ_0\frac{X_l/Z_0 +\tan(\beta z&#39;)}{1 -X_l/Z_0
+\tan(\beta z&#39;)}
   \\\\ &amp; = jZ_0 \tan(\beta (z+\Delta z))
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中 <span class="math inline">\(\Delta z = \arctan(\frac{X_l}{Z_0})\)</span>，当<span class="math inline">\(X_l = 0\)</span> 既短路时：</p>
+<p>其中 <span class="math inline">\(\Delta z =
+\arctan(\frac{X_l}{Z_0})\)</span>，当<span class="math inline">\(X_l =
+0\)</span> 既短路时：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-Z(z&#39;) &amp;=jZ_0 \tan(\beta z&#39;) 
+Z(z&#39;) &amp;=jZ_0 \tan(\beta z&#39;)
 \\\\&amp;= Z_0 \frac{1-e^{-j2\beta z&#39;}}{1 + e^{-j2\beta z&#39;}}
 \end{aligned}
 \end{equation}\]</span></p>
 <p>将其视作 “标准状态”，再由：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-Z(z&#39;)&amp; = Z_0 \frac{1+\Gamma_le^{-j2\beta z&#39;}}{1- \Gamma_le^{-j2\beta z&#39;}}
-\\\\   &amp; = Z_0 \frac{1-e^{-j(2\beta z&#39;+ \pi - \varphi_l)}}{1 + e^{-j(2\beta z&#39;+ \pi - \varphi_l)}}
+Z(z&#39;)&amp; = Z_0 \frac{1+\Gamma_le^{-j2\beta z&#39;}}{1-
+\Gamma_le^{-j2\beta z&#39;}}
+\\\\   &amp; = Z_0 \frac{1-e^{-j(2\beta z&#39;+ \pi - \varphi_l)}}{1 +
+e^{-j(2\beta z&#39;+ \pi - \varphi_l)}}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>得到 <span class="math inline">\(\Delta z\)</span> 与 <span class="math inline">\(\varphi_l\)</span> 的关系：</p>
+<p>得到 <span class="math inline">\(\Delta z\)</span> 与 <span
+class="math inline">\(\varphi_l\)</span> 的关系：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 &amp;\varphi_l = \pi  - 2arctan(X_l/Z_0)
@@ -375,44 +411,64 @@ Z(z&#39;)&amp; = Z_0 \frac{1+\Gamma_le^{-j2\beta z&#39;}}{1- \Gamma_le^{-j2\beta
 \begin{aligned}
 u(z) = U_l e^{j\beta z&#39;} + \Gamma_l U_l e^{-j\beta z&#39;}
 \\\\ =   U_l e^{j\beta z&#39;} +U_l e^{-j\beta z&#39;+j\varphi_l}
-\\\\ =   U_le^{j\phi_l/2}(e^{j\beta z&#39;&#39;} +e^{-j\beta z&#39;&#39;})
+\\\\ =   U_le^{j\phi_l/2}(e^{j\beta z&#39;&#39;} +e^{-j\beta
+z&#39;&#39;})
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中<span class="math inline">\(z&#39;&#39; = -\frac{\varphi_l}{2\beta}+z&#39;\)</span>，相当于当负载为纯电抗时，波在负载处会被完全反射并且有一个相差，其能够与入射波干涉产生有相较于短路的标准状态 <span class="math inline">\(\Delta z\)</span> 位移的驻波。</p>
+<p>其中<span class="math inline">\(z&#39;&#39; =
+-\frac{\varphi_l}{2\beta}+z&#39;\)</span>，相当于当负载为纯电抗时，波在负载处会被完全反射并且有一个相差，其能够与入射波干涉产生有相较于短路的标准状态
+<span class="math inline">\(\Delta z\)</span> 位移的驻波。</p>
 <h2 id="行驻波">行驻波</h2>
-<p>最一般的情况，当<span class="math inline">\(\Gamma_l = |\Gamma_l|e^{i\varphi_l},Z_l = R_l +iX_l\)</span>时：</p>
+<p>最一般的情况，当<span class="math inline">\(\Gamma_l =
+|\Gamma_l|e^{i\varphi_l},Z_l = R_l +iX_l\)</span>时：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 u(z&#39;)&amp; = U_l^+(e^{j\beta z&#39;} +\Gamma_l e^{-j\beta z&#39;})
-\\\\ &amp;= U_l^+(1-|\Gamma_l|)e^{j\beta z&#39;} +2jU_l^+|\Gamma_l| e^{j(\varphi_l-\pi)/2}\sin[\beta(z&#39;-\frac{1}{2\beta(\varphi_l-\pi)})]
+\\\\ &amp;= U_l^+(1-|\Gamma_l|)e^{j\beta z&#39;} +2jU_l^+|\Gamma_l|
+e^{j(\varphi_l-\pi)/2}\sin[\beta(z&#39;-\frac{1}{2\beta(\varphi_l-\pi)})]
 \end{aligned}
 \end{equation}\]</span></p>
 <p>分为了两部分，第一部分是部分射入的行波，第二部分是反射波与行波相互交叠发生的干涉驻波。由反射系数与阻抗的关系：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
 Z(z&#39;) &amp;= Z_0 \frac{1+ \Gamma(z)}{1- \Gamma(z)}
-\\\\ &amp;= Z_0 \frac{\rho+j\tan(\beta z&#39; - \varphi_l/2)}{1+j\rho\tan(\beta z&#39; - \varphi_l/2)}
+\\\\ &amp;= Z_0 \frac{\rho+j\tan(\beta z&#39; -
+\varphi_l/2)}{1+j\rho\tan(\beta z&#39; - \varphi_l/2)}
 \end{aligned}
 \end{equation}\]</span></p>
-<p>其中<span class="math inline">\(\rho = \frac{1+ \Gamma_l}{1- \Gamma_l}\)</span>(电压驻波比)，根据<span class="math inline">\(u(z&#39;) = U_l^+(e^{j\beta z&#39;} +\Gamma_l e^{-j\beta z&#39;})\)</span> 以及定义，其物理含义为电压振幅的最大值和最小值的比值。</p>
-<p>已知 <span class="math inline">\(\Gamma_l = \frac{Z_l -Z_0}{Z_l+Z_0} = \frac{R_L -Z_0+jX_l}{R_L +Z_0+jX_l}\)</span>，由复数除法的几何意义可知反射系数的俯角：</p>
+<p>其中<span class="math inline">\(\rho = \frac{1+ \Gamma_l}{1-
+\Gamma_l}\)</span>(电压驻波比)，根据<span
+class="math inline">\(u(z&#39;) = U_l^+(e^{j\beta z&#39;} +\Gamma_l
+e^{-j\beta z&#39;})\)</span>
+以及定义，其物理含义为电压振幅的最大值和最小值的比值。</p>
+<p>已知 <span class="math inline">\(\Gamma_l = \frac{Z_l -Z_0}{Z_l+Z_0}
+= \frac{R_L -Z_0+jX_l}{R_L
++Z_0+jX_l}\)</span>，由复数除法的几何意义可知反射系数的俯角：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-\varphi_l = \pi - \arctan(\frac{X_l}{Z_0+R_l})+ [\arctan(\frac{X_l}{Z_0-R_l})]
+\varphi_l = \pi - \arctan(\frac{X_l}{Z_0+R_l})+
+[\arctan(\frac{X_l}{Z_0-R_l})]
 \end{aligned}
 \end{equation}\]</span></p>
-<p>同样的，需要选定 “标准状态” 来定义 <span class="math inline">\(\Delta z\)</span>，当<span class="math inline">\(Z_L = R_L&lt;Z_0\)</span> 时，<span class="math inline">\(\varphi_l = 0\)</span> 选用其为标准状态，则定义 <span class="math inline">\(\Delta z = (\pi - \varphi_l)/2\beta\)</span>，任意负载的电压和阻抗：</p>
+<p>同样的，需要选定 “标准状态” 来定义 <span class="math inline">\(\Delta
+z\)</span>，当<span class="math inline">\(Z_L = R_L&lt;Z_0\)</span>
+时，<span class="math inline">\(\varphi_l = 0\)</span>
+选用其为标准状态，则定义 <span class="math inline">\(\Delta z = (\pi -
+\varphi_l)/2\beta\)</span>，任意负载的电压和阻抗：</p>
 <p><span class="math display">\[\begin{equation}
 \begin{aligned}
-&amp;u(z&#39;) = U_l^+(1-|\Gamma_l|)e^{j\beta z&#39;} +2jU_l^+|\Gamma_l| e^{j(\varphi_l-\pi)/2}\sin[\beta(z&#39;+\Delta z)]
-\\\\ &amp;Z(z&#39;) = \frac{1+j\rho \tan(\beta(z&#39;+\Delta z))}{\rho+j \tan(\beta(z&#39;+\Delta z))}
+&amp;u(z&#39;) = U_l^+(1-|\Gamma_l|)e^{j\beta z&#39;} +2jU_l^+|\Gamma_l|
+e^{j(\varphi_l-\pi)/2}\sin[\beta(z&#39;+\Delta z)]
+\\\\ &amp;Z(z&#39;) = \frac{1+j\rho \tan(\beta(z&#39;+\Delta z))}{\rho+j
+\tan(\beta(z&#39;+\Delta z))}
 \end{aligned}
 \end{equation}\]</span></p>
 <p>标准状态的电压电流如图所示：</p>
 <p><img src="6.png" srcset="/img/loading.gif" lazyload width="70%"></p>
 <p>而更一般的情况如图所示：</p>
 <p><img src="7.png" srcset="/img/loading.gif" lazyload width="100%"></p>
-<p><span class="math inline">\(d_{min}\)</span>代表波节和终端处的最小距离</p>
+<p><span
+class="math inline">\(d_{min}\)</span>代表波节和终端处的最小距离</p>
 
                 
               </div>

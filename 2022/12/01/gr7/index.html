@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="对偶矢量场 任意一点 \(p \in M\), 存在一个流形矢量空间，在该流形矢量空间的对偶空间里找到一个对偶矢量\(v^*\), 每一点选出来的对偶矢量构成的场称为对偶矢量场，基矢记作\(\{e^{*i}\}\)。 \(f\) 是 \(M\) 上的标量场，则定义 \(df\) 对偶矢量场： \[ d f|_p (v) &#x3D; v(f) \] \(dfg|_p(v) &#x3D; v(fg)|_p &#x3D;">
+    <meta name="description" content="对偶矢量场 任意一点 \(p \in M\), 存在一个流形矢量空间，在该流形矢量空间的对偶空间里找到一个对偶矢量\(v^*\), 每一点选出来的对偶矢量构成的场称为对偶矢量场，基矢记作\(\{e^{*i}\}\)。 \(f\) 是 \(M\) 上的标量场，则定义 \(df\) 对偶矢量场： \[ d f|_p (v) &#x3D; v(f) \] \(dfg|_p(v) &#x3D; v(fg)|_p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2.对偶矢量，张量及抽象指标">
 <meta property="og:url" content="http://dyf.zone/2022/12/01/gr7/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="对偶矢量场 任意一点 \(p \in M\), 存在一个流形矢量空间，在该流形矢量空间的对偶空间里找到一个对偶矢量\(v^*\), 每一点选出来的对偶矢量构成的场称为对偶矢量场，基矢记作\(\{e^{*i}\}\)。 \(f\) 是 \(M\) 上的标量场，则定义 \(df\) 对偶矢量场： \[ d f|_p (v) &#x3D; v(f) \] \(dfg|_p(v) &#x3D; v(fg)|_p &#x3D;">
+<meta property="og:description" content="对偶矢量场 任意一点 \(p \in M\), 存在一个流形矢量空间，在该流形矢量空间的对偶空间里找到一个对偶矢量\(v^*\), 每一点选出来的对偶矢量构成的场称为对偶矢量场，基矢记作\(\{e^{*i}\}\)。 \(f\) 是 \(M\) 上的标量场，则定义 \(df\) 对偶矢量场： \[ d f|_p (v) &#x3D; v(f) \] \(dfg|_p(v) &#x3D; v(fg)|_p">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-30T16:00:02.000Z">
 <meta property="article:modified_time" content="2023-01-19T06:28:41.251Z">
@@ -274,57 +274,123 @@
               <div class="markdown-body">
                 
                 <h1 id="对偶矢量场">对偶矢量场</h1>
-<p>任意一点 <span class="math inline">\(p \in M\)</span>, 存在一个流形矢量空间，在该流形矢量空间的对偶空间里找到一个对偶矢量<span class="math inline">\(v^*\)</span>, 每一点选出来的对偶矢量构成的场称为对偶矢量场，基矢记作<span class="math inline">\(\{e^{*i}\}\)</span>。</p>
-<p><span class="math inline">\(f\)</span> 是 <span class="math inline">\(M\)</span> 上的标量场，则定义 <span class="math inline">\(df\)</span> 对偶矢量场： <span class="math display">\[
+<p>任意一点 <span class="math inline">\(p \in M\)</span>,
+存在一个流形矢量空间，在该流形矢量空间的对偶空间里找到一个对偶矢量<span
+class="math inline">\(v^*\)</span>,
+每一点选出来的对偶矢量构成的场称为对偶矢量场，基矢记作<span
+class="math inline">\(\{e^{*i}\}\)</span>。</p>
+<p><span class="math inline">\(f\)</span> 是 <span
+class="math inline">\(M\)</span> 上的标量场，则定义 <span
+class="math inline">\(df\)</span> 对偶矢量场： <span
+class="math display">\[
 d f|_p (v) = v(f)
-\]</span> <span class="math inline">\(dfg|_p(v) = v(fg)|_p = g(p)v(f)|_p+v(g)|_pf(p)=g(p)df+f(p)dg\)</span></p>
-<p><span class="math inline">\(dx^\mu(\partial /\partial x^\mu) = \partial /\partial x^\mu (x^\mu) = \partial x^\mu /\partial x^\mu = 1 \Rightarrow dx^\mu\)</span> is a set of basis of dual map on <span class="math inline">\(P\)</span>.</p>
+\]</span> <span class="math inline">\(dfg|_p(v) = v(fg)|_p =
+g(p)v(f)|_p+v(g)|_pf(p)=g(p)df+f(p)dg\)</span></p>
+<p><span class="math inline">\(dx^\mu(\partial /\partial x^\mu) =
+\partial /\partial x^\mu (x^\mu) = \partial x^\mu /\partial x^\mu = 1
+\Rightarrow dx^\mu\)</span> is a set of basis of dual map on <span
+class="math inline">\(P\)</span>.</p>
 <h1 id="张量场">张量场</h1>
-<p>一个<span class="math inline">\((k,l)\)</span>型的张量场定义为一个映射：</p>
+<p>一个<span
+class="math inline">\((k,l)\)</span>型的张量场定义为一个映射：</p>
 <div style="text-align:center">
-<span class="math inline">\(T:V^*\times V^*..(k \\; times)\times V\times V...(l\\; times) \rightarrow R\)</span>
+<span class="math inline">\(T:V^*\times V^*..(k \\; times)\times V\times
+V...(l\\; times) \rightarrow R\)</span>
 </div>
 <p>在张量之间定义计算张量积：</p>
 <span class="math display">\[\begin{aligned}
 &amp;T \otimes T&#39; (w_1,w_2,..w_{h},v_1,v_2,...v_{h})
 \\\\&amp;=T(w_1,w_2,...w_m,v_1,v_2..)T&#39;(w_{m+1},w_{m+2}...v_{n+1},v_{n+2}...)
 \end{aligned}\]</span>
-<p>易证<span class="math inline">\(e_i \otimes e_j..\otimes e^{k*} \otimes e^{h*}...\)</span>是张量的基底，</p>
+<p>易证<span class="math inline">\(e_i \otimes e_j..\otimes e^{k*}
+\otimes e^{h*}...\)</span>是张量的基底，</p>
 <p>展开系数：</p>
 <div style="text-align:center">
-<span class="math inline">\(T^{ij..}_{\enspace kh..}= T(e^{i*},e^{j*}...,e_{k},e_{h}..)\)</span>
+<span class="math inline">\(T^{ij..}_{\enspace kh..}=
+T(e^{i*},e^{j*}...,e_{k},e_{h}..)\)</span>
 </div>
 <p><mark>缩并</mark>运算定义：</p>
-<p><span class="math inline">\(C_j^iT = T (.,.,.,...,e^{\mu*}(ith),...e_{\mu}(jth))\)</span>, 很多作用可以证明比如<span class="math inline">\(v(w)\)</span> 可以用缩并的形式来写 <span class="math inline">\(C_1^1(v\otimes w)\)</span></p>
-<p>在微分流形上，<span class="math inline">\((k,l)\)</span>型的度规张量在某点的基矢量及展开根据定义为：(以<span class="math inline">\((2,1)\)</span>型为例) <span class="math display">\[
-T = T^{ij}_{\\;  \\;  \\;  \\;  k}\frac{\partial }{\partial  x^i}\otimes \frac{\partial }{\partial  x^j} \otimes dx^k
+<p><span class="math inline">\(C_j^iT = T
+(.,.,.,...,e^{\mu*}(ith),...e_{\mu}(jth))\)</span>,
+很多作用可以证明比如<span class="math inline">\(v(w)\)</span>
+可以用缩并的形式来写 <span class="math inline">\(C_1^1(v\otimes
+w)\)</span></p>
+<p>在微分流形上，<span
+class="math inline">\((k,l)\)</span>型的度规张量在某点的基矢量及展开根据定义为：(以<span
+class="math inline">\((2,1)\)</span>型为例) <span
+class="math display">\[
+T = T^{ij}_{\\;  \\;  \\;  \\;  k}\frac{\partial }{\partial  x^i}\otimes
+\frac{\partial }{\partial  x^j} \otimes dx^k
 \]</span></p>
 <h1 id="度规张量场">度规张量场</h1>
-<p>度规是一个<span class="math inline">\((2,0)\)</span>型张量场，并且<span class="math inline">\(g(v,u)=g(u,v)\)</span>(对称性), <span class="math inline">\(\forall v \in V, g(v,u)=0 \Rightarrow u =0\)</span>（非退化），长度推广为<span class="math inline">\(\sqrt{|g(v,v)|}\)</span>，相应引出正交归一等概念， 正交<span class="math inline">\(g(v,u)=0\)</span></p>
-<p>假设有限维线性空间<span class="math inline">\(V\)</span>的正交归一基为<span class="math inline">\(\{e_i\}\)</span>，则称<span class="math inline">\(\forall i ,g(e_i,e_i) = 1\)</span>的空间是正定的，黎曼的，只有一个为<span class="math inline">\(-1\)</span>的叫做洛伦兹的。</p>
-<p>推广到流形上，自然出度规张量场，由于广义相对论的使用条件的限制，只研究号差处处一致的度规张量场，定义某条曲线的线长为<span class="math inline">\(\int \sqrt{|g(v,v)|}dt\)</span>, <span class="math inline">\(v\)</span>为曲线在<span class="math inline">\(C(t)\)</span>处的像点的切矢，同时我们也只研究<span class="math inline">\(g(v,v)\)</span>始终同号的曲线，异号的不适用于这个定义，引入记号<span class="math inline">\(ds^2 = g_{\mu\nu}dx^\mu(t)dx^\nu(t),g_{\mu\nu} = g(\partial /\partial x^\mu,\partial /\partial x^\nu)\)</span>, 此处的<span class="math inline">\(dx^i\)</span>理解成微分</p>
+<p>度规是一个<span
+class="math inline">\((2,0)\)</span>型张量场，并且<span
+class="math inline">\(g(v,u)=g(u,v)\)</span>(对称性), <span
+class="math inline">\(\forall v \in V, g(v,u)=0 \Rightarrow u
+=0\)</span>（非退化），长度推广为<span
+class="math inline">\(\sqrt{|g(v,v)|}\)</span>，相应引出正交归一等概念，
+正交<span class="math inline">\(g(v,u)=0\)</span></p>
+<p>假设有限维线性空间<span
+class="math inline">\(V\)</span>的正交归一基为<span
+class="math inline">\(\{e_i\}\)</span>，则称<span
+class="math inline">\(\forall i ,g(e_i,e_i) =
+1\)</span>的空间是正定的，黎曼的，只有一个为<span
+class="math inline">\(-1\)</span>的叫做洛伦兹的。</p>
+<p>推广到流形上，自然出度规张量场，由于广义相对论的使用条件的限制，只研究号差处处一致的度规张量场，定义某条曲线的线长为<span
+class="math inline">\(\int \sqrt{|g(v,v)|}dt\)</span>, <span
+class="math inline">\(v\)</span>为曲线在<span
+class="math inline">\(C(t)\)</span>处的像点的切矢，同时我们也只研究<span
+class="math inline">\(g(v,v)\)</span>始终同号的曲线，异号的不适用于这个定义，引入记号<span
+class="math inline">\(ds^2 = g_{\mu\nu}dx^\mu(t)dx^\nu(t),g_{\mu\nu} =
+g(\partial /\partial x^\mu,\partial /\partial x^\nu)\)</span>,
+此处的<span class="math inline">\(dx^i\)</span>理解成微分</p>
 <h1 id="抽象指标">抽象指标</h1>
 <h2 id="定义">定义</h2>
-<p><span class="math inline">\(a, b, c...\)</span> 为抽象指标，<span class="math inline">\(i,j,k,\mu,\nu,\sigma...\)</span>为具体指标，抽象指标不同的两个张量写一起表示张量积,<span class="math inline">\(T_{ab}T&#39;^{c}=T \otimes T&#39;\)</span>，相同的两个放一起代表先积后并<span class="math inline">\(T_{ab}e^a = C^1_1(T\otimes e)\)</span>。</p>
+<p><span class="math inline">\(a, b, c...\)</span> 为抽象指标，<span
+class="math inline">\(i,j,k,\mu,\nu,\sigma...\)</span>为具体指标，抽象指标不同的两个张量写一起表示张量积,<span
+class="math inline">\(T_{ab}T&#39;^{c}=T \otimes
+T&#39;\)</span>，相同的两个放一起代表先积后并<span
+class="math inline">\(T_{ab}e^a = C^1_1(T\otimes e)\)</span>。</p>
 <p><span class="math display">\[
 T_a^{\\; bc} = T^{\\; ij}_k (e^k)_a(e_i)^b(e_j)^c
 \]</span></p>
-<p>为张量<span class="math inline">\(T\)</span>的展开式，而具体的展开系数<span class="math inline">\(T^{\\; ij}_k\)</span>:</p>
+<p>为张量<span
+class="math inline">\(T\)</span>的展开式，而具体的展开系数<span
+class="math inline">\(T^{\\; ij}_k\)</span>:</p>
 <p><span class="math display">\[
 T_k^{\\;  \\;  ij} = T^{\\;  ab}_c (e_k)^c(e^i)_a(e^j)_b
 \]</span></p>
 <h2 id="恒等映射">恒等映射</h2>
-<p><span class="math inline">\(\delta_a^{\\; \\; b}\)</span>: <span class="math inline">\(\delta_a^{\\; \\; b}v^a =v^b, \delta_a^{\\; \\; b}w_b =w_a\)</span>，且恒等映射的展开分量：</p>
+<p><span class="math inline">\(\delta_a^{\\; \\; b}\)</span>: <span
+class="math inline">\(\delta_a^{\\; \\; b}v^a =v^b, \delta_a^{\\; \\;
+b}w_b =w_a\)</span>，且恒等映射的展开分量：</p>
 <div style="text-align:center">
-<span class="math inline">\(\delta_{a}^{\; \; b}(e^{\mu})_{b}(e_{\nu})^{a}=\delta_{\mu \nu}\)</span>
+<span class="math inline">\(\delta_{a}^{\; \;
+b}(e^{\mu})_{b}(e_{\nu})^{a}=\delta_{\mu \nu}\)</span>
 </div>
 <h2 id="度规的抽象指标">度规的抽象指标</h2>
-<p>由于度规是矢量空间和对偶空间的同构映射，所以定义<span class="math inline">\(v_a = g_{ab}v^{b}\)</span>, 度规实现了将一个矢量<span class="math inline">\(v^a\)</span>降指标的功能，同时在物理中对偶矢量与矢量表征同一个物理量，不加以区分（？）, 同理因为<span class="math inline">\(g_{ab}\)</span>是同构映射（张量面面观），所以存在逆映射<span class="math inline">\(g^{-1}\)</span></p>
-<p><span class="math inline">\(g^{-1}g_{ab}v^a = \delta^c_{\\; a}v^a = v^{c} \Rightarrow g^{-1}g_{ab} = \delta^c_{\\; \\; a}\Rightarrow g^{-1}\)</span>是一个<span class="math inline">\((2,0)\)</span>型张量，一般记作 <span class="math inline">\(g^{ab}\)</span></p>
-<p><span class="math inline">\(g^{ab}w_b = v^a \Rightarrow g_{ca}g^{ab}w_b = g_{ca}v^a\Rightarrow w_c = v_c\)</span>, 将 <span class="math inline">\(g^{ab}w_b\)</span> 记作 <span class="math inline">\(w^a\)</span> 通过前式我们可以看出 <span class="math inline">\(w_c\)</span> 与 <span class="math inline">\(v_c\)</span> 的自然同构关系。</p>
+<p>由于度规是矢量空间和对偶空间的同构映射，所以定义<span
+class="math inline">\(v_a = g_{ab}v^{b}\)</span>,
+度规实现了将一个矢量<span
+class="math inline">\(v^a\)</span>降指标的功能，同时在物理中对偶矢量与矢量表征同一个物理量，不加以区分（？）,
+同理因为<span
+class="math inline">\(g_{ab}\)</span>是同构映射（张量面面观），所以存在逆映射<span
+class="math inline">\(g^{-1}\)</span></p>
+<p><span class="math inline">\(g^{-1}g_{ab}v^a = \delta^c_{\\; a}v^a =
+v^{c} \Rightarrow g^{-1}g_{ab} = \delta^c_{\\; \\; a}\Rightarrow
+g^{-1}\)</span>是一个<span
+class="math inline">\((2,0)\)</span>型张量，一般记作 <span
+class="math inline">\(g^{ab}\)</span></p>
+<p><span class="math inline">\(g^{ab}w_b = v^a \Rightarrow
+g_{ca}g^{ab}w_b = g_{ca}v^a\Rightarrow w_c = v_c\)</span>, 将 <span
+class="math inline">\(g^{ab}w_b\)</span> 记作 <span
+class="math inline">\(w^a\)</span> 通过前式我们可以看出 <span
+class="math inline">\(w_c\)</span> 与 <span
+class="math inline">\(v_c\)</span> 的自然同构关系。</p>
 <p>在微分几何结构中：</p>
 <div style="text-align:center">
-<span class="math inline">\(g_{ab}(\frac{\partial}{\partial x^\mu})^a=w_b\)</span>
+<span class="math inline">\(g_{ab}(\frac{\partial}{\partial
+x^\mu})^a=w_b\)</span>
 </div>
 <br>
 <div style="text-align:center">
@@ -332,15 +398,19 @@ T_k^{\\;  \\;  ij} = T^{\\;  ab}_c (e_k)^c(e^i)_a(e^j)_b
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(\therefore w_b(\frac{\partial }{\partial x^\nu})^b = w_\nu(dx^\nu)_b(\frac{\partial }{\partial x^\nu})^b = w_{\nu}\)</span>
+<span class="math inline">\(\therefore w_b(\frac{\partial }{\partial
+x^\nu})^b = w_\nu(dx^\nu)_b(\frac{\partial }{\partial x^\nu})^b =
+w_{\nu}\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(=g_{ab} (\frac{\partial }{\partial x^\mu})^a(\frac{\partial }{\partial x^\nu})^b =g_{\mu\nu}\)</span>
+<span class="math inline">\(=g_{ab} (\frac{\partial }{\partial
+x^\mu})^a(\frac{\partial }{\partial x^\nu})^b =g_{\mu\nu}\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(\therefore g_{ab}(\frac{\partial }{\partial x^\mu})^a = g_{\mu\nu}(dx^\nu)_b\)</span>
+<span class="math inline">\(\therefore g_{ab}(\frac{\partial }{\partial
+x^\mu})^a = g_{\mu\nu}(dx^\nu)_b\)</span>
 </div>
 
                 

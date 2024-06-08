@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="定义 假设\((0,l)\)型张量满足$w_{a_1a_2...a_l} &#x3D;w_{[a_1a_2...a_l]} \(，则称该张量为\)l$次形式。 由抽象指标和具体指标可相互代换容易得到在某个基底下的展开系数： \[ w_{\mu_1\mu_2...\mu_l} &#x3D;w_{[\mu_1\mu_2,...\mu_l]}  \] 于是简单得到任何坐标系下，\(w_{221}\)等这种分量角">
+    <meta name="description" content="定义 假设\((0,l)\)型张量满足$w_{a_1a_2...a_l} &#x3D;w_{[a_1a_2...a_l]} \(，则称该张量为\)l$次形式。 由抽象指标和具体指标可相互代换容易得到在某个基底下的展开系数： \[ w_{\mu_1\mu_2...\mu_l} &#x3D;w_{[\mu_1\mu_2,...\mu_l]} \] 于是简单得到任何坐标系下，\(w_{221}\)等这种分量角">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8.微分形式">
 <meta property="og:url" content="http://dyf.zone/2022/12/14/gr6/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="定义 假设\((0,l)\)型张量满足$w_{a_1a_2...a_l} &#x3D;w_{[a_1a_2...a_l]} \(，则称该张量为\)l$次形式。 由抽象指标和具体指标可相互代换容易得到在某个基底下的展开系数： \[ w_{\mu_1\mu_2...\mu_l} &#x3D;w_{[\mu_1\mu_2,...\mu_l]}  \] 于是简单得到任何坐标系下，\(w_{221}\)等这种分量角">
+<meta property="og:description" content="定义 假设\((0,l)\)型张量满足$w_{a_1a_2...a_l} &#x3D;w_{[a_1a_2...a_l]} \(，则称该张量为\)l$次形式。 由抽象指标和具体指标可相互代换容易得到在某个基底下的展开系数： \[ w_{\mu_1\mu_2...\mu_l} &#x3D;w_{[\mu_1\mu_2,...\mu_l]} \] 于是简单得到任何坐标系下，\(w_{221}\)等这种分量角">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-14T13:49:17.000Z">
 <meta property="article:modified_time" content="2023-01-20T09:47:59.888Z">
@@ -274,45 +274,94 @@
               <div class="markdown-body">
                 
                 <h1 id="定义">定义</h1>
-<p>假设<span class="math inline">\((0,l)\)</span>型张量满足$w_{a_1a_2...a_l} =w_{[a_1a_2...a_l]} <span class="math inline">\(，则称该张量为\)</span>l$次形式。</p>
+<p>假设<span
+class="math inline">\((0,l)\)</span>型张量满足$w_{a_1a_2...a_l}
+=w_{[a_1a_2...a_l]} <span
+class="math inline">\(，则称该张量为\)</span>l$次形式。</p>
 <p>由抽象指标和具体指标可相互代换容易得到在某个基底下的展开系数：</p>
 <p><span class="math display">\[
-w_{\mu_1\mu_2...\mu_l} =w_{[\mu_1\mu_2,...\mu_l]} 
+w_{\mu_1\mu_2...\mu_l} =w_{[\mu_1\mu_2,...\mu_l]}
 \]</span></p>
-<p>于是简单得到任何坐标系下，<span class="math inline">\(w_{221}\)</span>等这种分量角标重复的都等于0，只可能存在<span class="math inline">\(w_{231}\)</span>等这种分量。</p>
-<p>容易验证<span class="math inline">\(l\)</span>形式的张量满足<span class="math inline">\((0,l)\)</span>型张量线性子空间的定义，记作<span class="math inline">\(\varLambda(l)\)</span>。</p>
+<p>于是简单得到任何坐标系下，<span
+class="math inline">\(w_{221}\)</span>等这种分量角标重复的都等于0，只可能存在<span
+class="math inline">\(w_{231}\)</span>等这种分量。</p>
+<p>容易验证<span class="math inline">\(l\)</span>形式的张量满足<span
+class="math inline">\((0,l)\)</span>型张量线性子空间的定义，记作<span
+class="math inline">\(\varLambda(l)\)</span>。</p>
 <h1 id="楔形积">楔形积：</h1>
-<p><span class="math inline">\(w\)</span>是<span class="math inline">\(l\)</span>形式，<span class="math inline">\(w&#39;\)</span>是<span class="math inline">\(m\)</span>形式，则定义他两的楔形积<span class="math inline">\(w \wedge w&#39;\)</span>:</p>
+<p><span class="math inline">\(w\)</span>是<span
+class="math inline">\(l\)</span>形式，<span
+class="math inline">\(w&#39;\)</span>是<span
+class="math inline">\(m\)</span>形式，则定义他两的楔形积<span
+class="math inline">\(w \wedge w&#39;\)</span>:</p>
 <div style="text-align:center">
-<span class="math inline">\(w \land w&#39;_{a_{1}a_{2}...a_{l+m}} = \frac{(l+m)!}{l!m!} w_{[a_{1}a_{2}..a_{l}}w&#39;_{a_{l+1}a_{l+2}...a_{l+m}]}\)</span>
+<span class="math inline">\(w \land w&#39;_{a_{1}a_{2}...a_{l+m}} =
+\frac{(l+m)!}{l!m!}
+w_{[a_{1}a_{2}..a_{l}}w&#39;_{a_{l+1}a_{l+2}...a_{l+m}]}\)</span>
 </div>
-<p>显然<span class="math inline">\(w \land w&#39;\)</span>是(l+m)型反称张量。</p>
-<h1 id="varlambdal的维数"><span class="math inline">\(\varLambda(l)\)</span>的维数：</h1>
-<p>假设流形的维度为<span class="math inline">\(n\)</span>,则<span class="math inline">\(dim \varLambda(l) = \frac{n!}{l!(n-l)!}\)</span>,<span class="math inline">\(l&gt;n\)</span>的情况无意义或者等于0。</p>
+<p>显然<span class="math inline">\(w \land
+w&#39;\)</span>是(l+m)型反称张量。</p>
+<h1 id="varlambdal的维数"><span
+class="math inline">\(\varLambda(l)\)</span>的维数：</h1>
+<p>假设流形的维度为<span class="math inline">\(n\)</span>,则<span
+class="math inline">\(dim \varLambda(l) =
+\frac{n!}{l!(n-l)!}\)</span>,<span
+class="math inline">\(l&gt;n\)</span>的情况无意义或者等于0。</p>
 <p>证明：</p>
-<p>借助基底场证明，<span class="math inline">\(\forall w_{a_1a_2...a_l} \in \varLambda(l) \subset T(0,l)\)</span>，可以写为<span class="math inline">\(w_{a_1a_2...a_l}=\sum_{i_1i_2...i_l} w_{i_1i_2...i_l} e_{i_1}e_{i_2}...e_{i_l}\)</span>，由前显然有<span class="math inline">\(w_{nn}\)</span>等于0，再由<span class="math inline">\(w_{a_1a_2...a_l} = w_{[a_1a_2...a_l]} = \delta{(\pi)} w_{a_{\pi(0)}a_{\pi(1)}...a_{\pi(l)}}\)</span>，<span class="math inline">\(\delta{(\pi)}\)</span>为逆序数，有<span class="math inline">\(w_{i_1i_2...i_l} = \delta{(\pi)} w_{i_{\pi(0)}i_{\pi(1)}...i_{\pi(l)}}\)</span>,为了便于说明，假定<span class="math inline">\(n =5,l=3\)</span>，将分量以展开系数的组合分类，比如分量<span class="math inline">\(w_{134} e_{1}e_{3}e_{4},w_{341} e_{3}e_{4}e_{1}\)</span>都属于<span class="math inline">\((1,3,4)\)</span>这个分类，由楔形积定义，</p>
+<p>借助基底场证明，<span class="math inline">\(\forall w_{a_1a_2...a_l}
+\in \varLambda(l) \subset T(0,l)\)</span>，可以写为<span
+class="math inline">\(w_{a_1a_2...a_l}=\sum_{i_1i_2...i_l}
+w_{i_1i_2...i_l} e_{i_1}e_{i_2}...e_{i_l}\)</span>，由前显然有<span
+class="math inline">\(w_{nn}\)</span>等于0，再由<span
+class="math inline">\(w_{a_1a_2...a_l} = w_{[a_1a_2...a_l]} =
+\delta{(\pi)} w_{a_{\pi(0)}a_{\pi(1)}...a_{\pi(l)}}\)</span>，<span
+class="math inline">\(\delta{(\pi)}\)</span>为逆序数，有<span
+class="math inline">\(w_{i_1i_2...i_l} = \delta{(\pi)}
+w_{i_{\pi(0)}i_{\pi(1)}...i_{\pi(l)}}\)</span>,为了便于说明，假定<span
+class="math inline">\(n
+=5,l=3\)</span>，将分量以展开系数的组合分类，比如分量<span
+class="math inline">\(w_{134} e_{1}e_{3}e_{4},w_{341}
+e_{3}e_{4}e_{1}\)</span>都属于<span
+class="math inline">\((1,3,4)\)</span>这个分类，由楔形积定义，</p>
 <span class="math display">\[\begin{aligned}
 e_1\wedge e_3 \wedge e_4 &amp;= 3! e_{[1}e_3e_{4]}
 \\\\ &amp;= 3! \frac{1}{3!}(\sum_\pi e_{\pi(1)}e_{\pi(2)}e_{\pi(3)})    
 \\\\ &amp;= \sum_\pi e_{\pi(1)}e_{\pi(2)}e_{\pi(3)}
 \end{aligned}\]</span>
-<p><span class="math inline">\(\pi(i)\pi(2)\pi(3)\)</span>是<span class="math inline">\((1,3,4)\)</span>的任意一种排序，最终得到:<span class="math inline">\(w_{134}e_1\wedge e_3 \wedge e_4\)</span>就是<span class="math inline">\((1,3,4)\)</span>所有元素求和的表达式，推广得到：</p>
+<p><span class="math inline">\(\pi(i)\pi(2)\pi(3)\)</span>是<span
+class="math inline">\((1,3,4)\)</span>的任意一种排序，最终得到:<span
+class="math inline">\(w_{134}e_1\wedge e_3 \wedge e_4\)</span>就是<span
+class="math inline">\((1,3,4)\)</span>所有元素求和的表达式，推广得到：</p>
 <div style="text-align:center">
-<span class="math inline">\(w_{a_1a_2...a_l}=\sum_{i_1,i_2,...i_l} w_{i_1i_2...i_l} e_{i_1}\wedge e_{i_2}\wedge ...\wedge e_{i_l}\)</span>
+<span class="math inline">\(w_{a_1a_2...a_l}=\sum_{i_1,i_2,...i_l}
+w_{i_1i_2...i_l} e_{i_1}\wedge e_{i_2}\wedge ...\wedge e_{i_l}\)</span>
 </div>
-<p><span class="math inline">\(i_1,..i_l\)</span>是从<span class="math inline">\(1,2,..n\)</span>中选出来的<span class="math inline">\(l\)</span>个无顺序的数，所以<span class="math inline">\(dim\varLambda(l) = \frac{n!}{l!(n-l)!}\)</span>，并且<span class="math inline">\(e_{i_1}\wedge e_{i_2}\wedge ...\wedge e_{i_l}, j&gt; i\)</span>是<span class="math inline">\(\varLambda(l)的基\)</span></p>
+<p><span class="math inline">\(i_1,..i_l\)</span>是从<span
+class="math inline">\(1,2,..n\)</span>中选出来的<span
+class="math inline">\(l\)</span>个无顺序的数，所以<span
+class="math inline">\(dim\varLambda(l) =
+\frac{n!}{l!(n-l)!}\)</span>，并且<span
+class="math inline">\(e_{i_1}\wedge e_{i_2}\wedge ...\wedge e_{i_l},
+j&gt; i\)</span>是<span
+class="math inline">\(\varLambda(l)的基\)</span></p>
 <h1 id="外微分算符">外微分算符</h1>
-<p>假设<span class="math inline">\(w_{a_1a_2...a_l}\)</span>是<span class="math inline">\(l\)</span>形式场，则定义<span class="math inline">\(dw_{a_1a_2...a_l}\)</span>:</p>
+<p>假设<span class="math inline">\(w_{a_1a_2...a_l}\)</span>是<span
+class="math inline">\(l\)</span>形式场，则定义<span
+class="math inline">\(dw_{a_1a_2...a_l}\)</span>:</p>
 <p><span class="math display">\[
 dw_{ba_1a_2...a_l}= (l+1) \nabla_{[b}w_{a_1a_2...a_l]}
 \]</span></p>
-<p>其中<span class="math inline">\(\nabla\)</span>为任意导数算符，因为克氏符下标对称可交换，所以得到该定义对于任意导数算符得到的结果相同。</p>
+<p>其中<span
+class="math inline">\(\nabla\)</span>为任意导数算符，因为克氏符下标对称可交换，所以得到该定义对于任意导数算符得到的结果相同。</p>
 <h2 id="theorem-1">theorem 1:</h2>
 <div style="text-align:center">
-<span class="math inline">\(d w_{ba_1a_2...a_l} = \sum_C d(w_{\mu_1\mu_2...\mu_l})_b\wedge (d x^{\mu_1})_{a_l} \wedge (d x^{\mu_2})_{a_2} ...\wedge (d x^{\mu_l})_{a_l}\)</span>
+<span class="math inline">\(d w_{ba_1a_2...a_l} = \sum_C
+d(w_{\mu_1\mu_2...\mu_l})_b\wedge (d x^{\mu_1})_{a_l} \wedge (d
+x^{\mu_2})_{a_2} ...\wedge (d x^{\mu_l})_{a_l}\)</span>
 </div>
 <p>证明：</p>
-<p>由定义有<span class="math inline">\(d w_{ba_1a_2...a_l} = (l+1)\partial_{[b}w_{a_1a_2...a_l]} = 1\)</span></p>
+<p>由定义有<span class="math inline">\(d w_{ba_1a_2...a_l} =
+(l+1)\partial_{[b}w_{a_1a_2...a_l]} = 1\)</span></p>
 
                 
               </div>

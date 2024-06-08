@@ -16,12 +16,12 @@
   <meta name="author" content="Duyifei">
   <meta name="keywords" content="">
   
-    <meta name="description" content="导数算符定义 导数算符是一个从流形\(M\)的 \((k,l)\) 型张量场映射到 \((k,l+1)\)型张量场的一个映射，记作\(\nabla_a\), 并且得满足以下性质：  \(\nabla_a \mu T &#x3D; \mu \nabla_a T\)，\(\mu\)为常数 \(\nabla_a T_1T_2 &#x3D; T_1 \nabla_a T_2 + T_2 \nabla_a T_1\),">
+    <meta name="description" content="导数算符定义 导数算符是一个从流形\(M\)的 \((k,l)\) 型张量场映射到 \((k,l+1)\)型张量场的一个映射，记作\(\nabla_a\), 并且得满足以下性质：  \(\nabla_a \mu T &#x3D; \mu \nabla_a T\)，\(\mu\)为常数 \(\nabla_a T_1T_2 &#x3D; T_1 \nabla_a T_2 + T_2 \nabla_a T_1\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3. 导数算符和测地线">
 <meta property="og:url" content="http://dyf.zone/2022/12/01/gr8/index.html">
 <meta property="og:site_name" content="dyf&#39;s blog">
-<meta property="og:description" content="导数算符定义 导数算符是一个从流形\(M\)的 \((k,l)\) 型张量场映射到 \((k,l+1)\)型张量场的一个映射，记作\(\nabla_a\), 并且得满足以下性质：  \(\nabla_a \mu T &#x3D; \mu \nabla_a T\)，\(\mu\)为常数 \(\nabla_a T_1T_2 &#x3D; T_1 \nabla_a T_2 + T_2 \nabla_a T_1\),">
+<meta property="og:description" content="导数算符定义 导数算符是一个从流形\(M\)的 \((k,l)\) 型张量场映射到 \((k,l+1)\)型张量场的一个映射，记作\(\nabla_a\), 并且得满足以下性质：  \(\nabla_a \mu T &#x3D; \mu \nabla_a T\)，\(\mu\)为常数 \(\nabla_a T_1T_2 &#x3D; T_1 \nabla_a T_2 + T_2 \nabla_a T_1\">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-30T16:00:03.000Z">
 <meta property="article:modified_time" content="2023-01-19T11:02:50.447Z">
@@ -274,50 +274,85 @@
               <div class="markdown-body">
                 
                 <h1 id="导数算符定义">导数算符定义</h1>
-<p>导数算符是一个从流形<span class="math inline">\(M\)</span>的 <span class="math inline">\((k,l)\)</span> 型张量场映射到 <span class="math inline">\((k,l+1)\)</span>型张量场的一个映射，记作<span class="math inline">\(\nabla_a\)</span>, 并且得满足以下性质：</p>
+<p>导数算符是一个从流形<span class="math inline">\(M\)</span>的 <span
+class="math inline">\((k,l)\)</span> 型张量场映射到 <span
+class="math inline">\((k,l+1)\)</span>型张量场的一个映射，记作<span
+class="math inline">\(\nabla_a\)</span>, 并且得满足以下性质：</p>
 <div style="text-align:center">
-<p><span class="math inline">\(\nabla_a \mu T = \mu \nabla_a T\)</span>，<span class="math inline">\(\mu\)</span>为常数</p>
-<p><span class="math inline">\(\nabla_a T_1T_2 = T_1 \nabla_a T_2 + T_2 \nabla_a T_1\)</span>, <span class="math inline">\(T_1,T_2\)</span>不一定同型。</p>
-<p><span class="math inline">\(C \cdot \nabla = \nabla \cdot C\)</span>, C表示缩并</p>
+<p><span class="math inline">\(\nabla_a \mu T = \mu \nabla_a
+T\)</span>，<span class="math inline">\(\mu\)</span>为常数</p>
+<p><span class="math inline">\(\nabla_a T_1T_2 = T_1 \nabla_a T_2 + T_2
+\nabla_a T_1\)</span>, <span
+class="math inline">\(T_1,T_2\)</span>不一定同型。</p>
+<p><span class="math inline">\(C \cdot \nabla = \nabla \cdot C\)</span>,
+C表示缩并</p>
 <p><span class="math inline">\(v(f) = v^a \nabla_a(f)\)</span></p>
-<p><span class="math inline">\(\nabla_a\nabla_b T = \nabla_b\nabla_a T\)</span></p>
+<p><span class="math inline">\(\nabla_a\nabla_b T = \nabla_b\nabla_a
+T\)</span></p>
 </div>
-<p>显然由定义，有<span class="math inline">\(\forall \nabla_a\)</span>, <span class="math inline">\(\enspace df = \nabla_a f\)</span></p>
+<p>显然由定义，有<span class="math inline">\(\forall \nabla_a\)</span>,
+<span class="math inline">\(\enspace df = \nabla_a f\)</span></p>
 <h1 id="克氏符">克氏符</h1>
-<p>假设对偶矢量场 <span class="math inline">\(w_a\)</span> 与对偶矢量场 <span class="math inline">\(w_a&#39;\)</span> 在p点取值相同，则往证：</p>
+<p>假设对偶矢量场 <span class="math inline">\(w_a\)</span> 与对偶矢量场
+<span class="math inline">\(w_a&#39;\)</span>
+在p点取值相同，则往证：</p>
 <p><span class="math display">\[
-(\tilde{ \nabla}_a - \nabla_a) w_b|_p = (\tilde{ \nabla}_a - \nabla_a) w_b&#39;|_p
+(\tilde{ \nabla}_a - \nabla_a) w_b|_p = (\tilde{ \nabla}_a - \nabla_a)
+w_b&#39;|_p
 \]</span></p>
 <p>证明：</p>
 <span class="math display">\[\begin{aligned}
-\nabla_a (w_b-w_b&#39;)|_p &amp;= \nabla_a \Omega_b|_p = \nabla_a (\Omega_\mu (dx)^\mu_b)|_p 
-\\\\&amp;= \Omega_\mu|_p \nabla_a ((dx)^\mu_b)|_p +(dx^\mu)_b|_p \nabla_a (\Omega_\mu )|_p
-\\\\&amp;= 0 \nabla_a ((dx)^\mu_b)|_p + (dx^\mu)_b|_p \tilde{\nabla_a} (\Omega_\mu )|_p 
-\\\\&amp;= \tilde{\nabla_a} (w_b-w_b&#39;)|_p 
+\nabla_a (w_b-w_b&#39;)|_p &amp;= \nabla_a \Omega_b|_p = \nabla_a
+(\Omega_\mu (dx)^\mu_b)|_p
+\\\\&amp;= \Omega_\mu|_p \nabla_a ((dx)^\mu_b)|_p +(dx^\mu)_b|_p
+\nabla_a (\Omega_\mu )|_p
+\\\\&amp;= 0 \nabla_a ((dx)^\mu_b)|_p + (dx^\mu)_b|_p \tilde{\nabla_a}
+(\Omega_\mu )|_p
+\\\\&amp;= \tilde{\nabla_a} (w_b-w_b&#39;)|_p
 \end{aligned}\]</span>
-<p>由于p任取，所以<span class="math inline">\(\tilde\nabla_a -\nabla_a\)</span> 对应一个 (1,2) 型的张量。</p>
-<p>任意导数算符 <span class="math inline">\(\nabla_a\)</span>, 它所对应的克氏符定义为 <span class="math inline">\(\Gamma^{\\;\\;\\;c}_{ab}w_c = \nabla_a w_b- \partial_aw_b\)</span></p>
-<p><span class="math inline">\(\partial_a\)</span> 为普通导数算符，定义为（以二维张量<span class="math inline">\(T_{b}^{\\;c}\)</span>为例）：</p>
+<p>由于p任取，所以<span class="math inline">\(\tilde\nabla_a
+-\nabla_a\)</span> 对应一个 (1,2) 型的张量。</p>
+<p>任意导数算符 <span class="math inline">\(\nabla_a\)</span>,
+它所对应的克氏符定义为 <span
+class="math inline">\(\Gamma^{\\;\\;\\;c}_{ab}w_c = \nabla_a w_b-
+\partial_aw_b\)</span></p>
+<p><span class="math inline">\(\partial_a\)</span>
+为普通导数算符，定义为（以二维张量<span
+class="math inline">\(T_{b}^{\\;c}\)</span>为例）：</p>
 <div style="text-align:center">
-<span class="math inline">\(\partial_a T^{\;c}_{b}= (dx^\eta)_a(dx^\mu)_b(\frac{\partial}{\partial x^\nu})^c \frac{\partial T_{\mu}^{\;\nu}}{\partial x^\eta}\)</span>
+<span class="math inline">\(\partial_a T^{\;c}_{b}=
+(dx^\eta)_a(dx^\mu)_b(\frac{\partial}{\partial x^\nu})^c \frac{\partial
+T_{\mu}^{\;\nu}}{\partial x^\eta}\)</span>
 </div>
 <p><br></p>
 <div>
-在展开 <span class="math inline">\(\partial_a T^{\;c}_{b}\)</span>时，一般将分量<span class="math inline">\(\frac{\partial T_{\nu}^{\;\mu}}{\partial x^\eta}\)</span> 记作 <span class="math inline">\(T_{,\eta\nu}^{\;\;\;\;\mu}\)</span>
+在展开 <span class="math inline">\(\partial_a
+T^{\;c}_{b}\)</span>时，一般将分量<span
+class="math inline">\(\frac{\partial T_{\nu}^{\;\mu}}{\partial
+x^\eta}\)</span> 记作 <span
+class="math inline">\(T_{,\eta\nu}^{\;\;\;\;\mu}\)</span>
 </div>
 <p>把对易算符可以用导数算符表示：</p>
 <p><span class="math display">\[
 [u,v]^a = u^b\nabla_b v^a - v^b \nabla_b v^a
 \]</span></p>
-<p>导数算符的无挠性等价于<span class="math inline">\(\nabla_a \delta_{b}^{\\;\\;c}=0\)</span></p>
+<p>导数算符的无挠性等价于<span class="math inline">\(\nabla_a
+\delta_{b}^{\\;\\;c}=0\)</span></p>
 <h1 id="平移">平移</h1>
-<p><span class="math inline">\(v^a\)</span> 是沿着曲线 <span class="math inline">\(C(t)\)</span> 的矢量场，若满足 <span class="math inline">\((\frac{\partial}{\partial t})^a \nabla_a v^b = 0\)</span>，则称 <span class="math inline">\(v^a\)</span> 矢量场是沿着 <span class="math inline">\(C(t)\)</span> 平移的。</p>
+<p><span class="math inline">\(v^a\)</span> 是沿着曲线 <span
+class="math inline">\(C(t)\)</span> 的矢量场，若满足 <span
+class="math inline">\((\frac{\partial}{\partial t})^a \nabla_a v^b =
+0\)</span>，则称 <span class="math inline">\(v^a\)</span> 矢量场是沿着
+<span class="math inline">\(C(t)\)</span> 平移的。</p>
 <div style="text-align:center">
-<span class="math inline">\((\frac{\partial}{\partial t})^a \nabla_a v^b = (\frac{\partial}{\partial t})^a (\partial_a v^b- \tau_{ac}^{\;\;b} v^c)\)</span>
+<span class="math inline">\((\frac{\partial}{\partial t})^a \nabla_a v^b
+= (\frac{\partial}{\partial t})^a (\partial_a v^b- \tau_{ac}^{\;\;b}
+v^c)\)</span>
 </div>
 <p><br></p>
 <div style="text-align:center">
-$ = ()^a (v_{,}<sup>{;;;}(dx</sup>)<em>a()^b - </em>{}^{;;;} v<sup>(dx</sup>)_a()^b) =0$
+$ = ()^a (v_{,}<sup>{;;;}(dx</sup>)<em>a()^b - </em>{}^{;;;}
+v<sup>(dx</sup>)_a()^b) =0$
 </div>
 <p><br></p>
 <div style="text-align:center">
@@ -332,17 +367,21 @@ $ +_{}<sup>{;;;}v</sup> = 0$
 \\\\ &amp;\frac{\partial}{\partial t} (f) = 0
 \\\\ &amp;(\frac{\partial}{\partial t})^a \nabla_a (f) = 0
 \end{aligned}\]</span>
-<p>第三行来自于<span class="math inline">\(v(f) = v^a\nabla_a f\)</span>，为了让沿着曲线平移的任意向量保持内积不变，则条件写为：</p>
+<p>第三行来自于<span class="math inline">\(v(f) = v^a\nabla_a
+f\)</span>，为了让沿着曲线平移的任意向量保持内积不变，则条件写为：</p>
 <div style="text-align:center">
-<span class="math inline">\((\frac{\partial}{\partial t})^a\nabla_a (g_{bc} v^b u^c) = 0\)</span>
+<span class="math inline">\((\frac{\partial}{\partial t})^a\nabla_a
+(g_{bc} v^b u^c) = 0\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(=(\frac{\partial}{\partial t})^a (g_{bc} v^b \nabla_a (u^c)\)</span>
+<span class="math inline">\(=(\frac{\partial}{\partial t})^a (g_{bc} v^b
+\nabla_a (u^c)\)</span>
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(+ u^c g_{bc} \nabla_a (v^b)+ u^c v^b\nabla_a (g_{bc})) =0\)</span>
+<span class="math inline">\(+ u^c g_{bc} \nabla_a (v^b)+ u^c v^b\nabla_a
+(g_{bc})) =0\)</span>
 </div>
 <br>
 <div style="text-align:center">
@@ -350,45 +389,72 @@ $ = g_{bc} v^b ()^a <em>a (u^c) + u^c g</em>{bc} ()^a_a v^b$
 </div>
 <br>
 <div style="text-align:center">
-<span class="math inline">\(+ u^c v^b(\frac{\partial}{\partial t})^a\nabla_a (g_{bc}) =0\)</span>
+<span class="math inline">\(+ u^c v^b(\frac{\partial}{\partial
+t})^a\nabla_a (g_{bc}) =0\)</span>
 </div>
 <p><br></p>
 <div style="text-align:center">
 <mark><span class="math inline">\(\nabla_a g_{bc} = 0\)</span></mark>
 </div>
-<p>第三行由于<span class="math inline">\(u,v\)</span>沿曲线平移，可证明在规定了度规后的流形上存在唯一导数算符与之对应满足内积不变。</p>
+<p>第三行由于<span
+class="math inline">\(u,v\)</span>沿曲线平移，可证明在规定了度规后的流形上存在唯一导数算符与之对应满足内积不变。</p>
 <h1 id="测地线">测地线</h1>
-<p>自平移的曲线称为测地线，既<span class="math inline">\(\frac{\partial}{\partial t} \nabla \frac{\partial}{\partial t} =0\)</span>，对应的曲线参数t称仿射参数</p>
+<p>自平移的曲线称为测地线，既<span
+class="math inline">\(\frac{\partial}{\partial t} \nabla
+\frac{\partial}{\partial t} =0\)</span>，对应的曲线参数t称仿射参数</p>
 <p>分量方程：</p>
 <span class="math display">\[\begin{aligned}
-&amp;\frac{dv^\nu}{dt}+\tau_{\mu\theta}^{\\;\\;\\;\nu}v^\theta \frac{dx^\mu}{dt} = 0 \\;\\;v^{\nu} = (\frac{\partial }{\partial t})^{\nu} = \frac{dx^\nu}{dt}
-\\\\&amp;\Rightarrow \frac{d^2x^\nu}{dt^2}+\tau_{\mu\theta}^{\\;\\;\\;\nu}\frac{dx^\theta}{dt} \frac{dx^\mu}{dt} = 0
+&amp;\frac{dv^\nu}{dt}+\tau_{\mu\theta}^{\\;\\;\\;\nu}v^\theta
+\frac{dx^\mu}{dt} = 0 \\;\\;v^{\nu} = (\frac{\partial }{\partial
+t})^{\nu} = \frac{dx^\nu}{dt}
+\\\\&amp;\Rightarrow
+\frac{d^2x^\nu}{dt^2}+\tau_{\mu\theta}^{\\;\\;\\;\nu}\frac{dx^\theta}{dt}
+\frac{dx^\mu}{dt} = 0
 \end{aligned}\]</span>
-<p>曲线<span class="math inline">\(\gamma(t)\)</span>满足方程：<span class="math inline">\(T^b \nabla_b T^a = \alpha(t)T^a\)</span> ，往证存在参数变换<span class="math inline">\(t&#39;=t&#39;(t)\)</span>, 使得<span class="math inline">\(\gamma&#39;(t&#39;)\)</span>是测地线：</p>
+<p>曲线<span class="math inline">\(\gamma(t)\)</span>满足方程：<span
+class="math inline">\(T^b \nabla_b T^a = \alpha(t)T^a\)</span>
+，往证存在参数变换<span class="math inline">\(t&#39;=t&#39;(t)\)</span>,
+使得<span
+class="math inline">\(\gamma&#39;(t&#39;)\)</span>是测地线：</p>
 <span class="math display">\[\begin{aligned}
 &amp;T^b \nabla_b T^a = \alpha(t)T^a
-\\\\&amp;\because \frac{\partial}{\partial t&#39;}^b = \frac{dt}{dt&#39;}\frac{\partial}{\partial t}^b
-\\\\ &amp;\frac{dt&#39;}{dt}(T&#39;^bT&#39;^a\nabla_b(\frac{dt&#39;}{dt})+T&#39;^b\frac{dt&#39;}{dt}\nabla_b T&#39;^a)= \alpha(t)\frac{dt&#39;}{dt}T&#39;^a
+\\\\&amp;\because \frac{\partial}{\partial t&#39;}^b =
+\frac{dt}{dt&#39;}\frac{\partial}{\partial t}^b
+\\\\
+&amp;\frac{dt&#39;}{dt}(T&#39;^bT&#39;^a\nabla_b(\frac{dt&#39;}{dt})+T&#39;^b\frac{dt&#39;}{dt}\nabla_b
+T&#39;^a)= \alpha(t)\frac{dt&#39;}{dt}T&#39;^a
 \end{aligned}\]</span>
-<p>想要证明<span class="math inline">\(T&#39;^b\nabla_b T&#39;^a = 0^a\)</span>，等价于证明<span class="math inline">\(\Rightarrow T&#39;^b\nabla_b(\frac{dt&#39;}{dt}) = \alpha(t)\)</span></p>
+<p>想要证明<span class="math inline">\(T&#39;^b\nabla_b T&#39;^a =
+0^a\)</span>，等价于证明<span class="math inline">\(\Rightarrow
+T&#39;^b\nabla_b(\frac{dt&#39;}{dt}) = \alpha(t)\)</span></p>
 <p><span class="math display">\[
-T&#39;^b\nabla_b(\frac{dt&#39;}{dt}) = T&#39;^b(\frac{dt&#39;}{dt}) = d^2t&#39;/dt^2 = \alpha(t) 
+T&#39;^b\nabla_b(\frac{dt&#39;}{dt}) = T&#39;^b(\frac{dt&#39;}{dt}) =
+d^2t&#39;/dt^2 = \alpha(t)
 \]</span></p>
 <p>也就是说满足曲线起点相同并且满足最后一行的微分方程的变换的曲线能够满足测地线的定义。</p>
-<p>此处实际拓宽了<span class="math inline">\(\frac{dt&#39;}{dt}\)</span>的定义域让它变成了一个M上的标量场。</p>
+<p>此处实际拓宽了<span
+class="math inline">\(\frac{dt&#39;}{dt}\)</span>的定义域让它变成了一个M上的标量场。</p>
 <blockquote>
-<p>3-3-4 一点一矢定一测，给定了一个流形上的点以及对应的一个矢量，可以从该点出发得到唯一的测地线</p>
+<p>3-3-4
+一点一矢定一测，给定了一个流形上的点以及对应的一个矢量，可以从该点出发得到唯一的测地线</p>
 </blockquote>
 <h3 id="线长参数必为仿射参数">线长参数必为仿射参数</h3>
 <p>prove:</p>
-<p>由于<span class="math inline">\(T\)</span>沿曲线平移，<span class="math inline">\(g(T,T)\)</span>在曲线上为常值，线长表达式：</p>
+<p>由于<span class="math inline">\(T\)</span>沿曲线平移，<span
+class="math inline">\(g(T,T)\)</span>在曲线上为常值，线长表达式：</p>
 <p><span class="math display">\[
 l =\int \sqrt{|g_{ab}T^aT^b|}dt
 \]</span></p>
-<p><span class="math inline">\(\frac{dl}{dt}=\sqrt{|g_{ab}T^aT^b|} = const \Rightarrow g_ab T^A T^b = const\)</span></p>
-<p>该内积沿曲线不变，所以假设t是仿射参数，对应的切矢为<span class="math inline">\(T\)</span>，<span class="math inline">\(l\)</span>对应的切矢为<span class="math inline">\(T&#39;\)</span>，<span class="math inline">\(\frac{dl}{dt} T= T&#39; = cT\)</span></p>
+<p><span class="math inline">\(\frac{dl}{dt}=\sqrt{|g_{ab}T^aT^b|} =
+const \Rightarrow g_ab T^A T^b = const\)</span></p>
+<p>该内积沿曲线不变，所以假设t是仿射参数，对应的切矢为<span
+class="math inline">\(T\)</span>，<span
+class="math inline">\(l\)</span>对应的切矢为<span
+class="math inline">\(T&#39;\)</span>，<span
+class="math inline">\(\frac{dl}{dt} T= T&#39; = cT\)</span></p>
 <div style="text-align:center">
-<span class="math inline">\(cT^a\nabla_b cT_c = c^2 T^a\nabla_b T_c =0\)</span>
+<span class="math inline">\(cT^a\nabla_b cT_c = c^2 T^a\nabla_b T_c
+=0\)</span>
 </div>
 <p>##` 测地线是两点间的长度取极值的连接线</p>
 <p>闵氏空间中测地线最长</p>
