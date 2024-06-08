@@ -1,0 +1,117 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1in]{geometry} % 设置边距，符合Word设定
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{appendix}
+
+\begin{document}
+
+实验坐标系下哈密顿量：
+
+$$
+\mathcal{H}= 
+\frac{1}{2}
+ \omega_1 \sigma_1^z
+ +\Omega_1 
+ \cos \left(w_2 t\right) 
+ \sigma_1^x
+ +\frac{1}{2} \omega_2 \sigma_2^z
++\frac{1}{2} \omega_{x x} \sigma_1^x \sigma_2^x
+$$
+
+两个比特都变换到以$w_2$转动的参考系下：
+$$
+2 \mathcal{H}_{\mathrm{DF}}= 
+ \delta_1 \sigma_1^z
+ +\Omega_1 \sigma_1^x
++\omega_{x x}
+[\sigma_1^x 
+\cos \left(\omega_2 t\right)
+-\sigma_1^y \sin \left(
+ \omega_2
+  t\right)]\left[\sigma_2^x
+   \cos \left(\omega_2 t\right)
+   -\sigma_2^y \sin \left(
+\omega_2 t\right)\right],
+$$
+
+其中$\delta_1=w1-w2$
+为了方便处理想把1的静态项去掉，先做旋转变换：
+
+$$
+\mathcal{U}_1   
+=\exp \left[-i\left(\xi_1 \sigma_1^y\right) / 2\right] 
+$$
+
+其中$\xi =\arctan \delta_1/\Omega_1$，$\eta_1 =\sqrt{\delta_1^2+\Omega_1^2}$
+
+$$
+2 \mathcal{H}^{\prime}= 
+ \eta_1 \sigma_1^{x\prime}
++\omega_{x x}
+[(\cos\xi \sigma_1^{x\prime}
+-sin\xi \sigma_1^{z\prime})\cos \left(\omega_2 t\right)
+-\sigma_1^y \sin \left(
+ \omega_2
+  t\right)]\left[\sigma_2^x
+   \cos \left(\omega_2 t\right)
+   -\sigma_2^y \sin \left(
+\omega_2 t\right)\right],
+$$
+
+再做含时变换：
+
+$$
+    \mathcal{U}_d 
+     =\exp \left[-i t\left(\eta_1 \sigma_1^{x\prime}\right) / 2\right],
+$$
+
+最终得到:
+
+$$
+\begin{aligned}
+  2 \mathcal{H}^{\prime}= 
+  \omega_{x x}
+  [(\cos\xi \sigma_1^{x\prime}
+  -sin\xi 
+  (\sigma_1^{z\prime}\cos\eta_1 t+ 
+  \sigma_1^{y\prime}\sin\eta_1 t))
+  \cos \left(\omega_2 t\right)\\
+  -(\sigma_1^{y\prime}\cos\eta_1 t
+   - \sigma_1^{z\prime}\sin\eta_1 t) \sin \left(
+   \omega_2
+    t\right)]\left[\sigma_2^x
+     \cos \left(\omega_2 t\right)
+     -\sigma_2^y \sin \left(
+  \omega_2 t\right)\right],  
+\end{aligned}
+$$
+
+省去高阶振荡项：
+
+$$
+2 \mathcal{H}^{\prime}\approx w_{xx}
+\cos \xi \sigma_x^{1\prime}  \sigma_x^{2}
+$$
+
+转回旋转参考系：
+
+$$
+2 \mathcal{H}^{\prime}\approx w_{xx}
+\cos \xi (\sigma_x^{1}\cos\xi 
++\sigma_z^{1}\sin\xi )  \sigma_x^{2}
+$$
+
+as $\xi \rightarrow \pi/2$，进一步的：
+
+$$
+2 \mathcal{H}^{\prime}\approx w_{xx}\sin\xi
+\cos \xi \sigma_z^{1}   \sigma_x^{2}
+$$
+
+
+\end{document}
